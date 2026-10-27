@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plano a render | ORNAT</title>
+<meta name="description" content="Sube tu plano y recórrelo en 3D: isométrico por planta, más de 30 estilos de interior en vivo e imagen fotorrealista en tu navegador. Sin cuentas.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="/plano-a-render/">
+<link rel="preload" href="/fonts/barlow-condensed-semibold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/svg+xml" href="/img/brand/ornat-planta-cuadrada-favicon.svg">
+<link rel="stylesheet" href="../shared/workspace.css">
+<link rel="stylesheet" href="./plano.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/",
+    "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/",
+    "three-mesh-bvh": "https://cdn.jsdelivr.net/npm/three-mesh-bvh@0.9.16/src/index.js",
+    "three-gpu-pathtracer": "https://cdn.jsdelivr.net/npm/three-gpu-pathtracer@0.0.27/src/index.js"
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="workspace">
+  <aside class="rail" aria-label="Navegación de Plano a render">
+    <a class="brand" href="/">ORNAT<span>PLANO A RENDER</span></a>
+    <a class="pr-sw" href="/software-ia/">Software IA <span aria-hidden="true">↗</span></a>
+    <nav aria-label="Pasos" id="nav">
+      <a href="#plano">1 · Plano</a><a href="#modelo">2 · Modelo y estilos</a><a href="#render">3 · Render</a><a href="#exportar">4 · Exportar</a>
+    </nav>
+    <div class="rail-bottom">
+      <p class="nav-label">( Ir a )</p>
+      <a href="/software-ia/">Software IA</a><a href="/propiedades/subir/">Subir propiedad</a><a href="/capacitacion/">Capacitación</a><a href="/control/">CRM</a><a href="/cuenta/">Cuenta</a><a href="/">Sitio</a>
+      <p class="demo-note"><span class="dot"></span>Todo corre en tu navegador</p>
+    </div>
+  </aside>
+  <div class="shell">
+    <div class="topbar no-print"><ornat-session current="plano"></ornat-session></div>
+    <main id="main" tabindex="-1">
+      <header class="pr-head">
+        <p class="eyebrow">( Software IA · Plano a render )</p>
+        <h1>Entra en tu <i>plano</i></h1>
+        <p class="lead">Sube las láminas de tu proyecto o abre un plano de ejemplo. Leemos muros, puertas y espacios en tu navegador y levantamos el isométrico de cada planta y un modelo 3D que puedes recorrer. Vístelo con más de 30 estilos de interior y míralo con luz real. Sin cuentas.</p>
+      </header>
+      <noscript><p class="card">Esta herramienta necesita JavaScript y WebGL.</p></noscript>
+
+      <section id="plano" class="pr-sec" aria-labelledby="t-plano">
+        <div class="pr-sec-head"><span class="pr-num" aria-hidden="true">1</span><div><h2 id="t-plano">Sube tu plano</h2><p class="hint">JPG, PNG, WebP o PDF. Una lámina puede traer varias plantas.</p></div></div>
+        <div id="plano-cuerpo"></div>
+      </section>
+
+      <section id="modelo" class="pr-sec" aria-labelledby="t-modelo">
+        <div class="pr-sec-head"><span class="pr-num" aria-hidden="true">2</span><div><h2 id="t-modelo">Recórrelo y vístelo</h2><p class="hint">Isométrico por planta, recorrido 3D y comparación con la lámina. Toca un estilo y mira cómo cambia.</p></div></div>
+        <div id="modelo-cuerpo"></div>
+      </section>
+
+      <section id="render" class="pr-sec" aria-labelledby="t-render">
+        <div class="pr-sec-head"><span class="pr-num" aria-hidden="true">3</span><div><h2 id="t-render">Míralo con luz real</h2><p class="hint">Trazado de rayos en tu tarjeta gráfica: luz de cielo, sol, rebotes y los materiales del estilo.</p></div></div>
+        <div id="render-cuerpo"></div>
+      </section>
+
+      <section id="exportar" class="pr-sec" aria-labelledby="t-exportar">
+        <div class="pr-sec-head"><span class="pr-num" aria-hidden="true">4</span><div><h2 id="t-exportar">Llévalo a tu estudio</h2><p class="hint">Descarga el modelo .glb para SketchUp, Blender o Unreal, los isométricos en PNG y el proyecto en JSON.</p></div></div>
+        <div id="exportar-cuerpo"></div>
+      </section>
+    </main>
+  </div>
+</div>
+<div id="toasts" role="status" aria-live="polite"></div>
+<div id="sr-anuncio" class="sr" role="status" aria-live="polite"></div>
+<script type="module" src="./app.js"></script>
+</body>
+</html>

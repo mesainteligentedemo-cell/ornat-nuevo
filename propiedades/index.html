@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Propiedades | ORNAT</title>
+<meta name="description" content="Catálogo de propiedades en venta, renta y preventa en la Riviera Maya y el sureste de México. Filtra por zona, precio, recámaras y más.">
+<link rel="canonical" href="/propiedades/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/svg+xml" href="/img/brand/ornat-planta-cuadrada-favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="./propiedades.css">
+<link rel="stylesheet" href="/shared/ficha.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="top">
+  <a class="brand" href="/" aria-label="ORNAT, inicio">ORNAT</a>
+  <nav aria-label="Principal"><a href="/">Inicio</a><a href="/propiedades/" aria-current="page">Propiedades</a><a href="/plano-a-render/">Plano a render</a><a href="/control/">CRM</a><a href="/cms/">Editor</a></nav>
+  <ornat-session current="propiedades"></ornat-session>
+</header>
+
+<main id="contenido">
+  <section id="list-view" hidden>
+    <div class="hero">
+      <p class="eyebrow">( Catálogo )</p>
+      <h1>Propiedades</h1>
+      <p class="lead">Venta, renta y preventa. Filtra y comparte la búsqueda: la dirección de la página guarda tus filtros.</p>
+      <p class="hero-actions"><a class="btn" id="upload-btn" href="/propiedades/subir/" hidden>Subir propiedad con IA</a></p>
+    </div>
+    <div id="seed-box" class="seed" hidden></div>
+    <ornat-catalog filters limit="12"></ornat-catalog>
+  </section>
+
+  <article id="detail-view" hidden></article>
+</main>
+
+<footer class="foot"><span>© 2026 ORNAT UX</span><span>Demo: las propiedades se leen de este navegador. Al conectar el backend se leerán de la base de datos del equipo.</span></footer>
+
+<div id="print-root" aria-hidden="true"></div>
+<script type="module" src="./propiedades.js"></script>
+<script type="module" src="/mapa-pdc/mapa-pdc.js"></script>
+</body>
+</html>

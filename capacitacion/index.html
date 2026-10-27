@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Capacitación | ORNAT</title>
+<meta name="description" content="Cursos internos, evaluaciones, asignaciones y constancias del equipo ORNAT.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/svg+xml" href="/img/brand/ornat-planta-cuadrada-favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../shared/workspace.css">
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="workspace">
+  <aside class="rail" id="rail" aria-label="Navegación de Capacitación">
+    <a class="brand" href="/">ORNAT<span>CAPACITACIÓN</span></a>
+    <nav aria-label="Secciones de Capacitación" id="nav"></nav>
+    <div class="rail-bottom">
+      <p class="nav-label">( Ir a )</p>
+      <a href="/cms/">Editor</a><a href="/control/">CRM</a><a href="/rrhh/">RRHH</a><a href="/cuenta/">Cuenta</a><a href="/plano-a-render/">Plano a render</a><a href="/">Sitio</a>
+      <p class="demo-note"><span class="dot"></span>Demo local · datos en este navegador</p>
+    </div>
+  </aside>
+  <div class="shell">
+    <div class="topbar no-print"><ornat-session current="capacitacion"></ornat-session></div>
+    <main id="main" tabindex="-1"><noscript>Esta pantalla necesita JavaScript.</noscript></main>
+  </div>
+</div>
+<div id="toasts" role="status" aria-live="polite"></div>
+<ornat-voice context="capacitacion"></ornat-voice>
+<script type="module" src="./capacitacion.js"></script>
+</body>
+</html>

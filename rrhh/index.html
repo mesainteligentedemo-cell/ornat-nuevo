@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Recursos Humanos | ORNAT</title>
+<meta name="description" content="Directorio, expedientes, vacaciones, onboarding y evaluaciones del equipo ORNAT.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/svg+xml" href="/img/brand/ornat-planta-cuadrada-favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../shared/workspace.css">
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="workspace">
+  <aside class="rail" id="rail" aria-label="Navegación de Recursos Humanos">
+    <a class="brand" href="/">ORNAT<span>RECURSOS HUMANOS</span></a>
+    <nav aria-label="Secciones de RRHH" id="nav"></nav>
+    <div class="rail-bottom">
+      <p class="nav-label">( Ir a )</p>
+      <a href="/cms/">Editor</a><a href="/control/">CRM</a><a href="/capacitacion/">Capacitación</a><a href="/cuenta/">Cuenta</a><a href="/plano-a-render/">Plano a render</a><a href="/">Sitio</a>
+      <p class="demo-note"><span class="dot"></span>Demo local · datos en este navegador</p>
+    </div>
+  </aside>
+  <div class="shell">
+    <div class="topbar no-print"><ornat-session current="rrhh"></ornat-session></div>
+    <p class="demo-warning no-print" role="note" style="margin:12px 24px 0;padding:12px 16px;border:1px solid #e5c76b;background:#fbf3df;color:#5b4a1c;border-radius:10px;font-size:13px;line-height:1.5"><strong>Demo:</strong> no captures datos personales reales (CURP, RFC, NSS, salarios, cuentas ni documentos). Aquí todo se guarda sin cifrar en este navegador; los datos reales irán a un servidor cifrado cuando conectemos el backend.</p>
+    <main id="main" tabindex="-1"><noscript>Esta pantalla necesita JavaScript.</noscript></main>
+  </div>
+</div>
+<div id="toasts" role="status" aria-live="polite"></div>
+<ornat-voice context="rrhh"></ornat-voice>
+<script type="module" src="./rrhh.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+/**
+ * ORNAT — conector privado, manual y vinculado a Google Sheets.
+ * Instalación: abre la hoja > Extensiones > Apps Script; pega este archivo en Code.gs,
+ * guarda y recarga la hoja. Abre el menú «ORNAT · Calendario» y autoriza tu cuenta.
+ * No desplegar como aplicación web. No necesita claves, contraseñas ni hoja pública.
+ * Exporta un archivo JSON; importar decisiones requiere confirmación del usuario.
+ * No sincroniza en segundo plano y NO publica contenido en redes sociales.
+ * APIs: developers.google.com/apps-script/guides/html/communication
+ *       developers.google.com/apps-script/reference/lock/lock-service
+ */
+const ORNAT_CALENDAR = Object.freeze({
+  spreadsheetId: '1tqoUkGDgs6IVVPab999_zvo3rwiY95VibYmb69fLHBk',
+  sheetId: 1059632877,
+  sheetName: 'Calendario',
+  headers: ['Seleccionar','ID','Pieza','Título','Red','Formato','Fecha','Hora','Copy','Hashtags','Archivo','Tipo','Duración real (s)','Duración recomendada','Alerta','Estado','Aprobado por','Aprobado el','Resultado','Publicado el']
+});
+
+function onOpen() {
+  SpreadsheetApp.getUi().createMenu('ORNAT · Calendario')
+    .addItem('Exportar / importar revisión JSON', 'ornatOpenCalendarConnector').addToUi();
+}
+
+function ornatOpenCalendarConnector() {
+  ornatSheet_();
+  const html = `<!doctype html><html lang="es"><head><base target="_top"><meta charset="utf-8"><style>
+  body{font:14px/1.5 Arial,sans-serif;color:#202a22;padding:18px}button{padding:11px;margin:6px 0;background:#223a27;color:white;border:0;border-radius:6px;cursor:pointer;width:100%}textarea{width:100%;box-sizing:border-box;min-height:140px}small,p{color:#526253}#status{white-space:pre-wrap;overflow-wrap:anywhere}input{max-width:100%}hr{border:0;border-top:1px solid #ddd;margin:22px 0}</style></head><body>
+  <h2>Calendario privado</h2><p>Intercambio manual de archivos. La hoja sigue privada; no hay sincronización automática ni publicación en redes.</p>
+  <button id="export">Descargar calendario JSON</button><hr>
+  <h3>Importar decisiones revisadas</h3><p>Selecciona el archivo JSON de revisión. Google Sheets te pedirá confirmar antes de modificar aprobaciones.</p>
+  <input id="file" type="file" accept="application/json,.json"><textarea id="review" aria-label="JSON de revisión" placeholder="O pega aquí el JSON de revisión"></textarea>
+  <button id="import">Validar y solicitar confirmación</button><small>Solo se actualizan Estado, Aprobado por y Aprobado el. El resto de los datos se conserva.</small><p id="status" role="status"></p>
+  <script>
+  const status=document.getElementById('status');
+  function busy(value){document.querySelectorAll('button').forEach(b=>b.disabled=value);}
+  function fail(error){busy(false);status.textContent=error.message||String(error);}
+  document.getElementById('export').onclick=()=>{busy(true);status.textContent='Leyendo calendario…';google.script.run.withFailureHandler(fail).withSuccessHandler(data=>{busy(false);const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='ornat-calendario-'+new Date().toISOString().slice(0,10)+'.json';a.textContent='Guardar archivo de calendario';a.target='_blank';status.replaceChildren(a,document.createElement('br'),document.createTextNode(data.rows.length+' piezas exportadas. '+data.warnings.join(' ')));setTimeout(()=>URL.revokeObjectURL(url),300000);}).ornatExportCalendar();};
+  document.getElementById('file').onchange=async e=>{const f=e.target.files[0];if(!f)return;if(f.size>2000000){fail(new Error('El JSON supera 2 MB.'));return;}document.getElementById('review').value=await f.text();};
+  document.getElementById('import').onclick=()=>{const text=document.getElementById('review').value;if(text.length>2000000){fail(new Error('El JSON supera 2 MB.'));return;}busy(true);status.textContent='Validando decisiones; revisa la confirmación en Google Sheets…';google.script.run.withFailureHandler(fail).withSuccessHandler(result=>{busy(false);status.textContent=result.cancelled?'Importación cancelada.':result.applied+' decisiones aplicadas. No se publicó en redes.';}).ornatImportCalendarReview(text);};
+  </script></body></html>`;
+  SpreadsheetApp.getUi().showSidebar(HtmlService.createHtmlOutput(html).setTitle('ORNAT · Calendario'));
+}
+
+function ornatExportCalendar() {
+  const data = ornatRead_();
+  return {format:'ornat-calendar',version:1,spreadsheetId:ORNAT_CALENDAR.spreadsheetId,
+    sheetId:ORNAT_CALENDAR.sheetId,sheetName:data.sheet.getName(),exportedAt:new Date().toISOString(),
+    timezone:data.sheet.getParent().getSpreadsheetTimeZone(),headers:ORNAT_CALENDAR.headers.slice(),
+    rows:data.rows,warnings:data.warnings,
+    integration:{mode:'manual-json',liveSync:false,socialPublishing:false}};
+}
+
+function ornatImportCalendarReview(text) {
+  if(typeof text!=='string'||text.length>2000000)throw new Error('El archivo JSON no es válido o supera 2 MB.');
+  let input;try{input=JSON.parse(text);}catch(_){throw new Error('No se pudo leer el JSON de revisión.');}
+  if(!input||input.format!=='ornat-calendar-review'||input.version!==1||
+     input.spreadsheetId!==ORNAT_CALENDAR.spreadsheetId||input.sheetId!==ORNAT_CALENDAR.sheetId||
+     !Array.isArray(input.reviews)||!input.reviews.length||input.reviews.length>500)
+    throw new Error('Usa un archivo ornat-calendar-review versión 1 de esta hoja (1–500 decisiones).');
+  const seen=new Set();
+  input.reviews.forEach(review=>{
+    if(!review||typeof review.id!=='string'||!review.id.trim()||seen.has(review.id)||
+       !['approve','reject'].includes(review.decision)||typeof review.expectedState!=='string'||
+       !/^[0-9a-f]{64}$/.test(review.expectedVersion)||typeof review.reviewer!=='string'||
+       !review.reviewer.trim()||review.reviewer.length>120)
+      throw new Error('Hay IDs duplicados, decisiones inválidas o falta el estado, versión o nombre del revisor.');
+    seen.add(review.id);
+  });
+  const ui=SpreadsheetApp.getUi();
+  const approved=input.reviews.filter(r=>r.decision==='approve').length;
+  if(ui.alert('Confirmar revisión ORNAT',approved+' aprobaciones y '+(input.reviews.length-approved)+
+      ' rechazos. Se actualizarán exclusivamente Estado, Aprobado por y Aprobado el. No se publicará nada en redes. ¿Continuar?',ui.ButtonSet.YES_NO)!==ui.Button.YES)
+    return {cancelled:true,applied:0};
+  const lock=LockService.getDocumentLock();
+  if(!lock||!lock.tryLock(15000))throw new Error('Otra revisión está en curso. Inténtalo nuevamente.');
+  let applied=0,writtenCells=0;
+  try{
+    const data=ornatRead_();
+    const map=new Map(data.rows.map(row=>[row.id,row]));
+    const plans=input.reviews.map(review=>{
+      const row=map.get(review.id);
+      if(!row||row.expectedState!==review.expectedState||row.expectedVersion!==review.expectedVersion)
+        throw new Error('La pieza '+review.id+' cambió o ya no existe. Exporta el calendario otra vez; no se aplicó ninguna decisión.');
+      if(row.values['Publicado el']||/publicad|programad|enviad/i.test(row.expectedState))
+        throw new Error('La pieza '+review.id+' ya está publicada o programada; su revisión está bloqueada.');
+      return {review,row};
+    });
+    const now=new Date();
+    const actor=Session.getActiveUser().getEmail();
+    plans.forEach(({review,row})=>{
+      const state=review.decision==='approve'?'Aprobado':'Rechazado';
+      const reviewer=(actor?actor+' · ':'')+review.reviewer.trim();
+      data.sheet.getRange(row.rowNumber,data.columns['Estado']).setValue(state);
+      writtenCells++;
+      data.sheet.getRange(row.rowNumber,data.columns['Aprobado por']).setValue(ornatLiteral_(reviewer));
+      writtenCells++;
+      data.sheet.getRange(row.rowNumber,data.columns['Aprobado el']).setValue(now);
+      writtenCells++;
+      applied++;
+    });
+    SpreadsheetApp.flush();
+    return {cancelled:false,applied,reviewedAt:now.toISOString(),socialPublishing:false};
+  }catch(error){
+    if(writtenCells)throw new Error('Se modificaron '+writtenCells+' celdas ('+applied+' decisiones completas) antes de un error. Revisa la hoja y exporta otra vez. Detalle: '+error.message);
+    throw error;
+  }finally{lock.releaseLock();}
+}
+
+function ornatSheet_(){
+  const book=SpreadsheetApp.getActiveSpreadsheet();
+  if(!book||book.getId()!==ORNAT_CALENDAR.spreadsheetId)
+    throw new Error('Instala este código dentro de la hoja ORNAT indicada; no se permite usar otra hoja.');
+  const sheet=book.getSheets().find(s=>s.getSheetId()===ORNAT_CALENDAR.sheetId);
+  if(!sheet||sheet.getName()!==ORNAT_CALENDAR.sheetName)throw new Error('No se encontró la pestaña Calendario esperada.');
+  return sheet;
+}
+
+function ornatRead_(){
+  const sheet=ornatSheet_(),width=sheet.getLastColumn();
+  if(!width)throw new Error('La pestaña no tiene encabezados.');
+  const headers=sheet.getRange(1,1,1,width).getDisplayValues()[0].map(v=>v.trim());
+  const columns={};
+  ORNAT_CALENDAR.headers.forEach(header=>{
+    const matches=headers.map((value,index)=>value===header?index+1:0).filter(Boolean);
+    if(matches.length!==1)throw new Error('Encabezado ausente o duplicado: '+header);
+    columns[header]=matches[0];
+  });
+  const rows=[],warnings=[],ids=new Set();
+  if(sheet.getLastRow()<2)return {sheet,columns,rows,warnings};
+  const source=sheet.getRange(2,1,sheet.getLastRow()-1,width).getDisplayValues();
+  source.forEach((cells,index)=>{
+    const values={};ORNAT_CALENDAR.headers.forEach(header=>values[header]=cells[columns[header]-1]);
+    // Checkbox-only placeholder rows (FALSE/FALSO) are not content pieces.
+    if(!ORNAT_CALENDAR.headers.some(h=>h!=='Seleccionar'&&values[h].trim()))return;
+    const id=values.ID.trim();
+    if(!id){warnings.push('Fila '+(index+2)+' omitida: falta ID.');return;}
+    if(ids.has(id))throw new Error('ID duplicado en la hoja: '+id+'. Corrígelo antes de revisar.');
+    ids.add(id);
+    const canonical=JSON.stringify(ORNAT_CALENDAR.headers.map(header=>values[header]));
+    const digest=Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256,canonical,Utilities.Charset.UTF_8);
+    const version=digest.map(n=>(n<0?n+256:n).toString(16).padStart(2,'0')).join('');
+    rows.push({id,rowNumber:index+2,values,expectedState:values.Estado,expectedVersion:version});
+  });
+  return {sheet,columns,rows,warnings};
+}
+
+function ornatLiteral_(value){return /^[=+@\-\t\r\n]/.test(value)?"'"+value:value;}

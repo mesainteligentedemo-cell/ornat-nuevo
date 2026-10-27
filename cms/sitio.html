@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Sitio publicado — ORNAT</title><meta name="description" content="Sitio publicado con ORNAT.">
+<base href="/cms/"><link rel="icon" href="/img/brand/ornat-planta-cuadrada-favicon.svg">
+<link rel="preload" href="/fonts/barlow-condensed-bold.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+// /sitios/<id> llega aquí por reescritura de Vercel: el navegador conserva la ruta sin ?p=, así que se lo damos a sitio.js.
+(() => {
+  const match = /^\/sitios\/([^/?#]+)\/?$/.exec(location.pathname);
+  if (!match) return;
+  document.documentElement.classList.add('public');
+  if (!new URLSearchParams(location.search).has('p')) history.replaceState(history.state, '', `${location.pathname}?p=${match[1]}${location.hash}`);
+})();
+</script>
+<style>
+@font-face{font-family:"Barlow Condensed";src:url("/fonts/barlow-condensed-bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url("/fonts/instrument-serif-regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+:root{--black:#000;--cream:#f4f1ea;--lime:#98ff03;--dim:rgba(244,241,234,.68);--line:rgba(244,241,234,.16)}
+[hidden]{display:none!important}
+html,body{margin:0;height:100%;background:var(--black);color:var(--cream);font:14px/1.5 Inter,system-ui,Arial,sans-serif}
+#site{position:fixed;inset:0;width:100%;height:100%;border:0;display:block;background:#fff}
+#state{position:fixed;inset:0;display:grid;place-items:center;text-align:center;padding:24px;background:var(--black);color:var(--cream);z-index:5}
+#state[hidden]{display:none}
+#state .mark{display:block;width:44px;height:44px;margin:0 auto 22px}
+#state b{display:block;font:700 clamp(28px,6vw,44px)/1 "Barlow Condensed",Arial Narrow,sans-serif;letter-spacing:.01em;text-transform:uppercase;margin-bottom:12px}
+#state p{margin:0 auto;color:var(--dim);max-width:44ch;font:400 clamp(18px,2.4vw,21px)/1.35 "Instrument Serif",Georgia,serif}
+#state .home{display:none;margin-top:26px;padding:12px 22px;border:0;border-radius:999px;background:var(--lime);color:var(--black);font:700 15px/1 "Barlow Condensed",Arial Narrow,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+#state.is-error .home{display:inline-flex}
+#state.is-error .mark{width:56px;height:56px}
+.spinner{width:26px;height:26px;border:2px solid var(--line);border-top-color:var(--lime);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.spinner{animation-duration:2.4s}}
+#demo-bar{position:fixed;left:12px;bottom:12px;z-index:10;max-width:min(560px,calc(100vw - 150px));background:#191c19;color:#f4f5ee;border-radius:14px;box-shadow:0 12px 34px #0007;padding:12px 14px;display:grid;gap:10px;font-size:12px}
+#demo-bar[hidden]{display:none}
+#demo-bar p{margin:0}
+.public #demo-bar,.public #reopen{display:none!important}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+button,a.btn{font:inherit;border:1px solid #3a4436;background:#272f24;color:#fff;border-radius:9px;padding:8px 12px;min-height:38px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
+button.primary{background:#c2f56a;border-color:#c2f56a;color:#17230e;font-weight:700}
+button:disabled{opacity:.45;cursor:default}
+button:focus-visible,a:focus-visible{outline:3px solid #98ff03;outline-offset:2px}
+#reopen{position:fixed;left:12px;bottom:12px;z-index:10;padding:8px 12px}
+#reopen[hidden]{display:none}
+#msg{font-size:11.5px;color:#c9d3bd;min-height:1.2em}
+@media(max-width:560px){#demo-bar{left:8px;right:8px;max-width:none;bottom:60px}#reopen{bottom:60px;left:8px}}
+</style></head>
+<body>
+<div id="state" role="status"><div><img class="mark" src="/img/brand/ornat-planta-cuadrada-lime.svg" alt="ORNAT" width="44" height="44"><div class="spinner" aria-hidden="true"></div><b id="state-title">Cargando el sitio…</b><p id="state-text">Aplicamos tu publicación sobre la plantilla original.</p><a class="home" href="/">Ir a ORNAT</a></div></div>
+<iframe id="site" title="Sitio publicado" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals allow-downloads"></iframe>
+<div id="demo-bar" role="region" aria-label="Aviso de demostración" hidden>
+  <p id="demo-text"></p>
+  <div class="row"><button type="button" class="primary" id="zip" disabled>Descargar sitio (.zip)</button><button type="button" id="copy">Copiar enlace</button><button type="button" id="hide" aria-label="Ocultar este aviso">Ocultar aviso</button></div>
+  <div id="msg" role="status" aria-live="polite"></div>
+</div>
+<button type="button" id="reopen" hidden>Mostrar aviso de demo</button>
+<script type="module" src="/cms/sitio.js"></script>
+<script type="module">
+// Corre después de sitio.js (los módulos se ejecutan en orden): sitio.js ya leyó ?p=, así que la ruta pública queda limpia.
+import { dbGet } from '/cms/core.js';
+const pub = document.documentElement.classList.contains('public');
+const id = new URLSearchParams(location.search).get('p');
+if (pub) history.replaceState(history.state, '', location.pathname + location.hash);
+const state = document.getElementById('state');
+// sitio.js quita el spinner cuando no puede mostrar la publicación: ese es el estado «no encontrada».
+new MutationObserver(() => {
+  if (state.hidden || state.querySelector('.spinner') || state.classList.contains('is-error')) return;
+  state.classList.add('is-error');
+  if (pub && document.getElementById('state-title').textContent === 'No encontramos esta publicación') {
+    document.title = 'Sitio no encontrado — ORNAT';
+    document.getElementById('state-text').textContent = 'Este sitio no existe o ya no está publicado. Revisa el enlace o pide uno nuevo a quien te lo compartió.';
+  }
+}).observe(state, { childList: true, subtree: true, characterData: true });
+if (id) dbGet('publications', id).then(record => {
+  const seo = record?.patch?.seo || {};
+  const description = typeof seo.description === 'string' && seo.description.trim() ? seo.description.trim() : record?.projectName ? `${record.projectName} — sitio publicado con ORNAT.` : '';
+  if (description) document.querySelector('meta[name="description"]').setAttribute('content', description.slice(0, 300));
+  if (typeof seo.title === 'string' && seo.title.trim() && !document.documentElement.dataset.ready) document.title = seo.title.trim();
+}).catch(() => {});
+</script>
+</body></html>

@@ -1,0 +1,50 @@
+/* ORNAT · submenú «Software IA» dentro del menú de pantalla completa (nav#menu).
+   Requiere los tokens de /styles.css. El JS vive en /software-menu.js. */
+.menu .msw-btn{display:flex;align-items:baseline;gap:20px;width:100%;text-align:left;font-family:var(--title);text-transform:uppercase;font-weight:600;font-size:clamp(30px,min(6vw,7vh),90px);line-height:1;padding:8px 0;transition:color .3s,padding .5s var(--ease)}
+.menu .msw-btn>span{font-family:var(--ui);font-size:var(--t-xs);color:var(--faint);letter-spacing:.2em}
+.menu .msw-btn:hover,.menu .msw-btn[aria-expanded="true"]{color:var(--lime)}
+.menu .msw-btn:hover{padding-left:20px}
+.menu .msw-btn:focus-visible{outline-offset:-3px}
+/* indicador +/− */
+.menu .msw-btn i{position:relative;align-self:center;flex:none;width:.42em;height:.42em;margin-left:auto;margin-right:.1em}
+.menu .msw-btn i:before,.menu .msw-btn i:after{content:"";position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:currentColor;transition:transform .45s var(--ease)}
+.menu .msw-btn i:after{transform:rotate(90deg)}
+.menu .msw-btn[aria-expanded="true"] i:after{transform:rotate(0)}
+
+.menu .msw-panel{padding:6px 0 26px clamp(0px,3.2vw,46px)}
+.menu .msw-panel[hidden]{display:none}
+.menu .msw-k{font-size:var(--t-xs);letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--faint);margin:4px 0 10px}
+.menu .msw-panel ul{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(20px,2.4vw,40px)}
+.menu .msw-panel li{overflow:visible;border:0;border-top:1px solid var(--line)}
+.menu .msw-panel li a{display:grid;gap:4px;padding:12px 0 13px;font-family:var(--ui);text-transform:none;font-weight:400;font-size:var(--t-sm);line-height:1.4;transition:color .3s,transform .5s var(--ease)}
+.menu .msw-panel li a:hover{padding-left:0;transform:translateX(6px)}
+.menu .msw-panel li a:hover b,.menu .msw-panel li a[aria-current="page"] b{color:var(--lime)}
+.menu .msw-panel li a:focus-visible{outline-offset:-2px}
+.menu .msw-panel b{font-family:var(--title);font-weight:600;text-transform:uppercase;font-size:clamp(19px,1.55vw,25px);line-height:1.05;letter-spacing:.01em;color:#fff;transition:color .3s}
+.menu .msw-panel small{font-size:clamp(12.5px,.9vw,14px);line-height:1.4;color:var(--dim)}
+.msw-new{display:inline-block;vertical-align:.2em;margin-left:8px;padding:3px 7px 2px;border-radius:99px;background:var(--lime);color:#000;font-family:var(--ui);font-style:normal;font-weight:600;font-size:10px;line-height:1.2;letter-spacing:.14em;text-transform:uppercase}
+
+@media(max-width:900px){
+  .menu .msw-panel{padding:4px 0 18px}
+  .menu .msw-panel ul{grid-template-columns:minmax(0,1fr)}
+  .menu .msw-panel li a{padding:11px 0 12px}
+  .menu .msw-btn{gap:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  .menu .msw-btn,.menu .msw-btn i:before,.menu .msw-btn i:after,.menu .msw-panel li a{transition:none}
+  .menu .msw-panel li a:hover{transform:none}
+}
+
+/* Banda opaca detrás del logo y de CERRAR: al hacer scroll, el contenido del menú pasa por debajo y no se lee
+   encimado con el header (que es transparente y usa mix-blend-mode). --menu-veil = borde inferior del header, lo fija el JS.
+   Vive dentro de nav#menu, así que la recorta su clip-path: solo existe mientras el menú se ve. */
+.menu-veil{position:fixed;left:0;right:0;top:0;z-index:5;height:calc(var(--menu-veil,76px) + 22px);background:linear-gradient(to bottom,var(--soft) calc(100% - 22px),rgba(10,10,11,0))}
+.menu{scroll-padding-top:calc(var(--menu-veil,76px) + 30px)}
+/* Con el menú abierto se oculta el asistente de voz, como en el rediseño (site.css: html.is-bar-open ornat-voice). */
+html.is-menu-open ornat-voice{visibility:hidden}
+
+/* Menú sin GSAP (páginas internas con body[data-menu="simple"]): misma cortina, con transición CSS. */
+.menu[data-simple]{visibility:hidden;transition:clip-path .8s var(--ease),visibility 0s linear .8s}
+.menu[data-simple].is-open{visibility:visible;clip-path:inset(0 0 0% 0);transition:clip-path .8s var(--ease)}
+html.is-menu-open:has(.menu[data-simple]){overflow:hidden}
+@media(prefers-reduced-motion:reduce){.menu[data-simple],.menu[data-simple].is-open{transition:none}}

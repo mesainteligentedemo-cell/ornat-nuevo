@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>ORNAT Studio — Personaliza tu sitio</title><link rel="icon" href="/img/brand/ornat-planta-cuadrada-favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript><link rel="stylesheet" href="editor.css"><link rel="stylesheet" href="editor-ext.css"></head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-design" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="i-text" viewBox="0 0 24 24"><path d="M5 6.5V5h14v1.5M12 5v14M9 19h6"/></symbol>
+<symbol id="i-media" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.6"/><path d="m4 18 5-5 3.5 3.5 2.5-2.5 5 5"/></symbol>
+<symbol id="i-style" viewBox="0 0 24 24"><path d="M12 3.5a8.5 8.5 0 1 0 0 17c1.4 0 2-1 1.5-2-.6-1.2.1-2.5 1.5-2.5h1.5a4 4 0 0 0 4-4c0-4.4-3.8-8.5-8.5-8.5z"/><circle cx="7.8" cy="11" r="1"/><circle cx="10.5" cy="7.2" r="1"/><circle cx="15" cy="7.8" r="1"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 4 8.5 4.5L12 13 3.5 8.5z"/><path d="m3.5 12.5 8.5 4.5 8.5-4.5M3.5 16.5 12 21l8.5-4.5"/></symbol>
+<symbol id="i-brand" viewBox="0 0 24 24"><path d="m12 3.5 8.5 8.5-8.5 8.5L3.5 12z"/><path d="M12 8.5 15.5 12 12 15.5 8.5 12z"/></symbol>
+<symbol id="i-site" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.3 2.4 3.4 5.2 3.4 8.5s-1.1 6.100-3.4 8.500c-2.300-2.400-3.400-5.200-3.400-8.500S9.700 5.900 12 3.500z"/></symbol>
+<symbol id="i-export" viewBox="0 0 24 24"><path d="M12 15V4M7.5 8.500 12 4l4.500 4.500M5 14v4.500a1.500 1.500 0 0 0 1.500 1.500h11a1.500 1.500 0 0 0 1.500-1.500V14"/></symbol>
+<symbol id="i-control" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M3.500 9h17M9 9v11.500"/></symbol>
+<symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 7 4.500 11.500 9 16"/><path d="M5 11.500h8.500a5.500 5.500 0 0 1 0 11H11" transform="translate(0 -3)"/></symbol>
+<symbol id="i-redo" viewBox="0 0 24 24"><path d="m15 7 4.500 4.500L15 16"/><path d="M19 11.500h-8.500a5.500 5.500 0 0 0 0 11H13" transform="translate(0 -3)"/></symbol>
+<symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M6 12h12M12 6v12"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.500v13l11-6.500z"/></symbol>
+<symbol id="i-pencil" viewBox="0 0 24 24"><path d="m4 20 1-4.500L16.500 4a2 2 0 0 1 3 3L8 18.500z"/></symbol>
+<symbol id="i-save" viewBox="0 0 24 24"><path d="M12 4v11M7.500 10.500 12 15l4.500-4.500M5 19.500h14"/></symbol>
+<symbol id="i-left" viewBox="0 0 24 24"><path d="m14.500 6-6 6 6 6"/></symbol>
+<symbol id="i-right" viewBox="0 0 24 24"><path d="m9.500 6 6 6-6 6"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.500 12s3.500-6.500 9.500-6.500S21.500 12 21.500 12 18 18.500 12 18.500 2.500 12 2.500 12z"/><circle cx="12" cy="12" r="2.800"/></symbol>
+<symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M2.500 12s3.500-6.500 9.500-6.500S21.500 12 21.500 12 18 18.500 12 18.500 2.500 12 2.500 12z"/><circle cx="12" cy="12" r="2.800"/><path d="M4 20 20 4"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.500"/><path d="m16 16 4.500 4.500"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#panel">Ir al panel</a>
+<header class="topbar">
+  <a class="brand" href="/" aria-label="Volver a ORNAT"><img src="/img/brand/ornat-planta-cuadrada.svg" alt=""><b>ORNAT</b><span>STUDIO</span></a>
+  <div class="project-title"><label class="sr" for="project-name">Nombre del proyecto</label><input id="project-name" value="Mi proyecto" maxlength="80" autocomplete="off"><span id="save-state" role="status">Iniciando…</span></div>
+  <div class="view-controls">
+    <div class="devices" role="group" aria-label="Tamaño de vista previa"><button class="active" data-device="desktop" aria-pressed="true">Escritorio</button><button data-device="tablet" aria-pressed="false">Tablet</button><button data-device="mobile" aria-pressed="false">Móvil</button></div>
+    <div class="zoom" role="group" aria-label="Zoom del lienzo"><button class="icon-btn" id="zoom-out" aria-label="Alejar" title="Alejar"><svg class="ic"><use href="#i-minus"/></svg></button><button class="zoom-value" id="zoom-label" aria-label="Zoom actual" title="Clic para ajustar al espacio">100%</button><button class="icon-btn" id="zoom-in" aria-label="Acercar" title="Acercar"><svg class="ic"><use href="#i-plus"/></svg></button><button class="text-btn zoom-fit" id="zoom-fit" aria-pressed="true">Ajustar</button></div>
+  </div>
+  <div class="header-actions">
+    <button class="icon-btn" id="undo" aria-label="Deshacer (Ctrl+Z)" title="Deshacer (Ctrl+Z)" disabled><svg class="ic"><use href="#i-undo"/></svg></button><button class="icon-btn" id="redo" aria-label="Rehacer (Ctrl+Y)" title="Rehacer (Ctrl+Y)" disabled><svg class="ic"><use href="#i-redo"/></svg></button>
+    <button class="button try-button" id="select-mode" aria-pressed="false" aria-label="Probar el sitio" title="Navega el sitio sin editar"><svg class="ic"><use href="#i-play"/></svg><span>Probar</span></button>
+    <span class="demo-pill">PRUEBA GRATIS</span>
+    <button class="button dark" id="export-project"><svg class="ic"><use href="#i-save"/></svg><span>Guardar copia</span></button>
+  </div>
+</header>
+<div class="workspace" id="workspace" data-drawer="open">
+  <nav class="rail" aria-label="Herramientas del editor">
+    <button data-tab="design" class="active" aria-label="Diseño" aria-expanded="true"><svg class="ic"><use href="#i-design"/></svg>Diseño</button>
+    <button data-tab="text" aria-label="Texto"><svg class="ic"><use href="#i-text"/></svg>Texto</button>
+    <button data-tab="media" aria-label="Imágenes"><svg class="ic"><use href="#i-media"/></svg>Imágenes</button>
+    <button data-tab="style" aria-label="Colores y fuentes" title="Colores y fuentes"><svg class="ic"><use href="#i-style"/></svg>Colores</button>
+    <button data-tab="sections" aria-label="Secciones"><svg class="ic"><use href="#i-layers"/></svg>Secciones</button>
+    <button data-tab="brand" aria-label="Marca"><svg class="ic"><use href="#i-brand"/></svg>Marca</button>
+    <button data-tab="site" aria-label="Sitio y legal" title="Sitio y legal"><svg class="ic"><use href="#i-site"/></svg>Sitio</button>
+    <button data-tab="export" aria-label="Entregar"><svg class="ic"><use href="#i-export"/></svg>Entregar</button>
+    <a href="/control/" class="control-link" title="CRM y dashboard"><svg class="ic"><use href="#i-control"/></svg>Control</a><a href="/capacitacion/" class="control-link rail-extra" title="Capacitación del equipo"><span class="rail-glyph" aria-hidden="true">◎</span>Cursos</a><a href="/rrhh/" class="control-link rail-extra" title="Recursos humanos"><span class="rail-glyph" aria-hidden="true">◍</span>RRHH</a><a href="/plano-a-render/" class="control-link rail-extra" title="Plano a render"><span class="rail-glyph" aria-hidden="true">◧</span>Plano a render</a>
+  </nav>
+  <aside class="drawer" id="drawer" aria-label="Panel de herramientas">
+    <div class="drawer-inner">
+      <div class="panel-heading"><div><span class="eyebrow" id="panel-eyebrow">TU ESPACIO DE TRABAJO</span><h1 id="panel-title">Diseño</h1><p id="panel-description">Una plantilla. Tu identidad.</p></div><button class="icon-btn drawer-close" id="drawer-close" aria-label="Contraer panel" title="Contraer panel"><svg class="ic"><use href="#i-left"/></svg></button></div>
+      <div id="panel" class="panel-content" tabindex="-1"><p class="muted">Cargando el editor…</p></div>
+    </div>
+  </aside>
+  <main class="canvas-area" id="canvas-area">
+    <div class="preview-toolbar"><div class="tpl-name"><span class="live-dot"></span><b id="template-label">Plantilla</b><button class="text-btn" id="change-template">Cambiar plantilla</button></div><span id="selection-hint" class="hint-line" role="status">Haz clic en cualquier elemento para editarlo. Doble clic para escribir.</span></div>
+    <div class="canvas-scroll" id="canvas-scroll">
+      <div class="stage" id="stage">
+        <div class="device-ruler" id="device-ruler" aria-hidden="true"><i></i><span id="ruler-label">Escritorio · 1440 px</span><i></i></div>
+        <div class="preview-shell" id="preview-shell" data-device="desktop"><iframe id="preview" title="Vista previa editable de tu plantilla" sandbox="allow-scripts allow-same-origin allow-forms" referrerpolicy="no-referrer"></iframe><div class="loading" id="loading"><span class="spinner"></span><b>Preparando tu plantilla</b><p>Conservamos su diseño, scroll y animaciones.</p></div></div>
+      </div>
+    </div>
+    <div class="float-toolbar" id="float-toolbar" role="toolbar" aria-label="Edición del elemento" hidden></div>
+    <button class="drawer-handle" id="drawer-open" aria-label="Abrir panel" title="Abrir panel"><svg class="ic"><use href="#i-right"/></svg></button>
+    <nav class="section-nav" id="section-nav" aria-label="Secciones de la página"><div class="chips-row" id="section-chips"></div></nav>
+    <footer class="canvas-footer"><span>Atajos: doble clic escribe · Supr oculta · ↑↓ cambia de elemento · Ctrl+Z deshace</span><span>Guardado en este navegador · <button class="text-btn" id="privacy-note">Tus archivos no se suben</button></span></footer>
+  </main>
+</div>
+<dialog id="templates-dialog" class="wide-dialog" aria-labelledby="templates-title"><div class="dialog-head"><div><span class="eyebrow">EL PUNTO DE PARTIDA</span><h2 id="templates-title">Elige tu estilo.</h2><p>Cada plantilla conserva su experiencia original.</p></div><button class="icon-btn" data-close="templates-dialog" aria-label="Cerrar plantillas"><svg class="ic"><use href="#i-close"/></svg></button></div>
+<div class="tpl-tools"><label class="sr" for="template-search">Buscar plantillas</label><input type="search" id="template-search" placeholder="Buscar una plantilla…" autocomplete="off"><label class="sr" for="template-sort">Ordenar plantillas</label><select id="template-sort"></select></div>
+<div class="chips-row wrap" id="template-chips" role="group" aria-label="Filtrar plantillas"></div><p class="result-count" id="template-count" role="status" aria-live="polite"></p>
+<div id="template-options" class="template-options"></div></dialog>
+<dialog id="tpl-viewer" class="tpl-viewer" aria-labelledby="tpl-viewer-title"><div class="dialog-head"><div><span class="eyebrow">VISTA PREVIA REAL</span><h2 id="tpl-viewer-title">Plantilla</h2><div class="tpl-tags" id="tpl-viewer-tags"></div></div><div class="tpl-viewer-tools"><div class="devices" role="group" aria-label="Tamaño de la vista previa"><button type="button" data-viewer-device="desktop" aria-pressed="true">Escritorio</button><button type="button" data-viewer-device="mobile" aria-pressed="false">Móvil</button></div><button type="button" class="icon-btn" id="tpl-viewer-prev" data-viewer-step="-1" aria-label="Plantilla anterior" title="Anterior"><svg class="ic"><use href="#i-left"/></svg></button><button type="button" class="icon-btn" id="tpl-viewer-next" data-viewer-step="1" aria-label="Plantilla siguiente" title="Siguiente"><svg class="ic"><use href="#i-right"/></svg></button><button type="button" class="icon-btn" data-close="tpl-viewer" aria-label="Cerrar vista previa"><svg class="ic"><use href="#i-close"/></svg></button></div></div>
+<div class="tpl-viewer-stage" id="tpl-viewer-stage"><div class="tpl-viewer-shell" id="tpl-viewer-shell"><iframe id="tpl-viewer-frame" title="Vista previa de la plantilla" sandbox="allow-scripts allow-same-origin allow-forms" referrerpolicy="no-referrer" src="about:blank"></iframe></div><div class="loading" id="tpl-viewer-load" hidden><span class="spinner"></span><b>Abriendo la plantilla real</b><p>Puedes recorrerla con scroll antes de elegirla.</p></div></div>
+<div class="tpl-viewer-foot"><button type="button" class="button" data-close="tpl-viewer">Volver a la galería</button><button type="button" class="button lime" id="tpl-viewer-use" data-choose-template="">Usar esta plantilla</button></div></dialog>
+<dialog id="carry-dialog" aria-labelledby="carry-title"><div class="dialog-head"><div><span class="eyebrow">CAMBIAR DE PLANTILLA</span><h2 id="carry-title">Cambiar de plantilla</h2></div><button class="icon-btn" data-close="carry-dialog" aria-label="Cancelar el cambio"><svg class="ic"><use href="#i-close"/></svg></button></div><div id="carry-body"></div></dialog>
+<dialog id="projects-dialog" aria-labelledby="projects-title"><div class="dialog-head"><div><span class="eyebrow">GUARDADO LOCAL</span><h2 id="projects-title">Mis proyectos</h2></div><button class="icon-btn" data-close="projects-dialog" aria-label="Cerrar proyectos"><svg class="ic"><use href="#i-close"/></svg></button></div>
+<div class="tpl-tools"><label class="sr" for="project-search">Buscar proyectos</label><input type="search" id="project-search" placeholder="Buscar por nombre…" autocomplete="off"></div>
+<div class="tpl-tools"><label class="sr" for="project-template">Filtrar por plantilla</label><select id="project-template"></select><label class="sr" for="project-sort">Ordenar proyectos</label><select id="project-sort"></select><button class="text-btn" id="project-clear">Limpiar filtros</button></div>
+<p class="result-count" id="project-count" role="status" aria-live="polite"></p><div id="project-list"></div></dialog>
+<dialog id="prompt-dialog" aria-label="Prompt de imagen"><div class="dialog-head"><div><span class="eyebrow">DIRECCIÓN DE IMAGEN</span><h2>El prompt para tu espacio</h2></div><button class="icon-btn" data-close="prompt-dialog" aria-label="Cerrar prompts"><svg class="ic"><use href="#i-close"/></svg></button></div><div id="prompt-content"></div></dialog>
+<input type="file" id="import-file" accept="application/json,.json" hidden><input type="file" id="media-file" accept="image/png,image/jpeg,image/webp,image/avif" hidden><input type="file" id="video-file" accept="video/mp4,video/webm" hidden><input type="file" id="sequence-files" accept="image/png,image/jpeg,image/webp,image/avif" multiple hidden><div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script type="module" src="editor.js"></script><ornat-voice context="cms" position="bottom-right"></ornat-voice><script type="module" src="/shared/voice-widget.js"></script></body></html>

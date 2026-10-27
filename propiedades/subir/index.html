@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Subir propiedad con IA | ORNAT</title>
+<meta name="description" content="Sube las fotos de una propiedad, deja que la IA las analice, ajusta el texto con un prompt y genera la ficha técnica lista para el catálogo.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="/propiedades/subir/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/svg+xml" href="/img/brand/ornat-planta-cuadrada-favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../propiedades.css">
+<link rel="stylesheet" href="/shared/ficha.css">
+<link rel="stylesheet" href="./subir.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="top">
+  <a class="brand" href="/" aria-label="ORNAT, inicio">ORNAT</a>
+  <nav aria-label="Principal"><a href="/">Inicio</a><a href="/propiedades/">Propiedades</a><a href="/propiedades/subir/" aria-current="page">Subir con IA</a><a href="/plano-a-render/">Plano a render</a><a href="/control/">CRM</a><a href="/cms/">Editor</a></nav>
+  <ornat-session current="propiedades"></ornat-session>
+</header>
+
+<main id="contenido">
+  <div id="gate" hidden></div>
+  <div id="app" hidden>
+    <div class="head">
+      <p class="eyebrow">( Alta con IA )</p>
+      <h1>Subir propiedad</h1>
+      <p class="lead">Sube las fotos, revisa lo que la IA ve, completa lo que solo tú sabes y publica una ficha impecable en el catálogo.</p>
+    </div>
+    <div id="ai-banner" class="banner" role="status"></div>
+    <ol class="steps" id="steps" aria-label="Pasos del alta"></ol>
+    <div id="draftbar" class="draftbar"></div>
+    <section id="panel" class="panel" tabindex="-1" aria-live="polite"></section>
+    <div id="nav" class="navbar"></div>
+  </div>
+</main>
+
+<div id="print-root" aria-hidden="true"></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<footer class="foot"><span>© 2026 ORNAT UX</span><span>Demo: el inventario y el borrador viven en este navegador. Con Supabase se guardan en la base del equipo.</span></footer>
+
+<script type="module" src="./subir.js"></script>
+<script type="module" src="/mapa-pdc/mapa-pdc.js"></script>
+</body>
+</html>

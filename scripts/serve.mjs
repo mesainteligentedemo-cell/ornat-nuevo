@@ -40,6 +40,11 @@ function proxyApi(req, res) {
 http.createServer(async (req, res) => {
   const { pathname } = new URL(req.url, 'http://localhost');
   if (pathname.startsWith('/api/')) return proxyApi(req, res);
+  // Igual que vercel.json: /sitios/<id> muestra el sitio publicado desde el CMS.
+  if (/^\/sitios\/[^/]+\/?$/.test(pathname)) {
+    res.writeHead(200, { 'content-type': TYPES['.html'] });
+    return res.end(await readFile(join(ROOT, 'cms/sitio.html')));
+  }
   // Igual que Vercel: /carpeta sin diagonal final redirige a /carpeta/
   if (!pathname.endsWith('/') && !extname(pathname)) {
     const dir = await findFile(`${pathname}/`);

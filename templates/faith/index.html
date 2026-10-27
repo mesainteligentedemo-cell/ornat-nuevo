@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ORNAT UX | Diseño visual para arquitectura e inmobiliarias</title>
+<meta name="description" content="ORNAT transforma tus ideas en experiencias visuales y sitios web para arquitectos, desarrolladores y brokers en Playa del Carmen, Cancún y Tulum.">
+<meta property="og:title" content="ORNAT UX | Diseño visual">
+<meta property="og:description" content="Del plano a la experiencia: diseño visual para arquitectura e inmobiliarias.">
+<meta property="og:image" content="img/cta.webp">
+<meta name="theme-color" content="#EEEBE4">
+<link rel="icon" href="https://ornat-faith.vercel.app/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@400;500;600&family=Allison&family=Mrs+Saint+Delafield&family=Smooch+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/templates/faith/styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="wave" viewBox="0 0 48 16"><path d="M2 5c5-4 9-4 14 0s9 4 14 0 9-4 14 0M2 12c5-4 9-4 14 0s9 4 14 0 9-4 14 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="spark" viewBox="0 0 20 20"><path d="M10 0c.6 5.2 4.2 8.8 10 10-5.8 1.2-9.4 4.8-10 10-.6-5.2-4.2-8.8-10-10C5.8 8.8 9.4 5.2 10 0z" fill="currentColor"/></symbol>
+    <symbol id="phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<header class="bar">
+  <button class="pill pill--menu" id="mbtn" aria-expanded="false" aria-controls="menu"><svg class="wv" aria-hidden="true"><use href="#wave"/></svg><span id="mlbl">Menú</span></button>
+  <a class="pill pill--cta" href="#contacto"><span class="d-only">Solicitar demo</span><span class="m-only">Demo</span><svg class="wv" aria-hidden="true"><use href="#wave"/></svg></a>
+</header>
+
+<nav class="menu" id="menu" aria-label="Menú principal" aria-hidden="true">
+  <div class="menu__in">
+    <ul class="menu__list">
+      <li><a href="#manifiesto"><small>01</small>Manifiesto</a></li>
+      <li><a href="#modulos"><small>02</small>Módulos</a></li>
+      <li><a href="#territorios"><small>03</small>Servicios</a></li>
+      <li><a href="#para-quien"><small>04</small>Para quién</a></li>
+      <li><a href="#metodo"><small>05</small>Método</a></li>
+      <li><a href="#contacto"><small>06</small>Solicitar demo</a></li>
+    </ul>
+    <aside class="menu__side">
+      <p class="script menu__script">del plano a la experiencia</p>
+      <div><b>Contacto directo</b><a href="tel:+529842353159">984 235 3159</a></div>
+      <div><b>Ubicación</b>Playa del Carmen, Cancún, Tulum y proyectos en México</div>
+    </aside>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Inicio">
+    <div class="hero__stage">
+      <a class="logo" href="#top" aria-label="ORNAT, inicio"><span>ORNAT</span><small>— ux —</small></a>
+      <div class="arch" id="arch">
+        <video id="reel" autoplay muted loop playsinline preload="metadata" poster="https://ornat-faith.vercel.app/media/reel-poster.webp" aria-label="Showreel de ORNAT">
+          <source src="https://ornat-faith.vercel.app/media/reel.mp4" type="video/mp4">
+        </video>
+        <div class="arch__tint"></div>
+      </div>
+      <div class="hero__copy">
+        <h1 class="hero__title"><span>ORNAT, el estudio</span><span>visual digital</span></h1>
+        <p class="script hero__script" id="heroScript">del plano a la experiencia</p>
+        <p class="hero__sub" id="heroSub">Estudio de diseño visual<br>para arquitectura e inmobiliarias.</p>
+      </div>
+      <a class="discover" href="#intro" aria-label="Desliza para descubrir">
+        <svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="dpath" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><text><textPath href="#dpath" startOffset="0" textLength="272" lengthAdjust="spacing">desliza para descubrir ·</textPath></text><circle cx="60" cy="60" r="24" fill="none" stroke="currentColor" stroke-width=".8"/><circle class="dot" cx="60" cy="60" r="2.4" fill="none" stroke="currentColor" stroke-width=".8"/></svg>
+      </a>
+      <p class="hero__mark" id="heroMark"><svg aria-hidden="true"><use href="#spark"/></svg>Playa del Carmen<br>Cancún · Tulum</p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro" id="intro">
+    <svg class="palm" viewBox="0 0 600 600" aria-hidden="true"><g fill="currentColor"><path d="M590 20C470 120 360 240 250 420l-8-4C350 236 462 112 584 12z"/><g id="lf"><ellipse cx="520" cy="80" rx="90" ry="14" transform="rotate(-20 520 80)"/><ellipse cx="470" cy="120" rx="100" ry="15" transform="rotate(40 470 120)"/><ellipse cx="440" cy="160" rx="110" ry="15" transform="rotate(-30 440 160)"/><ellipse cx="390" cy="210" rx="115" ry="16" transform="rotate(48 390 210)"/><ellipse cx="370" cy="250" rx="120" ry="16" transform="rotate(-38 370 250)"/><ellipse cx="320" cy="300" rx="115" ry="15" transform="rotate(55 320 300)"/><ellipse cx="310" cy="340" rx="110" ry="15" transform="rotate(-44 310 340)"/><ellipse cx="270" cy="390" rx="95" ry="13" transform="rotate(62 270 390)"/></g></g></svg>
+    <div class="intro__head">
+      <h2 class="t-display" data-reveal>Del bosquejo,</h2>
+      <p class="script intro__script">a tu operación.</p>
+    </div>
+    <div class="intro__grid">
+      <div class="intro__text" data-reveal>
+        <p class="kicker">Playa del Carmen <i>·</i> Cancún <i>·</i> Tulum</p>
+        <p class="lead">ORNAT transforma tus ideas en experiencias visuales, sitios web y herramientas de inteligencia artificial. Trabajamos con arquitectos, desarrolladores y brokers, desde el bosquejo hasta la operación.</p>
+        <a class="ulink" href="#modulos">Explorar los módulos</a>
+      </div>
+      <figure class="polaroid polaroid--r intro__pol" data-speed="-0.12">
+        <img src="/img/gpt-unique-v4/faith-exclusive-polaroid-villa-1536.webp" alt="Fotografía de del bosquejo, para este proyecto" width="1536" height="1024" loading="lazy" srcset="/img/gpt-unique-v4/faith-exclusive-polaroid-villa-480.webp 480w, /img/gpt-unique-v4/faith-exclusive-polaroid-villa-960.webp 960w, /img/gpt-unique-v4/faith-exclusive-polaroid-villa-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 70vw">
+        <figcaption>Riviera Maya, México</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- COLLAGE -->
+  <section class="collage" aria-label="Del plano al render">
+    <figure class="collage__a" data-speed="0.06"><img src="https://ornat-faith.vercel.app/img/collage-a.webp" alt="Maqueta de villa tropical con pantallas que muestran el sitio del proyecto" width="1300" height="867" loading="lazy"></figure>
+    <figure class="polaroid polaroid--l collage__pol" data-speed="-0.18">
+      <div class="wipe" data-wipe>
+        <img class="wipe__sk" src="/img/gpt-maroma-v1/faith-exclusive-sk-17-01-1774.webp?v=maroma-faith-exclusive-sk-17-01-6cccaa25f248" alt="Visualización conceptual en Maroma: bosquejo arquitectónico original para Del bosquejo," width="1774" height="887" loading="lazy" srcset="/img/gpt-maroma-v1/faith-exclusive-sk-17-01-480.webp?v=maroma-faith-exclusive-sk-17-01-6cccaa25f248 480w, /img/gpt-maroma-v1/faith-exclusive-sk-17-01-960.webp?v=maroma-faith-exclusive-sk-17-01-6cccaa25f248 960w, /img/gpt-maroma-v1/faith-exclusive-sk-17-01-1774.webp?v=maroma-faith-exclusive-sk-17-01-6cccaa25f248 1774w" sizes="(max-width: 900px) 100vw, 70vw">
+        <img class="wipe__rd" src="/img/gpt-maroma-v1/faith-exclusive-rd-17-01-1774.webp?v=maroma-faith-exclusive-rd-17-01-471aa713c29e" alt="Visualización conceptual en Maroma: fotografía de del bosquejo, para este proyecto" width="1774" height="887" loading="lazy" srcset="/img/gpt-maroma-v1/faith-exclusive-rd-17-01-480.webp?v=maroma-faith-exclusive-rd-17-01-471aa713c29e 480w, /img/gpt-maroma-v1/faith-exclusive-rd-17-01-960.webp?v=maroma-faith-exclusive-rd-17-01-471aa713c29e 960w, /img/gpt-maroma-v1/faith-exclusive-rd-17-01-1774.webp?v=maroma-faith-exclusive-rd-17-01-471aa713c29e 1774w" sizes="(max-width: 900px) 100vw, 70vw">
+      </div>
+      <figcaption>del plano al render</figcaption>
+    </figure>
+    <svg class="doodle collage__wave" aria-hidden="true"><use href="#wave"/></svg>
+    <figure class="collage__b" data-speed="-0.1"><img src="/img/gpt-unique-v4/faith-collage-b-1086.webp" alt="Residencia escalonada con jardines, alberca y muros de terracota" width="1086" height="1448" loading="lazy" srcset="/img/gpt-unique-v4/faith-collage-b-480.webp 480w, /img/gpt-unique-v4/faith-collage-b-960.webp 960w, /img/gpt-unique-v4/faith-collage-b-1086.webp 1086w" sizes="(max-width: 900px) 100vw, 70vw"></figure>
+    <p class="collage__cap kicker">Boceto <i>→</i> Render hiperrealista</p>
+  </section>
+
+  <!-- DEFINICIÓN -->
+  <section class="def" aria-label="Definición">
+    <svg class="stamp" viewBox="0 0 200 200" aria-hidden="true">
+      <defs><path id="spath" d="M100 100m-70 0a70 70 0 1 1 140 0a70 70 0 1 1-140 0"/></defs>
+      <circle cx="100" cy="100" r="86" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <circle cx="100" cy="100" r="54" fill="none" stroke="currentColor" stroke-width="1"/>
+      <text><textPath href="#spath">ORNAT · RIVIERA MAYA · MÉXICO · 2026 ·</textPath></text>
+      <text x="100" y="108" text-anchor="middle" class="stamp__c">ORNAT</text>
+      <path d="M120 70c12-8 24-8 36 0s24 8 36 0M118 86c12-8 24-8 36 0s24 8 36 0M120 102c12-8 24-8 36 0s24 8 36 0" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    </svg>
+    <p class="script def__script">or·nát</p>
+    <h2 class="t-display" data-reveal>Estudio visual digital</h2>
+    <p class="def__d" data-reveal>1. Diseño visual y tecnología para quienes <em>diseñan y comercializan</em> espacios.</p>
+    <p class="def__syn kicker" data-reveal>sin. <b>Presentar</b> · <b>Conversar</b> · <b>Capacitar</b> · <b>Decidir</b></p>
+  </section>
+
+  <!-- MÓDULOS -->
+  <section class="mods" id="modulos" aria-label="Módulos">
+    <div class="mods__head">
+      <p class="script">¿Y qué hacemos,</p>
+      <h2 class="t-display">exactamente?</h2>
+    </div>
+    <div class="mods__grid">
+      <article class="mod" data-speed="0">
+        <figure><img src="https://ornat-faith.vercel.app/img/m01.webp" alt="Sitio web de desarrollo inmobiliario en monitor y móvil con maqueta" width="1000" height="563" loading="lazy"></figure>
+        <p class="mod__n">01 · Plataforma y diseño</p><h3>Web IA</h3>
+        <p>Un sitio llamativo para presentar tu proyecto. Incluye un sitio web con experiencia personalizada.</p>
+      </article>
+      <article class="mod" data-speed="-0.08">
+        <figure class="tile"><img src="/img/gpt-maroma-v1/faith-exclusive-m02-1254.webp?v=maroma-faith-exclusive-m02-bf6dda179d63" alt="Visualización conceptual en Maroma: fotografía de render ia para este proyecto" width="1254" height="1254" loading="lazy" srcset="/img/gpt-maroma-v1/faith-exclusive-m02-480.webp?v=maroma-faith-exclusive-m02-bf6dda179d63 480w, /img/gpt-maroma-v1/faith-exclusive-m02-960.webp?v=maroma-faith-exclusive-m02-bf6dda179d63 960w, /img/gpt-maroma-v1/faith-exclusive-m02-1254.webp?v=maroma-faith-exclusive-m02-bf6dda179d63 1254w" sizes="(max-width: 900px) 100vw, 70vw"></figure>
+        <p class="mod__n">02 · Diseño visual</p><h3>Render IA</h3>
+        <p>Visualiza espacios. Convertimos tus planos o bosquejos en entregables visuales para explicar distribución, materiales y espacios.</p>
+      </article>
+      <article class="mod" data-speed="0.05">
+        <figure class="tile wipe" data-wipe><img class="wipe__sk" src="/img/gpt-unique-v4/faith-exclusive-m03-sk-1254.webp" alt="Bosquejo arquitectónico original para Del plano al render" width="1254" height="1254" loading="lazy" srcset="/img/gpt-unique-v4/faith-exclusive-m03-sk-480.webp 480w, /img/gpt-unique-v4/faith-exclusive-m03-sk-960.webp 960w, /img/gpt-unique-v4/faith-exclusive-m03-sk-1254.webp 1254w" sizes="(max-width: 900px) 100vw, 70vw"><img class="wipe__rd" src="/img/gpt-unique-v4/faith-exclusive-m03-rd-1254.webp" alt="Fotografía de del plano al render para este proyecto" width="1254" height="1254" loading="lazy" srcset="/img/gpt-unique-v4/faith-exclusive-m03-rd-480.webp 480w, /img/gpt-unique-v4/faith-exclusive-m03-rd-960.webp 960w, /img/gpt-unique-v4/faith-exclusive-m03-rd-1254.webp 1254w" sizes="(max-width: 900px) 100vw, 70vw"></figure>
+        <p class="mod__n">03 · Diseño visual</p><h3>Del plano al render</h3>
+        <p>Partimos de un plano o bosquejo para desarrollar planos, renders y videos hiperrealistas que ayuden a presentar espacios y explicar tu proyecto.</p>
+      </article>
+      <article class="mod" data-speed="-0.06">
+        <figure><img src="https://ornat-faith.vercel.app/img/m04.webp" alt="Maqueta de residencia con visor de realidad mixta y tableta" width="1000" height="667" loading="lazy"></figure>
+        <p class="mod__n">04 · Experiencias inmersivas</p><h3>Recorrido virtual</h3>
+        <p>Suma presentadores de IA, realidad aumentada, realidad mixta y producción con dron para tus desarrollos.</p>
+      </article>
+      <article class="mod" data-speed="0">
+        <figure><img src="https://ornat-faith.vercel.app/img/m05.webp" alt="Maqueta de villa con tableta y móvil mostrando conversaciones" width="1000" height="667" loading="lazy"></figure>
+        <p class="mod__n">05 · Agentes inteligentes</p><h3>Agente comercial</h3>
+        <p>Un agente con IA responde de forma natural usando información de tu empresa. Configuramos los canales disponibles y el seguimiento junto con tu equipo.</p>
+      </article>
+      <article class="mod" data-speed="-0.08">
+        <figure><img src="https://ornat-faith.vercel.app/img/m06.webp" alt="Edición de video de desarrollo inmobiliario" width="1000" height="563" loading="lazy"></figure>
+        <p class="mod__n">06 · Contenido social</p><h3>Contenido social</h3>
+        <p>Videos impactantes, recorridos con presentadores virtuales y publicaciones automatizadas para mantener una comunicación consistente con tu comunidad.</p>
+      </article>
+      <article class="mod" data-speed="0.05">
+        <figure><img src="/img/gpt-unique-v4/faith-exclusive-m07-1536.webp" alt="Fotografía de capacitación con voz y ia para este proyecto" width="1536" height="1024" loading="lazy" srcset="/img/gpt-unique-v4/faith-exclusive-m07-480.webp 480w, /img/gpt-unique-v4/faith-exclusive-m07-960.webp 960w, /img/gpt-unique-v4/faith-exclusive-m07-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 70vw"></figure>
+        <p class="mod__n">07 · Equipo</p><h3>Capacitación con voz y IA</h3>
+        <p>Un instructor con voz de IA capacita a tu personal de nuevo ingreso y a cada empleado actual, sin importar el área o el puesto, con módulos y exámenes.</p>
+      </article>
+      <article class="mod" data-speed="-0.06">
+        <figure><img src="/img/gpt-unique-v4/faith-exclusive-m08-1536.webp" alt="Fotografía de recursos humanos con ia para este proyecto" width="1536" height="1024" loading="lazy" srcset="/img/gpt-unique-v4/faith-exclusive-m08-480.webp 480w, /img/gpt-unique-v4/faith-exclusive-m08-960.webp 960w, /img/gpt-unique-v4/faith-exclusive-m08-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 70vw"></figure>
+        <p class="mod__n">08 · Equipo</p><h3>Recursos humanos con IA</h3>
+        <p>Entrevista a las personas con inteligencia artificial y compara perfiles con el mismo criterio, para agilizar la selección de tu equipo.</p>
+      </article>
+      <article class="mod" data-speed="0">
+        <figure><img src="/img/gpt-maroma-v1/faith-exclusive-m09-1536.webp?v=maroma-faith-exclusive-m09-1a200d1bce36" alt="Visualización conceptual en Maroma: fotografía de análisis empresarial para este proyecto" width="1536" height="1024" loading="lazy" srcset="/img/gpt-maroma-v1/faith-exclusive-m09-480.webp?v=maroma-faith-exclusive-m09-1a200d1bce36 480w, /img/gpt-maroma-v1/faith-exclusive-m09-960.webp?v=maroma-faith-exclusive-m09-1a200d1bce36 960w, /img/gpt-maroma-v1/faith-exclusive-m09-1536.webp?v=maroma-faith-exclusive-m09-1a200d1bce36 1536w" sizes="(max-width: 900px) 100vw, 70vw"></figure>
+        <p class="mod__n">09 · Datos</p><h3>Análisis empresarial</h3>
+        <p>Analiza información de los departamentos de tu empresa para apoyar decisiones con contexto.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA INTERMEDIO -->
+  <section class="help" aria-label="Solicitar demo">
+    <p class="script">¿Aún no te convence?</p>
+    <h2 class="t-display" data-reveal>Pronto, tu proyecto aquí</h2>
+    <p data-reveal>Elegimos contigo los servicios que necesitas y los combinamos en un solo plan.</p>
+    <a class="btn-o" href="#contacto" data-reveal>Solicitar demo</a>
+  </section>
+
+  <!-- MANIFIESTO (teal) -->
+  <section class="mani" id="manifiesto" aria-label="Manifiesto">
+    <div class="mq" aria-hidden="true">
+      <p class="script mq__script">Diseñamos</p>
+      <div class="mq__track" id="mqTrack">
+        <span>Sitios web</span><svg><use href="#spark"/></svg><span>Renders hiperrealistas</span><svg><use href="#spark"/></svg><span>Recorridos virtuales</span><svg><use href="#spark"/></svg><span>Agentes inteligentes</span><svg><use href="#spark"/></svg><span>Capacitación con voz</span><svg><use href="#spark"/></svg><span>Sitios web</span><svg><use href="#spark"/></svg><span>Renders hiperrealistas</span>
+      </div>
+    </div>
+    <p class="sr-only">Diseñamos sitios web, renders hiperrealistas, recorridos virtuales, agentes inteligentes y capacitación con voz.</p>
+    <div class="mani__grid">
+      <div class="mani__stack" id="stack">
+        <figure class="polaroid st"><img src="https://ornat-faith.vercel.app/img/v1.webp" alt="Maqueta de residencia con laptop, móvil y monitor mostrando el sitio" width="800" height="533" loading="lazy"><figcaption>presentar</figcaption></figure>
+        <figure class="polaroid st"><img src="/img/gpt-unique-v4/faith-exclusive-v2-1086.webp" alt="Fotografía de tu proyecto necesita una experiencia que lo explique. para este proyecto" width="1086" height="1448" loading="lazy" srcset="/img/gpt-unique-v4/faith-exclusive-v2-480.webp 480w, /img/gpt-unique-v4/faith-exclusive-v2-960.webp 960w, /img/gpt-unique-v4/faith-exclusive-v2-1086.webp 1086w" sizes="(max-width: 900px) 100vw, 70vw"><figcaption>conversar</figcaption></figure>
+        <figure class="polaroid st"><img src="/img/gpt-maroma-v1/faith-exclusive-v3-1536.webp?v=maroma-faith-exclusive-v3-0093228f8bd5" alt="Visualización conceptual en Maroma: fotografía de tu proyecto necesita una experiencia que lo explique. para este proyecto" width="1536" height="1024" loading="lazy" srcset="/img/gpt-maroma-v1/faith-exclusive-v3-480.webp?v=maroma-faith-exclusive-v3-0093228f8bd5 480w, /img/gpt-maroma-v1/faith-exclusive-v3-960.webp?v=maroma-faith-exclusive-v3-0093228f8bd5 960w, /img/gpt-maroma-v1/faith-exclusive-v3-1536.webp?v=maroma-faith-exclusive-v3-0093228f8bd5 1536w" sizes="(max-width: 900px) 100vw, 70vw"><figcaption>capacitar</figcaption></figure>
+      </div>
+      <div class="mani__copy">
+        <p class="kicker mani__lbl">Manifiesto</p>
+        <article class="vb" data-i="0">
+          <p class="script">Presentar</p>
+          <h3>Tu proyecto necesita una experiencia que lo explique.</h3>
+          <p>Presentar espacios, responder consultas y organizar información exige herramientas conectadas.</p>
+          <p class="vb__m">Del plano a la experiencia.</p>
+        </article>
+        <article class="vb" data-i="1">
+          <p class="script">Conversar</p>
+          <h3>Cada consulta necesita una respuesta.</h3>
+          <p>Un agente responde sobre espacios, condiciones y disponibilidad con información validada por tu equipo.</p>
+          <p class="vb__m">Consultas con seguimiento.</p>
+        </article>
+        <article class="vb" data-i="2">
+          <p class="script">Capacitar</p>
+          <h3>Tu equipo necesita aprender y decidir.</h3>
+          <p>Capacitación con voz, módulos y exámenes, junto con el análisis de tus áreas.</p>
+          <p class="vb__m">Tu proyecto. Tu equipo. Conectados.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="serv" id="territorios" aria-label="Servicios">
+    <div class="serv__head">
+      <p class="script">Servicios</p>
+      <h2 class="t-display" data-reveal>Elige lo que tu proyecto necesita</h2>
+      <p data-reveal>Seis territorios, dieciocho servicios.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <p class="card__n">Territorio 01</p><h3 class="script">Web y plataforma</h3>
+        <ul class="card__names"><li>Sitio web 4.0 con asistente de voz</li><li>CMS a tu medida</li><li>CRM</li></ul>
+        <button class="card__plus" aria-expanded="false" aria-label="Ver detalle de Web y plataforma"><i></i></button>
+        <div class="card__more"><div><ul class="svc">
+          <li><b>Sitio web 4.0 con asistente de voz</b>Un sitio que presenta tu proyecto y conversa con tus visitantes: un asistente de voz con IA atiende como servicio a clientes.</li>
+          <li><b>CMS a tu medida</b>Un administrador de contenido para que personalices y actualices tu sitio tú mismo, sin depender de nadie.</li>
+          <li><b>CRM</b>Centraliza prospectos, conversaciones y seguimiento en un solo lugar.</li></ul></div></div>
+      </article>
+      <article class="card card--navy">
+        <p class="card__n">Territorio 02</p><h3 class="script">Diseño visual</h3>
+        <ul class="card__names"><li>De plano o bosquejo a render</li><li>Planos isométricos con tu tipografía</li><li>Modelos con realidad aumentada</li></ul>
+        <button class="card__plus" aria-expanded="false" aria-label="Ver detalle de Diseño visual"><i></i></button>
+        <div class="card__more"><div><ul class="svc">
+          <li><b>De plano o bosquejo a render</b>Partimos de tu plano o bosquejo y lo convertimos en renders hiperrealistas para explicar distribución, materiales y espacios.</li>
+          <li><b>Planos isométricos con tu tipografía</b>Convertimos tus planos en renders y planos isométricos con la tipografía de tu marca.</li>
+          <li><b>Modelos con realidad aumentada</b>Maquetas que se recorren desde el celular, para ofrecer una experiencia de vanguardia a tus compradores.</li></ul></div></div>
+      </article>
+      <article class="card">
+        <p class="card__n">Territorio 03</p><h3 class="script">Video y obra</h3>
+        <ul class="card__names"><li>Videos arquitectónicos con IA</li><li>Videos con dron</li><li>Avances de obra en timelapse</li></ul>
+        <button class="card__plus" aria-expanded="false" aria-label="Ver detalle de Video y obra"><i></i></button>
+        <div class="card__more"><div><ul class="svc">
+          <li><b>Videos arquitectónicos con IA</b>Recorridos y piezas cinematográficas de tu proyecto, producidas con inteligencia artificial.</li>
+          <li><b>Videos con dron</b>Tomas aéreas que muestran el terreno, el entorno y la escala de tu desarrollo.</li>
+          <li><b>Avances de obra en timelapse</b>Registramos la construcción y la condensamos en un video que comunica el progreso.</li></ul></div></div>
+      </article>
+      <article class="card card--navy">
+        <p class="card__n">Territorio 04</p><h3 class="script">Bots y automatización</h3>
+        <ul class="card__names"><li>Bot que responde y califica leads</li><li>Bot para automatizar tus redes sociales</li><li>Bots para directores y propietarios</li><li>Tu empresa automatizada</li></ul>
+        <button class="card__plus" aria-expanded="false" aria-label="Ver detalle de Bots y automatización"><i></i></button>
+        <div class="card__more"><div><ul class="svc">
+          <li><b>Bot que responde y califica leads</b>Atiende a cada prospecto al instante, resuelve dudas y te entrega solo los contactos listos para hablar.</li>
+          <li><b>Bot para automatizar tus redes sociales</b>Programa, publica y da seguimiento a tu contenido para mantener una comunicación constante.</li>
+          <li><b>Bots para directores y propietarios</b>Un asistente que consulta tu información y te responde con datos de tu empresa para decidir con contexto.</li>
+          <li><b>Tu empresa automatizada</b>Conectamos tus herramientas para que las tareas repetitivas se resuelvan solas.</li></ul></div></div>
+      </article>
+      <article class="card">
+        <p class="card__n">Territorio 05</p><h3 class="script">Equipo y talento</h3>
+        <ul class="card__names"><li>Módulo de recursos humanos con IA</li><li>Capacitación con voz y IA</li></ul>
+        <button class="card__plus" aria-expanded="false" aria-label="Ver detalle de Equipo y talento"><i></i></button>
+        <div class="card__more"><div><ul class="svc">
+          <li><b>Módulo de recursos humanos con IA</b>Entrevista a candidatos con inteligencia artificial para agilizar la selección y comparar perfiles con el mismo criterio.</li>
+          <li><b>Capacitación con voz y IA</b>Un instructor con voz de IA que capacita a tu personal de nuevo ingreso y a cada empleado actual, sin importar el área o el puesto.</li></ul></div></div>
+      </article>
+      <article class="card card--navy">
+        <p class="card__n">Territorio 06</p><h3 class="script">Consultoría en <span class="ia">IA</span></h3>
+        <ul class="card__names"><li>Auditamos tus procesos</li><li>Implementamos IA en tu empresa</li><li>Marca visual y automatizada</li></ul>
+        <button class="card__plus" aria-expanded="false" aria-label="Ver detalle de Consultoría en IA"><i></i></button>
+        <div class="card__more"><div><ul class="svc">
+          <li><b>Auditamos tus procesos</b>Revisamos cómo trabaja tu empresa y detectamos dónde la automatización ahorra más tiempo.</li>
+          <li><b>Implementamos IA en tu empresa</b>Llevamos a producción las soluciones elegidas, junto con tu equipo.</li>
+          <li><b>Marca visual y automatizada</b>Llevamos la experiencia visual y la automatización de tu marca a otro nivel, siempre actualizadas.</li></ul></div></div>
+      </article>
+    </div>
+    <div class="serv__note" data-reveal>
+      <p class="kicker">Contigo en cada etapa</p>
+      <p>Elegimos contigo los servicios que necesitas y los combinamos en un solo plan. Definimos información, materiales, canales y entregables para que <b>el diseño visual y la tecnología</b> trabajen por tu empresa.</p>
+    </div>
+  </section>
+
+  <!-- PARA QUIÉN -->
+  <section class="aud" id="para-quien" aria-label="Para quién">
+    <div class="aud__copy">
+      <p class="script">Hecho para quienes</p>
+      <h2 class="t-display" data-reveal>diseñan y comercializan espacios</h2>
+      <p data-reveal>Trabajamos con arquitectos, desarrolladores y brokers, desde el bosquejo hasta la operación.</p>
+      <a class="ulink" href="#contacto" data-reveal>Solicitar demo</a>
+    </div>
+    <figure class="aud__img"><img src="/img/gpt-unique-v4/faith-aud-1536.webp" alt="Edificio residencial costero con balcones curvos y jardín junto a la playa" width="1536" height="1024" loading="lazy" data-speed="-0.06" srcset="/img/gpt-unique-v4/faith-aud-480.webp 480w, /img/gpt-unique-v4/faith-aud-960.webp 960w, /img/gpt-unique-v4/faith-aud-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 70vw"></figure>
+    <svg class="doodle aud__wave" aria-hidden="true"><use href="#wave"/></svg>
+    <div class="logos" aria-label="Audiencia">
+      <div class="logos__track" id="logos">
+        <span>Arquitectos</span><span>Diseño interior</span><span>Arquitectos paisajistas</span><span>Constructoras</span><span>Desarrolladores inmobiliarios</span><span>Brokers</span><span>Inmobiliarias</span><span>Despachos de diseño</span>
+        <span aria-hidden="true">Arquitectos</span><span aria-hidden="true">Diseño interior</span><span aria-hidden="true">Arquitectos paisajistas</span><span aria-hidden="true">Constructoras</span><span aria-hidden="true">Desarrolladores inmobiliarios</span><span aria-hidden="true">Brokers</span><span aria-hidden="true">Inmobiliarias</span><span aria-hidden="true">Despachos de diseño</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTODO -->
+  <section class="met" id="metodo" aria-label="El método">
+    <div class="met__head">
+      <p class="script">Por qué</p>
+      <h2 class="t-display" data-reveal>El método</h2>
+    </div>
+    <ol class="met__row">
+      <li class="step"><figure class="polaroid"><img src="https://ornat-faith.vercel.app/img/p1.webp" alt="Bosquejo a lápiz de la planta de una residencia" width="700" height="700" loading="lazy"><figcaption>entender</figcaption></figure><p class="step__n">Paso 01</p><p>Definimos el proyecto y las necesidades de tu equipo.</p></li>
+      <li class="step"><figure class="polaroid"><img src="https://ornat-faith.vercel.app/img/p2.webp" alt="Bosquejo a lápiz de residencia tropical" width="700" height="700" loading="lazy"><figcaption>diseñar</figcaption></figure><p class="step__n">Paso 02</p><p>Convertimos planos e ideas en experiencias visuales y digitales.</p></li>
+      <li class="step"><figure class="polaroid"><img src="/img/gpt-unique-v4/faith-exclusive-p3-1536.webp" alt="Fotografía de el método para este proyecto" width="1536" height="1024" loading="lazy" srcset="/img/gpt-unique-v4/faith-exclusive-p3-480.webp 480w, /img/gpt-unique-v4/faith-exclusive-p3-960.webp 960w, /img/gpt-unique-v4/faith-exclusive-p3-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 70vw"><figcaption>conectar</figcaption></figure><p class="step__n">Paso 03</p><p>Configuramos el sitio, los agentes y los módulos que necesitas.</p></li>
+      <li class="step"><figure class="polaroid"><img src="https://ornat-faith.vercel.app/img/p4.webp" alt="Maqueta de desarrollo en construcción con grúa" width="700" height="467" loading="lazy"><figcaption>acompañar</figcaption></figure><p class="step__n">Paso 04</p><p>Ajustamos contenidos y herramientas al crecimiento de tu operación.</p></li>
+    </ol>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto" aria-label="Contacto">
+    <figure class="contact__img"><img src="/img/gpt-maroma-v1/faith-exclusive-cta-1536.webp?v=maroma-faith-exclusive-cta-363205e21537" alt="Visualización conceptual en Maroma: fotografía de descubre los módulos que necesita tu empresa para este proyecto" width="1536" height="1024" loading="lazy" srcset="/img/gpt-maroma-v1/faith-exclusive-cta-480.webp?v=maroma-faith-exclusive-cta-363205e21537 480w, /img/gpt-maroma-v1/faith-exclusive-cta-960.webp?v=maroma-faith-exclusive-cta-363205e21537 960w, /img/gpt-maroma-v1/faith-exclusive-cta-1536.webp?v=maroma-faith-exclusive-cta-363205e21537 1536w" sizes="(max-width: 900px) 100vw, 70vw"></figure>
+    <div class="contact__copy">
+      <p class="script">Solicita una demo</p>
+      <h2 class="t-display" data-reveal>Descubre los módulos que necesita tu empresa</h2>
+      <p data-reveal>Conoce cómo combinar diseño visual, plataforma web y agentes.</p>
+      <dl class="contact__dl" data-reveal>
+        <div><dt>Contacto directo</dt><dd><a href="tel:+529842353159">984 235 3159</a></dd></div>
+        <div><dt>Ubicación</dt><dd>Playa del Carmen, Cancún, Tulum y proyectos en México</dd></div>
+      </dl>
+      <div class="contact__btns" data-reveal>
+        <a class="btn-s" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener">¡Quiero mi demo!</a>
+        <a class="btn-o" href="tel:+529842353159">Llamar</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot__big">
+    <p class="t-display">Tu proyecto. Tu equipo.</p>
+    <p class="script">conectados.</p>
+  </div>
+  <div class="foot__cols">
+    <div class="foot__contact">
+      <a class="foot__ph" href="tel:+529842353159">984 235 3159</a>
+      <p class="foot__web">ORNAT.COM.MX</p>
+    </div>
+    <div><h4>Estudio</h4><ul><li><a href="#top">Inicio</a></li><li><a href="#modulos">Módulos</a></li><li><a href="#territorios">Servicios</a></li><li><a href="#metodo">Método</a></li><li><a href="#contacto">Solicitar demo</a></li></ul></div>
+    <div><h4>Dirección</h4><ul><li>Riviera Maya y México</li><li>Playa del Carmen</li><li>Cancún</li><li>Tulum</li></ul></div>
+    <div><h4>Redes</h4><ul><li>Facebook</li><li>Instagram</li><li>TikTok</li><li>LinkedIn</li><li>Pinterest</li></ul></div>
+  </div>
+  <div class="foot__legal"><span>©2026 ORNAT UX. Todos los derechos reservados.</span><span>Aviso de Privacidad · Términos legales</span></div>
+</footer>
+
+<a class="fab" href="tel:+529842353159" aria-label="Llamar a ORNAT al 984 235 3159"><svg aria-hidden="true"><use href="#phone"/></svg></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="/templates/faith/main.js"></script>
+<script src="/cms/bridge.js"></script></body>
+</html>

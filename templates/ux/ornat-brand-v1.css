@@ -1,0 +1,7 @@
+/* Original geometry, colors and animation selectors remain intact. */
+html[lang='es-MX'] .heading { overflow-wrap: normal; }
+@media (max-width: 479px) {
+  .home-hero .h1 { font-size: 3.4rem; line-height: .98; }
+  .home-intro .heading { font-size: 3.2rem; line-height: 1.05; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

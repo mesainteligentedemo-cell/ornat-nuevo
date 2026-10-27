@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ORNAT UX | Diseño visual para arquitectura e inmobiliarias</title>
+<meta name="description" content="ORNAT transforma tus ideas en experiencias visuales y sitios web para arquitectos, desarrolladores y brokers. Playa del Carmen, Cancún y Tulum.">
+<meta property="og:title" content="ORNAT UX | Diseño visual">
+<meta property="og:description" content="Del plano a la experiencia: diseño visual y tecnología para arquitectura e inmobiliarias.">
+<meta property="og:image" content="img/hero.webp">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/svg+xml" href="https://ornat-superlogica.vercel.app/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/templates/superlogica/styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ornat-symbol" viewBox="-100 -100 200 200"><g><path d="M0-78H78V0M0-78V-50M0-30V-24" fill="none" stroke="currentColor" stroke-width="9"/></g><g transform="rotate(90)"><path d="M0-78H78V0M0-78V-50M0-30V-24" fill="none" stroke="currentColor" stroke-width="9"/></g><g transform="rotate(180)"><path d="M0-78H78V0M0-78V-50M0-30V-24" fill="none" stroke="currentColor" stroke-width="9"/></g><g transform="rotate(270)"><path d="M0-78H78V0M0-78V-50M0-30V-24" fill="none" stroke="currentColor" stroke-width="9"/></g><rect x="-24" y="-24" width="48" height="48" fill="currentColor"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M7 17 17 7m-8 0h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.5 4-2 1.3a10 10 0 0 0 6.2 6.2l1.3-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="i-web" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3 9h18M6 6.8h.01M8.5 6.8h.01" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M5 4v16M12 4v16M19 4v16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="5" cy="9" r="2" fill="#151c33" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="15" r="2" fill="#151c33" stroke="currentColor" stroke-width="1.4"/><circle cx="19" cy="7" r="2" fill="#151c33" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3 19c.6-3.3 3-5 6-5s5.4 1.7 6 5M15.5 5.2a3 3 0 0 1 0 5.6M17.5 14.3c1.8.6 3 2.2 3.5 4.7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><path d="m4 20 1-4.5L15.5 5a2.1 2.1 0 0 1 3 3L8 18.5 4 20Zm9.5-13 3 3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12v9M12 12 4 7.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+  <symbol id="i-ar" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m12 8 3 1.7v3.6L12 15l-3-1.7V9.7L12 8Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></symbol>
+  <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m16 10 5-3v10l-5-3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+  <symbol id="i-drone" viewBox="0 0 24 24"><path d="M9 12h6M6 6l3.5 4.5M18 6l-3.5 4.5M6 18l3.5-4.5M18 18l-3.5-4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="6" cy="6" r="2.4" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="18" cy="6" r="2.4" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="6" cy="18" r="2.4" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="18" cy="18" r="2.4" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5.5h16v10H10l-4.5 3.5v-3.5H4z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M8 10.5h.01M12 10.5h.01M16 10.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="18" cy="6" r="2.5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="18" cy="18" r="2.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m8.2 10.8 7.6-3.6M8.2 13.2l7.6 3.6" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="3.5" width="6" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><rect x="15" y="14.5" width="6" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M9 6.5h5a3 3 0 0 1 3 3v5" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.4" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3.5 19.5c.6-3.4 3.2-5.3 6.5-5.3 1.2 0 2.3.2 3.2.7M15 17.5l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m15 15 5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M14 4c3-1 5.5-.5 6 0 .5.5 1 3 0 6l-6 6-6-6 6-6ZM8 10l-3.5.5L3 13l4 .5M14 16l-.5 3.5L11 21l-.5-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="15.5" cy="8.5" r="1.4" fill="currentColor"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c.6 4.6 2.4 6.4 7 7-4.6.6-6.4 2.4-7 7-.6-4.6-2.4-6.4-7-7 4.6-.6 6.4-2.4 7-7Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M19 15.5c.2 1.6.9 2.3 2.5 2.5-1.6.2-2.3.9-2.5 2.5-.2-1.6-.9-2.3-2.5-2.5 1.6-.2 2.3-.9 2.5-2.5Z" fill="currentColor"/></symbol>
+</svg>
+
+<header class="hdr" id="hdr">
+  <div class="hdr-in">
+    <a href="#top" class="logo" aria-label="ORNAT UX, inicio"><svg viewBox="-100 -100 200 200" aria-hidden="true"><use href="#ornat-symbol" x="-100" y="-100" width="200" height="200"/></svg><b>ORNAT</b><small>UX</small></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#modulos">Módulos</a><a href="#servicios">Servicios</a><a href="#proceso">Proceso</a><a href="#metodo">Método</a><a href="#reel">Showreel</a>
+    </nav>
+    <a class="hdr-tel" href="tel:+529842353159"><svg aria-hidden="true"><use href="#i-phone"/></svg>984 235 3159</a>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mmenu"><i></i><i></i><i></i></button>
+  </div>
+  <div class="mmenu" id="mmenu" hidden>
+    <a href="#modulos">Módulos</a><a href="#servicios">Servicios</a><a href="#proceso">Proceso</a><a href="#metodo">Método</a><a href="#reel">Showreel</a><a href="#contacto">Solicitar demo</a>
+    <a class="mm-tel" href="tel:+529842353159"><svg aria-hidden="true"><use href="#i-phone"/></svg>984 235 3159</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-frame">
+      <img class="hero-img" src="/img/gpt-maroma-v1/superlogica-hero-1536.webp?v=maroma-superlogica-hero-5c5490c17b1a" width="1536" height="1024" alt="Visualización conceptual en Maroma: salón de doble altura con piedra caliza, celosía de nogal y vista al mar" decoding="async" fetchpriority="high" srcset="/img/gpt-maroma-v1/superlogica-hero-480.webp?v=maroma-superlogica-hero-5c5490c17b1a 480w, /img/gpt-maroma-v1/superlogica-hero-960.webp?v=maroma-superlogica-hero-5c5490c17b1a 960w, /img/gpt-maroma-v1/superlogica-hero-1536.webp?v=maroma-superlogica-hero-5c5490c17b1a 1536w" sizes="(max-width: 900px) 100vw, 70vw">
+      <div class="hero-shade"></div>
+      <svg class="wave" viewBox="0 0 1440 600" preserveAspectRatio="none" aria-hidden="true"><path id="wavePath" d="M-20 330C160 420 300 520 520 470S820 300 980 250 1260 170 1460 120" fill="none" stroke="#35d6f3" stroke-width="7" stroke-linecap="round"/></svg>
+      <p class="hero-kicker">Estudio de diseño visual para arquitectura e inmobiliarias</p>
+      <h1 class="hero-title"><span class="ln l1"><span>Del plano</span></span><span class="ln l2"><span>a la experiencia.</span></span></h1>
+      <div class="rot" aria-live="polite"><span class="rot-lbl">Diseñamos</span><span class="rot-win"><span class="rot-track" id="rotTrack"><span>sitios web</span><span>renders hiperrealistas</span><span>recorridos virtuales</span><span>agentes inteligentes</span><span>capacitación con voz</span><span>sitios web</span></span></span></div>
+    </div>
+  </section>
+
+  <!-- INTRO + PRODUCT UI -->
+  <section class="intro" id="estudio">
+    <div class="wrap intro-grid">
+      <div class="intro-copy">
+        <p class="eyebrow">Bienvenido a ORNAT UX</p>
+        <h2 class="h-md">ORNAT transforma tus ideas en experiencias visuales y sitios web. Trabajamos con arquitectos, desarrolladores y brokers, desde el bosquejo hasta la operación.</h2>
+        <ul class="intro-list">
+          <li><b>Presentar</b>Del plano al render, recorrido virtual y sitio web</li>
+          <li><b>Conversar</b>Un agente responde sobre espacios, condiciones y disponibilidad</li>
+          <li><b>Capacitar y decidir</b>Capacitación con voz, módulos y exámenes, junto con el análisis de tus áreas</li>
+        </ul>
+        <a class="btn" href="#contacto">Solicitar demo<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="stage" id="stage">
+        <svg class="lineart la-intro" viewBox="0 0 700 420" aria-hidden="true"><g fill="none" stroke="#1034f2" stroke-width="1.4"><rect class="la" x="120" y="60" width="520" height="300" rx="70" transform="rotate(-14 380 210)"/><rect class="la" x="100" y="80" width="520" height="300" rx="70" transform="rotate(-14 360 230)" opacity=".7"/><rect class="la" x="80" y="100" width="520" height="300" rx="70" transform="rotate(-14 340 250)" opacity=".45"/><rect class="la" x="60" y="120" width="520" height="300" rx="70" transform="rotate(-14 320 270)" opacity=".25"/></g></svg>
+        <article class="ui chat" aria-label="Ejemplo de interfaz del módulo Agente comercial">
+          <header><div><small>Módulo 05</small><b>Agente comercial</b></div><span class="pill"><i></i>Seguimiento</span></header>
+          <div class="chat-body" id="chatBody">
+            <p class="msg me">¿Qué espacios tiene el proyecto?</p>
+            <p class="msg bot typing" aria-hidden="true"><i></i><i></i><i></i></p>
+            <p class="msg bot ans">Te comparto espacios, condiciones y disponibilidad con información validada por tu equipo.</p>
+          </div>
+          <footer><span>Web IA</span><span>Render IA</span><span>Recorrido virtual</span></footer>
+        </article>
+        <article class="ui ring" id="cardRing" aria-label="9 módulos">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><g id="ringSegs" fill="none" stroke-width="11"></g></svg>
+          <span><b>9</b>módulos</span>
+        </article>
+        <article class="ui rcard" id="cardRender" aria-label="Render IA">
+          <div class="rc-top"><small>Render IA</small><span class="pill blue"><svg aria-hidden="true"><use href="#i-up"/></svg>Visualiza espacios</span></div>
+          <div class="rc-img"><img src="https://ornat-superlogica.vercel.app/img/card-render.webp" width="640" height="320" alt="Render de villa tropical con alberca" decoding="async"></div>
+          <p>Boceto → Render hiperrealista</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats" id="cifras">
+    <svg class="lineart la-stats" viewBox="0 0 800 560" aria-hidden="true"><g fill="none" stroke="#1034f2" stroke-width="1.3"><rect class="la" x="170" y="40" width="520" height="380" rx="80" transform="rotate(28 430 230)"/><rect class="la" x="150" y="60" width="520" height="380" rx="80" transform="rotate(28 410 250)" opacity=".75"/><rect class="la" x="130" y="80" width="520" height="380" rx="80" transform="rotate(28 390 270)" opacity=".5"/><rect class="la" x="110" y="100" width="520" height="380" rx="80" transform="rotate(28 370 290)" opacity=".3"/><rect class="la" x="90" y="120" width="520" height="380" rx="80" transform="rotate(28 350 310)" opacity=".15"/></g></svg>
+    <div class="wrap">
+      <h2 class="h-lg reveal">Diseño visual y tecnología para quienes diseñan y comercializan espacios.</h2>
+      <div class="stat-row">
+        <div class="stat"><span>Módulos</span><b data-count="9">9</b></div>
+        <div class="stat"><span>Servicios</span><b data-count="18">18</b></div>
+        <div class="stat"><span>Territorios</span><b data-count="6">6</b></div>
+        <div class="stat"><span>Pasos del proceso</span><b data-count="10">10</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATEMENT (scroll-driven) -->
+  <section class="statement" id="promesa">
+    <div class="st-sticky">
+      <div class="st-row">
+        <h2 class="st-a" id="stA">Del bosquejo,</h2>
+        <div class="st-art" id="stArt">
+          <img class="st-sk" src="/img/gpt-unique-v4/superlogica-exclusive-sk-1774.webp" width="1774" height="887" alt="Bosquejo arquitectónico original para Del bosquejo," decoding="async" srcset="/img/gpt-unique-v4/superlogica-exclusive-sk-480.webp 480w, /img/gpt-unique-v4/superlogica-exclusive-sk-960.webp 960w, /img/gpt-unique-v4/superlogica-exclusive-sk-1774.webp 1774w" sizes="(max-width: 900px) 100vw, 70vw">
+          <img class="st-rd" id="stRd" src="/img/gpt-unique-v4/superlogica-exclusive-rd-1774.webp" width="1774" height="887" alt="Fotografía de del bosquejo, para este proyecto" decoding="async" srcset="/img/gpt-unique-v4/superlogica-exclusive-rd-480.webp 480w, /img/gpt-unique-v4/superlogica-exclusive-rd-960.webp 960w, /img/gpt-unique-v4/superlogica-exclusive-rd-1774.webp 1774w" sizes="(max-width: 900px) 100vw, 70vw">
+        </div>
+        <h2 class="st-b" id="stB">a tu operación.</h2>
+      </div>
+      <p class="st-cap" id="stCap"><span>Del plano al render</span><span>Boceto → Render hiperrealista</span></p>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section class="compare" id="manifiesto">
+    <div class="wrap">
+      <div class="cmp">
+        <div class="cmp-def">
+          <p class="eyebrow">Definición</p>
+          <p class="def-word">ORNAT <span>\ or·nát \</span></p>
+          <p class="def-pill">Estudio visual digital</p>
+          <p>1. Diseño visual y tecnología para quienes <em>diseñan y comercializan</em> espacios.</p>
+          <p class="def-syn">sin. Presentar · Conversar · Capacitar · Decidir</p>
+        </div>
+        <div class="cmp-card cmp-pre">
+          <h3>El reto</h3>
+          <ul><li>Tu proyecto necesita una experiencia que lo explique.</li><li>Cada consulta necesita una respuesta.</li><li>Tu equipo necesita aprender y decidir.</li></ul>
+        </div>
+        <div class="cmp-card cmp-post" id="cmpPost">
+          <h3>Con ORNAT</h3>
+          <ul><li>Del plano a la experiencia.</li><li>Un agente responde sobre espacios, condiciones y disponibilidad con información validada por tu equipo.</li><li>Capacitación con voz, módulos y exámenes, junto con el análisis de tus áreas.</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULES: stacking panels -->
+  <section class="modules" id="modulos">
+    <article class="panel p-blue" data-panel>
+      <div class="panel-in">
+        <div class="panel-copy">
+          <p class="eyebrow">Módulos 01 — 03 · Plataforma y diseño visual</p>
+          <h2 class="h-md">Un sitio llamativo para presentar tu proyecto y entregables visuales para explicar distribución, materiales y espacios.</h2>
+          <div class="acc">
+            <div class="acc-it open" data-img="/img/gpt-unique-v4/superlogica-exclusive-m01-1536.webp" data-alt="Fotografía de un sitio llamativo para presentar tu proyecto y entregables visuales para explicar distribución, materiales y espacios. para este proyecto"><button class="acc-h" aria-expanded="true"><span><small>01</small>Web IA</span><i></i></button><div class="acc-b"><p>Un sitio llamativo para presentar tu proyecto. Incluye un sitio web con experiencia personalizada.</p><p class="tags">Sitio web · Experiencia personalizada</p></div></div>
+            <div class="acc-it" data-img="/img/gpt-unique-v4/superlogica-final-m02-1536.webp" data-alt="Torre residencial con balcones curvos y vegetación"><button class="acc-h" aria-expanded="false"><span><small>02</small>Render IA</span><i></i></button><div class="acc-b"><p>Visualiza espacios. Convertimos tus planos o bosquejos en entregables visuales para explicar distribución, materiales y espacios.</p><p class="tags">Render · Planos · Materiales</p></div></div>
+            <div class="acc-it" data-img="/img/gpt-unique-v4/superlogica-final-m03-1536.webp" data-alt="Interior residencial de doble altura con patio y alberca"><button class="acc-h" aria-expanded="false"><span><small>03</small>Del plano al render</span><i></i></button><div class="acc-b"><p>Partimos de un plano o bosquejo para desarrollar planos, renders y videos hiperrealistas que ayuden a presentar espacios y explicar tu proyecto.</p><p class="tags">Bosquejo · Render hiperrealista</p></div></div>
+          </div>
+        </div>
+        <figure class="panel-fig"><img src="/img/gpt-unique-v4/superlogica-exclusive-m01-1536.webp" width="1536" height="1024" alt="Fotografía de un sitio llamativo para presentar tu proyecto y entregables visuales para explicar distribución, materiales y espacios. para este proyecto" decoding="async" srcset="/img/gpt-unique-v4/superlogica-exclusive-m01-480.webp 480w, /img/gpt-unique-v4/superlogica-exclusive-m01-960.webp 960w, /img/gpt-unique-v4/superlogica-exclusive-m01-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 70vw"></figure>
+      </div>
+    </article>
+    <article class="panel p-purple" data-panel>
+      <div class="panel-in">
+        <div class="panel-copy">
+          <p class="eyebrow">Módulos 04 — 06 · Experiencias, agentes y contenido</p>
+          <h2 class="h-md">Recorridos virtuales, un agente que responde de forma natural y contenido para mantener una comunicación consistente con tu comunidad.</h2>
+          <div class="acc">
+            <div class="acc-it open" data-img="/img/gpt-maroma-v1/superlogica-exclusive-m04-1536.webp?v=maroma-superlogica-exclusive-m04-6c371ba4d137" data-alt="Visualización conceptual en Maroma: fotografía de recorridos virtuales, un agente que responde de forma natural y contenido para mantener una comunicación consistente con tu comuni para este proyecto"><button class="acc-h" aria-expanded="true"><span><small>04</small>Recorrido virtual</span><i></i></button><div class="acc-b"><p>Suma presentadores de IA, realidad aumentada, realidad mixta y producción con dron para tus desarrollos.</p><p class="tags">Recorrido virtual · RA · Realidad mixta · Dron</p></div></div>
+            <div class="acc-it" data-img="/img/gpt-maroma-v1/superlogica-final-m05-1536.webp?v=maroma-superlogica-final-m05-2c16debbcad8" data-alt="Visualización conceptual en Maroma: asesor inmobiliario atendiendo una consulta con información de la propiedad"><button class="acc-h" aria-expanded="false"><span><small>05</small>Agente comercial</span><i></i></button><div class="acc-b"><p>Un agente con IA responde de forma natural usando información de tu empresa. Configuramos los canales disponibles y el seguimiento junto con tu equipo.</p><p class="tags">Agente comercial · Seguimiento</p></div></div>
+            <div class="acc-it" data-img="/img/gpt-unique-v4/superlogica-final-m06-1536.webp" data-alt="Producción de video arquitectónico en una residencia con patio"><button class="acc-h" aria-expanded="false"><span><small>06</small>Contenido social</span><i></i></button><div class="acc-b"><p>Videos impactantes, recorridos con presentadores virtuales y publicaciones automatizadas para mantener una comunicación consistente con tu comunidad.</p><p class="tags">Videos · Presentadores virtuales · Redes</p></div></div>
+          </div>
+        </div>
+        <figure class="panel-fig"><img src="/img/gpt-maroma-v1/superlogica-exclusive-m04-1536.webp?v=maroma-superlogica-exclusive-m04-6c371ba4d137" width="1536" height="1024" alt="Visualización conceptual en Maroma: fotografía de recorridos virtuales, un agente que responde de forma natural y contenido para mantener una comunicación consistente con tu comuni para este proyecto" decoding="async" srcset="/img/gpt-maroma-v1/superlogica-exclusive-m04-480.webp?v=maroma-superlogica-exclusive-m04-6c371ba4d137 480w, /img/gpt-maroma-v1/superlogica-exclusive-m04-960.webp?v=maroma-superlogica-exclusive-m04-6c371ba4d137 960w, /img/gpt-maroma-v1/superlogica-exclusive-m04-1536.webp?v=maroma-superlogica-exclusive-m04-6c371ba4d137 1536w" sizes="(max-width: 900px) 100vw, 70vw"></figure>
+      </div>
+    </article>
+    <article class="panel p-navy" data-panel>
+      <div class="panel-in">
+        <div class="panel-copy">
+          <p class="eyebrow">Módulos 07 — 09 · Equipo y datos</p>
+          <h2 class="h-md">Tu equipo necesita aprender y decidir. Capacitación, selección y análisis con el mismo criterio.</h2>
+          <div class="acc">
+            <div class="acc-it open" data-img="/img/gpt-maroma-v1/superlogica-exclusive-m07-1536.webp?v=maroma-superlogica-exclusive-m07-ad3d77eae627" data-alt="Visualización conceptual en Maroma: fotografía de tu equipo necesita aprender y decidir. capacitación, selección y análisis con el mismo criterio. para este proyecto"><button class="acc-h" aria-expanded="true"><span><small>07</small>Capacitación con voz y IA</span><i></i></button><div class="acc-b"><p>Un instructor con voz de IA capacita a tu personal de nuevo ingreso y a cada empleado actual, sin importar el área o el puesto, con módulos y exámenes.</p><p class="tags">Voz con IA · Nuevo ingreso · Todo el equipo</p></div></div>
+            <div class="acc-it" data-img="/img/gpt-unique-v4/superlogica-final-m08-1536.webp" data-alt="Entrevista de selección en un estudio de arquitectura"><button class="acc-h" aria-expanded="false"><span><small>08</small>Recursos humanos con IA</span><i></i></button><div class="acc-b"><p>Entrevista a las personas con inteligencia artificial y compara perfiles con el mismo criterio, para agilizar la selección de tu equipo.</p><p class="tags">Entrevistas con IA · Selección · Candidatos</p></div></div>
+            <div class="acc-it" data-img="/img/gpt-unique-v4/superlogica-final-m09-1536.webp" data-alt="Análisis inmobiliario con mapa del entorno e indicadores"><button class="acc-h" aria-expanded="false"><span><small>09</small>Análisis empresarial</span><i></i></button><div class="acc-b"><p>Analiza información de los departamentos de tu empresa para apoyar decisiones con contexto.</p><p class="tags">Análisis · Departamentos · Decisiones</p></div></div>
+          </div>
+        </div>
+        <figure class="panel-fig"><img src="/img/gpt-maroma-v1/superlogica-exclusive-m07-1536.webp?v=maroma-superlogica-exclusive-m07-ad3d77eae627" width="1536" height="1024" alt="Visualización conceptual en Maroma: fotografía de tu equipo necesita aprender y decidir. capacitación, selección y análisis con el mismo criterio. para este proyecto" decoding="async" srcset="/img/gpt-maroma-v1/superlogica-exclusive-m07-480.webp?v=maroma-superlogica-exclusive-m07-ad3d77eae627 480w, /img/gpt-maroma-v1/superlogica-exclusive-m07-960.webp?v=maroma-superlogica-exclusive-m07-ad3d77eae627 960w, /img/gpt-maroma-v1/superlogica-exclusive-m07-1536.webp?v=maroma-superlogica-exclusive-m07-ad3d77eae627 1536w" sizes="(max-width: 900px) 100vw, 70vw"></figure>
+      </div>
+    </article>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="servicios">
+    <div class="sv-frame">
+      <svg class="sv-lines" viewBox="0 0 900 700" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#35d6f3" stroke-width="1.2"><path d="M300 720C420 520 640 470 900 430" opacity=".9"/><path d="M340 720C460 540 660 500 900 470" opacity=".6"/><path d="M380 720C500 560 680 530 900 510" opacity=".4"/><path d="M420 720C540 580 700 560 900 550" opacity=".25"/><path d="M460 720C580 600 720 590 900 590" opacity=".15"/></g></svg>
+      <div class="sv-grid">
+        <div class="sv-copy">
+          <p class="eyebrow">Servicios</p>
+          <h2 class="h-lg">Elige lo que <span class="cy">tu proyecto necesita.</span></h2>
+          <p class="sv-lead">Seis territorios, dieciocho servicios. Elegimos contigo los servicios que necesitas y los combinamos en un solo plan.</p>
+          <div class="sv-tabs" role="tablist" aria-label="Territorios">
+            <button role="tab" aria-selected="true" aria-controls="t1" id="tb1"><small>01</small>Web y plataforma</button>
+            <button role="tab" aria-selected="false" aria-controls="t2" id="tb2" tabindex="-1"><small>02</small>Diseño visual</button>
+            <button role="tab" aria-selected="false" aria-controls="t3" id="tb3" tabindex="-1"><small>03</small>Video y obra</button>
+            <button role="tab" aria-selected="false" aria-controls="t4" id="tb4" tabindex="-1"><small>04</small>Bots y automatización</button>
+            <button role="tab" aria-selected="false" aria-controls="t5" id="tb5" tabindex="-1"><small>05</small>Equipo y talento</button>
+            <button role="tab" aria-selected="false" aria-controls="t6" id="tb6" tabindex="-1"><small>06</small>Consultoría en IA</button>
+          </div>
+        </div>
+        <div class="sv-panel">
+          <div class="sv-pane active" role="tabpanel" id="t1" aria-labelledby="tb1"><p class="sv-ttl">Web y plataforma</p><ul>
+            <li><span class="ic"><svg><use href="#i-web"/></svg></span><b>Sitio web 4.0 con asistente de voz</b><p>Un sitio que presenta tu proyecto y conversa con tus visitantes: un asistente de voz con IA atiende como servicio a clientes.</p></li>
+            <li><span class="ic"><svg><use href="#i-sliders"/></svg></span><b>CMS a tu medida</b><p>Un administrador de contenido para que personalices y actualices tu sitio tú mismo, sin depender de nadie.</p></li>
+            <li><span class="ic"><svg><use href="#i-users"/></svg></span><b>CRM</b><p>Centraliza prospectos, conversaciones y seguimiento en un solo lugar.</p></li></ul></div>
+          <div class="sv-pane" role="tabpanel" id="t2" aria-labelledby="tb2"><p class="sv-ttl">Diseño visual</p><ul>
+            <li><span class="ic"><svg><use href="#i-pencil"/></svg></span><b>De plano o bosquejo a render</b><p>Partimos de tu plano o bosquejo y lo convertimos en renders hiperrealistas para explicar distribución, materiales y espacios.</p></li>
+            <li><span class="ic"><svg><use href="#i-cube"/></svg></span><b>Planos isométricos con tu tipografía</b><p>Convertimos tus planos en renders y planos isométricos con la tipografía de tu marca.</p></li>
+            <li><span class="ic"><svg><use href="#i-ar"/></svg></span><b>Modelos con realidad aumentada</b><p>Maquetas que se recorren desde el celular, para ofrecer una experiencia de vanguardia a tus compradores.</p></li></ul></div>
+          <div class="sv-pane" role="tabpanel" id="t3" aria-labelledby="tb3"><p class="sv-ttl">Video y obra</p><ul>
+            <li><span class="ic"><svg><use href="#i-film"/></svg></span><b>Videos arquitectónicos con IA</b><p>Recorridos y piezas cinematográficas de tu proyecto, producidas con inteligencia artificial.</p></li>
+            <li><span class="ic"><svg><use href="#i-drone"/></svg></span><b>Videos con dron</b><p>Tomas aéreas que muestran el terreno, el entorno y la escala de tu desarrollo.</p></li>
+            <li><span class="ic"><svg><use href="#i-clock"/></svg></span><b>Avances de obra en timelapse</b><p>Registramos la construcción y la condensamos en un video que comunica el progreso.</p></li></ul></div>
+          <div class="sv-pane" role="tabpanel" id="t4" aria-labelledby="tb4"><p class="sv-ttl">Bots y automatización</p><ul>
+            <li><span class="ic"><svg><use href="#i-chat"/></svg></span><b>Bot que responde y califica leads</b><p>Atiende a cada prospecto al instante, resuelve dudas y te entrega solo los contactos listos para hablar.</p></li>
+            <li><span class="ic"><svg><use href="#i-share"/></svg></span><b>Bot para automatizar tus redes sociales</b><p>Programa, publica y da seguimiento a tu contenido para mantener una comunicación constante.</p></li>
+            <li><span class="ic"><svg><use href="#i-chart"/></svg></span><b>Bots para directores y propietarios</b><p>Un asistente que consulta tu información y te responde con datos de tu empresa para decidir con contexto.</p></li>
+            <li><span class="ic"><svg><use href="#i-flow"/></svg></span><b>Tu empresa automatizada</b><p>Conectamos tus herramientas para que las tareas repetitivas se resuelvan solas.</p></li></ul></div>
+          <div class="sv-pane" role="tabpanel" id="t5" aria-labelledby="tb5"><p class="sv-ttl">Equipo y talento</p><ul>
+            <li><span class="ic"><svg><use href="#i-check"/></svg></span><b>Módulo de recursos humanos con IA</b><p>Entrevista a candidatos con inteligencia artificial para agilizar la selección y comparar perfiles con el mismo criterio.</p></li>
+            <li><span class="ic"><svg><use href="#i-mic"/></svg></span><b>Capacitación con voz y IA</b><p>Un instructor con voz de IA que capacita a tu personal de nuevo ingreso y a cada empleado actual, sin importar el área o el puesto.</p></li></ul></div>
+          <div class="sv-pane" role="tabpanel" id="t6" aria-labelledby="tb6"><p class="sv-ttl">Consultoría en IA</p><ul>
+            <li><span class="ic"><svg><use href="#i-search"/></svg></span><b>Auditamos tus procesos</b><p>Revisamos cómo trabaja tu empresa y detectamos dónde la automatización ahorra más tiempo.</p></li>
+            <li><span class="ic"><svg><use href="#i-rocket"/></svg></span><b>Implementamos IA en tu empresa</b><p>Llevamos a producción las soluciones elegidas, junto con tu equipo.</p></li>
+            <li><span class="ic"><svg><use href="#i-spark"/></svg></span><b>Marca visual y automatizada</b><p>Llevamos la experiencia visual y la automatización de tu marca a otro nivel, siempre actualizadas.</p></li></ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAND: full-bleed photo + scroll text -->
+  <section class="band">
+    <div class="band-frame">
+      <img class="band-img" src="/img/gpt-maroma-v1/superlogica-exclusive-band-1536.webp?v=maroma-superlogica-exclusive-band-7a76fb37b81f" width="1536" height="1024" alt="Visualización conceptual en Maroma: fotografía de tu proyecto. tu equipo. conectados. para este proyecto" decoding="async" srcset="/img/gpt-maroma-v1/superlogica-exclusive-band-480.webp?v=maroma-superlogica-exclusive-band-7a76fb37b81f 480w, /img/gpt-maroma-v1/superlogica-exclusive-band-960.webp?v=maroma-superlogica-exclusive-band-7a76fb37b81f 960w, /img/gpt-maroma-v1/superlogica-exclusive-band-1536.webp?v=maroma-superlogica-exclusive-band-7a76fb37b81f 1536w" sizes="(max-width: 900px) 100vw, 70vw">
+      <div class="band-shade"></div>
+      <svg class="band-lines" viewBox="0 0 1440 800" preserveAspectRatio="none" aria-hidden="true"><path d="M-20 520C300 470 620 420 900 300S1300 170 1460 140" fill="none" stroke="#35d6f3" stroke-width="7" stroke-linecap="round"/><path d="M700 330C900 260 1150 250 1420 290" fill="none" stroke="#35d6f3" stroke-width="5" stroke-linecap="round"/></svg>
+      <h2 class="band-title" id="bandTitle">Tu proyecto. Tu equipo. Conectados.</h2>
+      <p class="band-note">Definimos información, materiales, canales y entregables para que el diseño visual y la tecnología trabajen por tu empresa.</p>
+    </div>
+  </section>
+
+  <!-- REEL -->
+  <section class="reel" id="reel">
+    <div class="wrap reel-grid">
+      <div class="reel-copy">
+        <p class="eyebrow dark">Showreel</p>
+        <h2 class="h-md">Somos ORNAT.</h2>
+        <p class="muted">Del bosquejo a tu operación.</p>
+        <div class="ctrl"><button id="vPlay" aria-label="Pausar video" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ico-pause" d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path class="ico-play" d="M7 5l12 7-12 7z" fill="currentColor"/></svg></button><button id="vSound" aria-label="Activar sonido" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path class="ico-on" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path class="ico-off" d="m15.5 9.5 5 5m0-5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></div>
+      </div>
+      <div class="reel-frame">
+        <video id="reelVid" src="https://ornat-superlogica.vercel.app/media/reel.mp4" poster="https://ornat-superlogica.vercel.app/media/reel-poster.webp" autoplay muted loop playsinline preload="metadata" aria-label="Showreel de ORNAT UX con gráficos en movimiento"></video>
+        <a class="reel-go" href="#contacto" aria-label="Solicitar demo"><svg aria-hidden="true"><use href="#i-up"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS marquee -->
+  <section class="process" id="proceso">
+    <div class="wrap"><p class="eyebrow dark">El proceso</p><h2 class="h-sm">Y esto es solo el comienzo.<br><span class="muted">Diez pasos, un mismo equipo.</span></h2></div>
+    <div class="mq"><div class="mq-track">
+      <div class="tile"><small>001</small>Definir proyecto visual</div><div class="tile"><small>002</small>Cargar planos originales</div><div class="tile"><small>003</small>Generar renders hiperrealistas</div><div class="tile"><small>004</small>Crear recorrido virtual</div><div class="tile"><small>005</small>Configurar experiencia web</div>
+      <div class="tile" aria-hidden="true"><small>001</small>Definir proyecto visual</div><div class="tile" aria-hidden="true"><small>002</small>Cargar planos originales</div><div class="tile" aria-hidden="true"><small>003</small>Generar renders hiperrealistas</div><div class="tile" aria-hidden="true"><small>004</small>Crear recorrido virtual</div><div class="tile" aria-hidden="true"><small>005</small>Configurar experiencia web</div>
+    </div></div>
+    <div class="mq rev"><div class="mq-track">
+      <div class="tile"><small>006</small>Conectar agentes inteligentes</div><div class="tile"><small>007</small>Preparar contenido social</div><div class="tile"><small>008</small>Activar capacitación interactiva</div><div class="tile"><small>009</small>Analizar tu operación</div><div class="tile"><small>010</small>Aprobar la implementación</div>
+      <div class="tile" aria-hidden="true"><small>006</small>Conectar agentes inteligentes</div><div class="tile" aria-hidden="true"><small>007</small>Preparar contenido social</div><div class="tile" aria-hidden="true"><small>008</small>Activar capacitación interactiva</div><div class="tile" aria-hidden="true"><small>009</small>Analizar tu operación</div><div class="tile" aria-hidden="true"><small>010</small>Aprobar la implementación</div>
+    </div></div>
+  </section>
+
+  <!-- AUDIENCE slider -->
+  <section class="aud" id="para">
+    <div class="wrap aud-grid">
+      <div class="aud-copy">
+        <h2 class="h-sm">Hecho para quienes diseñan y comercializan espacios</h2>
+        <div class="arrows"><button id="audPrev" aria-label="Anterior"><svg aria-hidden="true" style="transform:scaleX(-1)"><use href="#i-arrow"/></svg></button><button id="audNext" aria-label="Siguiente"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+      </div>
+      <div class="aud-track" id="audTrack">
+        <div class="acard"><img src="https://ornat-superlogica.vercel.app/img/a1.webp" width="560" height="560" alt="" decoding="async"><b>Arquitectos</b></div>
+        <div class="acard"><img src="https://ornat-superlogica.vercel.app/img/a2.webp" width="560" height="560" alt="" decoding="async"><b>Diseño interior</b></div>
+        <div class="acard"><img src="https://ornat-superlogica.vercel.app/img/a3.webp" width="560" height="376" alt="" decoding="async"><b>Arquitectos paisajistas</b></div>
+        <div class="acard"><img src="https://ornat-superlogica.vercel.app/img/a4.webp" width="420" height="630" alt="" decoding="async"><b>Constructoras</b></div>
+        <div class="acard"><img src="https://ornat-superlogica.vercel.app/img/a5.webp" width="560" height="280" alt="" decoding="async"><b>Desarrolladores inmobiliarios</b></div>
+        <div class="acard"><img src="https://ornat-superlogica.vercel.app/img/a6.webp" width="560" height="280" alt="" decoding="async"><b>Brokers</b></div>
+        <div class="acard"><img src="https://ornat-superlogica.vercel.app/img/a7.webp" width="560" height="376" alt="" decoding="async"><b>Inmobiliarias</b></div>
+        <div class="acard"><img src="https://ornat-superlogica.vercel.app/img/a8.webp" width="560" height="313" alt="" decoding="async"><b>Despachos de diseño</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section class="method" id="metodo">
+    <div class="wrap">
+      <div class="m-head"><div><p class="eyebrow dark">Por qué</p><h2 class="h-lg">El método</h2></div><a class="link" href="#contacto">Solicitar demo<svg aria-hidden="true"><use href="#i-up"/></svg></a></div>
+      <div class="m-grid">
+        <article class="mcard"><img src="/img/gpt-unique-v4/superlogica-real-p1-1774.webp" width="1774" height="887" alt="Definición de necesidades y alcance con el cliente" decoding="async" srcset="/img/gpt-unique-v4/superlogica-real-p1-480.webp 480w, /img/gpt-unique-v4/superlogica-real-p1-960.webp 960w, /img/gpt-unique-v4/superlogica-real-p1-1774.webp 1774w" sizes="(max-width: 900px) 100vw, 70vw"><small>Paso 01 / 04</small><h3>Entender</h3><p>Definimos el proyecto y las necesidades de tu equipo.</p></article>
+        <article class="mcard"><img src="/img/gpt-unique-v4/superlogica-real-p2-1774.webp" width="1774" height="887" alt="Diseño de una fachada sobre papel de arquitectura" decoding="async" srcset="/img/gpt-unique-v4/superlogica-real-p2-480.webp 480w, /img/gpt-unique-v4/superlogica-real-p2-960.webp 960w, /img/gpt-unique-v4/superlogica-real-p2-1774.webp 1774w" sizes="(max-width: 900px) 100vw, 70vw"><small>Paso 02 / 04</small><h3>Diseñar</h3><p>Convertimos planos e ideas en experiencias visuales y digitales.</p></article>
+        <article class="mcard"><img src="/img/gpt-unique-v4/superlogica-real-p3-1774.webp" width="1774" height="887" alt="Conexión de la plataforma web y seguimiento comercial" decoding="async" srcset="/img/gpt-unique-v4/superlogica-real-p3-480.webp 480w, /img/gpt-unique-v4/superlogica-real-p3-960.webp 960w, /img/gpt-unique-v4/superlogica-real-p3-1774.webp 1774w" sizes="(max-width: 900px) 100vw, 70vw"><small>Paso 03 / 04</small><h3>Conectar</h3><p>Configuramos el sitio, los agentes y los módulos que necesitas.</p></article>
+        <article class="mcard"><img src="/img/gpt-unique-v4/superlogica-real-p4-1774.webp" width="1774" height="887" alt="Acompañamiento al cliente durante la revisión del proyecto" decoding="async" srcset="/img/gpt-unique-v4/superlogica-real-p4-480.webp 480w, /img/gpt-unique-v4/superlogica-real-p4-960.webp 960w, /img/gpt-unique-v4/superlogica-real-p4-1774.webp 1774w" sizes="(max-width: 900px) 100vw, 70vw"><small>Paso 04 / 04</small><h3>Acompañar</h3><p>Ajustamos contenidos y herramientas al crecimiento de tu operación.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contacto">
+    <svg class="ct-line" viewBox="0 0 1440 700" preserveAspectRatio="none" aria-hidden="true"><path id="ctPath" d="M330 360C520 470 640 600 860 600S1200 480 1460 400" fill="none" stroke="#5b74ff" stroke-width="4" stroke-linecap="round"/></svg>
+    <div class="wrap ct-grid">
+      <div class="ct-copy">
+        <h2 class="h-lg"><span class="w">Descubre los módulos que necesita tu empresa.</span> <span class="g">Conoce cómo combinar diseño visual, plataforma web y agentes.</span></h2>
+        <ul class="ct-info">
+          <li><small>Contacto directo</small><a href="tel:+529842353159">984 235 3159</a></li>
+          <li><small>Ubicación</small>Playa del Carmen, Cancún, Tulum y proyectos en México</li>
+        </ul>
+        <img class="ct-img" src="/img/gpt-maroma-v1/superlogica-exclusive-cta-1774.webp?v=maroma-superlogica-exclusive-cta-0fb467f550ab" width="1774" height="887" alt="Visualización conceptual en Maroma: fotografía de descubre los módulos que necesita tu empresa. conoce cómo combinar diseño visual, plataforma web y agentes. para este proyecto" decoding="async" srcset="/img/gpt-maroma-v1/superlogica-exclusive-cta-480.webp?v=maroma-superlogica-exclusive-cta-0fb467f550ab 480w, /img/gpt-maroma-v1/superlogica-exclusive-cta-960.webp?v=maroma-superlogica-exclusive-cta-0fb467f550ab 960w, /img/gpt-maroma-v1/superlogica-exclusive-cta-1774.webp?v=maroma-superlogica-exclusive-cta-0fb467f550ab 1774w" sizes="(max-width: 900px) 100vw, 70vw">
+      </div>
+      <form class="ct-form" id="ctForm" novalidate>
+        <div class="seg" role="radiogroup" aria-label="Tu perfil">
+          <button type="button" role="radio" aria-checked="true" data-v="Arquitectura y diseño"><i></i>Arquitectura y diseño</button>
+          <button type="button" role="radio" aria-checked="false" data-v="Inmobiliaria y desarrollo"><i></i>Inmobiliaria y desarrollo</button>
+        </div>
+        <div class="fbox">
+          <label>Nombre completo<input name="nombre" required autocomplete="name" placeholder="Nombre completo"></label>
+          <div class="frow"><label>Teléfono<input name="tel" type="tel" autocomplete="tel" placeholder="984 000 0000"></label><label><span>Empresa <em>(opcional)</em></span><input name="empresa" autocomplete="organization" placeholder="Nombre de la empresa"></label></div>
+          <label>Módulo de interés<select name="modulo"><option value="">Selecciona</option><option>Web IA</option><option>Render IA</option><option>Del plano al render</option><option>Recorrido virtual</option><option>Agente comercial</option><option>Contenido social</option><option>Capacitación con voz y IA</option><option>Recursos humanos con IA</option><option>Análisis empresarial</option></select></label>
+          <button class="btn full" type="submit">Solicitar demo por WhatsApp<svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <p class="fmsg" id="fMsg" role="status"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="f-top"><a href="#top" class="logo light" aria-label="ORNAT UX, inicio"><svg viewBox="-100 -100 200 200" aria-hidden="true"><use href="#ornat-symbol" x="-100" y="-100" width="200" height="200"/></svg><b>ORNAT</b><small>UX</small></a><p>Estudio de diseño visual para arquitectura e inmobiliarias. Del bosquejo a tu operación.</p></div>
+    <div class="f-cols">
+      <div><h4>Estudio</h4><a href="#estudio">Bienvenido</a><a href="#manifiesto">Manifiesto</a><a href="#proceso">Proceso</a><a href="#metodo">Método</a><a href="#reel">Showreel</a></div>
+      <div class="f-mods"><h4>Módulos</h4><div><a href="#modulos">Web IA</a><a href="#modulos">Render IA</a><a href="#modulos">Del plano al render</a><a href="#modulos">Recorrido virtual</a><a href="#modulos">Agente comercial</a><a href="#modulos">Contenido social</a><a href="#modulos">Capacitación con voz y IA</a><a href="#modulos">Recursos humanos con IA</a><a href="#modulos">Análisis empresarial</a></div></div>
+      <div><h4>Contacto</h4><a href="tel:+529842353159">984 235 3159</a><h4 class="mt">Ubicación</h4><span>Playa del Carmen</span><span>Cancún</span><span>Tulum</span></div>
+    </div>
+    <div class="f-legal"><span>©2026 ORNAT UX. Todos los derechos reservados.</span><span>Riviera Maya, México</span></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="/templates/superlogica/main.js"></script>
+<script src="/cms/bridge.js"></script></body>
+</html>

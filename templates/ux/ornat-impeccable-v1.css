@@ -1,0 +1,108 @@
+/* ORNAT UX — correcciones de la crítica Impeccable (2026-10-10).
+   Capa de override: la geometría, colores y animaciones originales se conservan.
+   Cada bloque nombra el hallazgo que corrige. */
+
+/* 1. Texto de interfaz: piso de 12px y interlineado legible (detector: undersized-ui-text, tiny-text, tight-leading).
+      max() respeta la escala fluida original y solo actúa cuando el texto cae por debajo del piso. */
+/* Excepción: .txt-10 (datos meta de la introducción) vive en una columna de ancho fijo; subirlo a 12px
+   encimaba etiquetas y valores en móvil. Se deja con su tamaño original hasta rediseñar ese bloque. */
+.txt.txt-font-mono.txt-14,
+.txt.txt-font-mono.txt-12 {
+  font-size: max(12px, 1.4rem);
+  line-height: 1.3;
+}
+.txt.txt-font-mono.txt-14.home-map-content-label-txt { line-height: 1.3; }
+.txt.txt-14 { font-size: max(12px, 1.4rem); }
+.cookie-banner-description-text a { font-size: max(12px, 1.4rem); }
+.cookie-banner-description-text p { font-size: max(13px, 1.6rem); }
+.product-hero-sub .txt.txt-20,
+.product-hero-sub .txt-20 { line-height: 1.35; }
+.product-hero-label .txt { line-height: 1.3; }
+.home-hero-work-item-title .txt { font-size: max(12px, 1.4rem); line-height: 1.3; }
+
+/* 2. Áreas táctiles de 44px (36 de 42 elementos interactivos medían menos). */
+.header-menu-btn,
+.header-menu-item,
+.header-menu-dropdown-item,
+.header-cta-new,
+.header-cta,
+.cookie-banner-accept,
+.cookie-banner-reject,
+.footer-form-btn,
+button[type="submit"] { min-height: 44px; }
+.header-logo-item { min-width: 44px; min-height: 44px; align-items: center; }
+/* Enlaces en línea: la zona de toque crece sin mover el texto. */
+.footer-link,
+.cookie-banner-description-text a,
+.txt a,
+.w-richtext a { position: relative; }
+.footer-link::after,
+.cookie-banner-description-text a::after,
+.txt a::after,
+.w-richtext a::after {
+  content: "";
+  position: absolute;
+  left: -4px; right: -4px;
+  top: 50%;
+  height: 44px;
+  transform: translateY(-50%);
+}
+
+/* 3. Banner de cookies: barra compacta que no tapa el titular ni el CTA en móvil. */
+@media (max-width: 479px) {
+  .cookie-banner,
+  .cookie-banner.bg-global {
+    left: .8rem; right: .8rem; bottom: .8rem;
+    width: auto;
+    padding: .8rem 1.2rem;
+  }
+  .cookie-banner-content {
+    flex-flow: row wrap;
+    align-items: center;
+    row-gap: .8rem;
+  }
+  .cookie-banner-description { flex: 1 1 100%; }
+  .cookie-banner-description-text p { line-height: 1.3; }
+  .cookie-banner-action { align-self: stretch; width: 100%; justify-content: flex-end; }
+}
+
+/* 4. Un solo CTA de demo visible en la barra: el duplicado solo se muestra en el menú móvil. */
+@media (min-width: 992px) {
+  .header-cta.only-mb { display: none; }
+}
+
+/* 5. Foco visible también en el logo (antes: 1px punteado). */
+.header-logo-item:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--content--brand, #6a7a58);
+  outline-offset: 3px;
+}
+
+/* 6. Movimiento reducido: cubre el marquee del hero, que no estaba protegido. */
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-work-inner,
+  [class*="marquee"] { animation: none !important; transform: none !important; }
+}
+
+/* 2b. Áreas táctiles restantes: footer, CTAs de sección, campo de correo y enlaces del hero. */
+.footer-menu-item-link,
+.footer-info-item-title,
+.footer-policy-item,
+.home-platform-content-btn-wrap,
+.home-intro-btn,
+.cta-main-item-btn-inner { min-height: 44px; display: inline-flex; align-items: center; }
+.footer-form-input,
+.input.txt-16,
+.footer-form-input-submit,
+.input-submit { min-height: 44px; }
+.home-hero-sub-link { position: relative; }
+.home-hero-sub-link::after {
+  content: "";
+  position: absolute;
+  left: -4px; right: -4px;
+  top: 50%;
+  height: 44px;
+  transform: translateY(-50%);
+}

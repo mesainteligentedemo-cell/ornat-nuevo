@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORNAT UX — Diseño visual y software con IA para arquitectura e inmobiliarias</title>
+<meta name="description" content="ORNAT transforma tus ideas en experiencias visuales, sitios web y herramientas de inteligencia artificial. Trabajamos con arquitectos, desarrolladores y brokers, desde el bosquejo hasta la operación.">
+<meta name="theme-color" content="#1a0e01">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.0.0/swiper-bundle.min.css">
+<link rel="stylesheet" href="/templates/joshuas/styles.css">
+<link rel="preload" as="image" href="https://ornat-joshuas.vercel.app/img/hero.webp">
+<link rel="icon" type="image/svg+xml" href="https://ornat-joshuas.vercel.app/favicon.svg">
+</head>
+<body class="is-loading">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="emblem" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="22.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <g transform="translate(5.5 5.2) scale(.84)" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+      <path d="M6 7L34 7L37 10L37 38L34 41L6 41L3 38L3 10ZM8 14L8 34L10 36L30 36L32 34L32 14L30 12L10 12Z"/>
+      <path d="M6 7L10 3L38 3L41 6L41 34L37 38"/>
+      <path d="M14 15L16.2 15L16.2 27L17.1 28L18.9 28L19.8 27L19.8 15L22 15L22 28L20.1 30L15.9 30L14 28Z"/>
+      <path d="M24 15L26.2 15L27.5 19.7L28.8 15L31 15L28.9 22.5L31 30L28.8 30L27.5 25.3L26.2 30L24 30L26.1 22.5Z"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- LOADER -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-card">
+    <figure class="loader-quote">
+      <span class="loader-dash"></span>
+      <blockquote>“Desde el bosquejo hasta la operación.”</blockquote>
+      <figcaption>— ORNAT UX · Riviera Maya</figcaption>
+    </figure>
+    <svg class="loader-emblem"><use href="#emblem"/></svg>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav-word" aria-label="ORNAT UX, inicio">ORNAT UX</a>
+  <a href="#top" class="nav-emblem" aria-label="Volver arriba"><svg><use href="#emblem"/></svg></a>
+  <button class="nav-menu" id="menuBtn" aria-expanded="false" aria-controls="menu"><span class="plus" aria-hidden="true"></span><span class="lbl">Menú</span></button>
+</header>
+
+<!-- MENU OVERLAY -->
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu-bg"></div>
+  <div class="menu-inner" data-lenis-prevent>
+    <nav class="menu-links" aria-label="Principal">
+      <a href="#intro">Introducción</a>
+      <a href="#problemas">Problemas</a>
+      <a href="#para-quien">Para quién</a>
+      <a href="#modulos">Módulos</a>
+      <a href="#metodo">Método</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <ul class="menu-social" aria-label="Redes">
+      <li>Facebook</li><li>Instagram</li><li>X</li><li>TikTok</li><li>LinkedIn</li><li>Threads</li><li>Pinterest</li>
+    </ul>
+    <div class="menu-feature">
+      <div class="menu-deck" id="menuDeck">
+        <img src="/img/gpt-maroma-v1/joshuas-menu-web-1536.webp?v=maroma-joshuas-menu-web-93f2cfad6ad6" alt="Visualización conceptual en Maroma: diseño de un sitio inmobiliario en laptop y teléfono junto a un plano" data-t="Web IA" data-c="Plataforma y diseño" loading="lazy" width="1536" height="1024" decoding="async" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw" srcset="/img/gpt-maroma-v1/joshuas-menu-web-480.webp?v=maroma-joshuas-menu-web-93f2cfad6ad6 480w, /img/gpt-maroma-v1/joshuas-menu-web-960.webp?v=maroma-joshuas-menu-web-93f2cfad6ad6 960w, /img/gpt-maroma-v1/joshuas-menu-web-1536.webp?v=maroma-joshuas-menu-web-93f2cfad6ad6 1536w" sizes="(max-width: 900px) 100vw, 70vw">
+        <img src="/img/gpt-maroma-v1/joshuas-menu-render-1536.webp?v=maroma-joshuas-menu-render-c20957129ede" alt="Visualización conceptual en Maroma: residencia con muro de tierra, cristales de bronce y espejo de agua" data-t="Render IA" data-c="Plataforma y diseño" loading="lazy" width="1536" height="1024" decoding="async" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw" srcset="/img/gpt-maroma-v1/joshuas-menu-render-480.webp?v=maroma-joshuas-menu-render-c20957129ede 480w, /img/gpt-maroma-v1/joshuas-menu-render-960.webp?v=maroma-joshuas-menu-render-c20957129ede 960w, /img/gpt-maroma-v1/joshuas-menu-render-1536.webp?v=maroma-joshuas-menu-render-c20957129ede 1536w" sizes="(max-width: 900px) 100vw, 70vw">
+        <img src="/img/gpt-unique-v4/joshuas-menu-tour-1536.webp" alt="Interior residencial de piedra y madera abierto a un patio" data-t="Recorrido virtual" data-c="Plataforma y diseño" loading="lazy" width="1536" height="1024" decoding="async" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw" srcset="/img/gpt-unique-v4/joshuas-menu-tour-480.webp 480w, /img/gpt-unique-v4/joshuas-menu-tour-960.webp 960w, /img/gpt-unique-v4/joshuas-menu-tour-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 70vw">
+        <img src="/img/gpt-maroma-v1/joshuas-menu-agent-1536.webp?v=maroma-joshuas-menu-agent-8a9ec7e7a6b6" alt="Visualización conceptual en Maroma: tableta con atención comercial y folleto de un desarrollo inmobiliario" data-t="Agente comercial" data-c="Agentes inteligentes" loading="lazy" width="1536" height="1024" decoding="async" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw" srcset="/img/gpt-maroma-v1/joshuas-menu-agent-480.webp?v=maroma-joshuas-menu-agent-8a9ec7e7a6b6 480w, /img/gpt-maroma-v1/joshuas-menu-agent-960.webp?v=maroma-joshuas-menu-agent-8a9ec7e7a6b6 960w, /img/gpt-maroma-v1/joshuas-menu-agent-1536.webp?v=maroma-joshuas-menu-agent-8a9ec7e7a6b6 1536w" sizes="(max-width: 900px) 100vw, 70vw">
+        <img src="/img/gpt-unique-v4/joshuas-menu-training-1536.webp" alt="Capacitación de un equipo inmobiliario con plano en pantalla" data-t="Capacitación" data-c="Agentes inteligentes" loading="lazy" width="1536" height="1024" decoding="async" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw" srcset="/img/gpt-unique-v4/joshuas-menu-training-480.webp 480w, /img/gpt-unique-v4/joshuas-menu-training-960.webp 960w, /img/gpt-unique-v4/joshuas-menu-training-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 70vw">
+      </div>
+      <p class="menu-cat" id="menuCat">Plataforma y diseño</p>
+      <p class="menu-title" id="menuTitle">Web IA</p>
+      <a class="pill-btn" href="#modulos" data-close>Conoce más</a>
+    </div>
+    <div class="menu-cta">
+      <p class="menu-cta-h">Descubre los módulos que necesita <em>tu empresa</em></p>
+      <a class="cta-wide" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener"><span>Solicitar demo</span><span>984 235 3159</span></a>
+    </div>
+    <svg class="menu-emblem" aria-hidden="true"><use href="#emblem"/></svg>
+  </div>
+</div>
+
+<!-- HERO (fixed) -->
+<section class="hero" id="top" aria-label="Inicio">
+  <div class="hero-media">
+    <img class="kb kb-a" src="https://ornat-joshuas.vercel.app/img/hero.webp" alt="Residencia moderna de lujo junto al Caribe en una composición arquitectónica cinematográfica." fetchpriority="high" loading="eager" width="1536" height="1024" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/hero-480w.webp 480w, https://ornat-joshuas.vercel.app/img/hero-800w.webp 800w, https://ornat-joshuas.vercel.app/img/hero-1280w.webp 1280w, https://ornat-joshuas.vercel.app/img/hero.webp 1536w" sizes="108vw">
+    <img class="kb kb-b" src="https://ornat-joshuas.vercel.app/img/hero-slide-2.webp" alt="Resort boutique de villas contemporáneas junto a una laguna caribeña." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/hero-slide-2-480w.webp 480w, https://ornat-joshuas.vercel.app/img/hero-slide-2-800w.webp 800w, https://ornat-joshuas.vercel.app/img/hero-slide-2-1280w.webp 1280w, https://ornat-joshuas.vercel.app/img/hero-slide-2.webp 1536w" sizes="108vw">
+    <img class="kb kb-c" src="https://ornat-joshuas.vercel.app/img/hero-slide-3.webp" alt="Pabellón de hotel contemporáneo sobre la playa durante el atardecer." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/hero-slide-3-480w.webp 480w, https://ornat-joshuas.vercel.app/img/hero-slide-3-800w.webp 800w, https://ornat-joshuas.vercel.app/img/hero-slide-3-1280w.webp 1280w, https://ornat-joshuas.vercel.app/img/hero-slide-3.webp 1536w" sizes="108vw">
+  </div>
+  <div class="hero-shade"></div>
+  <div class="hero-copy">
+    <h1 class="hero-title"><span class="ln">Diseño visual</span> <span class="ln">y software con IA</span> <span class="hero-sub">para arquitectura e inmobiliarias</span></h1>
+  </div>
+  <div class="hero-marquee" aria-hidden="true"><div class="mq-track">
+    <span>Desliza para continuar</span><span>Riviera Maya, México</span><span>Desliza para continuar</span><span>Diseño visual IA</span><span>Desliza para continuar</span><span>Riviera Maya, México</span><span>Desliza para continuar</span><span>Diseño visual IA</span>
+    <span>Desliza para continuar</span><span>Riviera Maya, México</span><span>Desliza para continuar</span><span>Diseño visual IA</span><span>Desliza para continuar</span><span>Riviera Maya, México</span><span>Desliza para continuar</span><span>Diseño visual IA</span>
+  </div></div>
+</section>
+<div class="hero-spacer" aria-hidden="true"></div>
+
+<main class="main" id="main">
+  <!-- LATEST → intro -->
+  <section class="latest" id="intro">
+    <div class="latest-card">
+      <img class="latest-img" src="https://ornat-joshuas.vercel.app/img/lagoon.webp" alt="Visualización arquitectónica personalizada: Aerial photographic render of a unique boutique Caribbean development surrounding a lagoon with minimalist limestone villas." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/lagoon-480w.webp 480w, https://ornat-joshuas.vercel.app/img/lagoon-800w.webp 800w, https://ornat-joshuas.vercel.app/img/lagoon-1280w.webp 1280w, https://ornat-joshuas.vercel.app/img/lagoon.webp 1536w" sizes="100vw">
+      <div class="latest-fade"></div>
+      <div class="latest-copy">
+        <p class="eyebrow-wide">Bienvenido a ORNAT UX</p>
+        <h2 class="latest-title">Del plano a la experiencia</h2>
+        <p class="latest-text">ORNAT transforma tus ideas en experiencias visuales, sitios web y herramientas de inteligencia artificial. Trabajamos con arquitectos, desarrolladores y brokers, desde el bosquejo hasta la operación.</p>
+        <a class="link-line" href="#problemas">Descubre más</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="stackwrap">
+    <!-- FEATURES → problems -->
+    <section class="features" id="problemas" aria-label="Problemas">
+      <article class="feature">
+        <img class="f-img" src="https://ornat-joshuas.vercel.app/img/feature-agent.webp" alt="Asesora inmobiliaria presenta un agente comercial digital junto a una maqueta residencial." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/feature-agent-480w.webp 480w, https://ornat-joshuas.vercel.app/img/feature-agent-800w.webp 800w, https://ornat-joshuas.vercel.app/img/feature-agent.webp 1536w" sizes="100vw">
+        <div class="f-fade"></div>
+        <p class="f-spaced" aria-hidden="true">Estático</p>
+        <div class="f-bottom">
+          <div><p class="f-kicker">[01] Problemas</p><h3 class="f-title">Cada consulta necesita una respuesta</h3>
+          <p class="f-text">Un agente responde consultas sobre espacios, condiciones y disponibilidad con información validada por tu equipo.</p></div>
+          <ul class="tags"><li>Estático</li><li>Agente comercial</li><li>[01]</li></ul>
+        </div>
+      </article>
+      <article class="feature feature-wipe">
+        <div class="wipe">
+          <img class="wipe-sk" src="https://ornat-joshuas.vercel.app/img/sk1.webp" alt="Bosquejo a lápiz de la misma torre de Cancún que se revela como render." loading="lazy" width="1774" height="887" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/sk1-480w.webp 480w, https://ornat-joshuas.vercel.app/img/sk1-800w.webp 800w, https://ornat-joshuas.vercel.app/img/sk1-1280w.webp 1280w, https://ornat-joshuas.vercel.app/img/sk1.webp 1774w" sizes="88vw">
+          <img class="wipe-rd" src="https://ornat-joshuas.vercel.app/img/rd1.webp" alt="Render hiperrealista de una torre de lujo frente a la playa de Cancún." loading="lazy" width="1774" height="887" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/rd1-480w.webp 480w, https://ornat-joshuas.vercel.app/img/rd1-800w.webp 800w, https://ornat-joshuas.vercel.app/img/rd1-1280w.webp 1280w, https://ornat-joshuas.vercel.app/img/rd1.webp 1774w" sizes="88vw">
+          <span class="wipe-line"></span>
+        </div>
+        <div class="f-fade"></div>
+        <p class="f-spaced" aria-hidden="true">Fragmentado</p>
+        <div class="f-bottom">
+          <div><p class="f-kicker">[02] Problemas</p><h3 class="f-title">Tus planos necesitan convertirse en experiencias</h3>
+          <p class="f-text">Partimos de un plano o bosquejo para desarrollar planos, renders y videos hiperrealistas que ayuden a presentar espacios y explicar tu proyecto.</p></div>
+          <ul class="tags"><li>Fragmentado</li><li>Del plano al render</li><li>[02]</li></ul>
+        </div>
+      </article>
+      <article class="feature">
+        <img class="f-img" src="https://ornat-joshuas.vercel.app/img/feature-training.webp" alt="Arquitecto participa en capacitación con audio y módulos digitales desde su estudio." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/feature-training-480w.webp 480w, https://ornat-joshuas.vercel.app/img/feature-training-800w.webp 800w, https://ornat-joshuas.vercel.app/img/feature-training.webp 1536w" sizes="100vw">
+        <div class="f-fade"></div>
+        <p class="f-spaced" aria-hidden="true">Invisible</p>
+        <div class="f-bottom">
+          <div><p class="f-kicker">[03] Problemas</p><h3 class="f-title">Tu equipo necesita aprender y decidir</h3>
+          <p class="f-text">La capacitación con voz, módulos y exámenes, junto con el análisis de tus áreas, conecta conocimiento y decisiones dentro de tu empresa.</p></div>
+          <ul class="tags"><li>Invisible</li><li>Capacitación</li><li>[03]</li></ul>
+        </div>
+      </article>
+      <article class="feature">
+        <img class="f-img" src="https://ornat-joshuas.vercel.app/img/feature-social.webp" alt="Equipo profesional produce video inmobiliario con cámara y contenido vertical." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/feature-social-480w.webp 480w, https://ornat-joshuas.vercel.app/img/feature-social-800w.webp 800w, https://ornat-joshuas.vercel.app/img/feature-social.webp 1536w" sizes="100vw">
+        <div class="f-fade"></div>
+        <p class="f-spaced" aria-hidden="true">Lento</p>
+        <div class="f-bottom">
+          <div><p class="f-kicker">[04] Problemas</p><h3 class="f-title">Tus redes necesitan contenido con un propósito</h3>
+          <p class="f-text">Videos impactantes, recorridos con presentadores virtuales y publicaciones automatizadas permiten explicar tus proyectos y mantener una comunicación consistente con tu comunidad.</p></div>
+          <ul class="tags"><li>Lento</li><li>Contenido social</li><li>[04]</li></ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- CURATED → audiences -->
+    <section class="curated" id="para-quien" aria-label="Para quién">
+      <div class="cur-marquee"><div class="cur-track" id="curTrack">
+        <figure class="cur-card"><img src="https://ornat-joshuas.vercel.app/img/plan.webp" alt="Visualización arquitectónica personalizada: Detailed luxurious furnished 3D isometric single-level coastal apartment model on neutral sand, oak, travertine, terrace and tropical garden." loading="lazy" width="825" height="1100" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/plan-480w.webp 480w, https://ornat-joshuas.vercel.app/img/plan-800w.webp 800w, https://ornat-joshuas.vercel.app/img/plan.webp 825w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">Para quién</span><figcaption><b>Arquitectos</b>Explica tus proyectos con planos, renders y experiencias visuales que acompañen tu presentación.</figcaption></figure>
+        <figure class="cur-card"><img src="https://ornat-joshuas.vercel.app/img/interior.webp" alt="Visualización arquitectónica personalizada: Photographic minimalist luxurious coastal lounge, soft sculptural armchairs, travertine flooring, golden light, palms." loading="lazy" width="1100" height="733" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/interior-480w.webp 480w, https://ornat-joshuas.vercel.app/img/interior-800w.webp 800w, https://ornat-joshuas.vercel.app/img/interior.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">Para quién</span><figcaption><b>Diseño interior</b>Presenta ambientes, materiales y acabados con visualizaciones que expliquen cada decisión de diseño.</figcaption></figure>
+        <figure class="cur-card"><img src="https://ornat-joshuas.vercel.app/img/villa.webp" alt="Visualización arquitectónica personalizada: Landscape architecture model of a luxurious Caribbean villa and terraced tropical gardens on dark stone pedestal." loading="lazy" width="825" height="1100" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/villa-480w.webp 480w, https://ornat-joshuas.vercel.app/img/villa-800w.webp 800w, https://ornat-joshuas.vercel.app/img/villa.webp 825w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">Para quién</span><figcaption><b>Arquitectos paisajistas</b>Muestra jardines y espacios exteriores mediante renders, videos y recorridos que comuniquen tu propuesta.</figcaption></figure>
+        <figure class="cur-card"><img src="https://ornat-joshuas.vercel.app/img/constr.webp" alt="Visualización arquitectónica personalizada: Professional construction drone documenting an elegant coastal residence under construction; real detailed materials and unfinished structure." loading="lazy" width="1100" height="733" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/constr-480w.webp 480w, https://ornat-joshuas.vercel.app/img/constr-800w.webp 800w, https://ornat-joshuas.vercel.app/img/constr.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">Para quién</span><figcaption><b>Constructoras</b>Documenta avances con dron y videos apoyados por IA para comunicar el desarrollo del proyecto.</figcaption></figure>
+        <figure class="cur-card"><img src="https://ornat-joshuas.vercel.app/img/tower.webp" alt="Visualización arquitectónica personalizada: A unique ultra luxury vertical tower facing Cancun beach, photorealistic architectural miniature presentation, limestone and bronze." loading="lazy" width="1100" height="733" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/tower-480w.webp 480w, https://ornat-joshuas.vercel.app/img/tower-800w.webp 800w, https://ornat-joshuas.vercel.app/img/tower.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">Para quién</span><figcaption><b>Desarrolladores inmobiliarios</b>Presenta preventas con sitios web, renders, videos hiperrealistas y experiencias de realidad aumentada o mixta.</figcaption></figure>
+        <figure class="cur-card"><img src="https://ornat-joshuas.vercel.app/img/overwater.webp" alt="Visualización arquitectónica personalizada: Fine architectural miniature of elegant overwater modern villas with Caribbean blue water on warm stone base." loading="lazy" width="1100" height="733" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/overwater-480w.webp 480w, https://ornat-joshuas.vercel.app/img/overwater-800w.webp 800w, https://ornat-joshuas.vercel.app/img/overwater.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">Para quién</span><figcaption><b>Brokers</b>Atiende consultas con agentes inteligentes y comparte contenido visual que explique las propiedades de tu cartera.</figcaption></figure>
+        <figure class="cur-card"><img src="https://ornat-joshuas.vercel.app/img/audience-realestate.webp" alt="Equipo inmobiliario coordina presentación, atención y análisis alrededor de una maqueta." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/audience-realestate-480w.webp 480w, https://ornat-joshuas.vercel.app/img/audience-realestate-800w.webp 800w, https://ornat-joshuas.vercel.app/img/audience-realestate.webp 1536w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">Para quién</span><figcaption><b>Inmobiliarias</b>Conecta presentación, atención, capacitación y análisis en tu operación inmobiliaria.</figcaption></figure>
+        <figure class="cur-card"><img src="https://ornat-joshuas.vercel.app/img/studio.webp" alt="Visualización arquitectónica personalizada: A sophisticated architectural studio team presenting an architectural maquette and immersive property visualization." loading="lazy" width="1100" height="733" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/studio-480w.webp 480w, https://ornat-joshuas.vercel.app/img/studio-800w.webp 800w, https://ornat-joshuas.vercel.app/img/studio.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">Para quién</span><figcaption><b>Despachos de diseño</b>Integra visualización, contenido y herramientas digitales según las necesidades de tu despacho.</figcaption></figure>
+      </div></div>
+      <div class="cur-foot">
+        <div><p class="eyebrow-sm">Para quién</p><h2 class="cur-title">Hecho para quienes diseñan y comercializan espacios</h2></div>
+        <ul class="tags tags-dark"><li>Playa del Carmen</li><li>Cancún</li><li>Tulum</li><li>Riviera Maya</li><li>México</li></ul>
+      </div>
+    </section>
+
+  <!-- STORIES → modules -->
+  <section class="stories" id="modulos" aria-label="Módulos">
+    <p class="eyebrow-sm center">Explora cómo conectamos diseño visual, software e inteligencia artificial</p>
+    <h2 class="stories-title">Módulos</h2>
+    <div class="filters" role="tablist" aria-label="Filtrar módulos">
+      <button class="filter is-on" data-f="all" role="tab" aria-selected="true">Todos</button>
+      <button class="filter" data-f="plataforma" role="tab" aria-selected="false">Plataforma y diseño</button>
+      <button class="filter" data-f="agentes" role="tab" aria-selected="false">Agentes inteligentes</button>
+    </div>
+    <p class="filter-desc" id="filterDesc" aria-live="polite">Combinamos diseño visual, software e inteligencia artificial en módulos que eliges según tu proyecto y equipo.</p>
+    <div class="stories-layout">
+      <div class="mgrid" id="mgrid">
+        <a class="mcard w4" data-c="plataforma" href="#contacto"><div class="mimg"><img src="https://ornat-joshuas.vercel.app/img/web.webp" alt="Presentación visual de un sitio inmobiliario para una propiedad de lujo." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/web-480w.webp 480w, https://ornat-joshuas.vercel.app/img/web-800w.webp 800w, https://ornat-joshuas.vercel.app/img/web.webp 1536w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"></div><div class="mmeta"><span class="chip chip-d">Plataforma y diseño</span><h3>Web IA</h3><p>Un sitio para presentar tu proyecto.</p></div></a>
+        <a class="mcard w2" data-c="plataforma" href="#contacto"><div class="mimg tall"><img src="https://ornat-joshuas.vercel.app/img/cutaway.webp" alt="Render hiperrealista de una residencia contemporánea junto al Caribe." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/cutaway-480w.webp 480w, https://ornat-joshuas.vercel.app/img/cutaway-800w.webp 800w, https://ornat-joshuas.vercel.app/img/cutaway.webp 1536w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"></div><div class="mmeta"><span class="chip chip-d">Plataforma y diseño</span><h3>Render IA</h3><p>Visualiza espacios.</p></div></a>
+        <a class="mcard w3 off" data-c="plataforma" href="#contacto"><div class="mimg wipe-mini"><img class="sk" src="https://ornat-joshuas.vercel.app/img/sk3.webp" alt="Bosquejo isométrico a lápiz del mismo departamento que se revela a color." loading="lazy" width="1100" height="1100" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/sk3-480w.webp 480w, https://ornat-joshuas.vercel.app/img/sk3-800w.webp 800w, https://ornat-joshuas.vercel.app/img/sk3.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><img class="rd" src="https://ornat-joshuas.vercel.app/img/rd3.webp" alt="Plano isométrico 3D de un departamento amueblado con terraza y alberca privada." loading="lazy" width="1100" height="1100" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/rd3-480w.webp 480w, https://ornat-joshuas.vercel.app/img/rd3-800w.webp 800w, https://ornat-joshuas.vercel.app/img/rd3.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"></div><div class="mmeta"><span class="chip chip-d">Plataforma y diseño</span><h3>Del plano al render</h3><p>Convertimos tus planos o bosquejos en entregables visuales para explicar distribución, materiales y espacios.</p></div></a>
+        <a class="mcard w3" data-c="plataforma" href="#contacto"><div class="mimg"><img src="https://ornat-joshuas.vercel.app/img/tour.webp" alt="Vista interior inmersiva de una residencia tropical con salida al jardín." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/tour-480w.webp 480w, https://ornat-joshuas.vercel.app/img/tour-800w.webp 800w, https://ornat-joshuas.vercel.app/img/tour.webp 1536w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"></div><div class="mmeta"><span class="chip chip-d">Plataforma y diseño</span><h3>Recorrido virtual</h3><p>Recorridos con presentadores virtuales para explicar tus proyectos.</p></div></a>
+        <a class="mcard w2" data-c="agentes" href="#contacto"><div class="mimg tall"><img src="https://ornat-joshuas.vercel.app/img/agent.webp" alt="Interfaz de atención comercial con IA junto a una maqueta inmobiliaria." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/agent-480w.webp 480w, https://ornat-joshuas.vercel.app/img/agent-800w.webp 800w, https://ornat-joshuas.vercel.app/img/agent.webp 1536w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"></div><div class="mmeta"><span class="chip chip-d">Agentes inteligentes</span><h3>Agente comercial</h3><p>Un agente con IA responde de forma natural usando información de tu empresa.</p></div></a>
+        <a class="mcard w4" data-c="agentes" href="#contacto"><div class="mimg"><img src="https://ornat-joshuas.vercel.app/img/social.webp" alt="Estación de producción de video vertical para redes sociales inmobiliarias." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/social-480w.webp 480w, https://ornat-joshuas.vercel.app/img/social-800w.webp 800w, https://ornat-joshuas.vercel.app/img/social.webp 1536w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"></div><div class="mmeta"><span class="chip chip-d">Agentes inteligentes</span><h3>Contenido social</h3><p>Videos impactantes y publicaciones automatizadas para una comunicación consistente con tu comunidad.</p></div></a>
+        <a class="mcard w3" data-c="agentes" href="#contacto"><div class="mimg"><img src="https://ornat-joshuas.vercel.app/img/train.webp" alt="Audífonos y tableta con interfaz visual de capacitación mediante audio." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/train-480w.webp 480w, https://ornat-joshuas.vercel.app/img/train-800w.webp 800w, https://ornat-joshuas.vercel.app/img/train.webp 1536w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"></div><div class="mmeta"><span class="chip chip-d">Agentes inteligentes</span><h3>Capacitación</h3><p>Capacita mediante audio, módulos y exámenes.</p></div></a>
+        <a class="mcard w3 off" data-c="agentes" href="#contacto"><div class="mimg"><img src="https://ornat-joshuas.vercel.app/img/data.webp" alt="Maqueta de desarrollo residencial junto a un tablero de análisis inmobiliario." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/data-480w.webp 480w, https://ornat-joshuas.vercel.app/img/data-800w.webp 800w, https://ornat-joshuas.vercel.app/img/data.webp 1536w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"></div><div class="mmeta"><span class="chip chip-d">Agentes inteligentes</span><h3>Análisis empresarial</h3><p>Analiza información de los departamentos de tu empresa para apoyar decisiones con contexto.</p></div></a>
+      </div>
+      <aside class="side">
+        <div class="side-card">
+          <p class="side-brand"><svg aria-hidden="true"><use href="#emblem"/></svg> ORNAT UX</p>
+          <div class="side-imgs"><img src="https://ornat-joshuas.vercel.app/img/ab1.webp" alt="Estación de trabajo para planear una experiencia visual arquitectónica." loading="lazy" width="1100" height="1100" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/ab1-480w.webp 480w, https://ornat-joshuas.vercel.app/img/ab1-800w.webp 800w, https://ornat-joshuas.vercel.app/img/ab1.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><img src="/img/gpt-unique-v4/joshuas-real-ab9-1536.webp" alt="Residencia y alberca vistas desde su terraza" loading="lazy" width="1536" height="1024" decoding="async" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw" srcset="/img/gpt-unique-v4/joshuas-real-ab9-480.webp 480w, /img/gpt-unique-v4/joshuas-real-ab9-960.webp 960w, /img/gpt-unique-v4/joshuas-real-ab9-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 70vw"></div>
+          <p class="side-title">Descubre los módulos que necesita tu empresa</p>
+          <p class="side-text">Solicita una demo y conoce cómo combinar diseño visual, plataforma web y agentes para tu empresa.</p>
+          <a class="side-btn" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener">Solicitar demo</a>
+          <p class="side-note">984 235 3159</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="method" id="metodo">
+      <p class="eyebrow-sm center">Por qué</p>
+      <h2 class="method-title">Diseñado para tu proyecto y tu equipo</h2>
+      <p class="method-lead">Elegimos contigo los módulos que necesitas. Definimos información, materiales, canales y entregables para que el diseño visual y la tecnología acompañen el trabajo de tu empresa.</p>
+      <ol class="method-list">
+        <li><span>01</span><h3>Entender</h3><p>Definimos el proyecto y las necesidades de tu equipo</p></li>
+        <li><span>02</span><h3>Diseñar</h3><p>Convertimos planos e ideas en experiencias visuales y digitales</p></li>
+        <li><span>03</span><h3>Conectar</h3><p>Configuramos el sitio, los agentes y los módulos que necesitas</p></li>
+        <li><span>04</span><h3>Acompañar</h3><p>Ajustamos contenidos y herramientas al crecimiento de tu operación</p></li>
+      </ol>
+    </div>
+  </section>
+  </div>
+
+  <!-- REMINISCE → process steps -->
+  <section class="reminisce" id="proceso" aria-label="Proceso">
+    <h2 class="rem-title" aria-label="Proceso">Proceso</h2>
+    <p class="rem-sub">Contigo en cada etapa · Del bosquejo a tu operación</p>
+    <div class="swiper rem-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><article class="rcard"><div class="rimg"><img src="https://ornat-joshuas.vercel.app/img/ab1-scene2.webp" alt="Escena de trabajo para definir proyecto visual." loading="lazy" width="1100" height="1100" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/ab1-scene2-480w.webp 480w, https://ornat-joshuas.vercel.app/img/ab1-scene2-800w.webp 800w, https://ornat-joshuas.vercel.app/img/ab1-scene2.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">001</span></div><h3>Definir proyecto visual</h3></article></div>
+        <div class="swiper-slide"><article class="rcard"><div class="rimg"><img src="https://ornat-joshuas.vercel.app/img/ab2.webp" alt="Escena de trabajo para cargar planos originales." loading="lazy" width="1100" height="1100" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/ab2-480w.webp 480w, https://ornat-joshuas.vercel.app/img/ab2-800w.webp 800w, https://ornat-joshuas.vercel.app/img/ab2.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">002</span></div><h3>Cargar planos originales</h3></article></div>
+        <div class="swiper-slide"><article class="rcard"><div class="rimg"><img src="https://ornat-joshuas.vercel.app/img/ab3.webp" alt="Escena de trabajo para generar renders hiperrealistas." loading="lazy" width="1100" height="1100" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/ab3-480w.webp 480w, https://ornat-joshuas.vercel.app/img/ab3-800w.webp 800w, https://ornat-joshuas.vercel.app/img/ab3.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">003</span></div><h3>Generar renders hiperrealistas</h3></article></div>
+        <div class="swiper-slide"><article class="rcard"><div class="rimg"><img src="https://ornat-joshuas.vercel.app/img/ab4.webp" alt="Escena de trabajo para crear recorrido virtual." loading="lazy" width="1100" height="618" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/ab4-480w.webp 480w, https://ornat-joshuas.vercel.app/img/ab4-800w.webp 800w, https://ornat-joshuas.vercel.app/img/ab4.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">004</span></div><h3>Crear recorrido virtual</h3></article></div>
+        <div class="swiper-slide"><article class="rcard"><div class="rimg"><img src="https://ornat-joshuas.vercel.app/img/ab5.webp" alt="Escena de trabajo para configurar experiencia web." loading="lazy" width="1100" height="733" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/ab5-480w.webp 480w, https://ornat-joshuas.vercel.app/img/ab5-800w.webp 800w, https://ornat-joshuas.vercel.app/img/ab5.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">005</span></div><h3>Configurar experiencia web</h3></article></div>
+        <div class="swiper-slide"><article class="rcard"><div class="rimg"><img src="https://ornat-joshuas.vercel.app/img/ab6.webp" alt="Escena de trabajo para conectar agentes inteligentes." loading="lazy" width="1100" height="733" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/ab6-480w.webp 480w, https://ornat-joshuas.vercel.app/img/ab6-800w.webp 800w, https://ornat-joshuas.vercel.app/img/ab6.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">006</span></div><h3>Conectar agentes inteligentes</h3></article></div>
+        <div class="swiper-slide"><article class="rcard"><div class="rimg"><img src="https://ornat-joshuas.vercel.app/img/ab7.webp" alt="Escena de trabajo para preparar contenido social." loading="lazy" width="1100" height="733" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/ab7-480w.webp 480w, https://ornat-joshuas.vercel.app/img/ab7-800w.webp 800w, https://ornat-joshuas.vercel.app/img/ab7.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">007</span></div><h3>Preparar contenido social</h3></article></div>
+        <div class="swiper-slide"><article class="rcard"><div class="rimg"><img src="https://ornat-joshuas.vercel.app/img/ab8.webp" alt="Escena de trabajo para activar capacitación interactiva." loading="lazy" width="1100" height="733" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/ab8-480w.webp 480w, https://ornat-joshuas.vercel.app/img/ab8-800w.webp 800w, https://ornat-joshuas.vercel.app/img/ab8.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">008</span></div><h3>Activar capacitación interactiva</h3></article></div>
+        <div class="swiper-slide"><article class="rcard"><div class="rimg"><img src="https://ornat-joshuas.vercel.app/img/ab10.webp" alt="Escena de trabajo para analizar la operación." loading="lazy" width="1100" height="733" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/ab10-480w.webp 480w, https://ornat-joshuas.vercel.app/img/ab10-800w.webp 800w, https://ornat-joshuas.vercel.app/img/ab10.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">009</span></div><h3>Analizar tu operación</h3></article></div>
+        <div class="swiper-slide"><article class="rcard"><div class="rimg"><img src="https://ornat-joshuas.vercel.app/img/ab12.webp" alt="Escena de trabajo para aprobar la implementación." loading="lazy" width="1100" height="733" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/ab12-480w.webp 480w, https://ornat-joshuas.vercel.app/img/ab12-800w.webp 800w, https://ornat-joshuas.vercel.app/img/ab12.webp 1100w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><span class="chip">010</span></div><h3>Aprobar la implementación</h3></article></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" id="contacto">
+  <div class="foot-main">
+    <div class="foot-col">
+      <p class="eyebrow-sm">Redes</p>
+      <ul class="foot-social"><li>Facebook</li><li>Instagram</li><li>X</li><li>TikTok</li><li>LinkedIn</li><li>Threads</li><li>Pinterest</li></ul>
+    </div>
+    <div class="foot-col">
+      <p class="eyebrow-sm">Contacto directo</p>
+      <a class="foot-phone" href="tel:+529842353159">984 235 3159</a>
+      <a class="foot-link" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener">Solicitar demo</a>
+      <p class="foot-addr">Playa del Carmen, Cancún, Tulum, Riviera Maya, México</p>
+    </div>
+    <div class="foot-col foot-right">
+      <p class="eyebrow-sm">Diseño visual IA · Fundado 2026</p>
+    </div>
+  </div>
+  <div class="foot-row">
+    <span class="foot-pill">Software y diseño visual para empresas</span>
+    <svg class="foot-dome" viewBox="0 0 80 40" aria-hidden="true"><path d="M0 40a40 40 0 0 1 80 0z" fill="currentColor"/><circle cx="40" cy="40" r="22" fill="none" stroke="#1a0e01" stroke-width="2"/><circle cx="40" cy="40" r="10" fill="#1a0e01"/></svg>
+  </div>
+  <div class="foot-legal">
+    <span>©2026 ORNAT UX</span><span>Todos los derechos reservados</span><span>Riviera Maya, México</span><span>Aviso de Privacidad</span><span>Términos legales</span><span>Cookies</span>
+  </div>
+  <div class="foot-giant">
+    <img class="foot-bg" src="https://ornat-joshuas.vercel.app/img/beach.webp" alt="Visualización arquitectónica personalizada: Exclusive minimal Caribbean beachfront property, pool and stone pavilion in amber sunset, wide atmospheric photography." loading="lazy" width="1672" height="941" decoding="async" srcset="https://ornat-joshuas.vercel.app/img/beach-480w.webp 480w, https://ornat-joshuas.vercel.app/img/beach-800w.webp 800w, https://ornat-joshuas.vercel.app/img/beach-1280w.webp 1280w, https://ornat-joshuas.vercel.app/img/beach.webp 1672w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw">
+    <div class="giant-word"><svg aria-hidden="true"><use href="#emblem"/></svg><span>ORNAT UX</span></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11.0.0/swiper-bundle.min.js"></script>
+<script src="/templates/joshuas/main.js"></script>
+<script src="/cms/bridge.js"></script></body>
+</html>

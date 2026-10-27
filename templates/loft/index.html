@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORNAT UX — Diseño visual y software con IA para arquitectura e inmobiliarias</title>
+<meta name="description" content="ORNAT transforma tus ideas en experiencias visuales, sitios web y herramientas de inteligencia artificial para arquitectos, desarrolladores y brokers.">
+<link rel="icon" type="image/svg+xml" href="https://ornat-loft.vercel.app/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wdth,wght@0,62.5..100,100..500;1,62.5..100,300&family=Inter+Tight:wght@400;500;600&family=Fragment+Mono&family=Allura&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="https://ornat-loft.vercel.app/img/clouds.webp">
+<link rel="stylesheet" href="/templates/loft/styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mono" viewBox="0 0 44 60">
+    <ellipse cx="21" cy="34" rx="14.5" ry="19" fill="none" stroke="currentColor" stroke-width="3.2"/>
+    <path d="M33 3 9 58" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M26 3h14" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M3 58h13" stroke="currentColor" stroke-width="1.6"/>
+  </symbol>
+  <symbol id="star" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="14.5" fill="none" stroke="currentColor" stroke-width="1"/>
+    <path d="M16 4 18 14 28 16 18 18 16 28 14 18 4 16 14 14Z" fill="currentColor"/>
+    <path d="M8.5 8.5 16 16M23.5 8.5 16 16M8.5 23.5 16 16M23.5 23.5 16 16" stroke="currentColor" stroke-width=".8"/>
+  </symbol>
+</svg>
+
+<!-- entrada -->
+<section class="gate" id="gate" aria-label="Bienvenida">
+  <div class="gate-bg"></div>
+  <div class="gate-in">
+    <svg class="gate-mono"><use href="#mono"/></svg>
+    <div class="gate-wm"><span>ORNAT</span><small>UX</small></div>
+    <button class="gate-btn" id="enter" type="button" disabled>CARGANDO 0%</button>
+  </div>
+  <p class="gate-copy">ORNAT UX © Todos los derechos reservados.</p>
+</section>
+
+<!-- escena -->
+<div class="stage" aria-hidden="true">
+  <canvas id="seq"></canvas>
+  <div class="sun"></div>
+  <div class="haze hz1"><i></i></div>
+  <div class="haze hz2"><i></i></div>
+  <div class="shade"></div>
+  <div class="grain"></div>
+</div>
+
+<header class="ui top">
+  <button class="logo" id="menuBtn" type="button" aria-label="Abrir menú"><svg><use href="#mono"/></svg></button>
+  <a class="talk" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20platicar%20sobre%20mi%20proyecto." target="_blank" rel="noopener">Hablemos</a>
+</header>
+
+<div class="ui axis" aria-hidden="true">
+  <i class="axis-line"></i>
+  <div class="axis-mark"><i class="dot"></i><svg class="star"><use href="#star"/></svg><i class="dot"></i></div>
+  <span class="axis-txt">DESLIZA PARA EXPLORAR</span>
+</div>
+
+<main class="ui copy">
+  <article class="ch hero" data-from="0" data-to=".115">
+    <h1 class="big"><span class="ln"><span>Diseñamos</span></span><span class="ln"><span>espacios que venden</span></span></h1>
+    <p>Llamarnos agencia o estudio de render se queda corto. ORNAT es tu socio de diseño visual y tecnología desde el primer bosquejo: entendemos la arquitectura, la preventa y la operación de una inmobiliaria. Ya sea un desarrollo residencial o un proyecto comercial, te acompañamos en cada etapa.</p>
+    <p>Diseñamos, renderizamos, programamos, conectamos, capacitamos y acompañamos a tu equipo con el mismo nivel de detalle, de principio a fin.</p>
+  </article>
+
+  <article class="ch step" data-from=".13" data-to=".27">
+    <h2><span class="pre">Del</span> <span class="script" data-dots="...">bosquejo</span></h2>
+    <p>Tu idea es el punto de partida; juntos la convertimos en algo extraordinario.</p>
+    <aside class="note">Diseño visual y<br>software con IA.</aside>
+  </article>
+  <article class="ch step" data-from=".285" data-to=".43">
+    <h2><span class="pre">al</span> <span class="script" data-dots="...">render</span></h2>
+    <p>Convertimos planos y bosquejos en renders y videos hiperrealistas que explican distribución, materiales y espacios.</p>
+    <aside class="note">Del plano al render<br>hiperrealista.</aside>
+  </article>
+  <article class="ch step" data-from=".445" data-to=".595">
+    <h2><span class="pre">a la</span> <span class="script" data-dots="...">plataforma</span></h2>
+    <p>Un sitio llamativo para presentar tu proyecto, con una experiencia pensada para tu desarrollo.</p>
+    <aside class="note">Web IA a la medida<br>de tu proyecto.</aside>
+  </article>
+  <article class="ch step" data-from=".61" data-to=".755">
+    <h2><span class="pre">a los</span> <span class="script" data-dots="...">agentes</span></h2>
+    <p>Un agente con IA responde de forma natural con la información de tu empresa, a cualquier hora.</p>
+    <aside class="note">Recorridos virtuales,<br>realidad aumentada y dron.</aside>
+  </article>
+  <article class="ch step" data-from=".77" data-to=".895">
+    <h2><span class="pre">a tu</span> <span class="script" data-dots=".">venta</span></h2>
+    <p>Presenta, conversa, capacita y cierra con tecnología que acompaña el trabajo de tu equipo.</p>
+    <aside class="note">De principio a fin:<br>arquitectura e inmobiliarias.</aside>
+  </article>
+
+  <article class="ch final" data-from=".905" data-to="1.01">
+    <h2 class="cool"><span class="o">CREANDO</span><span>ESPACIOS ÚNICOS</span><em>con IA</em></h2>
+    <p>Llamarnos agencia o estudio de render se queda corto. ORNAT es tu socio de diseño visual y tecnología desde el primer bosquejo: entendemos la arquitectura, la preventa y la operación de una inmobiliaria.</p>
+    <p>Diseñamos, renderizamos, programamos, conectamos, capacitamos y acompañamos a tu equipo, en todo México.</p>
+    <div class="btns">
+      <button class="b tan" type="button" data-open-menu>Conoce más</button>
+      <a class="b dark" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo." target="_blank" rel="noopener">Contáctanos</a>
+    </div>
+  </article>
+</main>
+
+<div class="ui ctrl">
+  <button class="play" id="play" type="button" aria-label="Reproducir recorrido" aria-pressed="false">
+    <svg class="i-play" viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>
+    <svg class="i-pause" viewBox="0 0 16 16"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z" fill="currentColor"/></svg>
+  </button>
+</div>
+
+<div class="ui prog" aria-hidden="true"><i class="fill" id="fill"></i><i class="tip" id="tip"></i></div>
+
+<!-- menú -->
+<nav class="menu" id="menu" aria-label="Principal" aria-hidden="true">
+  <button class="close" type="button" id="menuClose">Cerrar</button>
+  <div class="menu-in">
+    <div class="menu-wm"><span>ORNAT</span><small>DISEÑO VISUAL Y SOFTWARE CON IA</small></div>
+    <ul>
+      <li><a href="#" data-go="0">Inicio</a></li>
+      <li><a href="#" data-go=".2">El bosquejo</a></li>
+      <li><a href="#" data-go=".35">El render</a></li>
+      <li><a href="#" data-go=".52">La plataforma</a></li>
+      <li><a href="#" data-go=".68">Los agentes</a></li>
+      <li><a href="#" data-go=".95">Creando espacios</a></li>
+    </ul>
+    <div class="menu-call"><span>LLÁMANOS</span><a href="tel:+529842353159">984 235 3159</a></div>
+  </div>
+  <p class="menu-copy">Playa del Carmen, Cancún, Tulum y proyectos en todo México.</p>
+</nav>
+
+<div class="spacer" aria-hidden="true"></div>
+
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="/templates/loft/main.js"></script>
+<script src="/cms/bridge.js"></script></body>
+</html>

@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORNAT UX | Diseño visual y software con IA para arquitectura e inmobiliarias</title>
+<meta name="description" content="ORNAT transforma tus ideas en experiencias visuales, sitios web y herramientas de inteligencia artificial. Trabajamos con arquitectos, desarrolladores y brokers, desde el bosquejo hasta la operación.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="https://ornat-fitandyou.vercel.app/img/hero.webp">
+<link rel="stylesheet" href="/templates/fitandyou/styles.css">
+<link rel="icon" type="image/svg+xml" href="https://ornat-fitandyou.vercel.app/favicon.svg">
+</head>
+<body class="is-loading">
+
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__count"><span class="br">[</span><span class="loader__num" id="loaderNum">0</span><span class="br">]</span></div>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#inicio" class="logo" aria-label="ORNAT UX, inicio">
+    <span>ORNAT</span><span class="logo__box">UX</span>
+  </a>
+  <nav class="nav__pill" aria-label="Principal">
+    <a href="#servicios">Servicios</a>
+    <a href="#modulos">Módulos</a>
+    <a href="#problemas">Problemas</a>
+    <a href="#metodo">Método</a>
+    <a href="#ubicacion">Ubicación</a>
+  </nav>
+  <a class="nav__cta" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener">Solicitar demo <span>[+]</span></a>
+  <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="mmenu"><span class="sr">Menú</span><span aria-hidden="true">[+]</span></button>
+</header>
+<div class="mmenu" id="mmenu" hidden>
+  <a href="#servicios">Servicios</a>
+  <a href="#modulos">Módulos</a>
+  <a href="#problemas">Problemas</a>
+  <a href="#metodo">Método</a>
+  <a href="#ubicacion">Ubicación</a>
+  <a class="mmenu__cta" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener">Solicitar demo [+]</a>
+</div>
+
+<main id="inicio">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <h1 class="hero__title">
+    <span class="line"><span class="li">Diseño visual y software</span></span>
+    <span class="line"><span class="li">con IA para arquitectura</span></span>
+    <span class="line line--accent"><span class="li">e inmobiliarias.</span></span>
+  </h1>
+  <div class="hero__media" id="heroMedia">
+    <div class="kb">
+      <img class="kb__img is-on" src="https://ornat-fitandyou.vercel.app/img/hero.webp" alt="" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/hero-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/hero-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/hero-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/hero.webp 1536w" sizes="100vw">
+      <img class="kb__img" src="https://ornat-fitandyou.vercel.app/img/hero-slide-2.webp" alt="" loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/hero-slide-2-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/hero-slide-2-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/hero-slide-2-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/hero-slide-2.webp 1536w" sizes="100vw">
+      <img class="kb__img" src="https://ornat-fitandyou.vercel.app/img/hero-slide-3.webp" alt="" loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/hero-slide-3-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/hero-slide-3-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/hero-slide-3-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/hero-slide-3.webp 1536w" sizes="100vw">
+      <img class="kb__img" src="https://ornat-fitandyou.vercel.app/img/hero-slide-4.webp" alt="" loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/hero-slide-4-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/hero-slide-4-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/hero-slide-4-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/hero-slide-4.webp 1536w" sizes="100vw">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / BENEFITS -->
+<section class="about" id="servicios">
+  <h2 class="about__title">
+    <span class="row1"><span class="w">Del bosquejo</span></span>
+    <span class="row2"><span class="w">a tu</span><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0 C52 40 60 48 100 50 C60 52 52 60 50 100 C48 60 40 52 0 50 C40 48 48 40 50 0Z" fill="#fff"/><path d="M0 0 L100 100 M100 0 L0 100" stroke="#fff" stroke-width=".8"/></svg><span class="w accent">operación</span></span>
+  </h2>
+
+  <div class="grid">
+    <div class="tile tile--img g1"><img src="/img/gpt-unique-v4/fitandyou-real-grid-a-1254.webp" alt="Pabellón construido de acero y madera en un jardín costero" loading="lazy" width="1254" height="1254" decoding="async" sizes="100vw" srcset="/img/gpt-unique-v4/fitandyou-real-grid-a-480.webp 480w, /img/gpt-unique-v4/fitandyou-real-grid-a-960.webp 960w, /img/gpt-unique-v4/fitandyou-real-grid-a-1254.webp 1254w" sizes="(max-width: 900px) 100vw, 70vw"></div>
+    <div class="tile tile--circ g2"><div class="circ"><span>Proyectos<br>visibles</span></div></div>
+    <div class="tile tile--img tile--wide g3"><img src="https://ornat-fitandyou.vercel.app/img/grid-b.webp" alt="Maqueta de desarrollo en construcción con visualización terminada en pantalla." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/grid-b-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/grid-b-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/grid-b-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/grid-b.webp 1536w" sizes="100vw"></div>
+    <div class="tile tile--txt g4">
+      <p class="brk"><span>[</span>ORNAT transforma tus ideas en experiencias visuales, sitios web y herramientas de inteligencia artificial. Trabajamos con arquitectos, desarrolladores y brokers, desde el bosquejo hasta la operación.<span>]</span></p>
+    </div>
+    <div class="tile tile--circ g5"><div class="circ"><span>Atención<br>constante</span></div></div>
+    <div class="tile tile--circ g6"><div class="circ"><span>Equipos<br>conectados</span></div></div>
+    <div class="tile tile--big g7">
+      <div class="kb kb--big">
+        <img class="kb__img is-on" src="https://ornat-fitandyou.vercel.app/img/big-1.webp" alt="Modelo tridimensional de una torre residencial de lujo." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/big-1-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/big-1-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/big-1-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/big-1.webp 1536w" sizes="100vw">
+        <img class="kb__img" src="https://ornat-fitandyou.vercel.app/img/big-2.webp" alt="Modelo en corte de un departamento amueblado para explicar su distribución." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/big-2-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/big-2-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/big-2-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/big-2.webp 1536w" sizes="100vw">
+        <img class="kb__img" src="https://ornat-fitandyou.vercel.app/img/big-3.webp" alt="Modelo aéreo de conjunto residencial con alberca y jardines." loading="lazy" width="1254" height="1254" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/big-3-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/big-3-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/big-3.webp 1254w" sizes="100vw">
+      </div>
+      <a class="bubble bubble--abs" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener">Solicitar demo <span>[+]</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES (classes) -->
+<section class="mods" id="modulos">
+  <div class="mods__bg" aria-hidden="true">
+    <img class="is-on" src="https://ornat-fitandyou.vercel.app/img/mod-bg.webp" alt="Estación de diseño y software inmobiliario con maqueta arquitectónica." width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/mod-bg-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/mod-bg-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/mod-bg-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/mod-bg.webp 1536w" sizes="(max-width: 600px) 94vw, (max-width: 1100px) 46vw, 25vw">
+    <img src="https://ornat-fitandyou.vercel.app/img/web-ia.webp" alt="Interfaz visual de un sitio inmobiliario en varios dispositivos junto a una maqueta arquitectónica" loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/web-ia-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/web-ia-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/web-ia-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/web-ia.webp 1536w" sizes="(max-width: 991px) 94vw, 48vw"><img src="https://ornat-fitandyou.vercel.app/img/render-ia.webp" alt="Render hiperrealista de arquitectura contemporánea terminado" loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/render-ia-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/render-ia-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/render-ia-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/render-ia.webp 1536w" sizes="(max-width: 991px) 94vw, 48vw"><img src="https://ornat-fitandyou.vercel.app/img/plano-isometrico.webp" alt="Planta arquitectónica amueblada convertida en un isométrico 3D con materiales realistas" loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/plano-isometrico-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/plano-isometrico-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/plano-isometrico-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/plano-isometrico.webp 1536w" sizes="(max-width: 991px) 94vw, 48vw"><img src="https://ornat-fitandyou.vercel.app/img/recorrido-virtual.webp" alt="Interior arquitectónico con visor para recorrido virtual inmersivo" loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/recorrido-virtual-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/recorrido-virtual-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/recorrido-virtual-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/recorrido-virtual.webp 1536w" sizes="(max-width: 991px) 94vw, 48vw">
+    <img src="https://ornat-fitandyou.vercel.app/img/agente-comercial.webp" alt="Asesoría inmobiliaria con agente comercial apoyado por inteligencia artificial" loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/agente-comercial-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/agente-comercial-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/agente-comercial-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/agente-comercial.webp 1536w" sizes="(max-width: 991px) 94vw, 48vw"><img src="https://ornat-fitandyou.vercel.app/img/contenido-social.webp" alt="Producción de contenido audiovisual vertical para redes sociales de arquitectura" loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/contenido-social-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/contenido-social-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/contenido-social-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/contenido-social.webp 1536w" sizes="(max-width: 991px) 94vw, 48vw"><img src="https://ornat-fitandyou.vercel.app/img/capacitacion-audio.webp" alt="Tableta con formación por audio, módulos y avance de capacitación" loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/capacitacion-audio-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/capacitacion-audio-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/capacitacion-audio-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/capacitacion-audio.webp 1536w" sizes="(max-width: 991px) 94vw, 48vw"><img src="https://ornat-fitandyou.vercel.app/img/analisis-inmobiliario.webp" alt="Maqueta de desarrollo inmobiliario junto a tablero visual de análisis de unidades" loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/analisis-inmobiliario-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/analisis-inmobiliario-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/analisis-inmobiliario-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/analisis-inmobiliario.webp 1536w" sizes="(max-width: 991px) 94vw, 48vw">
+  </div>
+  <div class="mods__head">
+    <h2 class="big reveal-lines"><span class="line"><span class="li">Nuestros</span></span><span class="line"><span class="li">módulos</span></span></h2>
+    <p class="brk brk--side"><span>[</span>Combinamos diseño visual, software e inteligencia artificial en módulos que eliges según tu proyecto y equipo.<span>]</span></p>
+  </div>
+  <div class="mods__rule"></div>
+  <div class="mods__list">
+    <div class="mgroup">
+      <p class="mgroup__label">[01] Plataforma y diseño</p>
+      <p class="mgroup__desc">Presenta tu proyecto con un sitio llamativo, planos, renders y videos. Suma presentadores de IA, realidad aumentada, realidad mixta y producción con dron.</p>
+      <ul>
+        <li data-i="1"><span class="mname">Web IA</span><span class="mdesc">Un sitio para presentar tu proyecto.</span></li>
+        <li data-i="2"><span class="mname">Render IA</span><span class="mdesc">Visualiza espacios.</span></li>
+        <li data-i="3"><span class="mname">Del plano al render</span><span class="mdesc">Convertimos tus planos o bosquejos en entregables visuales.</span></li>
+        <li data-i="4"><span class="mname">Recorrido virtual</span><span class="mdesc">Recorridos que explican tus espacios.</span></li>
+      </ul>
+    </div>
+    <div class="mgroup">
+      <p class="mgroup__label">[02] Agentes inteligentes</p>
+      <p class="mgroup__desc">Atiende prospectos con agentes de IA y automatiza contenido. Capacita mediante voz, módulos y exámenes. Analiza tus departamentos para apoyar decisiones con información de tu operación.</p>
+      <ul>
+        <li data-i="5"><span class="mname">Agente comercial</span><span class="mdesc">Consultas con seguimiento.</span></li>
+        <li data-i="6"><span class="mname">Contenido social</span><span class="mdesc">Agentes de atención y redes automatizadas.</span></li>
+        <li data-i="7"><span class="mname">Capacitación</span><span class="mdesc">Capacitación con audio, módulos y exámenes.</span></li>
+        <li data-i="8"><span class="mname">Análisis empresarial</span><span class="mdesc">Análisis empresarial para apoyar tus decisiones.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS MARQUEE -->
+<section class="nums" aria-label="ORNAT en cifras">
+  <div class="mq mq--a"><div class="mq__track">
+    <span><b>8</b> módulos</span><span><b>4</b> etapas</span><span><b>10</b> pasos</span><span><b>2</b> servicios</span><span><b>2026</b> fundado</span>
+    <span aria-hidden="true"><b>8</b> módulos</span><span aria-hidden="true"><b>4</b> etapas</span><span aria-hidden="true"><b>10</b> pasos</span><span aria-hidden="true"><b>2</b> servicios</span><span aria-hidden="true"><b>2026</b> fundado</span>
+  </div></div>
+  <div class="mq mq--b"><div class="mq__track">
+    <span>Arquitectos<i>+</i></span><span>Diseño interior<i>+</i></span><span>Arquitectos paisajistas<i>+</i></span><span>Constructoras<i>+</i></span><span>Desarrolladores inmobiliarios<i>+</i></span><span>Brokers<i>+</i></span><span>Inmobiliarias<i>+</i></span><span>Despachos de diseño<i>+</i></span>
+    <span aria-hidden="true">Arquitectos<i>+</i></span><span aria-hidden="true">Diseño interior<i>+</i></span><span aria-hidden="true">Arquitectos paisajistas<i>+</i></span><span aria-hidden="true">Constructoras<i>+</i></span>
+  </div></div>
+  <figure class="float float--1"><img src="https://ornat-fitandyou.vercel.app/img/f1.webp" alt="Mesa de arquitectura con maqueta, planos y pantalla de visualización." loading="lazy" width="1672" height="941" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/f1-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/f1-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/f1-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/f1.webp 1672w" sizes="100vw"></figure>
+  <figure class="float float--2 wipe">
+    <img src="https://ornat-fitandyou.vercel.app/img/art.webp" alt="Bosquejo a lápiz de una villa contemporánea frente al mar." loading="lazy" width="1100" height="550" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/art-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/art-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/art.webp 1100w" sizes="100vw">
+    <img class="wipe__top" src="https://ornat-fitandyou.vercel.app/img/render.webp" alt="Render hiperrealista de la misma villa con iluminación cálida y alberca." loading="lazy" width="1100" height="550" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/render-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/render-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/render.webp 1100w" sizes="100vw">
+  </figure>
+  <figure class="float float--3"><img src="https://ornat-fitandyou.vercel.app/img/f3.webp" alt="Maqueta inmobiliaria con tablero de análisis empresarial." loading="lazy" width="1672" height="941" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/f3-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/f3-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/f3-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/f3.webp 1672w" sizes="100vw"></figure>
+</section>
+
+<!-- PROBLEMS (bonuses) -->
+<section class="probs" id="problemas">
+  <div class="probs__pin">
+    <div class="probs__bg" aria-hidden="true"><img src="https://ornat-fitandyou.vercel.app/img/prob-bg.webp" alt="Modelo arquitectónico con materiales oscuros y vidrio naranja, contexto de retos empresariales." width="1254" height="1254" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/prob-bg-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/prob-bg-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/prob-bg.webp 1254w" sizes="100vw"></div>
+    <h2 class="probs__title"><span class="accent">Problemas</span><span class="probs__sub"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0 C52 40 60 48 100 50 C60 52 52 60 50 100 C48 60 40 52 0 50 C40 48 48 40 50 0Z" fill="#fff"/></svg>que resolvemos</span></h2>
+    <div class="cards">
+      <article class="card" data-k="0">
+        <div class="card__top"><span class="card__tag">Estático</span><h3>Cada consulta necesita una respuesta</h3></div>
+        <div class="card__img"><img src="https://ornat-fitandyou.vercel.app/img/p1.webp" alt="Modelo residencial e interfaz de agente comercial para responder consultas." loading="lazy" width="1672" height="941" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/p1-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/p1-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/p1-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/p1.webp 1672w" sizes="(max-width: 600px) 94vw, (max-width: 1100px) 46vw, 25vw"></div>
+        <div class="card__bot"><span class="card__n">01</span><button class="card__more" aria-expanded="false">Más detalles <span>[+]</span></button></div>
+        <p class="card__desc">Un agente responde consultas sobre espacios, condiciones y disponibilidad con información validada por tu equipo.</p>
+      </article>
+      <article class="card" data-k="1">
+        <div class="card__top"><span class="card__tag">Fragmentado</span><h3>Tus planos necesitan convertirse en experiencias</h3></div>
+        <div class="card__img"><img src="https://ornat-fitandyou.vercel.app/img/p2.webp" alt="Planos y modelo amueblado de una residencia con alberca." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/p2-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/p2-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/p2-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/p2.webp 1536w" sizes="(max-width: 600px) 94vw, (max-width: 1100px) 46vw, 25vw"></div>
+        <div class="card__bot"><span class="card__n">02</span><button class="card__more" aria-expanded="false">Más detalles <span>[+]</span></button></div>
+        <p class="card__desc">Partimos de un plano o bosquejo para desarrollar planos, renders y videos hiperrealistas que ayuden a presentar espacios y explicar tu proyecto.</p>
+      </article>
+      <article class="card" data-k="2">
+        <div class="card__top"><span class="card__tag">Invisible</span><h3>Tu equipo necesita aprender y decidir</h3></div>
+        <div class="card__img"><img src="https://ornat-fitandyou.vercel.app/img/p3.webp" alt="Espacio de capacitación y análisis con tableta, audífonos y maqueta." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/p3-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/p3-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/p3-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/p3.webp 1536w" sizes="(max-width: 600px) 94vw, (max-width: 1100px) 46vw, 25vw"></div>
+        <div class="card__bot"><span class="card__n">03</span><button class="card__more" aria-expanded="false">Más detalles <span>[+]</span></button></div>
+        <p class="card__desc">La capacitación con voz, módulos y exámenes, junto con el análisis de tus áreas, conecta conocimiento y decisiones dentro de tu empresa.</p>
+      </article>
+      <article class="card" data-k="3">
+        <div class="card__top"><span class="card__tag">Lento</span><h3>Tus redes necesitan contenido con un propósito</h3></div>
+        <div class="card__img"><img src="https://ornat-fitandyou.vercel.app/img/p4.webp" alt="Producción de contenido inmobiliario con cámara, teléfono y modelo arquitectónico." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/p4-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/p4-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/p4-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/p4.webp 1536w" sizes="(max-width: 600px) 94vw, (max-width: 1100px) 46vw, 25vw"></div>
+        <div class="card__bot"><span class="card__n">04</span><button class="card__more" aria-expanded="false">Más detalles <span>[+]</span></button></div>
+        <p class="card__desc">Videos impactantes, recorridos con presentadores virtuales y publicaciones automatizadas permiten explicar tus proyectos y mantener una comunicación consistente con tu comunidad.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD (membership) -->
+<section class="method" id="metodo">
+  <h2 class="big center reveal-lines"><span class="line"><span class="li">Método</span></span></h2>
+  <div class="plans">
+    <article class="plan">
+      <div class="plan__head"><span class="plan__n">[1]</span><h3>Entender</h3><i class="plan__fold" aria-hidden="true"></i></div>
+      <ul><li>Definimos el proyecto y las necesidades de tu equipo</li><li>001 Definir proyecto visual</li><li>002 Cargar planos originales</li></ul>
+      <div class="plan__foot"><span class="plan__step">001—002</span><a href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener">Demo <span>[+]</span></a></div>
+    </article>
+    <article class="plan">
+      <div class="plan__head"><span class="plan__n">[2]</span><h3>Diseñar</h3><i class="plan__fold" aria-hidden="true"></i></div>
+      <ul><li>Convertimos planos e ideas en experiencias visuales y digitales</li><li>003 Generar renders hiperrealistas</li><li>004 Crear recorrido virtual</li></ul>
+      <div class="plan__foot"><span class="plan__step">003—004</span><a href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener">Demo <span>[+]</span></a></div>
+    </article>
+    <article class="plan plan--light">
+      <div class="plan__head"><span class="plan__n">[3]</span><h3>Conectar</h3><i class="plan__fold" aria-hidden="true"></i></div>
+      <ul><li>Configuramos el sitio, los agentes y los módulos que necesitas</li><li>005 Configurar experiencia web</li><li>006 Conectar agentes inteligentes</li><li>007 Preparar contenido social</li><li>008 Activar capacitación interactiva</li></ul>
+      <div class="plan__foot"><span class="plan__step">005—008</span><a href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener">Demo <span>[+]</span></a></div>
+    </article>
+    <article class="plan">
+      <div class="plan__head"><span class="plan__n">[4]</span><h3>Acompañar</h3><i class="plan__fold" aria-hidden="true"></i></div>
+      <ul><li>Ajustamos contenidos y herramientas al crecimiento de tu operación</li><li>009 Analizar tu operación</li><li>010 Aprobar la implementación</li></ul>
+      <div class="plan__foot"><span class="plan__step">009—010</span><a href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener">Demo <span>[+]</span></a></div>
+    </article>
+  </div>
+</section>
+
+<!-- MAP (locations) -->
+<section class="loc" id="ubicacion">
+  <h2 class="loc__title reveal-lines"><span class="line"><span class="li">Riviera Maya</span></span><span class="line"><span class="li">y México</span></span></h2>
+  <svg class="loc__line" id="locLine" aria-hidden="true"><line x1="0" y1="0" x2="0" y2="0"/></svg>
+  <div class="loc__map">
+    <canvas id="mapCanvas" aria-hidden="true"></canvas>
+    <button class="pin" data-c="0" style="--x:62%;--y:22%" aria-label="Cancún"><i></i></button>
+    <button class="pin is-on" data-c="1" style="--x:50%;--y:47%" aria-label="Playa del Carmen"><i></i></button>
+    <button class="pin" data-c="2" style="--x:44%;--y:72%" aria-label="Tulum"><i></i></button>
+  </div>
+  <div class="loc__card" id="locCard">
+    <div class="loc__info">
+      <h3 id="locCity">Playa del Carmen</h3>
+      <p class="loc__lbl">Contacto</p>
+      <p>Riviera Maya y México<br>Arquitectura e inmobiliarias<br><a href="tel:+529842353159">984 235 3159</a></p>
+    </div>
+    <div class="loc__img"><img id="locImg" src="https://ornat-fitandyou.vercel.app/img/loc-playa.webp" alt="Desarrollo residencial junto a la playa en Playa del Carmen." loading="lazy" width="1672" height="941" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/loc-playa-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/loc-playa-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/loc-playa-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/loc-playa.webp 1672w" sizes="100vw"></div>
+  </div>
+  <ul class="loc__row">
+    <li><button data-c="0">Cancún</button></li>
+    <li><button data-c="1" class="is-on">Playa del Carmen</button></li>
+    <li><button data-c="2">Tulum</button></li>
+    <li><a href="tel:+529842353159">984 235 3159</a></li>
+  </ul>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contacto">
+  <div class="cta__bg" aria-hidden="true"><img src="https://ornat-fitandyou.vercel.app/img/cta-bg.webp" alt="Espacio de tecnología inmobiliaria y arquitectura de lujo al atardecer." width="1536" height="1024" decoding="async" srcset="https://ornat-fitandyou.vercel.app/img/cta-bg-480w.webp 480w, https://ornat-fitandyou.vercel.app/img/cta-bg-960w.webp 960w, https://ornat-fitandyou.vercel.app/img/cta-bg-1440w.webp 1440w, https://ornat-fitandyou.vercel.app/img/cta-bg.webp 1536w" sizes="100vw"></div>
+  <h2 class="cta__title">
+    <span class="cr cr1"><span>Descubre</span><span class="cta__inline"><img src="/img/gpt-maroma-v1/maroma-legacy-fitandyou-cta-inline-1536.webp?v=maroma-maroma-legacy-fitandyou-cta-inline-d46a27f04462" alt="Visualización conceptual en Maroma: consulta de proyecto arquitectónico en Maroma" loading="lazy" width="1536" height="1024" decoding="async" srcset="/img/gpt-maroma-v1/maroma-legacy-fitandyou-cta-inline-480.webp?v=maroma-maroma-legacy-fitandyou-cta-inline-d46a27f04462 480w, /img/gpt-maroma-v1/maroma-legacy-fitandyou-cta-inline-960.webp?v=maroma-maroma-legacy-fitandyou-cta-inline-d46a27f04462 960w, /img/gpt-maroma-v1/maroma-legacy-fitandyou-cta-inline-1536.webp?v=maroma-maroma-legacy-fitandyou-cta-inline-d46a27f04462 1536w" sizes="100vw"></span><span>los módulos</span></span>
+    <span class="cr cr2"><span>que necesita</span><span>tu empresa</span></span>
+  </h2>
+  <p class="cta__offer">Solicita una demo</p>
+  <p class="cta__sub">Solicita una demo y conoce cómo combinar diseño visual, plataforma web y agentes para tu empresa.</p>
+  <form class="cta__form" id="ctaForm">
+    <label><span class="sr">Nombre</span><input name="nombre" placeholder="Nombre" autocomplete="name"></label>
+    <label><span class="sr">Empresa</span><input name="empresa" placeholder="Empresa" autocomplete="organization"></label>
+    <label><span class="sr">Teléfono</span><input name="tel" placeholder="Teléfono" type="tel" autocomplete="tel"></label>
+    <button class="bubble" type="submit">Solicitar demo <span>[+]</span></button>
+  </form>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot__logo">
+    <a href="#inicio" class="logo" aria-label="ORNAT UX, inicio"><span>ORNAT</span><span class="logo__box">UX</span></a>
+    <p class="foot__small">Diseño visual y software con IA para arquitectura e inmobiliarias</p>
+    <p class="foot__copy">©2026 ORNAT UX.<br>Todos los derechos reservados.</p>
+  </div>
+  <nav class="foot__nav" aria-label="Pie de página">
+    <a href="#servicios">Servicios</a><a href="#modulos">Módulos</a><a href="#metodo">Método</a><a href="#ubicacion">Ubicación</a>
+  </nav>
+  <div class="foot__soc" aria-label="Redes">
+    <span>Facebook</span><span>Instagram</span><span>X</span><span>TikTok</span><span>LinkedIn</span><span>Threads</span><span>Pinterest</span>
+  </div>
+  <a href="#inicio" class="foot__up" aria-label="Volver arriba"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V4M5 11l7-7 7 7" fill="none" stroke="#fff" stroke-width="2"/></svg></a>
+  <p class="foot__big">Tu proyecto. Tu equipo. Conectados.</p>
+  <div class="foot__legal"><span>Aviso de Privacidad</span><span>Términos legales</span><a href="tel:+529842353159">984 235 3159</a></div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="/templates/fitandyou/main.js"></script>
+<script src="/cms/bridge.js"></script></body>
+</html>

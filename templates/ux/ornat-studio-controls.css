@@ -1,0 +1,34 @@
+/* ORNAT studio notation: cut graphite guides and clipped architectural corners. */
+html body *,html body *::before,html body *::after {
+ border-image-source:url("https://ornat-ux.vercel.app/assets/ornat-studio-frame.svg") !important;
+ border-image-slice:14 !important;
+ border-image-width:1.5 !important;
+}
+html body .line.line-horizital {
+ height:3px !important; min-height:3px; background:url("https://ornat-ux.vercel.app/assets/ornat-studio-h.svg") repeat-x !important; background-size:320px 3px !important;
+}
+html body .line.line-vertical {
+ width:3px !important; min-width:3px; background:url("https://ornat-ux.vercel.app/assets/ornat-studio-v.svg") repeat-y !important; background-size:3px 320px !important;
+}
+html body .line.line-horizital.line-dash { background-image:url("https://ornat-ux.vercel.app/assets/ornat-studio-h-dash.svg") !important; background-size:320px 3px !important; }
+html body .line.line-vertical.line-dash { background-image:url("https://ornat-ux.vercel.app/assets/ornat-studio-v-dash.svg") !important; background-size:3px 320px !important; }
+html body [data-ornat-ui-stage] .line::before,html body [data-ornat-ui-stage] .line::after { display:none !important; }
+html body :is(button,a.btn-fill-hover,a.btn-bg-hover,a.home-hero-btn,a.home-intro-btn,a.home-platform-content-btn-wrap) {
+ border:1px solid transparent; border-radius:0;
+ border-image-source:url("https://ornat-ux.vercel.app/assets/ornat-studio-button.svg") !important;
+ border-image-slice:20 !important; border-image-width:1.5 !important;
+ box-shadow:none !important;
+}
+html body :is(button,a.btn-fill-hover,a.btn-bg-hover,a.home-hero-btn,a.home-intro-btn,a.home-platform-content-btn-wrap):focus-visible {
+ outline:2px solid #535f49; outline-offset:3px;
+}
+html body .header-menu-btn-ic-line { background-image:url("https://ornat-ux.vercel.app/assets/ornat-studio-h-dash.svg") !important; background-size:80px 3px !important; }
+html body hr { height:3px; background:url("https://ornat-ux.vercel.app/assets/ornat-studio-h-dash.svg") repeat-x; background-size:320px 3px; }
+html body svg [stroke-dasharray]:not([data-ornat-original-dash]) { stroke-linecap:round; }
+html body svg[data-ornat-handdrawn] [stroke-dasharray] { stroke-dasharray:14 6 2 6; stroke:#737763; }
+html body a:has(> .btn-fill),html body a:has(> .btn-bg) {
+ border:1px solid transparent;
+ border-image-source:url("https://ornat-ux.vercel.app/assets/ornat-studio-button.svg") !important;
+ border-image-slice:20 !important; border-image-width:1.5 !important;
+}
+html body a:has(> .btn-fill):focus-visible,html body a:has(> .btn-bg):focus-visible { outline:2px solid #535f49; outline-offset:3px; }

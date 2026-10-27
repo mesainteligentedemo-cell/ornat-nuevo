@@ -1,0 +1,29 @@
+/* The GPT still-life photographs keep their materials and complete silhouettes. */
+img[data-ornat-abstract] {
+  object-fit: contain !important;
+  object-position: center !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  clip-path: none !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}
+.ink-mask[data-ornat-abstract-mask] > .ink-mask-img.main {
+  opacity: 1 !important;
+  visibility: visible !important;
+  clip-path: none !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  filter: none !important;
+}
+.ink-mask[data-ornat-abstract-mask] > .ink-mask-img.sub {
+  display: none !important;
+}
+/* The active service tab has a dark fill even when its children are transparent. */
+.product-key-tab-item.active,
+.product-key-tab-item.active .txt,
+.product-key-tab-item.active .number-index,
+.product-key-tab-item.active [data-ornat-ink] {
+  color: #f6f3ea !important;
+  -webkit-text-fill-color: #f6f3ea !important;
+}

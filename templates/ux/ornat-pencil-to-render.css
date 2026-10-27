@@ -1,0 +1,71 @@
+/* Matched pencil/render pairs. Original hosts, masks and GSAP stay in control. */
+.ornat-render-layer {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+  opacity: 0;
+  z-index: 2;
+  /* A restrained irregular reveal edge, progressing top to bottom. */
+  clip-path: polygon(0 0,100% 0,100% var(--ornat-reveal,0%),
+    86% calc(var(--ornat-reveal,0%) - .7%),
+    70% var(--ornat-reveal,0%),
+    55% calc(var(--ornat-reveal,0%) - 1.1%),
+    39% calc(var(--ornat-reveal,0%) - .35%),
+    21% calc(var(--ornat-reveal,0%) - .8%),0 var(--ornat-reveal,0%));
+}
+.ornat-render-layer[data-render-complete] { clip-path: inset(0); }
+[data-ornat-scene-secondary] { visibility: hidden !important; }
+/* The stationary reveal replaces only this pair's moving organic mask. */
+.ink-mask[data-ornat-render-pair] > .ink-mask-img.sub { visibility: hidden !important; }
+.ornat-render-layer > img.ornat-render-image {
+  display: block; position: static;
+  width: 100%; height: 100%; min-width: 0; min-height: 0;
+  max-width: 100%; max-height: 100%;
+  margin: 0; padding: 0; border: 0;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+.ink-mask[data-ornat-render-pair] > .ink-mask-img.sub.ink-filter,
+.ink-mask[data-ornat-render-pair] > .ink-mask-img.sub svg.layer,
+.ink-mask[data-ornat-render-pair] > .ink-mask-img.sub svg image {
+  filter: none !important;
+  mix-blend-mode: normal;
+}
+/* The filter on the SVG mask path remains untouched. */
+img[data-art-transition="isometric-3d"] {
+  filter: grayscale(1) !important;
+  /* The flat plan leaves precisely where the stationary 3D model appears.
+     The model uses the same reveal edge as photographs, with no 3D rotation. */
+  clip-path: inset(var(--ornat-plan-reveal,0%) 0 0 0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ornat-render-layer { transition: none; animation: none; }
+}
+
+/* The interface finishes alongside the architecture in the same scroll stage. */
+[data-ornat-ui-stage] {
+  --ornat-ui-progress: 0;
+  --ornat-ui-ink: 0%;
+  color: #48443c;
+  background-color: #f6f3ea;
+}
+[data-ornat-ui-stage] .line {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+[data-ornat-ui-stage] .line::before,
+[data-ornat-ui-stage] .line::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+}
+[data-ornat-ui-stage] .line::before { opacity: 1 !important; }
+[data-ornat-ui-stage] .line.line-horizital::before { background: url("https://ornat-ux.vercel.app/assets/ornat-pencil-line-h.svg") repeat-x; background-size: 520px 2px; }
+[data-ornat-ui-stage] .line.line-vertical::before { background: url("https://ornat-ux.vercel.app/assets/ornat-pencil-line-v.svg") repeat-y; background-size: 2px 520px; }
+[data-ornat-ui-stage] .line::after { display: none !important; }
+[data-ornat-ui-stage] .line.line-horizital::after { height: 1px; }
+[data-ornat-ui-stage] .line.line-vertical::after { width: 1px; }
+[data-ornat-ui-clean] .txt-font-mono { font-family: Geistmono,monospace !important; }
+[data-ornat-ui-stage] .bg-global {
+  background-color: #f6f3ea;
+}

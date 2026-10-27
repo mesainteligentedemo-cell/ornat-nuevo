@@ -1,0 +1,32 @@
+/* Pencil treatment for interface symbols; animation geometry stays untouched. */
+:root { --color--accent:var(--content--brand,#3b3933); }
+.home-hero-img-plus-box { border-color:var(--content--brand,#3b3933) !important; }
+.home-hero-img-plus,.home-hero-img-deco-ic,.home-hero-img-interact-wrap,
+.header-menu-btn,.header-ham,.cursor-drag { color:var(--content--brand,#3b3933); }
+svg [stroke='#F15534'],svg [stroke='#f15534'],svg [stroke='#fa3600'],svg [stroke='#FA3600'],
+svg [stroke='#f34c1d'],svg [stroke='#F34C1D'] { stroke:var(--content--brand,#3b3933) !important; }
+svg [fill='#F15534'],svg [fill='#f15534'],svg [fill='#fa3600'],svg [fill='#FA3600'],
+svg [fill='#f34c1d'],svg [fill='#F34C1D'] { fill:var(--content--brand,#3b3933) !important; }
+.header-logo svg path,.footer-logo svg path {
+  fill:none !important;
+  stroke:var(--content--brand,#3b3933) !important;
+  stroke-width:.95;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  vector-effect:non-scaling-stroke;
+}
+.header-logo svg path:nth-of-type(2n),.footer-logo svg path:nth-of-type(2n) { stroke-opacity:.68; }
+.header-logo svg path:nth-of-type(3n),.footer-logo svg path:nth-of-type(3n) { stroke-opacity:.48; }
+svg[data-pencil-symbol] { filter:url('#ornat-pencil-symbol-grain'); }
+svg[data-pencil-symbol] path,svg[data-pencil-symbol] line,
+svg[data-pencil-symbol] polyline,svg[data-pencil-symbol] polygon {
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.header-menu-btn:focus-visible,.header-logo a:focus-visible,.footer-logo a:focus-visible {
+  outline:1px dashed var(--content--brand,#3b3933);
+  outline-offset:5px;
+}
+@media (prefers-reduced-motion:reduce) {
+  svg[data-pencil-symbol] { filter:none; }
+}

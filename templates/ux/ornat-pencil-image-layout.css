@@ -1,0 +1,127 @@
+/* Image geometry only: keep the site's masks, timeline and transforms intact. */
+:root { --ornat-pencil-paper: #f6f4ee; }
+
+/* Both reveal layers occupy the same rectangle. The SVG <image> uses its
+   native xMidYMid meet; the base image follows that same contain geometry. */
+.ink-mask { isolation: isolate; }
+.ink-mask > .ink-mask-img { min-width: 0; min-height: 0; }
+.ink-mask > .ink-mask-img.main > img.img-basic,
+.ink-mask > .ink-mask-img.sub > svg.layer {
+  width: 100%; height: 100%; min-width: 0; min-height: 0;
+  max-width: 100%; max-height: 100%; inset: 0;
+}
+.ink-mask > .ink-mask-img.main > img.img-basic {
+  object-fit: contain; object-position: 50% 50%;
+  mix-blend-mode: normal;
+}
+.ink-mask > .ink-mask-img.sub > svg.layer { display: block; }
+
+/* Pencil sheets must retain the entire architecture, including margins. */
+.home-usecase-img-list { isolation: isolate; }
+.home-usecase-img-item {
+  background-color: var(--ornat-pencil-paper);
+  mix-blend-mode: normal;
+}
+.home-usecase-img-item > img.img-basic.img-abs.img-cover {
+  object-fit: contain; object-position: 50% 50%;
+  min-width: 0; min-height: 0; width: 100%; height: 100%;
+  max-width: 100%; max-height: 100%; mix-blend-mode: normal;
+}
+/* Some exported pages begin with every gallery item marked active.
+   Allow one opaque sheet while the original script selects its active item. */
+.home-usecase-img-item:not(.active) { visibility: hidden; }
+.home-usecase-img-item.active:has(~ .home-usecase-img-item.active) {
+  visibility: hidden;
+}
+
+/* Paper belongs to the animated inner itself, so its original opacity and
+   movement still govern the complete sheet rather than a floating drawing. */
+.home-map-main-inner { isolation: isolate; }
+.home-map-main-img-inner {
+  background-color: var(--ornat-pencil-paper);
+  isolation: isolate;
+}
+.home-map-main-img-inner > img.img-basic {
+  object-fit: contain; object-position: 50% 50%;
+  width: 100%; height: 100%; min-width: 0; min-height: 0;
+  max-width: 100%; max-height: 100%; mix-blend-mode: normal;
+}
+.home-map-main-img[data-ornat-layer-suppressed] {
+  visibility: hidden;
+}
+
+/* Transparent drawings cannot be composited as separate buildings. Keep the
+   original introduction timeline, but show only its dominant visual sheet. */
+.about-hero-list { isolation: isolate; }
+.about-hero-item { background-color: var(--ornat-pencil-paper); }
+.about-hero-item > img { object-fit: contain; object-position: center; }
+.about-hero-item[data-ornat-layer-suppressed] { visibility: hidden !important; }
+.about-hero-item-inner .embed-ic { aspect-ratio: 1; max-width: 100%; }
+
+/* One map sheet remains visible even after the original fade-out. */
+.home-map-main-img[data-ornat-map-sheet],
+.home-map-main-img[data-ornat-map-sheet] .home-map-main-img-inner {
+  opacity:1 !important;
+  visibility:visible !important;
+}
+.home-map-main-img[data-ornat-map-sheet] .home-map-main-img-inner {
+  transform:none !important;
+}
+/* Small collaged drawings now occupy their own rows instead of covering the
+   main architectural view. Each keeps its own distinct pencil/render pair. */
+.home-why-item-img:not(:has(.home-why-item-img-main)) {
+  display:flex !important;
+  flex-direction:column;
+  gap:20px;
+  padding-top:0 !important;
+  height:auto !important;
+}
+.home-why-item-img:not(:has(.home-why-item-img-main)) > .home-why-item-img-inner {
+  position:relative !important;
+  inset:auto !important;
+  flex:none;
+  transform:none !important;
+}
+.home-why-item-img:not(:has(.home-why-item-img-main)) .home-why-item-img-box {
+  position:relative !important;
+  inset:auto !important;
+  transform:none !important;
+  width:100% !important;
+  max-width:100%;
+}
+.home-why-item-img:not(:has(.home-why-item-img-main)) .home-why-item-img-box-content {
+  transform:none !important;
+}
+/* The selected plan and its isometric reveal share one stationary viewport;
+   other plans and the decorative facade cannot appear behind it. */
+.home-why-item-img:has(.home-why-item-img-main) > .home-why-item-img-inner,
+.home-why-item-img:has(.home-why-item-img-main) > .home-why-item-img-box {
+  display:none !important;
+}
+.home-why-item-img-child:not(.active) { display:none !important; visibility:hidden !important; }
+.home-why-item-img-child.active {
+  visibility:visible !important;
+  transform:none !important;
+  opacity:1 !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+}
+.home-why-item-img-child.active .home-why-item-img-child-inner {
+  transform:none !important;
+}
+
+/* Handwritten headings need their actual height rather than the original
+   typeface's fixed viewport allocation. Keep following modules in flow. */
+.home-hero,.home-hero > .container.full-h,.home-hero-inner {
+  height:auto !important;
+}
+.home-hero-inner { display:flex !important; flex-direction:column; }
+.home-hero-img-wrap { height:clamp(340px,68vh,760px) !important; flex:none; }
+.home-hero-content,.home-hero-title-wrap,.home-hero-sub {
+  height:auto !important;
+  min-height:min-content;
+}
+.home-hero-title-wrap { padding-bottom:24px; }
+.home-hero-title-wrap .heading { height:auto !important; }
+.home-intro-wrap { position:relative; clear:both; }

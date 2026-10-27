@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORNAT UX | Diseño visual y software con IA para arquitectura e inmobiliarias</title>
+<meta name="description" content="ORNAT transforma tus ideas en experiencias visuales, sitios web y herramientas de inteligencia artificial. Trabajamos con arquitectos, desarrolladores y brokers, desde el bosquejo hasta la operación.">
+<meta name="theme-color" content="#212123">
+<meta property="og:title" content="ORNAT UX | Diseño visual y software con IA para arquitectura e inmobiliarias">
+<meta property="og:description" content="Diseño visual, sitios web y agentes de IA para arquitectos, desarrolladores y brokers en la Riviera Maya.">
+<meta property="og:image" content="img/tower-render.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23212123'/%3E%3Ctext x='6' y='23' font-family='Arial' font-weight='700' font-size='18' fill='%23fff'%3EO%3C/text%3E%3Ccircle cx='25' cy='21' r='3' fill='%23FF660F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Unbounded:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="https://ornat-empire.vercel.app/img/tower-sketch.webp">
+<link rel="stylesheet" href="/templates/empire/styles.css">
+</head>
+<body class="is-loading">
+
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__word"><span>O</span><span>R</span><span>N</span><span>A</span><span>T</span><i class="dot"></i></div>
+  <div class="loader__bottom">
+    <div class="loader__row"><span class="loader__pct" id="loaderPct">0%</span><span class="loader__tag">Diseño visual y software con IA</span></div>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+  </div>
+</div>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<!-- HEADER -->
+<header class="nav" id="nav">
+  <div class="nav__left">
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    <a href="#inicio" class="logo" data-go>ORNAT<span>.</span></a>
+  </div>
+  <div class="nav__right">
+    <a class="btn btn--line" href="#modulos" data-go><span>Ver módulos</span><i class="arr" aria-hidden="true"></i></a>
+    <a class="btn btn--dark" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener"><span>Solicitar demo</span><i class="arr" aria-hidden="true"></i></a>
+  </div>
+</header>
+
+<!-- MENU -->
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu__inner">
+    <div class="menu__meta">
+      <p>Fundado en 2026<br><b>Riviera Maya, México</b></p>
+      <p class="menu__social">Facebook · Instagram · X · TikTok · LinkedIn · Threads · Pinterest</p>
+    </div>
+    <nav class="menu__links" aria-label="Menú principal">
+      <a href="#servicios" data-go>Servicios</a>
+      <a href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener" class="is-accent">Solicitar demo</a>
+      <a href="#valores" data-go>Método</a>
+      <a href="#modulos" data-go>Módulos</a>
+      <a href="#para-quien" data-go>Para quién</a>
+    </nav>
+    <p class="menu__brand" aria-hidden="true">ORNAT<span>.</span></p>
+  </div>
+</div>
+
+<!-- page transition curtain -->
+<div class="curtain" id="curtain" aria-hidden="true"></div>
+
+<a class="float-cta" href="#modulos" data-go>Ver módulos <i class="arr" aria-hidden="true"></i></a>
+
+<main id="main">
+
+<!-- HERO / 3D TOWER -->
+<section class="hero" id="inicio" data-nav="light">
+  <div class="hero__stage">
+    <div class="hero__big" aria-hidden="true">
+      <div><span>Del plano</span></div>
+      <div><span>a la</span></div>
+      <div><span>experiencia</span></div>
+    </div>
+    <canvas class="hero__canvas" id="towerCanvas" aria-hidden="true"></canvas>
+    <img class="hero__fallback" src="https://ornat-empire.vercel.app/img/tower-render.webp" alt="Render de una torre residencial frente al mar en la Riviera Maya" width="1024" height="1536">
+  </div>
+  <div class="hero__copy">
+    <h5 class="ta">ORNAT UX:</h5>
+    <h1 class="ta">Diseño visual y software con IA para arquitectura e inmobiliarias</h1>
+    <p class="ta">ORNAT transforma tus ideas en experiencias visuales, sitios web y herramientas de inteligencia artificial. Trabajamos con arquitectos, desarrolladores y brokers, desde el bosquejo hasta la operación.</p>
+  </div>
+</section>
+
+<!-- DISCOVER / AUDIENCES -->
+<section class="brands" id="para-quien" data-nav="dark">
+  <img class="brands__ghost" src="https://ornat-empire.vercel.app/img/tower-sketch.webp" alt="" aria-hidden="true">
+  <div class="brands__head">
+    <p class="ta">Explora cómo conectamos diseño visual,<br>software e inteligencia artificial</p>
+    <h2 class="ta">Hecho para quienes diseñan<br><span>y comercializan espacios</span></h2>
+  </div>
+  <ul class="tiles">
+    <li class="tile"><b>Arquitectos</b><span>Explica tus proyectos con planos, renders y experiencias visuales que acompañen tu presentación.</span></li>
+    <li class="tile"><b>Diseño interior</b><span>Presenta ambientes, materiales y acabados con visualizaciones que expliquen cada decisión de diseño.</span></li>
+    <li class="tile"><b>Arquitectos paisajistas</b><span>Muestra jardines y espacios exteriores mediante renders, videos y recorridos que comuniquen tu propuesta.</span></li>
+    <li class="tile"><b>Constructoras</b><span>Documenta avances con dron y videos apoyados por IA para comunicar el desarrollo del proyecto.</span></li>
+    <li class="tile"><b>Desarrolladores inmobiliarios</b><span>Presenta preventas con sitios web, renders, videos hiperrealistas y experiencias de realidad aumentada o mixta.</span></li>
+    <li class="tile"><b>Brokers</b><span>Atiende consultas con agentes inteligentes y comparte contenido visual que explique las propiedades de tu cartera.</span></li>
+    <li class="tile"><b>Inmobiliarias</b><span>Conecta presentación, atención, capacitación y análisis en tu operación inmobiliaria.</span></li>
+    <li class="tile"><b>Despachos de diseño</b><span>Integra visualización, contenido y herramientas digitales según las necesidades de tu despacho.</span></li>
+  </ul>
+</section>
+
+<!-- CORE (white clouds) -->
+<section class="core" id="servicios" data-nav="light">
+  <div class="clouds clouds--top" aria-hidden="true"></div>
+  <div class="core__inner">
+    <p class="eyebrow ta">Contigo en cada etapa</p>
+    <h2 class="ta">Del bosquejo<br>a tu operación</h2>
+    <a class="btn btn--dark btn--wide" href="#valores" data-go><span>Conoce más</span><i class="arr" aria-hidden="true"></i></a>
+  </div>
+  <div class="clouds" aria-hidden="true"></div>
+</section>
+
+<!-- MODULES horizontal slider -->
+<section class="floors" id="modulos" data-nav="dark">
+  <h2 class="floors__title">Explora cada módulo</h2>
+  <div class="floors__track" id="track">
+    <article class="card">
+      <img src="https://ornat-empire.vercel.app/img/m-web-ia.webp" alt="Maqueta de vivienda junto a pantallas con un sitio web inmobiliario" loading="lazy" width="1400" height="788">
+      <h3 class="card__label">Web IA</h3><p class="card__cap">Un sitio para presentar tu proyecto.</p><span class="card__num">1 \ 9</span>
+    </article>
+    <article class="card">
+      <img src="https://ornat-empire.vercel.app/img/m-render-ia.webp" alt="Maqueta de desarrollo frente al mar con renders en una laptop" loading="lazy" width="1400" height="933">
+      <h3 class="card__label">Render IA</h3><p class="card__cap">Visualiza espacios.</p><span class="card__num">2 \ 9</span>
+    </article>
+    <article class="card">
+      <img src="https://ornat-empire.vercel.app/img/m-plano-render.webp" alt="Maqueta seccionada de un interior junto a un monitor con gráficas" loading="lazy" width="1400" height="933">
+      <h3 class="card__label">Del plano al render</h3><p class="card__cap">Convertimos tus planos o bosquejos en entregables visuales.</p><span class="card__num">3 \ 9</span>
+    </article>
+    <article class="card">
+      <img src="/img/gpt-maroma-v1/empire-exclusive-m-recorrido-1536.webp?v=maroma-empire-exclusive-m-recorrido-b218a5d590ca" alt="Visualización conceptual en Maroma: fotografía de recorrido virtual para este proyecto" loading="lazy" width="1536" height="1024" srcset="/img/gpt-maroma-v1/empire-exclusive-m-recorrido-480.webp?v=maroma-empire-exclusive-m-recorrido-b218a5d590ca 480w, /img/gpt-maroma-v1/empire-exclusive-m-recorrido-960.webp?v=maroma-empire-exclusive-m-recorrido-b218a5d590ca 960w, /img/gpt-maroma-v1/empire-exclusive-m-recorrido-1536.webp?v=maroma-empire-exclusive-m-recorrido-b218a5d590ca 1536w" sizes="(max-width: 900px) 100vw, 70vw">
+      <h3 class="card__label">Recorrido virtual</h3><p class="card__cap">Recorridos con presentadores virtuales para explicar tus proyectos.</p><span class="card__num">4 \ 9</span>
+    </article>
+    <article class="card">
+      <img src="https://ornat-empire.vercel.app/img/m-agentes.webp" alt="Teléfono con conversación de un agente y monitor con propiedades" loading="lazy" width="1400" height="788">
+      <h3 class="card__label">Agente comercial</h3><p class="card__cap">Consultas con seguimiento.</p><span class="card__num">5 \ 9</span>
+    </article>
+    <article class="card">
+      <img src="/img/gpt-maroma-v1/empire-exclusive-m-social-1536.webp?v=maroma-empire-exclusive-m-social-1ed4fe74e052" alt="Visualización conceptual en Maroma: fotografía de contenido social para este proyecto" loading="lazy" width="1536" height="1024" srcset="/img/gpt-maroma-v1/empire-exclusive-m-social-480.webp?v=maroma-empire-exclusive-m-social-1ed4fe74e052 480w, /img/gpt-maroma-v1/empire-exclusive-m-social-960.webp?v=maroma-empire-exclusive-m-social-1ed4fe74e052 960w, /img/gpt-maroma-v1/empire-exclusive-m-social-1536.webp?v=maroma-empire-exclusive-m-social-1ed4fe74e052 1536w" sizes="(max-width: 900px) 100vw, 70vw">
+      <h3 class="card__label">Contenido social</h3><p class="card__cap">Videos impactantes y publicaciones automatizadas para tu comunidad.</p><span class="card__num">6 \ 9</span>
+    </article>
+    <article class="card">
+      <img src="/img/gpt-unique-v4/empire-exclusive-m-capacitacion-1536.webp" alt="Fotografía de capacitación para este proyecto" loading="lazy" width="1536" height="1024" srcset="/img/gpt-unique-v4/empire-exclusive-m-capacitacion-480.webp 480w, /img/gpt-unique-v4/empire-exclusive-m-capacitacion-960.webp 960w, /img/gpt-unique-v4/empire-exclusive-m-capacitacion-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 70vw">
+      <h3 class="card__label">Capacitación</h3><p class="card__cap">Capacitación con audio, módulos y exámenes.</p><span class="card__num">7 \ 9</span>
+    </article>
+    <article class="card">
+      <img src="https://ornat-empire.vercel.app/img/m-analisis.webp" alt="Pantallas con gráficas de análisis junto a una maqueta" loading="lazy" width="1400" height="933">
+      <h3 class="card__label">Análisis empresarial</h3><p class="card__cap">Análisis empresarial para apoyar tus decisiones.</p><span class="card__num">8 \ 9</span>
+    </article>
+    <article class="card card--cta">
+      <div class="card--cta__bg" aria-hidden="true"></div>
+      <div class="card--cta__body">
+        <h3>Descubre los módulos que necesita tu empresa</h3>
+        <p>Solicita una demo y conoce cómo combinar diseño visual, plataforma web y agentes para tu empresa.</p>
+        <a class="btn btn--white btn--wide" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener"><span>Solicitar demo</span><i class="arr" aria-hidden="true"></i></a>
+      </div>
+      <span class="card__num">9 \ 9</span>
+    </article>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values" id="valores" data-nav="dark">
+  <div class="values__hero">
+    <div class="values__facade" aria-hidden="true"></div>
+    <h2 class="upper ta">Diseñado para tu proyecto y tu equipo</h2>
+  </div>
+
+  <div class="vrow vrow--a">
+    <div class="vcard vcard--title"><h3 class="upper">Plataforma y diseño</h3></div>
+    <figure class="vimg"><img src="https://ornat-empire.vercel.app/img/m-plataforma.webp" alt="Monitor y teléfono con una plataforma inmobiliaria junto a una maqueta con alberca" loading="lazy" width="1400" height="788"></figure>
+    <div class="vcard vcard--text">
+      <h4>[01] Presenta tu proyecto</h4>
+      <p>Presenta tu proyecto con un sitio llamativo, planos, renders y videos. Suma presentadores de IA, realidad aumentada, realidad mixta y producción con dron.</p>
+      <p>Tu software incluye un sitio web llamativo. Complementa tu plataforma con planos, renders, videos y experiencias inmersivas para tus desarrollos.</p>
+    </div>
+  </div>
+
+  <div class="vrow vrow--b">
+    <h3 class="upper vrow__title ta">Agentes inteligentes</h3>
+    <figure class="vimg"><img src="/img/gpt-unique-v4/empire-real-abs-a1-1254.webp" alt="Atención comercial inmobiliaria con información de la propiedad" loading="lazy" width="1254" height="1254" srcset="/img/gpt-unique-v4/empire-real-abs-a1-480.webp 480w, /img/gpt-unique-v4/empire-real-abs-a1-960.webp 960w, /img/gpt-unique-v4/empire-real-abs-a1-1254.webp 1254w" sizes="(max-width: 900px) 100vw, 70vw"></figure>
+    <div class="vcard vcard--text">
+      <h4>[02] Atiende, capacita y analiza</h4>
+      <p>Atiende prospectos con agentes de IA y automatiza contenido. Capacita mediante voz, módulos y exámenes. Analiza tus departamentos para apoyar decisiones con información de tu operación.</p>
+      <p>Un agente con IA responde de forma natural usando información de tu empresa. Configuramos los canales disponibles y el seguimiento junto con tu equipo.</p>
+    </div>
+  </div>
+
+  <div class="vrow vrow--c">
+    <div class="vcard vcard--title"><h3 class="upper">Del plano al render</h3></div>
+    <div class="wipe" id="wipe" role="img" aria-label="Bosquejo a lápiz de una residencia que se transforma en render a color">
+      <img class="wipe__render" src="/img/gpt-unique-v4/empire-final-wipe-render-1254.webp" alt="Residencia blanca con jardín y espejo de agua" loading="lazy" width="1254" height="1254" srcset="/img/gpt-unique-v4/empire-final-wipe-render-480.webp 480w, /img/gpt-unique-v4/empire-final-wipe-render-960.webp 960w, /img/gpt-unique-v4/empire-final-wipe-render-1254.webp 1254w" sizes="(max-width: 900px) 100vw, 70vw">
+      <div class="wipe__sketch"><img src="/img/gpt-unique-v4/empire-final-wipe-sketch-1254.webp" alt="Bosquejo arquitectónico alineado con el render de la misma residencia" loading="lazy" width="1254" height="1254" srcset="/img/gpt-unique-v4/empire-final-wipe-sketch-480.webp 480w, /img/gpt-unique-v4/empire-final-wipe-sketch-960.webp 960w, /img/gpt-unique-v4/empire-final-wipe-sketch-1254.webp 1254w" sizes="(max-width: 900px) 100vw, 70vw"></div>
+      <i class="wipe__line" aria-hidden="true"></i>
+    </div>
+    <div class="vcard vcard--text">
+      <h4>Diseño visual</h4>
+      <p>Convertimos tus planos o bosquejos en entregables visuales para explicar distribución, materiales y espacios. Definimos contigo el alcance de cada proyecto.</p>
+      <p>Partimos de un plano o bosquejo para desarrollar planos, renders y videos hiperrealistas que ayuden a presentar espacios y explicar tu proyecto.</p>
+    </div>
+  </div>
+
+  <div class="bv">
+    <h3 class="bv__title ta">Tu proyecto necesita una experiencia que lo explique</h3>
+    <div class="bv__grid bv__grid--2">
+      <div class="bv__box is-hot"><i class="ico" aria-hidden="true"></i><small>Estático [01]</small><h4>Cada consulta necesita una respuesta</h4><p>Un agente responde consultas sobre espacios, condiciones y disponibilidad con información validada por tu equipo.</p></div>
+      <div class="bv__box"><i class="ico" aria-hidden="true"></i><small>Fragmentado [02]</small><h4>Tus planos necesitan convertirse en experiencias</h4><p>Partimos de un plano o bosquejo para desarrollar planos, renders y videos hiperrealistas que ayuden a presentar espacios y explicar tu proyecto.</p></div>
+      <div class="bv__box"><i class="ico" aria-hidden="true"></i><small>Invisible [03]</small><h4>Tu equipo necesita aprender y decidir</h4><p>La capacitación con voz, módulos y exámenes, junto con el análisis de tus áreas, conecta conocimiento y decisiones dentro de tu empresa.</p></div>
+      <div class="bv__box"><i class="ico" aria-hidden="true"></i><small>Lento [04]</small><h4>Tus redes necesitan contenido con un propósito</h4><p>Videos impactantes, recorridos con presentadores virtuales y publicaciones automatizadas permiten explicar tus proyectos y mantener una comunicación consistente con tu comunidad.</p></div>
+    </div>
+    <p class="bv__note">Presentar espacios, responder consultas y organizar información exige herramientas conectadas. Diseñamos experiencias para que arquitectos, desarrolladores y brokers expliquen sus proyectos y acompañen a sus clientes.</p>
+  </div>
+
+  <div class="vrow vrow--b">
+    <h3 class="upper vrow__title ta">Tu proyecto. Tu equipo. Conectados.</h3>
+    <figure class="vimg"><img src="/img/gpt-unique-v4/empire-real-abs-a2-1254.webp" alt="Equipo de arquitectura coordinando los entregables del proyecto" loading="lazy" width="1254" height="1254" srcset="/img/gpt-unique-v4/empire-real-abs-a2-480.webp 480w, /img/gpt-unique-v4/empire-real-abs-a2-960.webp 960w, /img/gpt-unique-v4/empire-real-abs-a2-1254.webp 1254w" sizes="(max-width: 900px) 100vw, 70vw"></figure>
+    <div class="vcard vcard--text">
+      <h4>Presenta, conversa, capacita y toma decisiones</h4>
+      <p>Elegimos contigo los módulos que necesitas. Definimos información, materiales, canales y entregables para que el diseño visual y la tecnología acompañen el trabajo de tu empresa.</p>
+      <ul class="ticks"><li>Sitio web y experiencia personalizada.</li><li>Agentes de atención y redes automatizadas.</li><li>Capacitación con audio, módulos y exámenes.</li><li>Análisis empresarial para apoyar tus decisiones.</li></ul>
+    </div>
+  </div>
+
+  <div class="bv">
+    <h3 class="bv__title ta">Método</h3>
+    <div class="bv__grid bv__grid--4">
+      <div class="bv__box is-hot"><i class="ico" aria-hidden="true"></i><h4>Entender</h4><p>Definimos el proyecto y las necesidades de tu equipo</p></div>
+      <div class="bv__box"><i class="ico" aria-hidden="true"></i><h4>Diseñar</h4><p>Convertimos planos e ideas en experiencias visuales y digitales</p></div>
+      <div class="bv__box"><i class="ico" aria-hidden="true"></i><h4>Conectar</h4><p>Configuramos el sitio, los agentes y los módulos que necesitas</p></div>
+      <div class="bv__box"><i class="ico" aria-hidden="true"></i><h4>Acompañar</h4><p>Ajustamos contenidos y herramientas al crecimiento de tu operación</p></div>
+    </div>
+    <ol class="steps">
+      <li><span>001</span>Definir proyecto visual</li>
+      <li><span>002</span>Cargar planos originales</li>
+      <li><span>003</span>Generar renders hiperrealistas</li>
+      <li><span>004</span>Crear recorrido virtual</li>
+      <li><span>005</span>Configurar experiencia web</li>
+      <li><span>006</span>Conectar agentes inteligentes</li>
+      <li><span>007</span>Preparar contenido social</li>
+      <li><span>008</span>Activar capacitación interactiva</li>
+      <li><span>009</span>Analizar tu operación</li>
+      <li><span>010</span>Aprobar la implementación</li>
+    </ol>
+    <p class="bv__note">Cada módulo tiene un alcance acordado y una experiencia pensada para tu equipo.</p>
+  </div>
+
+  <div class="ready" id="ready">
+    <h2 class="ready__text upper"><span id="readyText">Descubre los módulos que necesita tu empresa</span></h2>
+    <a class="ready__circle" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener"><span>Solicitar demo</span><i class="arr" aria-hidden="true"></i></a>
+  </div>
+</section>
+
+<!-- DESIGN (sky clouds) -->
+<section class="design" id="contacto" data-nav="light">
+  <div class="design__inner">
+    <p class="lockup">ORNAT <span>&amp;</span> UX</p>
+    <h2 class="ta">Tu proyecto.<br>Tu equipo.<br>Conectados.</h2>
+    <a class="btn btn--orange" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener"><span>Solicitar demo</span><i class="arr arr--r" aria-hidden="true"></i></a>
+  </div>
+  <div class="clouds" aria-hidden="true"></div>
+</section>
+</main>
+
+<footer class="foot" data-nav="light">
+  <p class="foot__brand" aria-label="ORNAT">ORNAT<span>.</span></p>
+  <nav class="foot__links" aria-label="Pie de página">
+    <a href="#servicios" data-go>Servicios</a>
+    <a href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener" class="is-accent">Solicitar demo</a>
+    <a href="#valores" data-go>Método</a>
+    <a href="#modulos" data-go>Módulos</a>
+  </nav>
+  <div class="foot__meta">
+    <p>Fundado en 2026<br><b>Playa del Carmen, Cancún, Tulum<br>Riviera Maya, México</b></p>
+    <p><a href="tel:+529842353159">984 235 3159</a></p>
+    <p class="foot__social">Facebook · Instagram · X · TikTok · LinkedIn · Threads · Pinterest</p>
+    <p class="foot__copy">©2026 ORNAT UX. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="/templates/empire/main.js"></script>
+<script src="/cms/bridge.js"></script></body>
+</html>

@@ -1,0 +1,4 @@
+.home-why img {
+  /* Width and height attributes reserve the native ratio while images load. */
+  height: auto;
+}

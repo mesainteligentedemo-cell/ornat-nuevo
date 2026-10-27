@@ -1,0 +1,8 @@
+/* Preserve original image sizing, filters, masks, and scroll timelines. */
+@media (prefers-reduced-motion:reduce) {
+  .loading-img svg image { mask:none; }
+}
+
+/* Both ink-mask layers share the same artwork and fitting geometry. */
+.home-platform-img-item[data-pencil-aligned] .ink-mask-img.main img { object-fit:contain; object-position:50% 50%; }
+.home-platform-img-item[data-pencil-aligned] .ink-mask-img.sub svg { width:100%; height:100%; }

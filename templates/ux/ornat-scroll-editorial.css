@@ -1,0 +1,35 @@
+/* Continuous editorial motion. Typography, assets and module content stay intact. */
+:root { --ornat-scroll-paper:#f6f3ea; --ornat-scroll-header:84px; }
+.main-inner { overscroll-behavior-y:contain; scroll-padding-top:var(--ornat-scroll-header); }
+.main-content.ornat-editorial-flow > .web-component {
+  display:block;
+  position:relative; z-index:2; background:var(--ornat-scroll-paper);
+  isolation:isolate;
+}
+.main-content.ornat-editorial-flow > .ornat-editorial-opening {
+  position:sticky; top:var(--ornat-opening-top,0px); z-index:1;
+}
+.ornat-editorial-flow .ornat-editorial-art {
+  translate:0 var(--ornat-art-y,0px);
+  opacity:var(--ornat-art-opacity,1) !important;
+  transition:none !important; object-fit:contain !important;
+  object-position:center !important; rotate:none !important;
+  scale:1 !important; transform:none !important;
+}
+/* Reserve space below the fixed navigation and the horizontal feature selector. */
+.ornat-editorial-flow .product-key-main { scroll-margin-top:calc(var(--ornat-scroll-header) + 32px); }
+.ornat-editorial-flow .product-key-tab-list { z-index:4; background:var(--ornat-scroll-paper); }
+.ornat-editorial-flow .product-key-main-title-wrap { overflow:visible; }
+@media (max-width:991px) {
+  :root { --ornat-scroll-header:76px; }
+}
+@media (max-width:767px) {
+  .main-content.ornat-editorial-flow > .ornat-editorial-opening {
+    position:relative; top:auto;
+  }
+  .ornat-editorial-flow .ornat-editorial-art { translate:0 var(--ornat-art-y,0px); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .main-content.ornat-editorial-flow > .ornat-editorial-opening { position:relative; top:auto; }
+  .ornat-editorial-flow .ornat-editorial-art { translate:none !important; opacity:1 !important; }
+}

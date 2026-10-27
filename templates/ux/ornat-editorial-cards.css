@@ -1,0 +1,72 @@
+/* A new composition: floating paper panels rather than a ruled spreadsheet. */
+html body *,html body *::before,html body *::after {
+ border-image:none !important; border-color:transparent !important;
+}
+html body .line.line { display:none !important; }
+html body [class*="ruler"],html body .home-hero-curor-line,
+html body .footer-content-item-line,html body .product-key-main-title-line { visibility:hidden !important; }
+html body .body-inner { padding:1.2rem; }
+html body .header { background:#f6f3ea; }
+html body :is(.header-menu-item,.header-cta-new,.header-cta) { border:0 !important; }
+html body .header-menu-item { border-radius:1.2rem; }
+html body .header-menu-item:hover { background-color:#e8ecdf; }
+html body .footer-info-wrap { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:2rem; padding:2rem; }
+html body .footer-info-item {
+ background-color:rgba(255,255,255,.55); border-radius:1.8rem .4rem 1.8rem .4rem;
+ box-shadow:0 8px 24px rgba(54,53,42,.035); padding:2.4rem !important;
+}
+html body .footer-info-item.item2 { background-color:#e9eddf; border-radius:.4rem 1.8rem .4rem 1.8rem; }
+html body .footer-info-item.item3 { background-color:#eeebe2; border-radius:1.8rem; }
+html body .footer-info-item-label { margin-bottom:1.4rem; color:#606752; }
+html body .footer-info-item-inner.item2 { margin-top:2rem; }
+html body .footer-info-item-title-wrap { gap:1.2rem 2rem; }
+html body :is(.product-faq-item,.home-usecase-faq-item,.policy-hero-table-item,.tp-resource-hero-table-item) {
+ margin-bottom:1.2rem; border-radius:1.2rem; background-color:rgba(255,255,255,.55);
+ box-shadow:inset 3px 0 #b7c0a6;
+}
+html body :is(.product-faq-item-head,.home-usecase-faq-item-head) { padding-left:1.6rem; padding-right:1.6rem; }
+html body :is(.home-problem-item,.pricing-hero-package,.resource-hero-item) { border-radius:1.4rem; background-color:rgba(255,255,255,.48); }
+html body :is(.home-hero-content,.product-hero-content,.home-intro-content) { background:transparent; }
+html body :is(button,a:has(> .btn-fill),a:has(> .btn-bg),a.btn-fill-hover,a.btn-bg-hover,a.home-hero-btn,a.home-intro-btn,a.home-platform-content-btn-wrap) {
+ border:0 !important; border-radius:1.4rem !important;
+ background-color:#e7ecde; box-shadow:none !important;
+ overflow:hidden;
+}
+html body :is(button,a:has(> .btn-fill),a:has(> .btn-bg),a.btn-fill-hover,a.btn-bg-hover,a.home-hero-btn,a.home-intro-btn,a.home-platform-content-btn-wrap):hover { background-color:#d8e0ce; }
+html body :is(.header-menu-item,.header-menu-btn) { background-color:transparent; border-radius:1.2rem !important; }
+html body .btn-fill-bg { display:none !important; }
+html body .cta-main-item-btn-inner { background-color:#344538 !important; border-radius:100px !important; }
+html body .cta-main-item-btn-inner:hover { background-color:#435a46 !important; }
+html body .btn-fill-icon { border-radius:50%; background-color:rgba(113,132,98,.12); }
+html body :is(button,a):focus-visible { outline:2px solid #6a7a58; outline-offset:4px; }
+html body .header-menu-btn-ic-line { background:#4f5949 !important; border-radius:3px; }
+html body .home-hero-img-plus-line { border-radius:50%; }
+@media(max-width:991px) {
+ html body .footer-info-wrap { grid-template-columns:1fr; gap:1.2rem; padding:1.2rem; }
+}
+@media(max-width:767px) {
+ html body .body-inner { padding:.8rem; }
+ html body .footer-info-item { padding:2rem !important; }
+}
+
+html body :is(.footer-info-item,.product-faq-item,.home-usecase-faq-item,.pricing-hero-package,.resource-hero-item) {
+ background-image:url("https://ornat-ux.vercel.app/assets/ornat-panel-mark.svg"); background-repeat:no-repeat; background-position:right 8px top 8px; background-size:32px 32px;
+}
+html body .footer-info-item.item2 { background-position:right 8px bottom 8px; }
+/* Let the contact cards determine their height before the wordmark begins. */
+html body .footer-content-item.item-bot { height:auto !important; min-height:0; }
+html body .footer-info-wrap { grid-template-rows:auto; margin:0; align-items:stretch; }
+html body .footer-info-item { grid-row:auto !important; grid-column:auto !important; order:0; min-width:0; }
+html body .footer-info-item-inner { margin:0; padding:0; flex:none; }
+html body .footer-info-item-inner.item2 { padding:0; }
+html body .footer-info-item-title-wrap { margin-top:0; }
+html body .footer-info-item-title { overflow-wrap:anywhere; }
+/* Remove the original measuring frame: ticks and decorative corner crosses. */
+html body :is(.bg-border,.bg-border-item,.bg-border-plus,
+ .loading-ruler,.home-hero-ruler-item-wrap,.home-hero-img-plus,
+ .home-hero-img-plus-line,.home-problem-item-plus,
+ .resource-hero-item-img-plus,.resource-hero-item-img-plus-item,
+ .about-team-item-plus-item) {
+ display:none !important;
+ background-image:none !important;
+}

@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORNAT UX | Diseño visual y software con IA para arquitectura e inmobiliarias</title>
+<meta name="description" content="ORNAT transforma tus ideas en experiencias visuales, sitios web y herramientas de inteligencia artificial. Trabajamos con arquitectos, desarrolladores y brokers, desde el bosquejo hasta la operación.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/templates/ifi/styles.css">
+<link rel="preload" as="image" href="https://ornat-ifi.vercel.app/img/m1.webp">
+<link rel="icon" type="image/svg+xml" href="https://ornat-ifi.vercel.app/favicon.svg">
+</head>
+<body class="is-loading">
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__mark">ORNAT</div>
+  <div class="loader__meta"><span>Riviera Maya, México</span><span class="loader__pct" id="loaderPct">0%</span></div>
+  <div class="loader__bar"><i id="loaderBar"></i></div>
+</div>
+
+<header class="hdr" id="hdr">
+  <a class="hdr__left mono" href="tel:+529842353159">984 235 3159</a>
+  <a class="hdr__logo" href="#top" aria-label="ORNAT UX, inicio">ORNAT</a>
+  <button class="hdr__menu mono" id="menuOpen" aria-expanded="false" aria-controls="menu">Menú</button>
+</header>
+
+<nav class="menu" id="menu" aria-label="Menú principal" aria-hidden="true">
+  <div class="menu__scrim" data-close></div>
+  <div class="menu__panel">
+    <button class="menu__close mono" data-close>Cerrar</button>
+    <ol class="menu__list">
+      <li><a href="#modulos" data-close><span class="mono">01</span>Módulos</a></li>
+      <li><a href="#servicios" data-close><span class="mono">02</span>Servicios</a></li>
+      <li><a href="#para-quien" data-close><span class="mono">03</span>Para quién</a></li>
+      <li><a href="#metodo" data-close><span class="mono">04</span>Método</a></li>
+      <li><a href="#problemas" data-close><span class="mono">05</span>Problemas</a></li>
+      <li><a href="#contacto" data-close><span class="mono">06</span>Contacto</a></li>
+    </ol>
+    <div class="menu__foot mono">
+      <a class="pill pill--dark" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener">Solicitar demo</a>
+      <p>Playa del Carmen, Cancún, Tulum, Riviera Maya, México</p>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- HERO + INTRO (top-container) -->
+  <section class="hero" id="hero">
+    <div class="hero__sticky">
+      <canvas class="hero__whorl" id="heroWhorl" aria-hidden="true"></canvas>
+      <canvas class="hero__beam" id="beam" aria-hidden="true"></canvas>
+      <h1 class="hero__title">
+        <span class="line"><span>Diseño visual</span></span>
+        <span class="line"><em>y software con IA</em></span>
+        <span class="hero__sub mono">para arquitectura e inmobiliarias</span>
+      </h1>
+      <div class="hero__intro">
+        <p class="mono">ORNAT transforma tus ideas en experiencias visuales, sitios web y herramientas de inteligencia artificial. Trabajamos con arquitectos, desarrolladores y brokers, desde el bosquejo hasta la operación.</p>
+        <a class="pill" href="#metodo">Sobre ORNAT</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÓDULOS (projects slider) -->
+  <section class="mods" id="modulos" aria-labelledby="modsTitle">
+    <h2 class="display reveal-lines" id="modsTitle"><span>Nuestros</span><span>Módulos</span></h2>
+    <div class="mods__viewport" id="modsViewport">
+      <ul class="mods__track" id="modsTrack">
+        <li class="mod" data-cat="Plataforma y diseño" data-title="Web IA" data-text="Un sitio para presentar tu proyecto"><figure><img src="https://ornat-ifi.vercel.app/img/m1.webp" alt="Presentación visual de un sitio inmobiliario para una propiedad de lujo." draggable="false" loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-ifi.vercel.app/img/m1-480w.webp 480w, https://ornat-ifi.vercel.app/img/m1-800w.webp 800w, https://ornat-ifi.vercel.app/img/m1-1280w.webp 1280w, https://ornat-ifi.vercel.app/img/m1.webp 1536w" sizes="(max-width: 900px) 72vw, (min-width: 1676px) 620px, 37vw"></figure></li>
+        <li class="mod" data-cat="Plataforma y diseño" data-title="Render IA" data-text="Visualiza espacios."><figure><img src="https://ornat-ifi.vercel.app/img/m2.webp" alt="Render hiperrealista de una residencia contemporánea junto al Caribe." loading="lazy" draggable="false" width="1536" height="1024" decoding="async" srcset="https://ornat-ifi.vercel.app/img/m2-480w.webp 480w, https://ornat-ifi.vercel.app/img/m2-800w.webp 800w, https://ornat-ifi.vercel.app/img/m2-1280w.webp 1280w, https://ornat-ifi.vercel.app/img/m2.webp 1536w" sizes="(max-width: 900px) 72vw, (min-width: 1667px) 500px, 30vw"></figure></li>
+        <li class="mod" data-cat="Plataforma y diseño" data-title="Del plano al render" data-text="Convertimos tus planos o bosquejos en entregables visuales para explicar distribución, materiales y espacios."><figure><img src="https://ornat-ifi.vercel.app/img/m3.webp" alt="Plano isométrico 3D de un departamento amueblado con terraza y alberca privada." loading="lazy" draggable="false" width="1536" height="1024" decoding="async" srcset="https://ornat-ifi.vercel.app/img/m3-480w.webp 480w, https://ornat-ifi.vercel.app/img/m3-800w.webp 800w, https://ornat-ifi.vercel.app/img/m3-1280w.webp 1280w, https://ornat-ifi.vercel.app/img/m3.webp 1536w" sizes="(max-width: 900px) 72vw, (min-width: 1750px) 420px, (max-width: 917px) 220px, 24vw"></figure></li>
+        <li class="mod" data-cat="Plataforma y diseño" data-title="Recorrido virtual" data-text="Recorridos con presentadores virtuales que explican tus proyectos."><figure><img src="https://ornat-ifi.vercel.app/img/m4.webp" alt="Vista interior inmersiva de una residencia tropical con salida al jardín." loading="lazy" draggable="false" width="1536" height="1024" decoding="async" srcset="https://ornat-ifi.vercel.app/img/m4-480w.webp 480w, https://ornat-ifi.vercel.app/img/m4-800w.webp 800w, https://ornat-ifi.vercel.app/img/m4-1280w.webp 1280w, https://ornat-ifi.vercel.app/img/m4.webp 1536w" sizes="(max-width: 900px) 72vw, (min-width: 1676px) 620px, 37vw"></figure></li>
+        <li class="mod" data-cat="Agentes inteligentes" data-title="Agente comercial" data-text="Consultas con seguimiento"><figure><img src="https://ornat-ifi.vercel.app/img/m5.webp" alt="Interfaz de atención comercial con IA junto a una maqueta inmobiliaria." loading="lazy" draggable="false" width="1536" height="1024" decoding="async" srcset="https://ornat-ifi.vercel.app/img/m5-480w.webp 480w, https://ornat-ifi.vercel.app/img/m5-800w.webp 800w, https://ornat-ifi.vercel.app/img/m5-1280w.webp 1280w, https://ornat-ifi.vercel.app/img/m5.webp 1536w" sizes="(max-width: 900px) 72vw, (min-width: 1667px) 500px, 30vw"></figure></li>
+        <li class="mod" data-cat="Agentes inteligentes" data-title="Contenido social" data-text="Videos impactantes y publicaciones automatizadas para tu comunidad."><figure><img src="https://ornat-ifi.vercel.app/img/m6.webp" alt="Estación de producción de video vertical para redes sociales inmobiliarias." loading="lazy" draggable="false" width="1536" height="1024" decoding="async" srcset="https://ornat-ifi.vercel.app/img/m6-480w.webp 480w, https://ornat-ifi.vercel.app/img/m6-800w.webp 800w, https://ornat-ifi.vercel.app/img/m6-1280w.webp 1280w, https://ornat-ifi.vercel.app/img/m6.webp 1536w" sizes="(max-width: 900px) 72vw, (min-width: 1750px) 420px, (max-width: 917px) 220px, 24vw"></figure></li>
+        <li class="mod" data-cat="Agentes inteligentes" data-title="Capacitación" data-text="Capacitación con audio, módulos y exámenes."><figure><img src="https://ornat-ifi.vercel.app/img/m7.webp" alt="Audífonos y tableta con interfaz visual de capacitación mediante audio." loading="lazy" draggable="false" width="1536" height="1024" decoding="async" srcset="https://ornat-ifi.vercel.app/img/m7-480w.webp 480w, https://ornat-ifi.vercel.app/img/m7-800w.webp 800w, https://ornat-ifi.vercel.app/img/m7.webp 1536w" sizes="(max-width: 900px) 72vw, (min-width: 1676px) 620px, 37vw"></figure></li>
+        <li class="mod" data-cat="Agentes inteligentes" data-title="Análisis empresarial" data-text="Análisis empresarial para apoyar tus decisiones."><figure><img src="https://ornat-ifi.vercel.app/img/m8.webp" alt="Maqueta de desarrollo residencial junto a un tablero de análisis inmobiliario." loading="lazy" draggable="false" width="1536" height="1024" decoding="async" srcset="https://ornat-ifi.vercel.app/img/m8-480w.webp 480w, https://ornat-ifi.vercel.app/img/m8-800w.webp 800w, https://ornat-ifi.vercel.app/img/m8-1280w.webp 1280w, https://ornat-ifi.vercel.app/img/m8.webp 1536w" sizes="(max-width: 900px) 72vw, (min-width: 1667px) 500px, 30vw"></figure></li>
+      </ul>
+    </div>
+    <div class="mods__info">
+      <div class="mods__caption" id="modsCaption" aria-live="polite">
+        <span class="mono mods__cat" id="modsCat">Plataforma y diseño</span>
+        <h3 class="mods__name" id="modsName">Web IA</h3>
+        <p class="mono mods__text" id="modsText">Un sitio para presentar tu proyecto</p>
+      </div>
+      <div class="mods__ctrl">
+        <div class="mods__nav mono"><button id="modsPrev">Anterior</button><span id="modsCount">01 / 08</span><button id="modsNext">Siguiente</button></div>
+        <a class="pill" href="#servicios">[Explora cada módulo]</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS (tailored services) -->
+  <section class="svc" id="servicios" aria-labelledby="svcTitle">
+    <h2 class="display reveal-lines" id="svcTitle"><span>Contigo en cada etapa</span><span>Del bosquejo a tu operación</span></h2>
+    <canvas class="particles svc__particles" data-src="https://ornat-ifi.vercel.app/img/p-17-02.webp" data-count="9000" aria-hidden="true"></canvas>
+    <ul class="svc__list mono">
+      <li><b>001</b>Definir proyecto visual</li>
+      <li><b>002</b>Cargar planos originales</li>
+      <li><b>003</b>Generar renders hiperrealistas</li>
+      <li><b>004</b>Crear recorrido virtual</li>
+      <li><b>005</b>Configurar experiencia web</li>
+      <li><b>006</b>Conectar agentes inteligentes</li>
+      <li><b>007</b>Preparar contenido social</li>
+      <li><b>008</b>Activar capacitación interactiva</li>
+      <li><b>009</b>Analizar tu operación</li>
+      <li><b>010</b>Aprobar la implementación</li>
+    </ul>
+    <div class="svc__services">
+      <article>
+        <span class="mono">[01]</span>
+        <h3>Plataforma y diseño</h3>
+        <p class="mono">Presenta tu proyecto con un sitio llamativo, planos, renders y videos. Suma presentadores de IA, realidad aumentada, realidad mixta y producción con dron.</p>
+      </article>
+      <article>
+        <span class="mono">[02]</span>
+        <h3>Agentes inteligentes</h3>
+        <p class="mono">Atiende prospectos con agentes de IA y automatiza contenido. Capacita mediante voz, módulos y exámenes. Analiza tus departamentos para apoyar decisiones con información de tu operación.</p>
+      </article>
+    </div>
+    <a class="pill" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener">Solicitar demo</a>
+  </section>
+
+  <!-- PARA QUIÉN (team) -->
+  <section class="aud" id="para-quien" aria-labelledby="audTitle">
+    <div class="aud__head">
+      <span class="mono aud__side">Fundado en</span>
+      <h2 class="display reveal-lines" id="audTitle"><span>Hecho para quienes</span><span>diseñan y</span><span>comercializan espacios.</span></h2>
+      <span class="mono aud__side">2026</span>
+    </div>
+    <div class="aud__strip-wrap">
+      <ul class="aud__strip" id="audStrip">
+        <li><img src="https://ornat-ifi.vercel.app/img/a1.webp" alt="Escena de trabajo y visualización arquitectónica para arquitectos." loading="lazy" width="900" height="600" decoding="async" srcset="https://ornat-ifi.vercel.app/img/a1-480w.webp 480w, https://ornat-ifi.vercel.app/img/a1-800w.webp 800w, https://ornat-ifi.vercel.app/img/a1.webp 900w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><div><h3>Arquitectos</h3><p class="mono">Explica tus proyectos con planos, renders y experiencias visuales que acompañen tu presentación.</p></div></li>
+        <li><img src="https://ornat-ifi.vercel.app/img/a8.webp" alt="Escena de trabajo y visualización arquitectónica para diseño interior." loading="lazy" width="900" height="600" decoding="async" srcset="https://ornat-ifi.vercel.app/img/a8-480w.webp 480w, https://ornat-ifi.vercel.app/img/a8-800w.webp 800w, https://ornat-ifi.vercel.app/img/a8.webp 900w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><div><h3>Diseño interior</h3><p class="mono">Presenta ambientes, materiales y acabados con visualizaciones que expliquen cada decisión de diseño.</p></div></li>
+        <li><img src="https://ornat-ifi.vercel.app/img/a2.webp" alt="Escena de trabajo y visualización arquitectónica para arquitectos paisajistas." loading="lazy" width="900" height="600" decoding="async" srcset="https://ornat-ifi.vercel.app/img/a2-480w.webp 480w, https://ornat-ifi.vercel.app/img/a2-800w.webp 800w, https://ornat-ifi.vercel.app/img/a2.webp 900w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><div><h3>Arquitectos paisajistas</h3><p class="mono">Muestra jardines y espacios exteriores mediante renders, videos y recorridos que comuniquen tu propuesta.</p></div></li>
+        <li><img src="https://ornat-ifi.vercel.app/img/a5.webp" alt="Escena de trabajo y visualización arquitectónica para constructoras." loading="lazy" width="900" height="600" decoding="async" srcset="https://ornat-ifi.vercel.app/img/a5-480w.webp 480w, https://ornat-ifi.vercel.app/img/a5-800w.webp 800w, https://ornat-ifi.vercel.app/img/a5.webp 900w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><div><h3>Constructoras</h3><p class="mono">Documenta avances con dron y videos apoyados por IA para comunicar el desarrollo del proyecto.</p></div></li>
+        <li><img src="https://ornat-ifi.vercel.app/img/a4.webp" alt="Escena de trabajo y visualización arquitectónica para desarrolladores inmobiliarios." loading="lazy" width="900" height="600" decoding="async" srcset="https://ornat-ifi.vercel.app/img/a4-480w.webp 480w, https://ornat-ifi.vercel.app/img/a4-800w.webp 800w, https://ornat-ifi.vercel.app/img/a4.webp 900w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><div><h3>Desarrolladores inmobiliarios</h3><p class="mono">Presenta preventas con sitios web, renders, videos hiperrealistas y experiencias de realidad aumentada o mixta.</p></div></li>
+        <li><img src="https://ornat-ifi.vercel.app/img/a3.webp" alt="Escena de trabajo y visualización arquitectónica para brokers." loading="lazy" width="900" height="600" decoding="async" srcset="https://ornat-ifi.vercel.app/img/a3-480w.webp 480w, https://ornat-ifi.vercel.app/img/a3-800w.webp 800w, https://ornat-ifi.vercel.app/img/a3.webp 900w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><div><h3>Brokers</h3><p class="mono">Atiende consultas con agentes inteligentes y comparte contenido visual que explique las propiedades de tu cartera.</p></div></li>
+        <li><img src="https://ornat-ifi.vercel.app/img/a7.webp" alt="Escena de trabajo y visualización arquitectónica para inmobiliarias." loading="lazy" width="900" height="600" decoding="async" srcset="https://ornat-ifi.vercel.app/img/a7-480w.webp 480w, https://ornat-ifi.vercel.app/img/a7-800w.webp 800w, https://ornat-ifi.vercel.app/img/a7.webp 900w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><div><h3>Inmobiliarias</h3><p class="mono">Conecta presentación, atención, capacitación y análisis en tu operación inmobiliaria.</p></div></li>
+        <li><img src="https://ornat-ifi.vercel.app/img/a6.webp" alt="Escena de trabajo y visualización arquitectónica para despachos de diseño." loading="lazy" width="900" height="600" decoding="async" srcset="https://ornat-ifi.vercel.app/img/a6-480w.webp 480w, https://ornat-ifi.vercel.app/img/a6-800w.webp 800w, https://ornat-ifi.vercel.app/img/a6.webp 900w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"><div><h3>Despachos de diseño</h3><p class="mono">Integra visualización, contenido y herramientas digitales según las necesidades de tu despacho.</p></div></li>
+      </ul>
+    </div>
+    <a class="pill" href="#contacto">Para quién</a>
+  </section>
+
+  <!-- MÉTODO (holistic) -->
+  <section class="meth" id="metodo" aria-labelledby="methTitle">
+    <canvas class="particles meth__particles" data-src="https://ornat-ifi.vercel.app/img/p-17-09.webp" data-count="10000" data-columns="1" aria-hidden="true"></canvas>
+    <h2 class="display reveal-lines" id="methTitle"><span>Diseñado para tu proyecto</span><span><em>y tu equipo</em></span></h2>
+    <p class="mono meth__lead">Elegimos contigo los módulos que necesitas. Definimos información, materiales, canales y entregables para que el diseño visual y la tecnología acompañen el trabajo de tu empresa.</p>
+    <ol class="meth__steps">
+      <li><span class="mono">01</span><h3>Entender</h3><p class="mono">Definimos el proyecto y las necesidades de tu equipo</p></li>
+      <li><span class="mono">02</span><h3>Diseñar</h3><p class="mono">Convertimos planos e ideas en experiencias visuales y digitales</p></li>
+      <li><span class="mono">03</span><h3>Conectar</h3><p class="mono">Configuramos el sitio, los agentes y los módulos que necesitas</p></li>
+      <li><span class="mono">04</span><h3>Acompañar</h3><p class="mono">Ajustamos contenidos y herramientas al crecimiento de tu operación</p></li>
+    </ol>
+  </section>
+
+  <!-- QUOTE (managing) -->
+  <section class="quote" aria-label="Manifiesto">
+    <blockquote>
+      <p class="reveal-words">Combinamos diseño visual, software e inteligencia artificial en módulos que eliges según tu proyecto y equipo.</p>
+      <footer class="mono"><span>Estudio</span><span>ORNAT UX</span></footer>
+    </blockquote>
+    <div class="quote__wipe" id="wipe">
+      <img class="quote__art" src="https://ornat-ifi.vercel.app/img/art-17-01.webp" alt="Bosquejo a lápiz del mismo pabellón frente al mar que se revela como render." loading="lazy" width="1600" height="800" decoding="async" srcset="https://ornat-ifi.vercel.app/img/art-17-01-480w.webp 480w, https://ornat-ifi.vercel.app/img/art-17-01-800w.webp 800w, https://ornat-ifi.vercel.app/img/art-17-01-1280w.webp 1280w, https://ornat-ifi.vercel.app/img/art-17-01.webp 1600w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw">
+      <img class="quote__render" src="https://ornat-ifi.vercel.app/img/render-17-01.webp" alt="Residencia moderna de lujo junto al Caribe en una composición arquitectónica cinematográfica." loading="lazy" width="1600" height="800" decoding="async" srcset="https://ornat-ifi.vercel.app/img/render-17-01-480w.webp 480w, https://ornat-ifi.vercel.app/img/render-17-01-800w.webp 800w, https://ornat-ifi.vercel.app/img/render-17-01-1280w.webp 1280w, https://ornat-ifi.vercel.app/img/render-17-01.webp 1600w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw">
+      <span class="quote__label mono"><span>Bosquejo</span><span>Render</span></span>
+    </div>
+  </section>
+
+  <!-- PROBLEMAS -->
+  <section class="prob" id="problemas" aria-labelledby="probTitle">
+    <span class="mono prob__eyebrow">Problemas</span>
+    <h2 class="display reveal-lines" id="probTitle"><span>Tu proyecto necesita</span><span>una experiencia que lo explique</span></h2>
+    <div class="prob__grid">
+      <article><span class="mono">[01] Estático</span><h3>Cada consulta necesita una respuesta</h3><p class="mono">Un agente responde consultas sobre espacios, condiciones y disponibilidad con información validada por tu equipo.</p></article>
+      <article><span class="mono">[02] Fragmentado</span><h3>Tus planos necesitan convertirse en experiencias</h3><p class="mono">Partimos de un plano o bosquejo para desarrollar planos, renders y videos hiperrealistas que ayuden a presentar espacios y explicar tu proyecto.</p></article>
+      <article><span class="mono">[03] Invisible</span><h3>Tu equipo necesita aprender y decidir</h3><p class="mono">La capacitación con voz, módulos y exámenes, junto con el análisis de tus áreas, conecta conocimiento y decisiones dentro de tu empresa.</p></article>
+      <article><span class="mono">[04] Lento</span><h3>Tus redes necesitan contenido con un propósito</h3><p class="mono">Videos impactantes, recorridos con presentadores virtuales y publicaciones automatizadas permiten explicar tus proyectos y mantener una comunicación consistente con tu comunidad.</p></article>
+    </div>
+  </section>
+
+  <!-- CTA (start your project) -->
+  <section class="cta" aria-labelledby="ctaTitle">
+    <canvas class="cta__glow" id="glow" aria-hidden="true"></canvas>
+    <h2 class="display reveal-lines" id="ctaTitle"><span>Descubre los módulos</span><span>que necesita tu empresa</span></h2>
+    <p class="mono">Solicita una demo y conoce cómo combinar diseño visual, plataforma web y agentes para tu empresa.</p>
+    <a class="pill" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener">Solicitar demo</a>
+  </section>
+
+  <!-- marquee wordmark (architectural lighting works) -->
+  <section class="mark" aria-hidden="true">
+    <div class="mark__inner"><b>ORNAT</b><span>diseño visual<br>y software con IA</span><i class="mark__bars"></i></div>
+  </section>
+</main>
+
+<footer class="ftr" id="contacto">
+  <div class="ftr__band"><img src="https://ornat-ifi.vercel.app/img/band.webp" alt="Interior minimalista caribeño de lujo con piedra, madera y luz cálida." loading="lazy" width="1536" height="1024" decoding="async" srcset="https://ornat-ifi.vercel.app/img/band-480w.webp 480w, https://ornat-ifi.vercel.app/img/band-800w.webp 800w, https://ornat-ifi.vercel.app/img/band-1280w.webp 1280w, https://ornat-ifi.vercel.app/img/band.webp 1536w" sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 50vw"></div>
+  <div class="ftr__grid">
+    <div class="ftr__left">
+      <h2>¿Quieres conocer aplicaciones de diseño visual e inteligencia artificial?</h2>
+      <p class="mono">Recibe contenidos útiles y demostraciones del equipo ORNAT.</p>
+      <a class="pill pill--dark" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener">Solicitar demo</a>
+    </div>
+    <div class="ftr__right">
+      <h3>Dirección</h3>
+      <p class="mono">Playa del Carmen, Cancún, Tulum<br>Riviera Maya, México</p>
+      <p class="mono">Arquitectura e inmobiliarias</p>
+      <h3>Contacto directo</h3>
+      <p class="mono"><a href="tel:+529842353159">Teléfono: 984 235 3159</a><br><a href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener">WhatsApp: Solicitar demo</a></p>
+      <h3>Redes</h3>
+      <ul class="mono ftr__social"><li>Facebook</li><li>Instagram</li><li>X</li><li>TikTok</li><li>LinkedIn</li><li>Threads</li><li>Pinterest</li></ul>
+      <div class="ftr__legal mono"><span>©2026 ORNAT UX. Todos los derechos reservados.</span><span>Fundado: 2026</span></div>
+    </div>
+  </div>
+</footer>
+
+<div class="cookies" id="cookies" role="region" aria-label="Aviso de cookies" hidden>
+  <p class="mono">Este sitio usa cookies.</p>
+  <div><button class="mono" data-cookie="no">Rechazar</button><button class="pill pill--dark" data-cookie="ok">Aceptar</button></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="/templates/ifi/main.js"></script>
+<script src="/templates/ifi/hero-whorl.js"></script>
+<script src="/cms/bridge.js"></script></body>
+</html>

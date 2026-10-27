@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ORNAT UX | Diseño visual para arquitectura e inmobiliarias</title>
+<meta name="description" content="ORNAT transforma tus ideas en experiencias visuales y sitios web para arquitectos, desarrolladores y brokers en Playa del Carmen, Cancún, Tulum y México.">
+<meta property="og:title" content="ORNAT UX | Diseño visual">
+<meta property="og:description" content="Del plano a la experiencia: diseño visual y tecnología para arquitectura e inmobiliarias.">
+<meta property="og:image" content="img/hero.webp">
+<meta name="theme-color" content="#141416">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="https://ornat-concrete.vercel.app/favicon.svg">
+<link rel="stylesheet" href="/templates/concrete/styles.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<!-- ============ PORTAL / CHOOSER ============ -->
+<div class="portal" id="portal" role="dialog" aria-modal="true" aria-label="Elige tu ruta en ORNAT">
+  <div class="portal-brand" aria-hidden="true"><span>O</span><span>R</span><span>N</span><span>A</span><span>T</span><span>.</span></div>
+  <a class="p-btn" href="#top" data-path="diseno">
+    <span class="p-inner">
+      <span class="p-bg"><img src="/img/gpt-maroma-v1/concrete-loader-1536.webp?v=maroma-concrete-loader-85fac0efb9f4" width="1536" height="1024" alt="Visualización conceptual en Maroma: patio de acceso con pórtico de concreto y puerta de madera" decoding="async" fetchpriority="high" sizes="(max-width: 900px) 100vw, 70vw" sizes="(max-width: 900px) 100vw, 70vw" srcset="/img/gpt-maroma-v1/concrete-loader-480.webp?v=maroma-concrete-loader-85fac0efb9f4 480w, /img/gpt-maroma-v1/concrete-loader-960.webp?v=maroma-concrete-loader-85fac0efb9f4 960w, /img/gpt-maroma-v1/concrete-loader-1536.webp?v=maroma-concrete-loader-85fac0efb9f4 1536w" sizes="(max-width: 900px) 100vw, 70vw"></span>
+      <span class="p-visuals" aria-hidden="true"><img src="https://ornat-concrete.vercel.app/img/pl1.webp" width="900" height="675" alt="" decoding="async"><img src="https://ornat-concrete.vercel.app/img/pl2.webp" width="900" height="675" alt="" decoding="async"><img src="https://ornat-concrete.vercel.app/img/pl3.webp" width="900" height="675" alt="" decoding="async"></span>
+      <span class="p-label"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="p-txt">Quiero presentar mi proyecto<small>Diseño visual</small></span></span>
+    </span>
+  </a>
+  <a class="p-btn" href="#automatizacion" data-path="automatizacion">
+    <span class="p-inner">
+      <span class="p-bg"><img src="https://ornat-concrete.vercel.app/img/portal-r.webp" width="1536" height="1024" alt="Estación de trabajo con monitores frente a una maqueta y vista al mar" decoding="async"></span>
+      <span class="p-visuals" aria-hidden="true"><img src="https://ornat-concrete.vercel.app/img/pr1.webp" width="900" height="675" alt="" decoding="async"><img src="https://ornat-concrete.vercel.app/img/pr2.webp" width="900" height="675" alt="" decoding="async"><img src="https://ornat-concrete.vercel.app/img/pr3.webp" width="900" height="675" alt="" decoding="async"></span>
+      <span class="p-label"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="p-txt">Quiero automatizar mi empresa<small>Automatización</small></span></span>
+    </span>
+  </a>
+  <button class="p-skip mono" type="button" id="pskip">( Ver todo el sitio ↓ )</button>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr" id="hdr">
+  <a href="#top" class="logo" data-go aria-label="ORNAT, inicio">ORNAT<i>.</i></a>
+  <nav class="nav" aria-label="Principal">
+    <button type="button" class="nav-link" data-sub="diseno" aria-expanded="false">Diseño visual<b class="cross" aria-hidden="true">+</b></button>
+    <button type="button" class="nav-link" data-sub="automatizacion" aria-expanded="false">Automatización<b class="cross" aria-hidden="true">+</b></button>
+    <a class="nav-link" href="#modulos" data-go>Módulos</a>
+    <a class="nav-link" href="#metodo" data-go>Método</a>
+  </nav>
+  <div class="hdr-r">
+    <a class="nav-link dim" href="tel:+529842353159">984 235 3159</a>
+    <a class="nav-link" href="#contacto" data-go>Solicitar demo</a>
+  </div>
+  <button type="button" class="mplus" id="mplus" aria-label="Abrir menú" aria-expanded="false"><b class="cross">+</b></button>
+</header>
+
+<!-- ============ SUBMENU ============ -->
+<div class="sub" id="sub" aria-hidden="true">
+  <div class="sub-ov" data-close></div>
+  <div class="sub-wrap" role="dialog" aria-label="Menú de servicios">
+    <div class="sub-top"><span class="logo">ORNAT<i>.</i></span><button type="button" class="sub-x" data-close aria-label="Cerrar menú"><span class="ico"><b class="cross">+</b></span>Cerrar</button></div>
+    <div class="sub-body">
+      <div class="sub-grp" data-grp="diseno">
+        <span class="mono">( Diseño visual )</span>
+        <ul class="sub-list">
+          <li><a href="#t01" data-go data-img="/img/gpt-maroma-v1/concrete-exclusive-t01-1086.webp?v=maroma-concrete-exclusive-t01-e5389afa3366">Web y plataforma</a></li>
+          <li><a href="#t02" data-go data-img="https://ornat-concrete.vercel.app/img/t02.webp">Diseño visual</a></li>
+          <li><a href="#t03" data-go data-img="https://ornat-concrete.vercel.app/img/t03.webp">Video y obra</a></li>
+        </ul>
+      </div>
+      <div class="sub-grp" data-grp="automatizacion">
+        <span class="mono">( Automatización )</span>
+        <ul class="sub-list">
+          <li><a href="#t04" data-go data-img="https://ornat-concrete.vercel.app/img/t04.webp">Bots y automatización</a></li>
+          <li><a href="#t05" data-go data-img="https://ornat-concrete.vercel.app/img/t05.webp">Equipo y talento</a></li>
+          <li><a href="#t06" data-go data-img="https://ornat-concrete.vercel.app/img/t06.webp">Consultoría en IA</a></li>
+        </ul>
+      </div>
+      <div class="sub-grp sub-more">
+        <span class="mono">( ORNAT )</span>
+        <ul class="sub-list sm">
+          <li><a href="#modulos" data-go>Módulos</a></li>
+          <li><a href="#proceso" data-go>El proceso</a></li>
+          <li><a href="#metodo" data-go>El método</a></li>
+          <li><a href="#contacto" data-go>Solicitar demo</a></li>
+        </ul>
+      </div>
+      <figure class="sub-vis" aria-hidden="true"><img src="/img/gpt-unique-v4/concrete-menu-web-1086.webp" width="1086" height="1448" alt="Tableta con un sitio inmobiliario para un conjunto de viviendas con patio" decoding="async" srcset="/img/gpt-unique-v4/concrete-menu-web-480.webp 480w, /img/gpt-unique-v4/concrete-menu-web-960.webp 960w, /img/gpt-unique-v4/concrete-menu-web-1086.webp 1086w" sizes="(max-width: 900px) 100vw, 70vw"></figure>
+    </div>
+    <div class="sub-foot mono"><a href="tel:+529842353159">984 235 3159</a><span>Playa del Carmen · Cancún · Tulum</span></div>
+  </div>
+</div>
+
+<main class="app" id="app">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top" data-hdr="light">
+    <div class="hero-bg"><img src="/img/gpt-maroma-v1/concrete-hero-1536.webp?v=maroma-concrete-hero-a63f76ac4fbf" width="1536" height="1024" alt="Visualización conceptual en Maroma: sala costera de concreto, madera y lino con ventanales hacia la playa" decoding="async" srcset="/img/gpt-maroma-v1/concrete-hero-480.webp?v=maroma-concrete-hero-a63f76ac4fbf 480w, /img/gpt-maroma-v1/concrete-hero-960.webp?v=maroma-concrete-hero-a63f76ac4fbf 960w, /img/gpt-maroma-v1/concrete-hero-1536.webp?v=maroma-concrete-hero-a63f76ac4fbf 1536w" sizes="(max-width: 900px) 100vw, 70vw"></div>
+    <h1 class="hero-t">
+      <span class="l1"><span class="w">ORNAT,</span><span class="w r">el estudio</span></span>
+      <span class="l2"><span class="w">visual</span> <span class="w">digital</span></span>
+    </h1>
+    <div class="hero-line"></div>
+    <ul class="hero-ch">
+      <li><b>9</b><span>módulos para presentar, conversar, capacitar y decidir</span></li>
+      <li><b>18</b><span>servicios en seis territorios</span></li>
+      <li><b>10</b><span>pasos, un mismo equipo</span></li>
+      <li><b>2026</b><span>fundado en la Riviera Maya, México</span></li>
+    </ul>
+    <span class="hero-scroll">Desliza ↓</span>
+  </section>
+
+  <!-- ============ PRESENTATION ============ -->
+  <section class="pres" data-hdr="dark">
+    <p class="pres-lead reveal">ORNAT transforma tus ideas en experiencias visuales y sitios web. Trabajamos con arquitectos, desarrolladores y brokers, desde el bosquejo hasta la operación.</p>
+    <div class="pres-grid">
+      <figure class="pres-a prllx"><img class="visual" src="https://ornat-concrete.vercel.app/img/pres-a.webp" width="900" height="675" alt="Maqueta de residencia con muestras de materiales sobre mesa de piedra" decoding="async"></figure>
+      <p class="pres-txt reveal">Presentar espacios, responder consultas y organizar información exige herramientas conectadas. Del plano a la experiencia.</p>
+      <div class="pres-b">
+        <figure class="wipe" id="wipe">
+          <img src="https://ornat-concrete.vercel.app/img/wipe-sk.webp" width="1400" height="700" alt="Bosquejo a lápiz de una villa contemporánea" decoding="async">
+          <img class="wipe-rd" src="https://ornat-concrete.vercel.app/img/wipe-rd.webp" width="1400" height="700" alt="Render de la misma villa con alberca y vegetación tropical" decoding="async">
+          <span class="mono tag"><i></i>Del plano al render · Boceto → Render hiperrealista</span>
+        </figure>
+        <p class="pres-txt reveal">Partimos de un plano o bosquejo para desarrollar planos, renders y videos hiperrealistas que ayuden a presentar espacios y explicar tu proyecto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PATH 1 ============ -->
+  <section class="intro-path" id="diseno" data-hdr="dark">
+    <span class="mono">( Diseño visual )</span>
+    <h2 class="t-md reveal">Tu proyecto necesita una experiencia que lo explique.</h2>
+  </section>
+
+  <div class="stack">
+    <section class="st st-cream" id="t01" data-hdr="dark">
+      <h3 class="t-xl">Web y plataforma</h3>
+      <figure class="st-vis"><img src="/img/gpt-maroma-v1/concrete-exclusive-t01-1086.webp?v=maroma-concrete-exclusive-t01-e5389afa3366" width="1086" height="1448" alt="Visualización conceptual en Maroma: fotografía de web y plataforma para este proyecto" decoding="async" srcset="/img/gpt-maroma-v1/concrete-exclusive-t01-480.webp?v=maroma-concrete-exclusive-t01-e5389afa3366 480w, /img/gpt-maroma-v1/concrete-exclusive-t01-960.webp?v=maroma-concrete-exclusive-t01-e5389afa3366 960w, /img/gpt-maroma-v1/concrete-exclusive-t01-1086.webp?v=maroma-concrete-exclusive-t01-e5389afa3366 1086w" sizes="(max-width: 900px) 100vw, 70vw"></figure>
+      <div class="st-c">
+        <span class="mono">01 / Territorio</span>
+        <ul class="svc">
+          <li><b>Sitio web 4.0 con asistente de voz</b>Un sitio que presenta tu proyecto y conversa con tus visitantes: un asistente de voz con IA atiende como servicio a clientes.</li>
+          <li><b>CMS a tu medida</b>Un administrador de contenido para que personalices y actualices tu sitio tú mismo, sin depender de nadie.</li>
+          <li><b>CRM</b>Centraliza prospectos, conversaciones y seguimiento en un solo lugar.</li>
+        </ul>
+        <a class="btn" href="#contacto" data-go><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">Solicitar demo</span></a>
+      </div>
+      <div class="st-fade"></div>
+    </section>
+    <section class="st st-dark" id="t02" data-hdr="light">
+      <h3 class="t-xl">Diseño visual</h3>
+      <figure class="st-vis"><img src="https://ornat-concrete.vercel.app/img/t02.webp" width="760" height="1013" alt="Maqueta de residencia tropical con escalinata y espejo de agua" decoding="async"></figure>
+      <div class="st-c">
+        <span class="mono">02 / Territorio</span>
+        <ul class="svc">
+          <li><b>De plano o bosquejo a render</b>Partimos de tu plano o bosquejo y lo convertimos en renders hiperrealistas para explicar distribución, materiales y espacios.</li>
+          <li><b>Planos isométricos con tu tipografía</b>Convertimos tus planos en renders y planos isométricos con la tipografía de tu marca.</li>
+          <li><b>Modelos con realidad aumentada</b>Maquetas que se recorren desde el celular, para ofrecer una experiencia de vanguardia a tus compradores.</li>
+        </ul>
+        <a class="btn" href="#contacto" data-go><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">Solicitar demo</span></a>
+      </div>
+      <div class="st-fade"></div>
+    </section>
+    <section class="st st-kaki" id="t03" data-hdr="dark">
+      <h3 class="t-xl">Video y obra</h3>
+      <figure class="st-vis"><img src="https://ornat-concrete.vercel.app/img/t03.webp" width="760" height="1013" alt="Maqueta de edificio residencial en construcción con andamios" decoding="async"></figure>
+      <div class="st-c">
+        <span class="mono">03 / Territorio</span>
+        <ul class="svc">
+          <li><b>Videos arquitectónicos con IA</b>Recorridos y piezas cinematográficas de tu proyecto, producidas con inteligencia artificial.</li>
+          <li><b>Videos con dron</b>Tomas aéreas que muestran el terreno, el entorno y la escala de tu desarrollo.</li>
+          <li><b>Avances de obra en timelapse</b>Registramos la construcción y la condensamos en un video que comunica el progreso.</li>
+        </ul>
+        <a class="btn" href="#contacto" data-go><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">Solicitar demo</span></a>
+      </div>
+      <div class="st-fade"></div>
+    </section>
+  </div>
+
+  <!-- ============ PATH 2 ============ -->
+  <section class="intro-path" id="automatizacion" data-hdr="dark">
+    <span class="mono">( Automatización )</span>
+    <h2 class="t-md reveal">Cada consulta necesita una respuesta.</h2>
+    <p class="intro-sub reveal">Un agente responde sobre espacios, condiciones y disponibilidad con información validada por tu equipo.</p>
+  </section>
+
+  <div class="stack">
+    <section class="st st-cream" id="t04" data-hdr="dark">
+      <h3 class="t-xl">Bots y automatización</h3>
+      <figure class="st-vis"><img src="https://ornat-concrete.vercel.app/img/t04.webp" width="760" height="1013" alt="Pantalla con panel de seguimiento de prospectos sobre una maqueta" decoding="async"></figure>
+      <div class="st-c">
+        <span class="mono">04 / Territorio</span>
+        <ul class="svc">
+          <li><b>Bot que responde y califica leads</b>Atiende a cada prospecto al instante, resuelve dudas y te entrega solo los contactos listos para hablar.</li>
+          <li><b>Bot para automatizar tus redes sociales</b>Programa, publica y da seguimiento a tu contenido para mantener una comunicación constante.</li>
+          <li><b>Bots para directores y propietarios</b>Un asistente que consulta tu información y te responde con datos de tu empresa para decidir con contexto.</li>
+          <li><b>Tu empresa automatizada</b>Conectamos tus herramientas para que las tareas repetitivas se resuelvan solas.</li>
+        </ul>
+        <a class="btn" href="#contacto" data-go><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">Solicitar demo</span></a>
+      </div>
+      <div class="st-fade"></div>
+    </section>
+    <section class="st st-dark" id="t05" data-hdr="light">
+      <h3 class="t-xl">Equipo y talento</h3>
+      <figure class="st-vis"><img src="https://ornat-concrete.vercel.app/img/t05.webp" width="760" height="1013" alt="Tableta con capacitación por voz y audífonos sobre mesa de piedra" decoding="async"></figure>
+      <div class="st-c">
+        <span class="mono">05 / Territorio</span>
+        <ul class="svc">
+          <li><b>Módulo de recursos humanos con IA</b>Entrevista a candidatos con inteligencia artificial para agilizar la selección y comparar perfiles con el mismo criterio.</li>
+          <li><b>Capacitación con voz y IA</b>Un instructor con voz de IA que capacita a tu personal de nuevo ingreso y a cada empleado actual, sin importar el área o el puesto.</li>
+        </ul>
+        <a class="btn" href="#contacto" data-go><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">Solicitar demo</span></a>
+      </div>
+      <div class="st-fade"></div>
+    </section>
+    <section class="st st-kaki" id="t06" data-hdr="dark">
+      <h3 class="t-xl">Consultoría en IA</h3>
+      <figure class="st-vis"><img src="https://ornat-concrete.vercel.app/img/t06.webp" width="760" height="1013" alt="Tableta vertical con un recorrido inmobiliario junto a una maqueta" decoding="async"></figure>
+      <div class="st-c">
+        <span class="mono">06 / Territorio</span>
+        <ul class="svc">
+          <li><b>Auditamos tus procesos</b>Revisamos cómo trabaja tu empresa y detectamos dónde la automatización ahorra más tiempo.</li>
+          <li><b>Implementamos IA en tu empresa</b>Llevamos a producción las soluciones elegidas, junto con tu equipo.</li>
+          <li><b>Marca visual y automatizada</b>Llevamos la experiencia visual y la automatización de tu marca a otro nivel, siempre actualizadas.</li>
+        </ul>
+        <a class="btn" href="#contacto" data-go><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">Solicitar demo</span></a>
+      </div>
+      <div class="st-fade"></div>
+    </section>
+  </div>
+
+  <!-- ============ REEL ============ -->
+  <section class="reel" data-hdr="light">
+    <div class="reel-hd">
+      <span class="mono">( Showreel )</span>
+      <h2 class="t-md reveal">Del bosquejo, a tu operación.</h2>
+    </div>
+    <div class="reel-frame" id="reelFrame">
+      <video id="reel" src="https://ornat-concrete.vercel.app/media/ornat-reel.mp4" poster="https://ornat-concrete.vercel.app/media/ornat-reel-poster.webp" muted loop playsinline autoplay preload="auto" aria-label="Showreel de ORNAT: módulos de diseño visual y automatización"></video>
+    </div>
+    <div class="reel-ft mono"><span>Presentar · Conversar · Capacitar · Decidir</span><span>Playa del Carmen · Cancún · Tulum</span></div>
+  </section>
+
+  <!-- ============ MODULES ============ -->
+  <section class="mods" id="modulos" data-hdr="dark">
+    <div class="mods-hd">
+      <span class="mono">( Módulos )</span>
+      <h2 class="t-md reveal">Elige lo que tu proyecto necesita.</h2>
+      <p class="mods-note reveal">Elegimos contigo los servicios que necesitas y los combinamos en un solo plan. Definimos información, materiales, canales y entregables para que el diseño visual y la tecnología trabajen por tu empresa.</p>
+    </div>
+    <ul class="mods-grid">
+      <li class="card"><figure><img src="https://ornat-concrete.vercel.app/img/m01.webp" width="960" height="640" alt="Experiencia web inmobiliaria en escritorio, tableta y móvil junto a una maqueta" decoding="async"></figure><div class="card-b"><span class="mono">01 · Plataforma y diseño</span><h3>Web IA</h3><p>Un sitio llamativo para presentar tu proyecto. Incluye un sitio web con experiencia personalizada.</p><a class="btn" href="#contacto" data-go><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">Solicitar demo</span></a></div></li>
+      <li class="card"><figure><img src="https://ornat-concrete.vercel.app/img/m02.webp" width="960" height="640" alt="Maqueta de torre residencial frente a la playa" decoding="async"></figure><div class="card-b"><span class="mono">02 · Diseño visual</span><h3>Render IA</h3><p>Visualiza espacios. Convertimos tus planos o bosquejos en entregables visuales para explicar distribución, materiales y espacios.</p><a class="btn" href="#contacto" data-go><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">Solicitar demo</span></a></div></li>
+      <li class="card"><figure><img src="https://ornat-concrete.vercel.app/img/m03.webp" width="960" height="640" alt="Monitor con render de interior junto a la maqueta de la misma residencia" decoding="async"></figure><div class="card-b"><span class="mono">03 · Diseño visual</span><h3>Del plano al render</h3><p>Partimos de un plano o bosquejo para desarrollar planos, renders y videos hiperrealistas que ayuden a presentar espacios y explicar tu proyecto.</p><a class="btn" href="#contacto" data-go><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">Solicitar demo</span></a></div></li>
+      <li class="card"><figure><img src="https://ornat-concrete.vercel.app/img/m04.webp" width="960" height="640" alt="Maqueta de villa con alberca, tableta y visor de realidad mixta" decoding="async"></figure><div class="card-b"><span class="mono">04 · Experiencias inmersivas</span><h3>Recorrido virtual</h3><p>Suma presentadores de IA, realidad aumentada, realidad mixta y producción con dron para tus desarrollos.</p><a class="btn" href="#contacto" data-go><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">Solicitar demo</span></a></div></li>
+      <li class="card"><figure><img src="https://ornat-concrete.vercel.app/img/m05.webp" width="960" height="640" alt="Tableta y teléfono con un asistente comercial y seguimiento de consultas" decoding="async"></figure><div class="card-b"><span class="mono">05 · Agentes inteligentes</span><h3>Agente comercial</h3><p>Un agente con IA responde de forma natural usando información de tu empresa. Configuramos los canales disponibles y el seguimiento junto con tu equipo.</p><a class="btn" href="#contacto" data-go><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">Solicitar demo</span></a></div></li>
+      <li class="card"><figure><img src="https://ornat-concrete.vercel.app/img/m06.webp" width="960" height="640" alt="Contenido audiovisual de arquitectura en formatos verticales" decoding="async"></figure><div class="card-b"><span class="mono">06 · Contenido social</span><h3>Contenido social</h3><p>Videos impactantes, recorridos con presentadores virtuales y publicaciones automatizadas para mantener una comunicación consistente con tu comunidad.</p><a class="btn" href="#contacto" data-go><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">Solicitar demo</span></a></div></li>
+      <li class="card"><figure><img src="https://ornat-concrete.vercel.app/img/m07.webp" width="960" height="640" alt="Monitor con onda de voz y audífonos sobre escritorio de piedra" decoding="async"></figure><div class="card-b"><span class="mono">07 · Equipo</span><h3>Capacitación con voz y IA</h3><p>Un instructor con voz de IA capacita a tu personal de nuevo ingreso y a cada empleado actual, sin importar el área o el puesto, con módulos y exámenes.</p><a class="btn" href="#contacto" data-go><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">Solicitar demo</span></a></div></li>
+      <li class="card"><figure><img src="https://ornat-concrete.vercel.app/img/m08.webp" width="960" height="640" alt="Tableta con entrevista en video junto a un catálogo de proyectos" decoding="async"></figure><div class="card-b"><span class="mono">08 · Equipo</span><h3>Recursos humanos con IA</h3><p>Entrevista a las personas con inteligencia artificial y compara perfiles con el mismo criterio, para agilizar la selección de tu equipo.</p><a class="btn" href="#contacto" data-go><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">Solicitar demo</span></a></div></li>
+      <li class="card"><figure><img src="https://ornat-concrete.vercel.app/img/m09.webp" width="960" height="640" alt="Paneles de análisis junto a una maqueta arquitectónica" decoding="async"></figure><div class="card-b"><span class="mono">09 · Datos</span><h3>Análisis empresarial</h3><p>Analiza información de los departamentos de tu empresa para apoyar decisiones con contexto.</p><a class="btn" href="#contacto" data-go><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">Solicitar demo</span></a></div></li>
+    </ul>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="proc" id="proceso" data-hdr="dark">
+    <div class="proc-hd">
+      <span class="mono">( El proceso )</span>
+      <h2 class="t-md reveal">Y esto es solo el comienzo.</h2>
+    </div>
+    <ol class="steps">
+      <li class="step"><span class="step-n">001</span><span class="step-c">Definir proyecto visual</span></li>
+      <li class="step"><span class="step-n">002</span><span class="step-c">Cargar planos originales</span></li>
+      <li class="step"><span class="step-n">003</span><span class="step-c">Generar renders hiperrealistas</span></li>
+      <li class="step"><span class="step-n">004</span><span class="step-c">Crear recorrido virtual</span></li>
+      <li class="step"><span class="step-n">005</span><span class="step-c">Configurar experiencia web</span></li>
+      <li class="step"><span class="step-n">006</span><span class="step-c">Conectar agentes inteligentes</span></li>
+      <li class="step"><span class="step-n">007</span><span class="step-c">Preparar contenido social</span></li>
+      <li class="step"><span class="step-n">008</span><span class="step-c">Activar capacitación interactiva</span></li>
+      <li class="step"><span class="step-n">009</span><span class="step-c">Analizar tu operación</span></li>
+      <li class="step"><span class="step-n">010</span><span class="step-c">Aprobar la implementación</span></li>
+    </ol>
+    <p class="proc-ft mono">Diez pasos, un mismo equipo · <a href="#contacto" data-go>Solicitar demo</a></p>
+  </section>
+
+  <!-- ============ METHOD ============ -->
+  <section class="meth" id="metodo" data-hdr="dark">
+    <div class="meth-hd">
+      <span class="mono">( Por qué )</span>
+      <h2 class="t-md reveal">El método</h2>
+    </div>
+    <ol class="meth-grid">
+      <li><figure class="prllx"><img class="visual" src="https://ornat-concrete.vercel.app/img/k1.webp" width="640" height="480" alt="Planos y maqueta de residencia sobre mesa de trabajo" decoding="async"></figure><span class="mono">Paso 01 / 04</span><h3>Entender</h3><p>Definimos el proyecto y las necesidades de tu equipo.</p></li>
+      <li><figure class="prllx"><img class="visual" src="https://ornat-concrete.vercel.app/img/k2.webp" width="640" height="480" alt="Bosquejos de fachada junto a una maqueta y muestras de madera" decoding="async"></figure><span class="mono">Paso 02 / 04</span><h3>Diseñar</h3><p>Convertimos planos e ideas en experiencias visuales y digitales.</p></li>
+      <li><figure class="prllx"><img class="visual" src="https://ornat-concrete.vercel.app/img/k3.webp" width="640" height="480" alt="Sitio inmobiliario en monitor, laptop y teléfono" decoding="async"></figure><span class="mono">Paso 03 / 04</span><h3>Conectar</h3><p>Configuramos el sitio, los agentes y los módulos que necesitas.</p></li>
+      <li><figure class="prllx"><img class="visual" src="https://ornat-concrete.vercel.app/img/k4.webp" width="640" height="480" alt="Escritorio de revisión de proyecto con monitores y maqueta" decoding="async"></figure><span class="mono">Paso 04 / 04</span><h3>Acompañar</h3><p>Ajustamos contenidos y herramientas al crecimiento de tu operación.</p></li>
+    </ol>
+  </section>
+
+  <!-- ============ AUDIENCE ============ -->
+  <section class="aud" data-hdr="light">
+    <span class="mono">( Hecho para quienes diseñan y comercializan espacios )</span>
+    <div class="marq" aria-label="Arquitectos, diseño interior, arquitectos paisajistas, constructoras, desarrolladores inmobiliarios, brokers, inmobiliarias y despachos de diseño">
+      <div class="marq-in" aria-hidden="true">
+        <span>Arquitectos</span><span>Diseño interior</span><span>Arquitectos paisajistas</span><span>Constructoras</span><span>Desarrolladores inmobiliarios</span><span>Brokers</span><span>Inmobiliarias</span><span>Despachos de diseño</span>
+        <span>Arquitectos</span><span>Diseño interior</span><span>Arquitectos paisajistas</span><span>Constructoras</span><span>Desarrolladores inmobiliarios</span><span>Brokers</span><span>Inmobiliarias</span><span>Despachos de diseño</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta" id="contacto" data-hdr="light">
+    <div class="cta-bg prllx" data-from="-12" data-to="12"><img class="visual" src="https://ornat-concrete.vercel.app/img/cta.webp" width="1536" height="1024" alt="Monitor con una villa frente al mar junto a una maqueta blanca" decoding="async"></div>
+    <div class="cta-in">
+      <span class="mono">( Solicita una demo )</span>
+      <h2 class="t-md reveal">Descubre los módulos que necesita tu empresa</h2>
+      <figure class="cta-p"><img src="https://ornat-concrete.vercel.app/img/cta-p.webp" width="700" height="933" alt="Maqueta de villa tropical con planos y muestras de materiales" decoding="async"></figure>
+      <p class="cta-sub">Conoce cómo combinar diseño visual, plataforma web y agentes.</p>
+      <div class="cta-acts">
+        <a class="btn btn-l" href="https://wa.me/529842353159?text=Hola%20ORNAT%2C%20quiero%20solicitar%20una%20demo" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">¡Quiero mi demo!</span></a>
+        <a class="btn btn-l" href="tel:+529842353159"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span><span class="btn-t">984 235 3159</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="ftr" data-hdr="light">
+    <div class="ftr-cols">
+      <div><span class="mono">( Diseño visual )</span><ul><li><a href="#t01" data-go>Web y plataforma</a></li><li><a href="#t02" data-go>Diseño visual</a></li><li><a href="#t03" data-go>Video y obra</a></li></ul></div>
+      <div><span class="mono">( Automatización )</span><ul><li><a href="#t04" data-go>Bots y automatización</a></li><li><a href="#t05" data-go>Equipo y talento</a></li><li><a href="#t06" data-go>Consultoría en IA</a></li></ul></div>
+      <div><span class="mono">( ORNAT )</span><ul><li><a href="#modulos" data-go>Módulos</a></li><li><a href="#proceso" data-go>El proceso</a></li><li><a href="#metodo" data-go>El método</a></li><li><a href="#contacto" data-go>Solicitar demo</a></li></ul></div>
+      <div><span class="mono">( Contacto )</span><ul><li><a href="tel:+529842353159">984 235 3159</a></li><li>Playa del Carmen</li><li>Cancún</li><li>Tulum</li></ul></div>
+    </div>
+    <div class="ftr-obj" id="fobj" aria-hidden="true">
+      <svg viewBox="0 0 32 36"><g fill="none" stroke="currentColor" stroke-width=".22" stroke-linejoin="round">
+        <path d="M7.5 6.4 12.5 2.4 25.5 7.6 20.5 11.6Z"/><path d="M20.5 11.6 25.5 7.6 29 12.85 24 16.85Z"/><path d="M24 16.85 29 12.85 29 27.15 24 31.15Z"/><path d="M4 8.85 9 4.85 12.5 2.4 7.5 6.4Z"/>
+        <path d="M4 8.85 7.5 6.4 20.5 11.6 24 16.85 24 31.15 20.5 33.6 7.5 28.4 4 23.15Z"/><path d="M10.3 13.9 17.7 16.9 17.7 25.1 10.3 22.1Z"/><path d="M10.3 13.9 15.3 9.9 22.7 12.9 17.7 16.9"/><path d="M17.7 25.1 22.7 21.1 22.7 12.9"/>
+      </g></svg>
+    </div>
+    <div class="ftr-btm"><span>©2026 ORNAT UX. Todos los derechos reservados.</span><span>Aviso de Privacidad · Términos legales · Cookies</span></div>
+    <div class="ftr-word" aria-hidden="true">ORNAT.</div>
+  </footer>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="/templates/concrete/main.js"></script>
+<script src="/cms/bridge.js"></script></body>
+</html>

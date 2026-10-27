@@ -1,0 +1,86 @@
+:root { --content--brand:#3b3933; --content--primary:#34322e; --content--secondary:#4a4740; --content--terriary:#565249; --content--border:#8a8478; --content--white:#f6f3ea; --content--surface:#797368; }
+html,body { color:var(--content--primary); background-color:#f6f3ea; }
+body,button,input,textarea,select,.heading,.txt,.txt-font-mono,.richtext,.w-richtext,h1,h2,h3,h4,h5,h6,p,a,li,label {
+}
+.heading {  }
+.txt-font-mono {  }
+::selection { background:#c5bdac; color:#24221f; }
+.line { background-color:transparent !important; }
+.line.line-horizital { height:2px; background-image:url("https://ornat-ux.vercel.app/assets/ornat-pencil-line-h.svg"); background-repeat:repeat-x; background-size:520px 2px; }
+.line.line-vertical { width:2px; background-image:url("https://ornat-ux.vercel.app/assets/ornat-pencil-line-v.svg"); background-repeat:repeat-y; background-size:2px 520px; }
+hr { height:2px; border:0; background:url("https://ornat-ux.vercel.app/assets/ornat-pencil-line-h.svg") repeat-x; }
+button,input,textarea,select { border-color:#817c70; }
+.btn-main,.btn-submit,.input-submit { border-radius:1px 3px 2px 1px; box-shadow:inset 0 0 0 .6px #6b6559, .7px .6px 0 #81796b; }
+svg:not(.loading-img svg) { color:inherit; }
+svg [stroke='#fa3600'],svg [stroke='#FA3600'],svg [stroke='#f34c1d'] { stroke:#4d473c; }
+svg [fill='#fa3600'],svg [fill='#FA3600'] { fill:#4d473c; }
+img:not([src$='.svg']),svg image { filter:grayscale(1); }
+.home-hero-img-plus,.home-hero-img-interact,.home-hero-interact { color:#4d473c; }
+@media(max-width:767px) {
+  .heading {  }
+}
+
+/* Typography stays stable while architectural imagery transforms. */
+.heading,.txt,.richtext,.w-richtext,h1,h2,h3,h4,h5,h6,p,label,
+button,input,textarea,select,a,li,
+.heading *,.txt *,.richtext *,.w-richtext *,
+[data-ornat-ui-clean] .txt-font-mono {
+  color:#48443c !important;
+  animation:none !important;
+  transition:none !important;
+}
+.heading,.txt,.richtext,.w-richtext,h1,h2,h3,h4,h5,h6,p,
+.heading *,.txt *,.richtext *,.w-richtext * {
+  transform:none !important;
+  translate:none !important;
+  rotate:none !important;
+  scale:none !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  filter:none !important;
+  clip-path:none !important;
+  text-shadow:none;
+}
+/* Original rollover labels have two copies; retain one stationary label. */
+.btn-fill-label-inner.label-bot { visibility:hidden !important; }
+.btn-fill-label-inner.label-top { transform:none !important; }
+.btn-fill-label-inner.label-bot * { visibility:hidden !important; }
+
+/* Every existing border retains its layout widths but uses graphite strokes.
+   Nine-slice artwork preserves imperfect corners at every viewport size. */
+*,*::before,*::after {
+  border-image-source:url("https://ornat-ux.vercel.app/assets/ornat-pencil-border.svg") !important;
+  border-image-slice:3 !important;
+  border-image-width:1 !important;
+  border-image-repeat:stretch !important;
+}
+.body-inner *:not(svg):not(svg *) {
+}
+
+/* Contrast follows the actual surface; handwriting remains permanent. */
+[data-ornat-ink="light"] { color:#f6f3ea !important; -webkit-text-fill-color:#f6f3ea !important; text-shadow:none !important; }
+[data-ornat-ink="dark"] { color:#25231f !important; -webkit-text-fill-color:#25231f !important; }
+input[data-ornat-ink]::placeholder,textarea[data-ornat-ink]::placeholder { color:inherit !important; opacity:1; -webkit-text-fill-color:currentColor; }
+
+/* Architect's construction strokes: static grain, irregular doubled edges. */
+*,*::before,*::after { border-image-width:2 !important; }
+.line.line-horizital { min-height:2px; background-image:url("https://ornat-ux.vercel.app/assets/ornat-pencil-line-h.svg") !important; }
+.line.line-vertical { min-width:2px; background-image:url("https://ornat-ux.vercel.app/assets/ornat-pencil-line-v.svg") !important; }
+.header-menu-btn-ic-line { height:2px !important; background:transparent url("https://ornat-ux.vercel.app/assets/ornat-pencil-line-h.svg") repeat-x !important; background-size:160px 2px !important; }
+svg[data-ornat-handdrawn] { filter:url('#ornat-pencil-trace') !important; }
+svg[data-ornat-handdrawn] :is(path,line,polyline,polygon,rect,circle,ellipse) { stroke-linecap:round; stroke-linejoin:round; }
+.btn-main,.btn-submit,.input-submit { box-shadow:none; }
+
+/* Original type system: BT Grotesk for reading, Geist Mono for technical labels. */
+body,.body,button,input,textarea,select { font-family:'BT Grotesk',Arial,sans-serif; }
+.txt-font-mono,.txt.txt-font-mono { font-family:Geistmono,monospace !important; font-weight:500; }
+
+/* ORNAT's distinct editorial typography, inspired by the initial grotesk. */
+@font-face { font-family:'ORNAT Manrope'; src:url("https://ornat-ux.vercel.app/assets/ornat-manrope-variable.woff2") format('woff2'); font-weight:200 800; font-style:normal; font-display:swap; }
+body,.body,button,input,textarea,select,.heading,.txt,.richtext,.w-richtext,h1,h2,h3,h4,h5,h6,p,a,label,li {
+ font-family:'ORNAT Manrope','BT Grotesk',sans-serif !important;
+}
+body,.body { font-weight:450; }
+.heading,h1,h2,h3,h4,h5,h6 { font-weight:750; letter-spacing:-.035em; }
+h1,h2 { line-height:1.04; }
+.txt-font-mono,.txt.txt-font-mono,.txt-font-mono * { font-family:Geistmono,monospace !important; font-weight:500; letter-spacing:.025em; }

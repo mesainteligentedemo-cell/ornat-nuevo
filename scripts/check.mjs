@@ -59,7 +59,7 @@ async function checkHtml(file, source) {
     if (attr === 'srcset') { for (const part of value.split(',')) refs.add(part.trim().split(/\s+/)[0]); continue; }
     refs.add(value);
   }
-  for (const [, value] of markup.matchAll(/<a\b(?![^>]*\shref=)[^>]*>/g)) if (!/\sname=|role="button"/.test(value)) warnings.push(`${rel}: <a> sin href`);
+  for (const [value] of markup.matchAll(/<a\b(?![^>]*\shref=)[^>]*>/g)) if (!/\sname=|role="button"/.test(value)) warnings.push(`${rel}: <a> sin href`);
   for (const ref of refs) {
     if (!ref || /^(https?:|mailto:|tel:|data:|blob:|javascript:|about:|#|\/\/)/i.test(ref) || ref.includes('${')) {
       if (ref === '#') errors.push(`${rel}: enlace con href="#" sin destino`);

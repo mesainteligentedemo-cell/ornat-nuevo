@@ -1,0 +1,839 @@
+{
+ "version": 1,
+ "id": "casa-dos-plantas",
+ "nombre": "Casa de dos plantas · 240 m²",
+ "origen": "ejemplo",
+ "creado": "2026-10-25T01:15:39.412Z",
+ "actualizado": "2026-10-25T01:15:39.412Z",
+ "estilo": "contemporaneo",
+ "laminas": [
+  {
+   "id": "la-casa-dos-plantas",
+   "nombre": "Casa de dos plantas · 240 m² (ejemplo)",
+   "ancho": 1520,
+   "alto": 962,
+   "src": "muestras/casa-dos-plantas.png"
+  }
+ ],
+ "plantas": [
+  {
+   "id": "casa-pb",
+   "nombre": "Planta baja",
+   "nivel": 0,
+   "altura": 2.7,
+   "losa": 0.2,
+   "escala": {
+    "confianza": "alta",
+    "fuente": "ejemplo",
+    "nota": "Plano de ejemplo dibujado por ORNAT: la geometría es exacta."
+   },
+   "lamina": {
+    "id": "la-casa-dos-plantas",
+    "x": 120,
+    "y": 120,
+    "mPorPx": 0.017857142857142856
+   },
+   "muros": [
+    {
+     "id": "pb-n",
+     "x1": 0,
+     "y1": 0,
+     "x2": 10,
+     "y2": 0,
+     "grosor": 0.2
+    },
+    {
+     "id": "pb-e",
+     "x1": 10,
+     "y1": 0,
+     "x2": 10,
+     "y2": 12,
+     "grosor": 0.2
+    },
+    {
+     "id": "pb-s",
+     "x1": 10,
+     "y1": 12,
+     "x2": 0,
+     "y2": 12,
+     "grosor": 0.2
+    },
+    {
+     "id": "pb-o",
+     "x1": 0,
+     "y1": 12,
+     "x2": 0,
+     "y2": 0,
+     "grosor": 0.2
+    },
+    {
+     "id": "pb-1",
+     "x1": 0,
+     "y1": 5,
+     "x2": 10,
+     "y2": 5,
+     "grosor": 0.12
+    },
+    {
+     "id": "pb-2",
+     "x1": 6,
+     "y1": 0,
+     "x2": 6,
+     "y2": 5,
+     "grosor": 0.12
+    },
+    {
+     "id": "pb-3",
+     "x1": 6,
+     "y1": 5,
+     "x2": 6,
+     "y2": 12,
+     "grosor": 0.12
+    },
+    {
+     "id": "pb-4",
+     "x1": 6,
+     "y1": 9,
+     "x2": 10,
+     "y2": 9,
+     "grosor": 0.12
+    },
+    {
+     "id": "pb-5",
+     "x1": 3.5,
+     "y1": 5,
+     "x2": 3.5,
+     "y2": 9,
+     "grosor": 0.12
+    },
+    {
+     "id": "pb-6",
+     "x1": 3.5,
+     "y1": 7.5,
+     "x2": 6,
+     "y2": 7.5,
+     "grosor": 0.12
+    },
+    {
+     "id": "pb-7",
+     "x1": 3.5,
+     "y1": 9,
+     "x2": 6,
+     "y2": 9,
+     "grosor": 0.12
+    }
+   ],
+   "aberturas": [
+    {
+     "id": "pb-a1",
+     "muro": "pb-n",
+     "tipo": "corrediza",
+     "pos": 3,
+     "ancho": 3.2,
+     "alto": 2.3,
+     "antepecho": 0
+    },
+    {
+     "id": "pb-a2",
+     "muro": "pb-n",
+     "tipo": "ventana",
+     "pos": 8,
+     "ancho": 1.8,
+     "alto": 1.2,
+     "antepecho": 0.9
+    },
+    {
+     "id": "pb-a3",
+     "muro": "pb-e",
+     "tipo": "ventana",
+     "pos": 2,
+     "ancho": 1.5,
+     "alto": 1.2,
+     "antepecho": 0.9
+    },
+    {
+     "id": "pb-a4",
+     "muro": "pb-e",
+     "tipo": "ventana",
+     "pos": 10.5,
+     "ancho": 1.2,
+     "alto": 1.2,
+     "antepecho": 0.9
+    },
+    {
+     "id": "pb-a5",
+     "muro": "pb-s",
+     "tipo": "puerta",
+     "pos": 7,
+     "ancho": 1,
+     "alto": 2.3,
+     "antepecho": 0
+    },
+    {
+     "id": "pb-a6",
+     "muro": "pb-s",
+     "tipo": "ventana",
+     "pos": 2,
+     "ancho": 1.6,
+     "alto": 1.2,
+     "antepecho": 0.9
+    },
+    {
+     "id": "pb-a7",
+     "muro": "pb-o",
+     "tipo": "ventana",
+     "pos": 5,
+     "ancho": 1,
+     "alto": 1.2,
+     "antepecho": 0.9
+    },
+    {
+     "id": "pb-a8",
+     "muro": "pb-1",
+     "tipo": "vano",
+     "pos": 1.75,
+     "ancho": 2,
+     "alto": 2.3,
+     "antepecho": 0
+    },
+    {
+     "id": "pb-a9",
+     "muro": "pb-1",
+     "tipo": "vano",
+     "pos": 8,
+     "ancho": 1.2,
+     "alto": 2.3,
+     "antepecho": 0
+    },
+    {
+     "id": "pb-a10",
+     "muro": "pb-2",
+     "tipo": "vano",
+     "pos": 2.5,
+     "ancho": 2.4,
+     "alto": 2.3,
+     "antepecho": 0
+    },
+    {
+     "id": "pb-a11",
+     "muro": "pb-3",
+     "tipo": "puerta",
+     "pos": 5.5,
+     "ancho": 0.9,
+     "alto": 2.1,
+     "antepecho": 0
+    },
+    {
+     "id": "pb-a12",
+     "muro": "pb-5",
+     "tipo": "puerta",
+     "pos": 1.25,
+     "ancho": 0.8,
+     "alto": 2.1,
+     "antepecho": 0
+    },
+    {
+     "id": "pb-a13",
+     "muro": "pb-5",
+     "tipo": "puerta",
+     "pos": 3.25,
+     "ancho": 0.8,
+     "alto": 2.1,
+     "antepecho": 0
+    },
+    {
+     "id": "pb-a14",
+     "muro": "pb-7",
+     "tipo": "vano",
+     "pos": 1.25,
+     "ancho": 1.6,
+     "alto": 2.3,
+     "antepecho": 0
+    }
+   ],
+   "espacios": [
+    {
+     "id": "pb-e1",
+     "nombre": "Sala",
+     "uso": "sala",
+     "poligono": [
+      [
+       0,
+       0
+      ],
+      [
+       6,
+       0
+      ],
+      [
+       6,
+       5
+      ],
+      [
+       0,
+       5
+      ]
+     ]
+    },
+    {
+     "id": "pb-e2",
+     "nombre": "Comedor",
+     "uso": "comedor",
+     "poligono": [
+      [
+       6,
+       0
+      ],
+      [
+       10,
+       0
+      ],
+      [
+       10,
+       5
+      ],
+      [
+       6,
+       5
+      ]
+     ]
+    },
+    {
+     "id": "pb-e3",
+     "nombre": "Cocina",
+     "uso": "cocina",
+     "poligono": [
+      [
+       6,
+       5
+      ],
+      [
+       10,
+       5
+      ],
+      [
+       10,
+       9
+      ],
+      [
+       6,
+       9
+      ]
+     ]
+    },
+    {
+     "id": "pb-e4",
+     "nombre": "Estudio",
+     "uso": "estudio",
+     "poligono": [
+      [
+       6,
+       9
+      ],
+      [
+       10,
+       9
+      ],
+      [
+       10,
+       12
+      ],
+      [
+       6,
+       12
+      ]
+     ]
+    },
+    {
+     "id": "pb-e5",
+     "nombre": "Escalera",
+     "uso": "escalera",
+     "poligono": [
+      [
+       0,
+       5
+      ],
+      [
+       3.5,
+       5
+      ],
+      [
+       3.5,
+       9
+      ],
+      [
+       0,
+       9
+      ]
+     ]
+    },
+    {
+     "id": "pb-e6",
+     "nombre": "Medio baño",
+     "uso": "bano",
+     "poligono": [
+      [
+       3.5,
+       5
+      ],
+      [
+       6,
+       5
+      ],
+      [
+       6,
+       7.5
+      ],
+      [
+       3.5,
+       7.5
+      ]
+     ]
+    },
+    {
+     "id": "pb-e7",
+     "nombre": "Bodega",
+     "uso": "bodega",
+     "poligono": [
+      [
+       3.5,
+       7.5
+      ],
+      [
+       6,
+       7.5
+      ],
+      [
+       6,
+       9
+      ],
+      [
+       3.5,
+       9
+      ]
+     ]
+    },
+    {
+     "id": "pb-e8",
+     "nombre": "Recibidor",
+     "uso": "circulacion",
+     "poligono": [
+      [
+       0,
+       9
+      ],
+      [
+       6,
+       9
+      ],
+      [
+       6,
+       12
+      ],
+      [
+       0,
+       12
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "casa-pa",
+   "nombre": "Planta alta",
+   "nivel": 1,
+   "altura": 2.6,
+   "losa": 0.2,
+   "escala": {
+    "confianza": "alta",
+    "fuente": "ejemplo",
+    "nota": "Plano de ejemplo dibujado por ORNAT: la geometría es exacta."
+   },
+   "lamina": {
+    "id": "la-casa-dos-plantas",
+    "x": 840,
+    "y": 120,
+    "mPorPx": 0.017857142857142856
+   },
+   "muros": [
+    {
+     "id": "pa-n",
+     "x1": 0,
+     "y1": 0,
+     "x2": 10,
+     "y2": 0,
+     "grosor": 0.2
+    },
+    {
+     "id": "pa-e",
+     "x1": 10,
+     "y1": 0,
+     "x2": 10,
+     "y2": 12,
+     "grosor": 0.2
+    },
+    {
+     "id": "pa-s",
+     "x1": 10,
+     "y1": 12,
+     "x2": 0,
+     "y2": 12,
+     "grosor": 0.2
+    },
+    {
+     "id": "pa-o",
+     "x1": 0,
+     "y1": 12,
+     "x2": 0,
+     "y2": 0,
+     "grosor": 0.2
+    },
+    {
+     "id": "pa-1",
+     "x1": 0,
+     "y1": 5,
+     "x2": 10,
+     "y2": 5,
+     "grosor": 0.12
+    },
+    {
+     "id": "pa-2",
+     "x1": 6,
+     "y1": 0,
+     "x2": 6,
+     "y2": 12,
+     "grosor": 0.12
+    },
+    {
+     "id": "pa-3",
+     "x1": 6,
+     "y1": 3,
+     "x2": 10,
+     "y2": 3,
+     "grosor": 0.12
+    },
+    {
+     "id": "pa-4",
+     "x1": 3.5,
+     "y1": 5,
+     "x2": 3.5,
+     "y2": 9,
+     "grosor": 0.12
+    },
+    {
+     "id": "pa-5",
+     "x1": 0,
+     "y1": 9,
+     "x2": 10,
+     "y2": 9,
+     "grosor": 0.12
+    }
+   ],
+   "aberturas": [
+    {
+     "id": "pa-a1",
+     "muro": "pa-n",
+     "tipo": "ventana",
+     "pos": 3,
+     "ancho": 2.4,
+     "alto": 1.2,
+     "antepecho": 0.9
+    },
+    {
+     "id": "pa-a2",
+     "muro": "pa-n",
+     "tipo": "ventana",
+     "pos": 8,
+     "ancho": 1,
+     "alto": 0.6,
+     "antepecho": 1.5
+    },
+    {
+     "id": "pa-a3",
+     "muro": "pa-e",
+     "tipo": "ventana",
+     "pos": 7,
+     "ancho": 1.6,
+     "alto": 1.2,
+     "antepecho": 0.9
+    },
+    {
+     "id": "pa-a4",
+     "muro": "pa-e",
+     "tipo": "ventana",
+     "pos": 10.5,
+     "ancho": 0.8,
+     "alto": 0.6,
+     "antepecho": 1.5
+    },
+    {
+     "id": "pa-a5",
+     "muro": "pa-s",
+     "tipo": "ventana",
+     "pos": 7,
+     "ancho": 1.8,
+     "alto": 1.2,
+     "antepecho": 0.9
+    },
+    {
+     "id": "pa-a6",
+     "muro": "pa-o",
+     "tipo": "ventana",
+     "pos": 5,
+     "ancho": 1,
+     "alto": 1.2,
+     "antepecho": 0.9
+    },
+    {
+     "id": "pa-a7",
+     "muro": "pa-1",
+     "tipo": "puerta",
+     "pos": 4.75,
+     "ancho": 0.9,
+     "alto": 2.1,
+     "antepecho": 0
+    },
+    {
+     "id": "pa-a8",
+     "muro": "pa-2",
+     "tipo": "puerta",
+     "pos": 1.5,
+     "ancho": 0.8,
+     "alto": 2.1,
+     "antepecho": 0
+    },
+    {
+     "id": "pa-a9",
+     "muro": "pa-2",
+     "tipo": "puerta",
+     "pos": 4,
+     "ancho": 0.8,
+     "alto": 2.1,
+     "antepecho": 0
+    },
+    {
+     "id": "pa-a10",
+     "muro": "pa-2",
+     "tipo": "puerta",
+     "pos": 6,
+     "ancho": 0.9,
+     "alto": 2.1,
+     "antepecho": 0
+    },
+    {
+     "id": "pa-a11",
+     "muro": "pa-5",
+     "tipo": "puerta",
+     "pos": 4.75,
+     "ancho": 0.9,
+     "alto": 2.1,
+     "antepecho": 0
+    },
+    {
+     "id": "pa-a12",
+     "muro": "pa-5",
+     "tipo": "puerta",
+     "pos": 6.6,
+     "ancho": 0.8,
+     "alto": 2.1,
+     "antepecho": 0
+    },
+    {
+     "id": "pa-a13",
+     "muro": "pa-4",
+     "tipo": "vano",
+     "pos": 2,
+     "ancho": 1.4,
+     "alto": 2.3,
+     "antepecho": 0
+    }
+   ],
+   "espacios": [
+    {
+     "id": "pa-e1",
+     "nombre": "Recámara principal",
+     "uso": "recamara",
+     "poligono": [
+      [
+       0,
+       0
+      ],
+      [
+       6,
+       0
+      ],
+      [
+       6,
+       5
+      ],
+      [
+       0,
+       5
+      ]
+     ]
+    },
+    {
+     "id": "pa-e2",
+     "nombre": "Baño principal",
+     "uso": "bano",
+     "poligono": [
+      [
+       6,
+       0
+      ],
+      [
+       10,
+       0
+      ],
+      [
+       10,
+       3
+      ],
+      [
+       6,
+       3
+      ]
+     ]
+    },
+    {
+     "id": "pa-e3",
+     "nombre": "Vestidor",
+     "uso": "vestidor",
+     "poligono": [
+      [
+       6,
+       3
+      ],
+      [
+       10,
+       3
+      ],
+      [
+       10,
+       5
+      ],
+      [
+       6,
+       5
+      ]
+     ]
+    },
+    {
+     "id": "pa-e4",
+     "nombre": "Escalera",
+     "uso": "escalera",
+     "poligono": [
+      [
+       0,
+       5
+      ],
+      [
+       3.5,
+       5
+      ],
+      [
+       3.5,
+       9
+      ],
+      [
+       0,
+       9
+      ]
+     ]
+    },
+    {
+     "id": "pa-e5",
+     "nombre": "Vestíbulo",
+     "uso": "circulacion",
+     "poligono": [
+      [
+       3.5,
+       5
+      ],
+      [
+       6,
+       5
+      ],
+      [
+       6,
+       9
+      ],
+      [
+       3.5,
+       9
+      ]
+     ]
+    },
+    {
+     "id": "pa-e6",
+     "nombre": "Recámara 2",
+     "uso": "recamara",
+     "poligono": [
+      [
+       6,
+       5
+      ],
+      [
+       10,
+       5
+      ],
+      [
+       10,
+       9
+      ],
+      [
+       6,
+       9
+      ]
+     ]
+    },
+    {
+     "id": "pa-e7",
+     "nombre": "Recámara 3",
+     "uso": "recamara",
+     "poligono": [
+      [
+       0,
+       9
+      ],
+      [
+       6,
+       9
+      ],
+      [
+       6,
+       12
+      ],
+      [
+       0,
+       12
+      ]
+     ]
+    },
+    {
+     "id": "pa-e8",
+     "nombre": "Baño 2",
+     "uso": "bano",
+     "poligono": [
+      [
+       6,
+       9
+      ],
+      [
+       10,
+       9
+      ],
+      [
+       10,
+       12
+      ],
+      [
+       6,
+       12
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

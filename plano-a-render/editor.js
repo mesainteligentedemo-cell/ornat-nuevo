@@ -91,7 +91,7 @@ export class Editor {
     if (this.tmp?.tipo === 'mover') { const mov = this.tmp.movido; this.tmp = null; if (mov) this.cambio('Muro movido'); }
   }
   tecla(e) {
-    if (e.key === 'Escape') { this.tmp = null; this.sel = null; this.dibujar(); return; }
+    if (e.key === 'Escape') { this.tmp = null; this.sel = null; this.onSeleccion(null); this.dibujar(); return; }
     if ((e.key === 'Delete' || e.key === 'Backspace') && this.sel) { e.preventDefault(); this.borrarSeleccion(); return; }
     const d = { ArrowLeft: [-0.05, 0], ArrowRight: [0.05, 0], ArrowUp: [0, -0.05], ArrowDown: [0, 0.05] }[e.key];
     if (d && this.sel?.tipo === 'muro') { e.preventDefault(); const w = this.planta.muros.find(x => x.id === this.sel.id); if (w) { w.x1 += d[0]; w.x2 += d[0]; w.y1 += d[1]; w.y2 += d[1]; this.cambio('Muro movido 5 cm'); } }

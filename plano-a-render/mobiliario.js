@@ -86,7 +86,14 @@ function poner(g, o, x = 0, y = 0, z = 0, rx = 0, ry = 0, rz = 0) { o.position.s
 function cajaB(g, w, h, d, mat, x, y0, z, r = 0) { return poner(g, caja(w, h, d, mat, r), x, y0 + Math.max(h, 0.003) / 2, z); }
 function cil(rt, rb, h, mat, seg = 12, abierto = false) { return malla(new THREE.CylinderGeometry(rt, rb, Math.max(h, 0.002), seg, 1, abierto), mat); }
 function cilB(g, rt, rb, h, mat, x, y0, z, seg = 12) { return poner(g, cil(rt, rb, h, mat, seg), x, y0 + h / 2, z); }
-function torno(perfil, mat, seg = 16) { return malla(new THREE.LatheGeometry(perfil.map(([r, y]) => V2(Math.max(0, r), y)), seg), mat); }
+// LatheGeometry promedia normales sin normalizarlas y las hojas deformadas dejan normales nulas en los polos:
+// se dejan unitarias para que el sombreado y la exportación .glb sean correctos (GLTFExporter avisa si no lo son).
+function normalesUnitarias(geo) {
+  const n = geo.attributes.normal; if (!n) return geo;
+  for (let i = 0; i < n.count; i++) { const x = n.getX(i), y = n.getY(i), z = n.getZ(i), l = Math.hypot(x, y, z); if (l < 1e-6) n.setXYZ(i, 0, 1, 0); else n.setXYZ(i, x / l, y / l, z / l); }
+  n.needsUpdate = true; return geo;
+}
+function torno(perfil, mat, seg = 16) { return malla(normalesUnitarias(new THREE.LatheGeometry(perfil.map(([r, y]) => V2(Math.max(0, r), y)), seg)), mat); }
 function tubo(pts, radio, mat, segs = 12, rad = 6) {
   const c = new THREE.CatmullRomCurve3(pts.map(p => V3(p[0], p[1], p[2])));
   return malla(new THREE.TubeGeometry(c, segs, radio, rad, false), mat);
@@ -156,7 +163,7 @@ function geoHoja(ancho = 0.5, caida = 0.2, copa = 0.1, sw = 10, sh = 4) {
     p.setXYZ(i, X, Y, t);
   }
   g.computeVertexNormals();
-  return g;
+  return normalesUnitarias(g);
 }
 
 function patas(g, M, E, { w, d, h, grosor = 1, ox = 0, oz = 0, tipo } = {}) {

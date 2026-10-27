@@ -1,0 +1,579 @@
+{
+ "version": 1,
+ "id": "villa-tulum",
+ "nombre": "Villa en Tulum · 128 m² + terraza y alberca",
+ "origen": "ejemplo",
+ "creado": "2026-10-25T01:15:39.423Z",
+ "actualizado": "2026-10-25T01:15:39.423Z",
+ "estilo": "tulum-bohemio",
+ "laminas": [
+  {
+   "id": "la-villa-tulum",
+   "nombre": "Villa en Tulum · 128 m² + terraza y alberca (ejemplo)",
+   "ancho": 1136,
+   "alto": 1130,
+   "src": "muestras/villa-tulum.png"
+  }
+ ],
+ "plantas": [
+  {
+   "id": "villa",
+   "nombre": "Planta única",
+   "nivel": 0,
+   "altura": 3,
+   "losa": 0.25,
+   "escala": {
+    "confianza": "alta",
+    "fuente": "ejemplo",
+    "nota": "Plano de ejemplo dibujado por ORNAT: la geometría es exacta."
+   },
+   "lamina": {
+    "id": "la-villa-tulum",
+    "x": 120,
+    "y": 120,
+    "mPorPx": 0.017857142857142856
+   },
+   "muros": [
+    {
+     "id": "v-n",
+     "x1": 0,
+     "y1": 0,
+     "x2": 16,
+     "y2": 0,
+     "grosor": 0.2
+    },
+    {
+     "id": "v-e",
+     "x1": 16,
+     "y1": 0,
+     "x2": 16,
+     "y2": 8,
+     "grosor": 0.2
+    },
+    {
+     "id": "v-s",
+     "x1": 16,
+     "y1": 8,
+     "x2": 0,
+     "y2": 8,
+     "grosor": 0.2
+    },
+    {
+     "id": "v-o",
+     "x1": 0,
+     "y1": 8,
+     "x2": 0,
+     "y2": 0,
+     "grosor": 0.2
+    },
+    {
+     "id": "v-1",
+     "x1": 5,
+     "y1": 0,
+     "x2": 5,
+     "y2": 8,
+     "grosor": 0.12
+    },
+    {
+     "id": "v-2",
+     "x1": 0,
+     "y1": 5,
+     "x2": 5,
+     "y2": 5,
+     "grosor": 0.12
+    },
+    {
+     "id": "v-3",
+     "x1": 3,
+     "y1": 5,
+     "x2": 3,
+     "y2": 8,
+     "grosor": 0.12
+    },
+    {
+     "id": "v-4",
+     "x1": 10,
+     "y1": 0,
+     "x2": 10,
+     "y2": 8,
+     "grosor": 0.12
+    },
+    {
+     "id": "v-5",
+     "x1": 13,
+     "y1": 0,
+     "x2": 13,
+     "y2": 8,
+     "grosor": 0.12
+    },
+    {
+     "id": "v-6",
+     "x1": 10,
+     "y1": 4,
+     "x2": 13,
+     "y2": 4,
+     "grosor": 0.12
+    },
+    {
+     "id": "v-7",
+     "x1": 13,
+     "y1": 5,
+     "x2": 16,
+     "y2": 5,
+     "grosor": 0.12
+    }
+   ],
+   "aberturas": [
+    {
+     "id": "v-a1",
+     "muro": "v-n",
+     "tipo": "ventana",
+     "pos": 2.5,
+     "ancho": 2,
+     "alto": 1.2,
+     "antepecho": 0.9
+    },
+    {
+     "id": "v-a2",
+     "muro": "v-n",
+     "tipo": "puerta",
+     "pos": 5.8,
+     "ancho": 1.1,
+     "alto": 2.4,
+     "antepecho": 0
+    },
+    {
+     "id": "v-a3",
+     "muro": "v-n",
+     "tipo": "ventana",
+     "pos": 8,
+     "ancho": 2.6,
+     "alto": 2,
+     "antepecho": 0.45
+    },
+    {
+     "id": "v-a4",
+     "muro": "v-n",
+     "tipo": "ventana",
+     "pos": 11.5,
+     "ancho": 1.6,
+     "alto": 1,
+     "antepecho": 1.1
+    },
+    {
+     "id": "v-a5",
+     "muro": "v-n",
+     "tipo": "ventana",
+     "pos": 14.5,
+     "ancho": 2,
+     "alto": 1.2,
+     "antepecho": 0.9
+    },
+    {
+     "id": "v-a6",
+     "muro": "v-e",
+     "tipo": "ventana",
+     "pos": 2.5,
+     "ancho": 1.8,
+     "alto": 1.2,
+     "antepecho": 0.9
+    },
+    {
+     "id": "v-a7",
+     "muro": "v-s",
+     "tipo": "ventana",
+     "pos": 1.5,
+     "ancho": 2,
+     "alto": 0.7,
+     "antepecho": 1.8
+    },
+    {
+     "id": "v-a8",
+     "muro": "v-s",
+     "tipo": "corrediza",
+     "pos": 8.5,
+     "ancho": 3.6,
+     "alto": 2.6,
+     "antepecho": 0
+    },
+    {
+     "id": "v-a9",
+     "muro": "v-s",
+     "tipo": "corrediza",
+     "pos": 4.5,
+     "ancho": 2.4,
+     "alto": 2.6,
+     "antepecho": 0
+    },
+    {
+     "id": "v-a10",
+     "muro": "v-s",
+     "tipo": "ventana",
+     "pos": 14.5,
+     "ancho": 0.8,
+     "alto": 0.6,
+     "antepecho": 1.5
+    },
+    {
+     "id": "v-a11",
+     "muro": "v-o",
+     "tipo": "ventana",
+     "pos": 5.5,
+     "ancho": 1.8,
+     "alto": 1.2,
+     "antepecho": 0.9
+    },
+    {
+     "id": "v-a12",
+     "muro": "v-1",
+     "tipo": "puerta",
+     "pos": 3.5,
+     "ancho": 0.9,
+     "alto": 2.1,
+     "antepecho": 0
+    },
+    {
+     "id": "v-a13",
+     "muro": "v-2",
+     "tipo": "puerta",
+     "pos": 4,
+     "ancho": 0.8,
+     "alto": 2.1,
+     "antepecho": 0
+    },
+    {
+     "id": "v-a14",
+     "muro": "v-3",
+     "tipo": "puerta",
+     "pos": 1.5,
+     "ancho": 0.8,
+     "alto": 2.1,
+     "antepecho": 0
+    },
+    {
+     "id": "v-a15",
+     "muro": "v-4",
+     "tipo": "vano",
+     "pos": 2,
+     "ancho": 1.6,
+     "alto": 2.3,
+     "antepecho": 0
+    },
+    {
+     "id": "v-a16",
+     "muro": "v-4",
+     "tipo": "vano",
+     "pos": 6,
+     "ancho": 2.2,
+     "alto": 2.3,
+     "antepecho": 0
+    },
+    {
+     "id": "v-a17",
+     "muro": "v-6",
+     "tipo": "vano",
+     "pos": 1.5,
+     "ancho": 1.8,
+     "alto": 2.3,
+     "antepecho": 0
+    },
+    {
+     "id": "v-a18",
+     "muro": "v-5",
+     "tipo": "puerta",
+     "pos": 4.55,
+     "ancho": 0.9,
+     "alto": 2.1,
+     "antepecho": 0
+    },
+    {
+     "id": "v-a19",
+     "muro": "v-7",
+     "tipo": "puerta",
+     "pos": 1.5,
+     "ancho": 0.8,
+     "alto": 2.1,
+     "antepecho": 0
+    }
+   ],
+   "espacios": [
+    {
+     "id": "v-e1",
+     "nombre": "Recámara principal",
+     "uso": "recamara",
+     "poligono": [
+      [
+       0,
+       0
+      ],
+      [
+       5,
+       0
+      ],
+      [
+       5,
+       5
+      ],
+      [
+       0,
+       5
+      ]
+     ]
+    },
+    {
+     "id": "v-e2",
+     "nombre": "Vestidor",
+     "uso": "vestidor",
+     "poligono": [
+      [
+       3,
+       5
+      ],
+      [
+       5,
+       5
+      ],
+      [
+       5,
+       8
+      ],
+      [
+       3,
+       8
+      ]
+     ]
+    },
+    {
+     "id": "v-e3",
+     "nombre": "Baño principal",
+     "uso": "bano",
+     "poligono": [
+      [
+       0,
+       5
+      ],
+      [
+       3,
+       5
+      ],
+      [
+       3,
+       8
+      ],
+      [
+       0,
+       8
+      ]
+     ]
+    },
+    {
+     "id": "v-e4",
+     "nombre": "Sala",
+     "uso": "sala",
+     "poligono": [
+      [
+       5,
+       0
+      ],
+      [
+       10,
+       0
+      ],
+      [
+       10,
+       8
+      ],
+      [
+       5,
+       8
+      ]
+     ]
+    },
+    {
+     "id": "v-e5",
+     "nombre": "Cocina",
+     "uso": "cocina",
+     "poligono": [
+      [
+       10,
+       0
+      ],
+      [
+       13,
+       0
+      ],
+      [
+       13,
+       4
+      ],
+      [
+       10,
+       4
+      ]
+     ]
+    },
+    {
+     "id": "v-e6",
+     "nombre": "Comedor",
+     "uso": "comedor",
+     "poligono": [
+      [
+       10,
+       4
+      ],
+      [
+       13,
+       4
+      ],
+      [
+       13,
+       8
+      ],
+      [
+       10,
+       8
+      ]
+     ]
+    },
+    {
+     "id": "v-e7",
+     "nombre": "Recámara de huéspedes",
+     "uso": "recamara",
+     "poligono": [
+      [
+       13,
+       0
+      ],
+      [
+       16,
+       0
+      ],
+      [
+       16,
+       5
+      ],
+      [
+       13,
+       5
+      ]
+     ]
+    },
+    {
+     "id": "v-e8",
+     "nombre": "Baño de huéspedes",
+     "uso": "bano",
+     "poligono": [
+      [
+       13,
+       5
+      ],
+      [
+       16,
+       5
+      ],
+      [
+       16,
+       8
+      ],
+      [
+       13,
+       8
+      ]
+     ]
+    },
+    {
+     "id": "v-e9",
+     "nombre": "Terraza",
+     "uso": "terraza",
+     "poligono": [
+      [
+       0,
+       8
+      ],
+      [
+       16,
+       8
+      ],
+      [
+       16,
+       11
+      ],
+      [
+       0,
+       11
+      ]
+     ]
+    },
+    {
+     "id": "v-e10",
+     "nombre": "Alberca",
+     "uso": "alberca",
+     "poligono": [
+      [
+       4,
+       11.5
+      ],
+      [
+       12,
+       11.5
+      ],
+      [
+       12,
+       14.5
+      ],
+      [
+       4,
+       14.5
+      ]
+     ]
+    },
+    {
+     "id": "v-e11",
+     "nombre": "Jardín poniente",
+     "uso": "jardin",
+     "poligono": [
+      [
+       0,
+       11
+      ],
+      [
+       4,
+       11
+      ],
+      [
+       4,
+       15
+      ],
+      [
+       0,
+       15
+      ]
+     ]
+    },
+    {
+     "id": "v-e12",
+     "nombre": "Jardín oriente",
+     "uso": "jardin",
+     "poligono": [
+      [
+       12,
+       11
+      ],
+      [
+       16,
+       11
+      ],
+      [
+       16,
+       15
+      ],
+      [
+       12,
+       15
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

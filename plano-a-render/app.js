@@ -5,10 +5,10 @@ import { ESTILOS, estiloPorId, buscarEstilos, TEMPERATURAS, REGIONES, PRESUPUEST
 import { normalizarProyecto, desdeJSON, aJSON, USOS, USO_KEYS, resumenPlanta, areaPoligono, escalarPlanta, plantaDesdePx, uid, ajustarAberturaAMuro, centroide, puntoEnPoligono, limites, estiloDe } from './modelo.js';
 import { detectarPlano } from './deteccion.js';
 import { Editor, HERRAMIENTAS } from './editor.js';
-import { leerArchivos, cargarImagen, paraIA } from './laminas.js';
+import { leerArchivos, cargarImagen, paraIA, LIMITES } from './laminas.js';
 import { muestraCanvas } from './texturas.js';
 import { Visor } from './visor.js';
-import { renderizar, CALIDADES, RESOLUCIONES, soportePathTracing } from './render-local.js';
+import { renderizar, liberarRender, CALIDADES, RESOLUCIONES, soportePathTracing } from './render-local.js';
 import { remote } from '../shared/remote-boot.js';
 import '../shared/session-bar.js';
 
@@ -46,7 +46,10 @@ function guardarLocal(silencioso = true) {
   catch { if (!silencioso) toast('No se pudo guardar en este navegador (almacenamiento lleno o bloqueado). Descarga el JSON.', 'error'); return false; }
 }
 function leerLocal() { try { const t = localStorage.getItem(ALMACEN); return t ? desdeJSON(t, { esEstilo }) : null; } catch { return null; } }
-let tGuardar = 0; const autoguardar = () => { clearTimeout(tGuardar); tGuardar = setTimeout(() => guardarLocal(true), 600); };
+let tGuardar = 0; const autoguardar = () => { clearTimeout(tGuardar); tGuardar = setTimeout(() => { tGuardar = 0; guardarLocal(true); }, 600); };
+// si la pestaña se cierra o se oculta antes de que corra el autoguardado, se guarda en ese momento
+const guardarPendiente = () => { if (tGuardar) { clearTimeout(tGuardar); tGuardar = 0; guardarLocal(true); } };
+addEventListener('pagehide', guardarPendiente); document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') guardarPendiente(); });
 
 /* ---------- láminas ---------- */
 async function registrarLamina({ id = uid('la'), nombre, canvas, src }) {
@@ -54,6 +57,7 @@ async function registrarLamina({ id = uid('la'), nombre, canvas, src }) {
   const lam = { id, nombre, canvas, ancho: canvas.width, alto: canvas.height, url: URL.createObjectURL(blob), src };
   S.laminas.set(id, lam); return lam;
 }
+function limpiarLaminas() { for (const l of S.laminas.values()) URL.revokeObjectURL(l.url); S.laminas.clear(); }
 const laminaDe = pl => (pl?.lamina ? S.laminas.get(pl.lamina.id) || null : null);
 
 /* ---------- proyecto ---------- */
@@ -69,7 +73,7 @@ async function abrirEjemplo(id, btn) {
   try {
     const r = await fetch(`muestras/${id}.json`); if (!r.ok) throw new Error('No se pudo cargar el ejemplo.');
     const p = desdeJSON(await r.text(), { esEstilo });
-    S.laminas.clear();
+    limpiarLaminas();
     for (const l of p.laminas) if (l.src) await registrarLamina({ id: l.id, nombre: l.nombre, canvas: await cargarImagen(l.src), src: l.src });
     establecer(p); toast(`Ejemplo cargado: ${p.nombre}. Es un plano dibujado por ORNAT con su lectura ya hecha.`);
     $('#plano').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -82,6 +86,7 @@ async function subirArchivos(files) {
   const zona = $('#zona'); zona?.classList.add('cargando');
   try {
     const hojas = await leerArchivos(files);
+    if ((S.proyecto?.laminas.length || 0) + hojas.length > LIMITES.laminas) throw new Error(`Máximo ${LIMITES.laminas} láminas por proyecto.`);
     if (!S.proyecto) S.proyecto = nuevoProyecto(hojas[0]?.nombre || 'Proyecto nuevo');
     for (const h of hojas) { const lam = await registrarLamina(h); S.proyecto.laminas.push({ id: lam.id, nombre: lam.nombre, ancho: lam.ancho, alto: lam.alto }); }
     toast(`${hojas.length === 1 ? 'Lámina cargada' : `${hojas.length} láminas cargadas`}. Ahora detecta los muros o dibújalos.`);
@@ -191,7 +196,7 @@ function pintarInicio() {
 
 function pintarPlano() {
   const cuerpo = $('#plano-cuerpo');
-  if (!S.proyecto) { cuerpo.innerHTML = pintarInicio(); const g = leerLocal(); if (g) $('#guardado-aviso').innerHTML = `<div class="banner"><p>Tienes un proyecto guardado en este navegador: <b>${esc(g.nombre)}</b> (${g.plantas.length} planta${g.plantas.length === 1 ? '' : 's'}).</p><button class="btn sm dark" type="button" data-accion="abrir-guardado">Abrirlo</button></div>`; return; }
+  if (!S.proyecto) { editor = null; cuerpo.innerHTML = pintarInicio(); const g = leerLocal(); if (g) $('#guardado-aviso').innerHTML = `<div class="banner"><p>Tienes un proyecto guardado en este navegador: <b>${esc(g.nombre)}</b> (${g.plantas.length} planta${g.plantas.length === 1 ? '' : 's'}).</p><button class="btn sm dark" type="button" data-accion="abrir-guardado">Abrirlo</button></div>`; return; }
   const P = S.proyecto; const pl = planta(); const lamSin = P.laminas.filter(l => !P.plantas.some(p => p.lamina?.id === l.id));
   cuerpo.innerHTML = `
     <div class="pr-barra">
@@ -214,7 +219,7 @@ function pintarPlano() {
       <div class="ed-panel" id="panel"></div>
     </div>` : P.laminas.length ? '' : '<p class="hint">Agrega una lámina para empezar.</p>'}`;
   if (P.plantas.length) {
-    editor = new Editor($('#editor'), { onCambio: (_, msg) => cambioGeometria(msg), onSeleccion: sel => { S.sel = sel; pintarPanel(); }, onCalibrar: d => pedirCalibracion(d), anunciar });
+    editor = new Editor($('#editor'), { onCambio: (_, msg) => { S.sel = editor?.sel || null; cambioGeometria(msg); }, onSeleccion: sel => { S.sel = sel; pintarPanel(); }, onCalibrar: d => pedirCalibracion(d), anunciar });
     editor.verLamina = $('#ver-lamina') ? $('#ver-lamina').checked : true; editor.herramienta(S.herramienta); editor.mostrar(pl, laminaDe(pl)); pintarPanel();
   } else editor = null;
 }
@@ -345,7 +350,7 @@ function opcionesVista() {
 }
 function pintarRender() {
   const c = $('#render-cuerpo'); if (!c) return;
-  if (!S.proyecto?.plantas.length) { c.innerHTML = '<p class="empty-s">Primero lee un plano o abre un ejemplo.</p>'; return; }
+  if (!S.proyecto?.plantas.length) { const rc = $('#r-canvas'); if (rc) { if (S.render.control) S.render.control.detener = true; else liberarRender(rc); } S.render.hecho = null; c.innerHTML = '<p class="empty-s">Primero lee un plano o abre un ejemplo.</p>'; return; }
   const { int, iso } = opcionesVista(); const todas = [...int, ...iso].map(x => x[0]);
   if (!todas.includes(S.render.vista)) S.render.vista = int[0]?.[0] || iso[0][0];
   const sop = soportePathTracing(); const R = S.render;
@@ -388,6 +393,7 @@ async function renderizarAhora() {
   const canvas = $('#r-canvas');
   try {
     const res = await renderizar(canvas, { proyecto: S.proyecto, estiloPorId, porDefecto: ESTILO_POR_DEFECTO, vista, ancho: w, alto: h, muestras: total, dof: R.dof, forzarRaster: R.modo === 'raster', exposicion: est?.iluminacion?.exposicion || 1, onProgreso: prog, control: ctrl });
+    if (!canvas.isConnected) return; // el proyecto se cerró mientras se renderizaba
     R.hecho = { ...res, vista, estilo: est?.nombre, w, h };
     const etiqueta = $('#r-vista').selectedOptions[0]?.textContent || '';
     canvas.setAttribute('aria-label', `Render de ${etiqueta} en estilo ${est?.nombre || ''}`);
@@ -395,8 +401,12 @@ async function renderizarAhora() {
     est0.textContent = res.modo === 'pathtracing' ? `Listo: ${res.muestras} muestras.` : 'Listo (rasterizado).';
     $('#r-png').disabled = false; const nb = $('#nube-ir'); if (nb) nb.disabled = false;
     toast('Render terminado.');
-  } catch (e) { console.error(e); toast(`No se pudo renderizar: ${e.message || e}`, 'error'); est0.textContent = 'El render falló.'; }
-  finally { R.corriendo = false; R.control = null; $('#r-ir').disabled = false; $('#r-stop').disabled = true; }
+  } catch (e) { if (!canvas.isConnected) return; console.error(e); toast(`No se pudo renderizar: ${e.message || e}`, 'error'); est0.textContent = 'El render falló.'; }
+  finally {
+    R.corriendo = false; R.control = null;
+    if (!canvas.isConnected) liberarRender(canvas);
+    const ir = $('#r-ir'), stop = $('#r-stop'); if (ir) ir.disabled = false; if (stop) stop.disabled = true;
+  }
 }
 async function nubeAhora(btn) {
   const R = S.render; if (!R.hecho) return; ocupado(btn, true, 'Enviando…');
@@ -435,7 +445,7 @@ async function exportarIsos(btn) {
   finally { ocupado(btn, false); }
 }
 async function abrirProyecto(p) {
-  S.laminas.clear();
+  limpiarLaminas();
   for (const l of p.laminas) if (l.src) { try { await registrarLamina({ id: l.id, nombre: l.nombre, canvas: await cargarImagen(l.src), src: l.src }); } catch {} }
   establecer(p);
   const faltan = p.laminas.filter(l => !S.laminas.has(l.id)).length;
@@ -452,7 +462,7 @@ document.addEventListener('click', async ev => {
   if (t.dataset.planta) { S.plantaSel = t.dataset.planta; S.sel = null; pintarPlano(); if (visor) visor.set(S.vista, S.plantaSel); const sp = $('#vis-planta'); if (sp) sp.value = S.plantaSel; return; }
   if (t.dataset.vista) { S.vista = t.dataset.vista; document.querySelectorAll('[data-vista]').forEach(b => b.setAttribute('aria-checked', String(b === t))); visor?.set(S.vista, planta()?.id); return; }
   if (t.dataset.estilo) return aplicarEstilo(t.dataset.estilo);
-  const a = t.dataset.accion; if (!a) { if (t.id === 'r-stop' && S.render.control) { S.render.control.detener = true; $('#r-estado').textContent = 'Deteniendo…'; } else if (t.id === 'r-png') { $('#r-canvas').toBlob(b => descargar(`${slug(S.proyecto.nombre)}-render.png`, b), 'image/png'); } else if (t.id === 'nube-ir') nubeAhora(t); return; }
+  const a = t.dataset.accion; if (!a) { if (t.id === 'r-stop' && S.render.control) { S.render.control.detener = true; $('#r-estado').textContent = 'Deteniendo…'; } else if (t.id === 'r-png') { $('#r-canvas').toBlob(b => (b ? descargar(`${slug(S.proyecto.nombre)}-render.png`, b) : toast('No se pudo generar el PNG del render.', 'error')), 'image/png'); } else if (t.id === 'nube-ir') nubeAhora(t); return; }
   const pl = planta();
   switch (a) {
     case 'detectar': return detectar(t.dataset.id, t);
@@ -464,7 +474,7 @@ document.addEventListener('click', async ev => {
     case 'borrar-sel': editor?.borrarSeleccion(); S.sel = null; pintarPanel(); return;
     case 'borrar-esp': pl.espacios = pl.espacios.filter(e => e.id !== t.dataset.id); editor?.mostrar(pl, laminaDe(pl)); cambioGeometria('Espacio borrado'); return;
     case 'borrar-planta': if (!confirm(`¿Quitar la ${pl.nombre} del proyecto?`)) return; S.proyecto.plantas = S.proyecto.plantas.filter(p => p.id !== pl.id); S.plantaSel = S.proyecto.plantas[0]?.id || null; pintarTodo(); refrescar3D(); autoguardar(); return;
-    case 'nuevo': if (!confirm('¿Empezar un proyecto nuevo? El actual sigue guardado en este navegador hasta que lo reemplaces.')) return; S.proyecto = null; S.laminas.clear(); visor?.destruir(); visor = null; pintarTodo(); return;
+    case 'nuevo': if (!confirm('¿Empezar un proyecto nuevo? El actual sigue guardado en este navegador hasta que lo reemplaces.')) return; S.proyecto = null; limpiarLaminas(); visor?.destruir(); visor = null; pintarTodo(); return;
     case 'glb': return exportarGLB(t);
     case 'png-iso': return exportarIsos(t);
     case 'json': return descargar(`${slug(S.proyecto.nombre)}.plano-a-render.json`, new Blob([aJSON(S.proyecto)], { type: 'application/json' }));
@@ -514,7 +524,7 @@ document.querySelectorAll('.pr-sec').forEach(s => io.observe(s));
 async function estadoServidor() {
   try {
     const r = await fetch('/api/plano/estado', { headers: { accept: 'application/json' } }); if (!r.ok) return;
-    const j = await r.json(); if (j?.ok) { S.servidor = { analisis: { disponible: j.analisis?.disponible === true }, nube: { disponible: j.nube?.disponible === true, proveedores: Array.isArray(j.nube?.proveedores) ? j.nube.proveedores : [] } }; pintarPlano(); pintarNube(); }
+    const j = await r.json(); if (j?.ok) { const antes = S.servidor.analisis.disponible; S.servidor = { analisis: { disponible: j.analisis?.disponible === true }, nube: { disponible: j.nube?.disponible === true, proveedores: Array.isArray(j.nube?.proveedores) ? j.nube.proveedores : [] } }; if (S.servidor.analisis.disponible !== antes) pintarPlano(); pintarNube(); }
   } catch { /* sin servidor: la herramienta sigue completa en modo local */ }
 }
 pintarTodo();

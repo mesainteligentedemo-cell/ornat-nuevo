@@ -1,6 +1,6 @@
 // ORNAT · pantalla de Recursos Humanos (modo demo). La lógica y los permisos viven en shared/people.js.
 import { data, ROLES } from '../shared/data.js';
-import { createPeople, AREAS, CONTRACTS, DOC_TYPES, REQUEST_TYPES, REQUEST_STATUS, WORKWEEKS, SENSITIVE_FIELDS, docState, vacationDaysForYear, completedYears, reviewResult, holidaysMX, maskValue, DEFAULT_ONBOARDING } from '../shared/people.js';
+import { createPeople, cleanEmployee, AREAS, CONTRACTS, DOC_TYPES, REQUEST_TYPES, REQUEST_STATUS, WORKWEEKS, SENSITIVE_FIELDS, docState, vacationDaysForYear, completedYears, reviewResult, holidaysMX, maskValue, DEFAULT_ONBOARDING } from '../shared/people.js';
 import { createTraining } from '../shared/training.js';
 import { putFile, getFile, deleteFile, clearFiles, MAX_FILE_BYTES } from '../shared/people-files.js';
 import { esc, toCSV, downloadText, fmtDate, fmtDateLong, todayISO, addDays, diffDays, isISODate, toUTC, MESES_LARGO, rid } from '../shared/ui.js';
@@ -306,8 +306,14 @@ $main.addEventListener('submit', guard(async e => {
   if (f.id === 'emp-form') {
     const msg = document.getElementById('emp-msg'); const fd = Object.fromEntries(new FormData(f)); const edit = !!f.dataset.id; msg.textContent = '';
     try {
-      let input = empFromForm(f, edit ? { id: f.dataset.id } : {});
-      if (!edit && fd.makeUser) { if (!input.email) throw new Error('Para crear acceso escribe el correo laboral.'); const u = d.users.list().find(x => x.email === input.email.toLowerCase()) || d.users.save({ name: input.name, email: input.email, role: fd.role || 'sales' }); input.userId = u.id; }
+      // El origen («ejemplo» o manual) no está en el formulario: al editar se conserva el que ya tenía.
+      let input = empFromForm(f, edit ? { id: f.dataset.id, source: P.employees.get(f.dataset.id)?.source } : {});
+      // Valida antes de crear el acceso: si el expediente no es válido no debe quedar un usuario huérfano
+      // (además, guardar un usuario vuelve a pintar la pantalla y borraría el formulario y su mensaje de error).
+      cleanEmployee(input);
+      if (input.birthDate && input.birthDate > todayISO()) throw new Error('La fecha de nacimiento no puede ser futura.');
+      if (input.status === 'baja' && input.endDate && input.hireDate && input.endDate < input.hireDate) throw new Error('La fecha de baja no puede ser anterior a la de ingreso.');
+      if (!edit && fd.makeUser) { if (!input.email) throw new Error('Para crear acceso escribe el correo laboral.'); const found = d.users.list().find(x => x.email === input.email.trim().toLowerCase()); if (found && P.employees.list({ status: '' }).some(x => x.userId === found.id)) throw new Error('Ese correo ya tiene acceso vinculado a otro expediente.'); if (found?.role === 'client') throw new Error('Ese correo es de un usuario Cliente; cámbiale el rol en Cuenta → Equipo antes de darlo de alta.'); const u = found || d.users.save({ name: input.name, email: input.email, role: fd.role || 'sales' }); input.userId = u.id; }
       const saved = P.employees.save(input);
       if (!edit && fd.onboarding) { const items = P.employees.startOnboarding(saved.id); const n = applyOnboardingCourses({ ...saved, onboarding: items }, saved.userId).length; toast(`Alta registrada${n ? ` · ${n} curso(s) asignado(s)` : ''}.`); } else toast(edit ? 'Cambios guardados.' : 'Alta registrada.');
       go(`#/persona/${saved.id}`);
@@ -318,7 +324,7 @@ $main.addEventListener('submit', guard(async e => {
     const msg = document.getElementById('req-msg'); try { P.requests.create(Object.fromEntries(new FormData(f))); toast('Solicitud enviada.'); render(); } catch (err) { msg.textContent = err.message; msg.dataset.state = 'error'; }
   } else if (f.id === 'cycle-form') {
     const msg = document.getElementById('cycle-msg'); const fd = Object.fromEntries(new FormData(f));
-    try { const objectives = fd.objectives.split('\n').map(l => l.trim()).filter(Boolean).map(l => { const [t, w] = l.split('|'); return { text: t.trim(), weight: Number(w) || 1 }; }); const cy = P.performance.saveCycle({ name: fd.name, from: fd.from, to: fd.to }); const n = P.performance.launch(cy.id, objectives); toast(`Ciclo creado con ${n} evaluación(es).`); render(); } catch (err) { msg.textContent = err.message; msg.dataset.state = 'error'; }
+    try { const objectives = fd.objectives.split('\n').map(l => l.trim()).filter(Boolean).map(l => { const [t, w] = l.split('|'); return { text: t.trim(), weight: Number(w) || 1 }; }).filter(o => o.text); if (!objectives.length) throw new Error('Agrega al menos un objetivo.'); if (fd.from && fd.to && fd.to < fd.from) throw new Error('La fecha de fin no puede ser anterior a la de inicio.'); const cy = P.performance.saveCycle({ name: fd.name, from: fd.from, to: fd.to }); const n = P.performance.launch(cy.id, objectives); toast(`Ciclo creado con ${n} evaluación(es).`); render(); } catch (err) { msg.textContent = err.message; msg.dataset.state = 'error'; }
   } else if (f.id === 'review-form') {
     const msg = document.getElementById('review-msg'); const fd = Object.fromEntries(new FormData(f)); const { comment, ...ratings } = fd;
     try { P.performance.submit(f.dataset.id, f.dataset.role, ratings, comment); toast('Evaluación enviada.'); render(); } catch (err) { msg.textContent = err.message; msg.dataset.state = 'error'; }

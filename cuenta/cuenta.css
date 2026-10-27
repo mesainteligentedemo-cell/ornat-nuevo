@@ -18,7 +18,7 @@ button{cursor:pointer;color:inherit}
 .brand{font:600 52px/.9 var(--cond);letter-spacing:-1.5px;text-decoration:none;display:block;padding:4px 14px 28px}
 .brand span{display:block;font:10px var(--font);letter-spacing:2px;margin-top:13px;color:#a6ad9d}
 #nav{display:grid;gap:3px}
-.nav-label{font-size:10px;letter-spacing:1.8px;color:#92998b;margin:14px 14px 10px;text-transform:uppercase}
+.nav-label{font-size:10px;letter-spacing:1.8px;color:#92998b;margin:14px 14px 10px;text-transform:uppercase;overflow-wrap:anywhere;min-width:0}
 #nav a{display:block;padding:12px 14px;border-radius:9px;color:#bfc5b7;text-decoration:none;font-size:14px}
 #nav a:hover{color:#fff}
 #nav a[aria-current=page]{background:var(--lime);color:var(--lime-ink);font-weight:700}
@@ -26,7 +26,7 @@ button{cursor:pointer;color:inherit}
 .rail-bottom a{color:#c1c8b7;text-decoration:none;padding:4px 0}.rail-bottom a:hover{color:#fff}
 .demo-note{margin:14px 0 0;color:#949d89;font-size:11px;display:flex;gap:7px;align-items:center}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--lime);display:inline-block}
-main{padding:clamp(24px,4vw,56px);max-width:1180px;width:100%}
+main{padding:clamp(24px,4vw,56px);max-width:1180px;width:100%;overflow-wrap:break-word}
 main:focus{outline:none}
 .eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
 h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;margin:0}
@@ -81,7 +81,7 @@ td select{font:inherit;font-size:14px;padding:7px 9px;border:1px solid var(--lin
 .conn summary{cursor:pointer;font-weight:600;padding:4px 0}
 .conn ol,.conn ul{margin:8px 0 4px;padding-left:20px;display:grid;gap:5px}
 .conn code{background:var(--paper);padding:1px 6px;border-radius:5px;font-size:12.5px}
-.who-grid{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0}
+.who-grid{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 18px;margin:0}
 .who-grid dt{color:var(--muted)}.who-grid dd{margin:0}
 @media (max-width:900px){
   .workspace{grid-template-columns:minmax(0,1fr)}

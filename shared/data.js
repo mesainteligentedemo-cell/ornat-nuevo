@@ -248,7 +248,7 @@ export function createData(storage = globalThis.localStorage || memoryStorage())
 
   const users = {
     list: () => read().users,
-    save(input) { const user = cleanUser(input); mutate('users', s => { const i = s.users.findIndex(u => u.id === user.id || u.email === user.email); if (i >= 0) s.users[i] = { ...s.users[i], ...user, id: s.users[i].id }; else s.users.push(user); }, 'Guardar usuario', `${user.email} · ${ROLES[user.role]}`, 'auth'); return user; },
+    save(input) { const user = cleanUser(input); mutate('users', s => { const i = s.users.findIndex(u => u.id === user.id || u.email === user.email); if (i >= 0) s.users[i] = { ...s.users[i], ...user, id: s.users[i].id, createdAt: s.users[i].createdAt || user.createdAt, name: String(input?.name ?? '').trim() ? user.name : s.users[i].name }; else s.users.push(user); }, 'Guardar usuario', `${user.email} · ${ROLES[user.role]}`, 'auth'); return user; },
     remove(id) { mutate('users', s => { const owners = s.users.filter(u => u.role === 'owner'); const target = s.users.find(u => u.id === id); if (target?.role === 'owner' && owners.length === 1) throw new Error('Debe quedar al menos un dueño.'); s.users = s.users.filter(u => u.id !== id); }, 'Eliminar usuario', id, 'auth'); },
   };
 

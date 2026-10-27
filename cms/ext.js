@@ -192,6 +192,8 @@ export function createExt(host) {
     });
     menu.addEventListener('click', () => close());
     document.addEventListener('pointerdown', e => { if (!menu.hidden && !menu.contains(e.target) && !more.contains(e.target)) close(); }, true);
+    // Abierto con el ratón, el foco sigue en «Más»: Escape también lo cierra desde ahí.
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) { e.preventDefault(); close(document.activeElement === more || menu.contains(document.activeElement)); } });
     addEventListener('resize', () => { if (!menu.hidden) place(); });
     ext.syncRail = () => {
       const active = [...menu.querySelectorAll('[data-tab]')].some(b => b.classList.contains('active'));

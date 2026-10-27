@@ -29,7 +29,7 @@ const NATIVE={desktop:1440,tablet:768,mobile:390};
 const DEVICE_LABEL={desktop:'Escritorio',tablet:'Tablet',mobile:'Móvil'};
 const emptyInventory=()=>({texts:[],images:[],colors:[],links:[],sections:[],logos:[],videos:[],sequences:[],warnings:[],seo:{}});
 let legalModes={},templates=[],project=null,inventory=emptyInventory(),currentTab='design',ready=false,selecting=true,history=[],future=[],saveTimer,applyTimer,loadTimer,toastTimer,lastEdit={key:null,time:0},uploadTarget=null,videoTarget=null,promptSlot=null,promptAnimation=false,revision=0,savedRevision=-1,storageAvailable=true;
-let sel=null,selRect=null,selVp=null,openText=null,openMedia=null,currentSection=null,device='desktop',zoom='fit',scale=1,lastViewScale=0,textLimit=80;
+let navPick=null,sel=null,selRect=null,selVp=null,openText=null,openMedia=null,currentSection=null,device='desktop',zoom='fit',scale=1,lastViewScale=0,textLimit=80;
 const filters={text:{q:'',section:'',type:'',edited:false,hidden:false},media:{q:'',section:'',type:'',modified:false,noAlt:false,lowQuality:false,hidden:false}};
 const tplFilter={q:'',chip:'all',tags:[],sort:'az'};let viewerSlug=null,viewerDevice='desktop',carryKit=null;
 let projectsCache=[];const prjFilter={q:'',template:'',sort:'recent'};
@@ -167,7 +167,7 @@ function sectionSelect(attr,items,value,label){
 }
 function searchField(id,attr,value,placeholder){return `<div class="search-field">${icon('search')}<label class="sr" for="${id}">${esc(placeholder)}</label><input id="${id}" type="search" ${attr} data-f="${id}" value="${esc(value)}" placeholder="${esc(placeholder)}" autocomplete="off"></div>`;}
 function textRow(t){
-  const p=project.patch,val=p.texts?.[t.id]??t.text,edited=textEdited(p,t.id,t.block),hid=isHidden(p,t.id,t.section,t.block),open=sel?.id===t.id||sel?.textIds?.[0]===t.id||openText===t.id,link=inventory.links.find(l=>l.id===t.id);
+  const p=project.patch,val=p.texts?.[t.id]??t.text,edited=textEdited(p,t.id,t.block),hid=isHidden(p,t.id,t.section,t.block),open=openText?openText===t.id:sel?.id===t.id||sel?.textIds?.[0]===t.id,link=inventory.links.find(l=>l.id===t.id);
   return `<div class="text-row ${open?'is-selected':''} ${hid?'is-hidden-row':''}" data-row="${esc(t.id)}"><div class="row-head"><button type="button" class="row-main" data-pick-text="${esc(t.id)}" aria-expanded="${open}"><span class="row-text">${esc(val)}</span><span class="row-meta"><span class="tag">${TYPE_LABEL[textType(t)]}</span>${esc(sectionLabel(t.section))}${edited?'<span class="dot-edited" title="Editado"></span><span class="sr">Editado</span>':''}</span></button><button type="button" class="row-eye" data-toggle-hide="${esc(t.id)}" aria-pressed="${hid}" aria-label="${hid?'Mostrar':'Ocultar'} este texto" title="${hid?'Mostrar':'Ocultar'}">${icon(hid?'eye-off':'eye')}</button></div>${open&&t.dynamic?`<div class="row-body"><div class="notice warning">Este texto lo controla la animación de la plantilla: se reescribe solo, así que no se puede editar aquí.</div></div>`:''}${open&&!t.dynamic?`<div class="row-body"><label class="field"><span>Texto</span><textarea data-text="${esc(t.id)}" maxlength="3000">${esc(val)}</textarea></label>${link?`<label class="field"><span>Destino del enlace</span><input data-link="${esc(link.id)}" value="${esc(p.links?.[link.id]??link.href)}" placeholder="https://…"></label>`:''}<div class="actions-row"><button type="button" class="button" data-locate="${esc(t.id)}">Ver en mi sitio</button>${edited?`<button type="button" class="button" data-reset-text="${esc(t.id)}">Restablecer</button>`:''}</div></div>`:''}</div>`;
 }
 function textPanel(){
@@ -243,7 +243,7 @@ function contrastHTML(){const colors=inventory.colors.map(c=>({key:c.key,value:p
 const MEDIA_ACCEPT=$('#media-file').accept;
 function pickUpload(id){uploadTarget=id;$('#media-file').value='';$('#media-file').accept=String(id).startsWith('icon-')?MEDIA_ACCEPT+',image/svg+xml':MEDIA_ACCEPT;$('#media-file').click();}
 function download(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),15000);}
-async function exportProject(){if(!project)return;await flushEdit();download(new Blob([JSON.stringify({format:'ornat-cms',version:1,project},null,2)],{type:'application/json'}),`${project.name.replace(/[^\p{L}\p{N}\- ]/gu,'').trim()||'mi-proyecto'}-ornat.json`);toast('Copia descargada. Incluye tus imágenes y cambios.');}
+async function exportProject(){if(!project)return;await flushEdit();download(new Blob([JSON.stringify({format:'ornat-cms',version:1,project},null,2)],{type:'application/json'}),`${project.name.replace(/[^\p{L}\p{N}\- ]/gu,'').replace(/\s+/g,' ').trim()||'mi-proyecto'}-ornat.json`);toast('Copia descargada. Incluye tus imágenes y cambios.');}
 function showPrompts(item,{animation=false,reference='',initial='',final=''}={}){promptAnimation=animation;promptSlot=item||allImages()[0]||{width:1920,height:1080,section:'Portada',kind:'image'};const slot=imageSlot(promptSlot),dims=assessImage({width:slot.width*2,height:slot.height*2},slot).recommended;const style=`fotografía arquitectónica editorial hiperrealista, luz natural y materiales físicamente creíbles; coherencia con ${template().name} y su paleta ${inventory.colors.slice(0,3).map(c=>c.value).join(', ')}`;const prompts=buildImagePrompts({section:sectionName(promptSlot.section),brand:project.patch.brand?.name||project.name,style,ratio:slot.width/slot.height,width:dims.width,height:dims.height,animation,referenceDescription:reference||promptSlot.alt||'el proyecto aportado por el usuario',initialDescription:initial||undefined,finalDescription:final||undefined});$('#prompt-content').innerHTML=`${field('Describe tu imagen o proyecto de referencia','prompt-reference',reference||promptSlot.alt||'',{hint:'Adjunta esa imagen al usar el prompt. Puedes cambiar esta descripción.'})}${animation?field('Aspecto de la imagen inicial','prompt-initial-state',initial||'Bosquejo arquitectónico de línea fina, misma perspectiva y geometría')+field('Aspecto de la imagen final','prompt-final-state',final||'Fotografía hiperrealista del proyecto construido, materiales naturales y luz real'):''}${button('Actualizar prompts con mi referencia','update-prompts','full')}<hr class="divider">${notice(`Medida recomendada: ${dims.width} × ${dims.height} px. Adjunta tu imagen de referencia junto al prompt para conservar tu proyecto.`)}${(prompts.requirements||[]).map(x=>`<p class="hint">• ${esc(x)}</p>`).join('')}${[['single','Imagen del módulo'],...(animation?[['initial','Imagen inicial'],['final','Imagen final']]:[])].map(([key,title])=>`<div class="prompt-block"><h3>${title}<button class="text-btn" data-copy-prompt="${key}">Copiar prompt</button></h3><textarea class="prompt-text" id="prompt-${key}" readonly>${esc(prompts[key])}</textarea></div>`).join('')}<p class="legal-note">Los prompts no generan imágenes aquí. Para una secuencia continua, necesitas un video o fotogramas intermedios coherentes; dos imágenes por sí solas no crean un recorrido fluido.</p>`;$('#prompt-dialog').showModal();}
 
 /* ---------- dialogs: projects and templates ---------- */
@@ -445,7 +445,7 @@ panel.addEventListener('click',e=>{
   if('mediaLow' in d){filters.media.lowQuality=!filters.media.lowQuality;renderPanel();return;}
   if('mediaHidden' in d){filters.media.hidden=!filters.media.hidden;renderPanel();return;}
   if('clearMedia' in d){filters.media={q:'',section:'',type:'',modified:false,noAlt:false,lowQuality:false,hidden:false};renderPanel();return;}
-  if(d.pickText){openText=openText===d.pickText&&sel?.id!==d.pickText?null:d.pickText;send('navigate',{id:d.pickText});renderPanel();revealSelectedRow();return;}
+  if(d.pickText){openText=openText===d.pickText&&sel?.id!==d.pickText?null:d.pickText;navPick=openText?{id:openText,at:Date.now()}:null;send('navigate',{id:d.pickText});renderPanel();revealSelectedRow();return;}
   if(d.pickMedia){openMedia=openMedia===d.pickMedia&&sel?.id!==d.pickMedia?null:d.pickMedia;send('navigate',{id:d.pickMedia});renderPanel();revealSelectedRow();return;}
   if(d.toggleHide){const key=d.toggleHide,hid=!!project.patch.hidden?.[key];setHidden(key,!hid,hid?'':(inventory.texts.find(t=>t.id===key)?.text||'elemento').slice(0,30));renderPanel();return;}
   if(d.toggleSection){const key='section:'+d.toggleSection,hid=!!project.patch.hidden?.[key];setHidden(key,!hid,hid?'':sectionLabel(d.toggleSection));renderSectionNav();renderPanel();return;}
@@ -496,6 +496,9 @@ $('#import-file').addEventListener('change',async e=>{const file=e.target.files[
 $('#video-file').addEventListener('change',async e=>{const file=e.target.files[0];if(!file)return;try{toast('Preparando tu video…');const media=await readVideo(file);const {src,...meta}=media;if(replacePatch({...project.patch,videos:{...project.patch.videos,[videoTarget]:{...project.patch.videos?.[videoTarget],src}},mediaMeta:{...project.patch.mediaMeta,[videoTarget]:meta}}))toast('Video aplicado. Comprueba su reproducción y portada.');}catch(error){toast(error.message,true);}});
 
 /* ---------- messages from the canvas ---------- */
+// La og:image de muchas plantillas es relativa a su sitio original (template.remote): el archivo no está en /templates/<id>/
+// ni en /cms/, donde el panel la mostraría. Se resuelve contra ese origen; sin él, contra la carpeta de la plantilla.
+function templateAsset(url){const t=template();if(!url||!t)return url;try{return new URL(url,t.remote||new URL(t.src,location.origin)).href;}catch{return url;}}
 function selectionHint(){
   if(!sel?.id){$('#selection-hint').textContent='Haz clic en cualquier elemento para editarlo. Doble clic para escribir.';return;}
   const hints={section:'Sección seleccionada · Supr la oculta · «Editar todos sus textos» en la barra.',image:'Foto seleccionada · arrástrala para reencuadrar.',background:'Fondo seleccionado · arrástralo para reencuadrar.',logo:'Logo seleccionado · reemplázalo desde la barra.',video:'Video seleccionado · reemplázalo desde la barra.',icon:'Ícono seleccionado · reemplázalo desde la barra.',item:'Elemento repetido seleccionado · duplícalo, muévelo o quítalo desde la barra.'};
@@ -503,7 +506,9 @@ function selectionHint(){
 }
 function onSelected(m){
   const had=sel?.id;
-  sel=m.id?m:null;if(!sel)selRect=null;else{openText=null;openMedia=null;}
+  // Al abrir una fila, el lienzo puede seleccionar el bloque que contiene ese texto: la fila elegida sigue abierta.
+  const picked=navPick&&Date.now()-navPick.at<1500?navPick.id:null;navPick=null;
+  sel=m.id?m:null;if(!sel)selRect=null;else{openText=picked;openMedia=null;}
   selectionHint();toolbar.closePop();toolbar.render();positionToolbar();
   if(['text','media'].includes(currentTab)&&(sel?.id||had))renderPanel();
   if(sel?.id)revealSelectedRow();
@@ -513,7 +518,7 @@ window.addEventListener('message',e=>{
   if(m.type==='applied')blockIssuesCache=m.issues||[];
   ext.message(m);
   if(m.type==='ready'||m.type==='inventory'){
-    inventory={...inventory,...m.inventory};
+    inventory={...inventory,...m.inventory};if(inventory.seo?.ogImage)inventory.seo={...inventory.seo,ogImage:templateAsset(inventory.seo.ogImage)};
     if(!ready){ready=true;clearTimeout(loadTimer);$('#loading').hidden=true;send('apply',{patch:project.patch});sendMode();send('analytics-mode',{enabled:consent()});lastViewScale=0;layoutPreview();
       if(carryKit&&carryKit.id===project.id){const kit=carryKit.kit;carryKit=null;try{const r=applyKit(project.patch,kit,{logo:false,name:false,fonts:false,colors:true},(m.inventory?.colors||[]).map(c=>c.key));if(r.changed.length){project.patch=r.patch;changed('carry-colors');}}catch{}}
     }
@@ -570,7 +575,7 @@ $('#select-mode').addEventListener('click',()=>{
 });
 $('#change-template').onclick=showTemplates;$('#export-project').onclick=exportProject;$('#undo').onclick=undo;$('#redo').onclick=redo;
 $('#privacy-note').onclick=()=>toast('Las imágenes subidas y los proyectos se quedan en este navegador. Las fotos originales de las plantillas se cargan desde sus sitios públicos.');
-$('#project-name').addEventListener('input',e=>{project.name=e.target.value.trim()||'Mi proyecto';changed('project.name');});
+$('#project-name').addEventListener('input',e=>{if(!project)return;project.name=e.target.value.trim()||'Mi proyecto';changed('project.name');});
 $('#zoom-in').onclick=()=>{const cur=Math.round(scale*100);setZoom(ZOOMS.find(z=>z>cur+.5)||ZOOMS.at(-1));};
 $('#zoom-out').onclick=()=>{const cur=Math.round(scale*100);setZoom([...ZOOMS].reverse().find(z=>z<cur-.5)||ZOOMS[0]);};
 $('#zoom-fit').onclick=()=>setZoom('fit');$('#zoom-label').onclick=()=>setZoom('fit');

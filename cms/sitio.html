@@ -60,14 +60,18 @@ const id = new URLSearchParams(location.search).get('p');
 if (pub) history.replaceState(history.state, '', location.pathname + location.hash);
 const state = document.getElementById('state');
 // sitio.js quita el spinner cuando no puede mostrar la publicación: ese es el estado «no encontrada».
-new MutationObserver(() => {
+// Sin ?p= ni ?v= sitio.js falla antes de que este módulo corra: por eso también se revisa una vez al inicio.
+const markError = () => {
   if (state.hidden || state.querySelector('.spinner') || state.classList.contains('is-error')) return;
   state.classList.add('is-error');
-  if (pub && document.getElementById('state-title').textContent === 'No encontramos esta publicación') {
-    document.title = 'Sitio no encontrado — ORNAT';
+  if (document.getElementById('state-title').textContent !== 'No encontramos esta publicación') return;
+  document.title = 'Sitio no encontrado — ORNAT';
+  if (pub) {
     document.getElementById('state-text').textContent = 'Este sitio no existe o ya no está publicado. Revisa el enlace o pide uno nuevo a quien te lo compartió.';
   }
-}).observe(state, { childList: true, subtree: true, characterData: true });
+};
+new MutationObserver(markError).observe(state, { childList: true, subtree: true, characterData: true });
+markError();
 if (id) dbGet('publications', id).then(record => {
   const seo = record?.patch?.seo || {};
   const description = typeof seo.description === 'string' && seo.description.trim() ? seo.description.trim() : record?.projectName ? `${record.projectName} — sitio publicado con ORNAT.` : '';

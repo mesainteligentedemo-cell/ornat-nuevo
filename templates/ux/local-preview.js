@@ -17,3 +17,12 @@
     notice.textContent = 'Tu información aún no se ha enviado. Para solicitar una demo, llámanos al 984 235 3159 o visita ORNAT.COM.MX.';
   }, true);
 })();
+
+/* Menú: el botón es un <a role="button"> sin href; Enter/Espacio lo activan como un botón. */
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Enter' && event.key !== ' ') return;
+  const btn = event.target.closest && event.target.closest('a[role="button"]:not([href])');
+  if (!btn) return;
+  event.preventDefault();
+  btn.click();
+});

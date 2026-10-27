@@ -54,7 +54,7 @@ h1,h2,h3,p{margin:0}
 
 /* ABOUT */
 .about{position:relative;padding:120px 0 120px}
-.about__title{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:11vw;line-height:.95;letter-spacing:-.06em;padding:0 var(--pad)}
+.about__title{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:11vw;line-height:.95;letter-spacing:-.06em;padding:0 var(--pad);overflow-x:clip}
 .about__title .row1{display:block}
 .about__title .row2{display:flex;align-items:center;justify-content:flex-end;gap:2vw}
 .about__title .w{display:inline-block}

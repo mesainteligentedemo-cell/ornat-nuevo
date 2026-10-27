@@ -146,6 +146,6 @@ export function handleChange(el){
  if(el.id==='tk-type'){filters={...filters,type:el.value};render();return true;}
  if(el.id==='tk-owner'){filters={...filters,owner:el.value};render();return true;}
  if(el.id==='tk-done'){filters={...filters,done:el.value};render();return true;}
- if(el.dataset.taskDone){const id=el.dataset.taskDone,done=el.checked;C.commit(done?'Completar tarea':'Reabrir tarea',s=>{s.tasks=s.tasks.map(t=>t.id===id?cleanTask({...t,done,doneAt:done?new Date().toISOString():''}):t);},S().tasks.find(t=>t.id===id)?.title||'');return true;}
+ if(el.dataset.taskDone){const id=el.dataset.taskDone,done=el.checked;C.commit(done?'Completar tarea':'Reabrir tarea',s=>{s.tasks=s.tasks.map(t=>t.id===id?cleanTask({...t,done,doneAt:done?new Date().toISOString():''}):t);},S().tasks.find(t=>t.id===id)?.title||'')||(el.checked=!done);return true;}
  return false;
 }

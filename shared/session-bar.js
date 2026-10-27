@@ -25,9 +25,9 @@ const CSS = `
 :host([variant=dark]){--ink:var(--ornat-session-ink,#eef0e7);--bg:var(--ornat-session-bg,#1a1d19);--line:var(--ornat-session-line,#3a3f37)}
 *{box-sizing:border-box}
 button,a{font:inherit;color:inherit}
-.chip{display:flex;align-items:center;gap:9px;background:var(--bg);border:1px solid var(--line);border-radius:99px;padding:5px 12px 5px 5px;cursor:pointer;min-height:40px}
+.chip{display:flex;align-items:center;gap:9px;max-width:min(70vw,320px);background:var(--bg);border:1px solid var(--line);border-radius:99px;padding:5px 12px 5px 5px;cursor:pointer;min-height:40px}
 .avatar{width:30px;height:30px;border-radius:50%;background:var(--a);color:#20261a;display:grid;place-items:center;font-weight:700;font-size:13px}
-.who{display:grid;text-align:left;line-height:1.15}.who b{font-weight:600}.who small{opacity:.7;font-size:11px}
+.who{display:grid;text-align:left;line-height:1.15;min-width:0}.who b{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.who small{opacity:.7;font-size:11px}
 .pop{position:absolute;right:0;top:calc(100% + 8px);min-width:250px;background:var(--bg);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.18);padding:10px;z-index:50;display:grid;gap:2px}
 .pop[hidden]{display:none}
 .pop a,.pop button.item{display:block;width:100%;text-align:left;padding:10px 12px;border-radius:9px;text-decoration:none;background:none;border:0;cursor:pointer}

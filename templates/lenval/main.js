@@ -45,7 +45,8 @@ const cycle = () => {
     $('#thumb').src = slides[(si + 1) % slides.length].src; [$('#pn').textContent, $('#pt').textContent] = labels[si]; cycle();
   } });
 };
-$('#thumb').src = slides[1].src; cycle();
+if ($('#thumb').getAttribute('src') !== slides[1].getAttribute('src')) $('#thumb').src = slides[1].src;
+cycle();
 gsap.to('.hero .slides', { yPercent: 18, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
 
 // split into visual lines

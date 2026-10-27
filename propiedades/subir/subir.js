@@ -57,6 +57,7 @@ function dropUrls(id) { const u = mem.urls.get(id); if (u) { URL.revokeObjectURL
 /* =================== persistencia del borrador =================== */
 let saveTimer;
 function persistNow() {
+  if (ui.publishedSlug) return;   // ya publicada: el borrador se borró y no debe revivir al salir de la página
   const snapshot = clone({ ...S, photos: S.photos.map(p => ({ ...p, aiState: p.aiState === 'done' ? 'done' : 'idle', aiError: '' })) });
   snapshot.savedAt = new Date().toISOString(); S.savedAt = snapshot.savedAt;
   if (!draftStore.save(snapshot)) toast('No se pudo guardar el borrador en este navegador (espacio lleno).', 'error');
@@ -86,10 +87,12 @@ function gateHTML(session) {
     <p class="lead">${session ? `Tu rol (${esc(data().getSession().user.role)}) no puede crear ni editar propiedades. Entra con un usuario Dueño o Editor.` : 'Necesitas iniciar sesión con un usuario que pueda editar propiedades.'}</p>
     <a class="btn" href="/cuenta/?next=${next}">${session ? 'Cambiar de usuario' : 'Entrar (demo)'}</a> <a class="btn ghost" href="/propiedades/">Ver el catálogo</a></div>`;
 }
+const appTitle = $('#app .head h1');   // un solo <h1> en el documento: el del acceso o el de la app
 function checkAccess() {
   const d = data(); const session = d.getSession(); const ok = !!session && d.can('properties.edit');
   $('#gate').hidden = ok; $('#app').hidden = !ok;
-  if (!ok) $('#gate').innerHTML = gateHTML(session);
+  if (!ok) { $('#gate').innerHTML = gateHTML(session); appTitle?.remove(); }
+  else { $('#gate').innerHTML = ''; if (appTitle && !appTitle.isConnected) $('#app .head .eyebrow').after(appTitle); }
   return ok;
 }
 
@@ -103,7 +106,7 @@ function renderBanner() {
     b.innerHTML = `<p><strong>IA conectada</strong> · ${esc(ai.model)}. Claude analiza cada foto, redacta el copy y reescribe con tus instrucciones.</p><p class="meter">Gasto de esta propiedad: <b>≈ ${fmtUsd(cost)}</b> <span>(${fmtTokens(S.usage.input_tokens)} tokens de entrada · ${fmtTokens(S.usage.output_tokens)} de salida)</span></p>`;
   } else {
     b.className = 'banner demo';
-    b.innerHTML = `<p><strong>${esc(DEMO_AI)}</strong></p><p>Mientras tanto funciona el análisis local real de cada foto (tamaño, luz, nitidez, duplicados, colores) y el copy sale de una plantilla claramente marcada como borrador automático sin IA.${ai.reachable ? '' : ' (No se encontró el servidor de IA en este entorno.)'}</p>`;
+    b.innerHTML = `<p><strong>${esc(DEMO_AI)}</strong></p><p>Mientras tanto funciona el análisis local real de cada foto (tamaño, luz, nitidez, duplicados, colores) y el copy sale de una plantilla claramente marcada como borrador automático sin IA.${!ai.reachable ? ' (No se encontró el servidor de IA en este entorno.)' : /401|403|auth|session|forbidden/i.test(ai.reason || '') ? ' (El servidor de IA pidió una sesión del equipo: entra con tu cuenta de ORNAT para activarla.)' : ''}</p>`;
   }
 }
 function renderSteps() {
@@ -137,6 +140,12 @@ function renderChrome() { renderBanner(); renderSteps(); renderDraftBar(); rende
 async function goto(n) {
   if (n === S.step && $('#panel').innerHTML) return;
   if (n > S.step && n >= 3 && !S.photos.length) return;
+  if (n > 3 && badFields().length) {
+    toast(badMessage(badFields()), 'error');
+    if (S.step !== 3) { S.step = 3; renderChrome(); renderPanel(); }
+    $(`#dataform [name="${badFields()[0]}"]`)?.focus();
+    return;
+  }
   S.step = n; ui.confirmPending = false;
   if (n === 3) applySuggestions();
   renderChrome(); renderPanel(); save();
@@ -342,6 +351,11 @@ const AMENITY_OPTS = ['Alberca', 'Terraza', 'Roof garden', 'Jardín', 'Vista al 
 const SERVICE_OPTS = ['Agua potable', 'Luz (CFE)', 'Gas', 'Internet / fibra', 'Drenaje', 'Cisterna', 'Planta de emergencia'];
 const FINISH_OPTS = ['Madera', 'Mármol', 'Concreto pulido', 'Cantera', 'Chukum', 'Porcelanato', 'Vidrio', 'Piedra natural'];
 const lower = s => s.toLowerCase();
+// Rangos que acepta cleanProperty (/shared/data.js); fuera de ellos guardar o previsualizar lanzaría un error.
+const NUM_LIMITS = { price: ['Precio', 0, 1e12], areaM2: ['Construcción', 0, 1e7], lotM2: ['Terreno', 0, 1e8], levels: ['Niveles', 0, 200], bedrooms: ['Recámaras', 0, 100], bathrooms: ['Baños', 0, 100], parking: ['Estacionamientos', 0, 100], lat: ['Latitud', -90, 90], lng: ['Longitud', -180, 180], ageYears: ['Antigüedad', 0, 1000], maintenanceFee: ['Mantenimiento', 0, 1e12] };
+const numInvalid = (k, f = S.form) => { const lim = NUM_LIMITS[k]; if (!lim || (k === 'ageYears' && f.ageMode === 'new')) return false; const v = f[k]; if (v === '' || v === null || v === undefined) return false; const n = Number(v); return !Number.isFinite(n) || n < lim[1] || n > lim[2]; };
+const badFields = (f = S.form) => Object.keys(NUM_LIMITS).filter(k => numInvalid(k, f));
+const badMessage = keys => `Revisa ${keys.map(k => `${NUM_LIMITS[k][0].toLowerCase()} (${NUM_LIMITS[k][1]} a ${new Intl.NumberFormat('es-MX').format(NUM_LIMITS[k][2])})`).join(', ')}: el valor no es válido.`;
 function applySuggestions() {
   const f = S.form; if (f.appliedSuggestions) return;
   const sug = suggestFromAnalyses(S.photos.map(p => p.analysis));
@@ -351,7 +365,7 @@ function applySuggestions() {
   for (const m of sug.finishes) if (!f.finishes.some(x => lower(x) === lower(m))) { f.finishes.push(m); f.suggested.finishes.push(m); }
   f.appliedSuggestions = true;
 }
-const input = (name, label, o = {}) => `<label class="fld${o.wide ? ' wide' : ''}">${label}${o.sug ? ' <em class="sug">sugerido — confirma</em>' : ''}<input name="${name}" type="${o.type || 'text'}" ${o.type === 'number' ? `inputmode="decimal" min="0" step="${o.step || 'any'}"` : ''} value="${esc(S.form[name])}" ${o.ph ? `placeholder="${esc(o.ph)}"` : ''} ${o.max ? `maxlength="${o.max}"` : ''} ${o.list ? `list="${o.list}"` : ''}></label>`;
+const input = (name, label, o = {}) => `<label class="fld${o.wide ? ' wide' : ''}">${label}${o.sug ? ' <em class="sug">sugerido — confirma</em>' : ''}<input name="${name}" type="${o.type || 'text'}" ${o.type === 'number' ? `inputmode="decimal" min="${NUM_LIMITS[name]?.[1] ?? 0}" max="${NUM_LIMITS[name]?.[2] ?? ''}" step="${o.step || 'any'}"` : ''} value="${esc(S.form[name])}"${numInvalid(name) ? ' aria-invalid="true"' : ''} ${o.ph ? `placeholder="${esc(o.ph)}"` : ''} ${o.max ? `maxlength="${o.max}"` : ''} ${o.list ? `list="${o.list}"` : ''}></label>`;
 const sel = (name, label, opts, o = {}) => `<label class="fld${o.wide ? ' wide' : ''}">${label}${o.sug ? ' <em class="sug">sugerido — confirma</em>' : ''}<select name="${name}">${opts.map(([v, t]) => `<option value="${esc(v)}"${String(v) === String(S.form[name]) ? ' selected' : ''}>${esc(t)}</option>`).join('')}</select></label>`;
 function chipGroup(key, opts) {
   const f = S.form; const all = [...new Set([...opts, ...f[key]])];
@@ -374,21 +388,28 @@ function step3HTML() {
       ${input('areaM2', 'Construcción (m²)', { type: 'number' })}${input('lotM2', 'Terreno (m²)', { type: 'number' })}${input('levels', 'Niveles', { type: 'number', step: 1 })}
       ${input('bedrooms', 'Recámaras', { type: 'number', step: 1 })}${input('bathrooms', 'Baños', { type: 'number', step: 0.5 })}${input('parking', 'Estacionamientos', { type: 'number', step: 1 })}</div></fieldset>
     <fieldset><legend>Ubicación</legend><div class="grid3">
-      ${input('city', 'Ciudad', { ph: 'Tulum, Cancún, Mérida…', list: 'cities' })}${input('zone', 'Zona o colonia', { ph: 'Aldea Zamá' })}${input('development', 'Desarrollo (opcional)')}
+      ${input('city', 'Ciudad', { ph: 'Tulum, Cancún, Mérida…', list: 'cities', max: 120 })}${input('zone', 'Zona o colonia', { ph: 'Aldea Zamá', max: 120 })}${input('development', 'Desarrollo (opcional)', { max: 120 })}
       ${input('lat', 'Latitud (opcional)', { type: 'number', ph: '20.2114' })}${input('lng', 'Longitud (opcional)', { type: 'number', ph: '-87.4654' })}</div>
       <datalist id="cities"><option>Tulum</option><option>Playa del Carmen</option><option>Cancún</option><option>Mérida</option><option>Bacalar</option><option>Akumal</option><option>Puerto Morelos</option></datalist>
       <p class="mini">Con coordenadas, la ficha muestra el mapa. Sin ellas, solo la zona y ciudad.</p></fieldset>
     <fieldset><legend>Características</legend><div class="grid3">
-      <div class="fld"><span>Antigüedad</span><div class="inl"><select name="ageMode" aria-label="Antigüedad"><option value="years"${f.ageMode === 'years' ? ' selected' : ''}>Años</option><option value="new"${f.ageMode === 'new' ? ' selected' : ''}>A estrenar</option></select><input name="ageYears" type="number" min="0" inputmode="numeric" value="${esc(f.ageYears)}" aria-label="Años de antigüedad" ${f.ageMode === 'new' ? 'disabled' : ''}></div></div>
-      ${input('orientation', 'Orientación', { ph: 'Oriente, vista al mar…' })}${sel('furnished', 'Amueblado', [['', 'Sin especificar'], ['Sin amueblar', 'Sin amueblar'], ['Semi amueblado', 'Semi amueblado'], ['Amueblado', 'Amueblado']])}
-      ${input('maintenanceFee', 'Mantenimiento mensual', { type: 'number' })}${input('delivery', 'Entrega (preventa)', { ph: 'Dic 2027' })}</div></fieldset>
+      <div class="fld"><span>Antigüedad</span><div class="inl"><select name="ageMode" aria-label="Antigüedad"><option value="years"${f.ageMode === 'years' ? ' selected' : ''}>Años</option><option value="new"${f.ageMode === 'new' ? ' selected' : ''}>A estrenar</option></select><input name="ageYears" type="number" min="0" max="1000" inputmode="numeric" value="${esc(f.ageYears)}"${numInvalid('ageYears') ? ' aria-invalid="true"' : ''} aria-label="Años de antigüedad" ${f.ageMode === 'new' ? 'disabled' : ''}></div></div>
+      ${input('orientation', 'Orientación', { ph: 'Oriente, vista al mar…', max: 60 })}${sel('furnished', 'Amueblado', [['', 'Sin especificar'], ['Sin amueblar', 'Sin amueblar'], ['Semi amueblado', 'Semi amueblado'], ['Amueblado', 'Amueblado']])}
+      ${input('maintenanceFee', 'Mantenimiento mensual', { type: 'number' })}${input('delivery', 'Entrega (preventa)', { ph: 'Dic 2027', max: 60 })}</div></fieldset>
     <fieldset><legend>Amenidades</legend>${chipGroup('amenities', AMENITY_OPTS)}</fieldset>
     <fieldset><legend>Acabados y materiales${sug.finishes.length ? '' : ''}</legend>${chipGroup('finishes', FINISH_OPTS)}</fieldset>
     <fieldset><legend>Servicios</legend>${chipGroup('services', SERVICE_OPTS)}</fieldset>
     <fieldset><legend>Notas para la redacción</legend><label class="fld wide"><span class="sr">Notas</span><textarea name="notes" rows="3" maxlength="1500" placeholder="Algo que el comprador debe saber y no se ve en las fotos: cercanía a la playa, uso de suelo, historia del lugar…">${esc(f.notes)}</textarea></label>
       <label class="check"><input type="checkbox" name="englishVersion" ${f.englishVersion ? 'checked' : ''}> También generar la versión en inglés${ai.configured ? '' : ' <small>(requiere la IA conectada)</small>'}</label></fieldset>
   </form>
+  <p class="errline" id="numerr" role="alert"${badFields().length ? '' : ' hidden'}>${badFields().length ? esc(badMessage(badFields())) : ''}</p>
   ${missing.length ? `<aside class="warnbox"><b>Faltan datos que el copy dejará como "por confirmar":</b> ${esc(missing.join(' · '))}.</aside>` : ''}`;
+}
+function showNumErrors(form) {
+  const bad = badFields();
+  form.querySelectorAll('input[type=number]').forEach(el => { if (bad.includes(el.name)) el.setAttribute('aria-invalid', 'true'); else el.removeAttribute('aria-invalid'); });
+  const box = $('#numerr'); if (box) { box.hidden = !bad.length; box.textContent = bad.length ? badMessage(bad) : ''; }
+  return bad;
 }
 function bindStep3() {
   const form = $('#dataform'); const f = S.form;
@@ -396,6 +417,7 @@ function bindStep3() {
     const t = e.target; if (!t.name) return;
     if (t.type === 'checkbox') f[t.name] = t.checked; else f[t.name] = t.value;
     if (t.name === 'type') f.suggested.type = '';
+    if (t.name in NUM_LIMITS || t.name === 'ageMode') showNumErrors(form);
     save();
   });
   form.addEventListener('change', e => {
@@ -654,7 +676,7 @@ async function init() {
   const st = await client.status(); ai = { ...ai, ...st, checked: true };
   if (!checkAccess()) { data().subscribe(t => { if (['session', 'users', 'all'].includes(t) && checkAccess()) location.reload(); }); return; }
   data().subscribe(t => { if (['session', 'users', 'all'].includes(t)) checkAccess(); });
-  if (restored) { S.photos.forEach(p => { if (p.aiState === 'running') p.aiState = 'idle'; }); if (S.step === 4 && !S.copy.current) S.step = 3; }
+  if (restored) { S.photos.forEach(p => { if (p.aiState === 'running') p.aiState = 'idle'; }); if (S.step === 4 && !S.copy.current) S.step = 3; if (S.step > 3 && badFields().length) S.step = 3; }
   else S.step = 1;
   renderChrome(); renderPanel();
   if (restored && S.photos.length) toast(`Recuperé tu borrador (${S.photos.length} fotos).`);

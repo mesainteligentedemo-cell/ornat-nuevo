@@ -291,6 +291,11 @@ function mount() {
     const go = () => sec.scrollIntoView({ block: 'start' });
     if (document.readyState === 'complete') requestAnimationFrame(go); else addEventListener('load', () => setTimeout(go, 60), { once: true });
   }
+  // Un enlace #pdc-… dentro de la misma página (o pegado en la barra) también abre su ficha.
+  addEventListener('hashchange', () => {
+    const h = location.hash.match(/^#pdc-([\w-]+)$/);
+    if (h && h[1] in POI_IX && sec.pdc.sel !== POI_IX[h[1]]) { sec.pdc.select(POI_IX[h[1]], { silent: true }); sec.scrollIntoView({ block: 'start', behavior: REDUCED ? 'auto' : 'smooth' }); }
+  });
   new IntersectionObserver((es, io) => { if (es[0].isIntersecting) { sec.classList.add('is-in'); io.disconnect(); } }, { rootMargin: '0px 0px -12% 0px' }).observe(sec.querySelector('.pdc__head'));
   new IntersectionObserver((es, io) => {
     if (!es[0].isIntersecting) return;
@@ -388,7 +393,7 @@ function buildDom() {
       <div class="pdc__card-a">
         <button type="button" class="pdc__mini" data-prev aria-label="Lugar anterior">←</button>
         <button type="button" class="pdc__mini" data-next aria-label="Lugar siguiente">→</button>
-        <a class="pdc__mini pdc__mini--wide" data-go target="_blank" rel="noopener">Cómo llegar ↗</a>
+        <a class="pdc__mini pdc__mini--wide" data-go href="https://www.google.com/maps/dir/?api=1&destination=${POIS[0].lat},${POIS[0].lon}" target="_blank" rel="noopener">Cómo llegar ↗</a>
         <button type="button" class="pdc__mini pdc__mini--wide" data-share>Compartir</button>
       </div>
     </aside>

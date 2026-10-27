@@ -43,7 +43,7 @@ function renderSeedBox() {
   const session = d.getSession();
   box.hidden = false;
   if (session && d.can('properties.edit')) {
-    box.innerHTML = '<p><strong>Aún no hay propiedades.</strong> Puedes cargar 12 fichas de ejemplo para probar el catálogo; después las quitas desde el Editor o con un clic aquí.</p><button class="btn" type="button" id="seed">Cargar propiedades de ejemplo</button>';
+    box.innerHTML = '<p><strong>Aún no hay propiedades.</strong> Puedes cargar 12 fichas de ejemplo para probar el catálogo; después las quitas desde el Editor.</p><button class="btn" type="button" id="seed">Cargar propiedades de ejemplo</button>';
     $('#seed').addEventListener('click', () => { d.properties.seedDemo(); });
   } else {
     const next = encodeURIComponent('/propiedades/');

@@ -349,3 +349,4 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
  .pcard{position:relative;top:auto;height:auto;min-height:100svh;overflow:visible;align-content:start}
  .pcard figure{height:clamp(150px,28svh,220px)}
 }
+.legal-links a:hover,.legal-links a:focus-visible{color:var(--lime)}

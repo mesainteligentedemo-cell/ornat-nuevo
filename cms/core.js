@@ -589,7 +589,7 @@ export async function readMedia(file,{logo=false,maxBytes=12*1024*1024,maxDimens
     const encodingQuality=Math.max(.2,Math.min(1,Number(quality??compressionQuality)||.86));
     const src=canvas.toDataURL(requestedType,encodingQuality);
     return {src,width,height,bytes:file.size,type:file.type,name:String(file.name||'Imagen').slice(0,300),hasAlpha:logo?hasAlpha:undefined,storedWidth:canvas.width,storedHeight:canvas.height,storedBytes:Math.floor((src.length-src.indexOf(',')-1)*.75)};
-  } catch(error) {throw new Error(error?.message||'No se pudo procesar esta imagen. Prueba con un PNG o JPEG.');}
+  } catch(error) {throw new Error(error instanceof Error&&!(globalThis.DOMException&&error instanceof DOMException)&&error.message?error.message:'No se pudo leer esta imagen: el archivo está dañado o no es una imagen válida. Prueba con un PNG, JPEG o WebP.');}
   finally {bitmap?.close?.();if(objectURL)URL.revokeObjectURL(objectURL);}
 }
 

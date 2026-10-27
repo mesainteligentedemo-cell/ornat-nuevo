@@ -89,7 +89,7 @@ function bindLogin() {
 /* ---------- sesión ---------- */
 function sesionHTML(session) {
   const u = session.user; const users = d.users.list();
-  const links = [['/cms/', 'Editor', 'cms.view'], ['/control/', 'CRM', 'crm.view'], ['/propiedades/', 'Catálogo público', null]].filter(([, , p]) => !p || d.can(p));
+  const links = [['/cms/', 'Editor', 'cms.view'], ['/control/', 'CRM', 'crm.view'], ['/propiedades/', 'Catálogo público', null], ['/capacitacion/', 'Capacitación', 'internal'], ['/rrhh/', 'RRHH', 'internal']].filter(([, , p]) => !p || (p === 'internal' ? u.role !== 'client' : d.can(p)));
   return `<p class="eyebrow">( Sesión )</p><h1>Hola, ${esc(u.name)}</h1>
   <p class="lead">Modo demo: la sesión y los datos viven en este navegador y no se comparten con nadie.</p>
   ${takeFlash()}
@@ -146,7 +146,18 @@ function bindEquipo() {
   const invite = main.querySelector('#invite'); if (!invite) return;
   invite.addEventListener('submit', e => {
     e.preventDefault();
-    try { const u = d.users.save({ name: invite.elements.name.value, email: invite.elements.email.value, role: invite.elements.role.value }); notify(`Guardado: ${u.name} · ${ROLES[u.role]}.`); }
+    try {
+      // Si el correo ya existe se actualiza ese usuario: conserva su alta y su nombre si no se escribe otro,
+      // y aplica las mismas reglas que la tabla (no cambiar tu propio rol ni dejar la cuenta sin Dueño).
+      const users = d.users.list(); const role = invite.elements.role.value;
+      const existing = users.find(u => u.email === invite.elements.email.value.trim().toLowerCase());
+      if (existing && role !== existing.role) {
+        if (existing.email === d.getSession()?.user.email) throw new Error('No puedes cambiar tu propio rol.');
+        if (existing.role === 'owner' && users.filter(u => u.role === 'owner').length === 1) throw new Error('Debe quedar al menos un Dueño.');
+      }
+      const u = d.users.save({ ...existing, name: invite.elements.name.value.trim() || existing?.name || '', email: invite.elements.email.value, role });
+      notify(`Guardado: ${u.name} · ${ROLES[u.role]}.`);
+    }
     catch (err) { const m = main.querySelector('#invite-msg'); m.textContent = err.message; m.dataset.state = 'error'; }
   });
   main.querySelectorAll('[data-role]').forEach(sel => sel.addEventListener('change', () => {
@@ -457,7 +468,7 @@ const bindRetry = () => { main.querySelector('#retry')?.addEventListener('click'
 
 function sesionRemoteHTML(session) {
   const u = session.user;
-  const links = [['/cms/', 'Editor', 'cms.view'], ['/control/', 'CRM', 'crm.view'], ['/propiedades/', 'Catálogo público', null]].filter(([, , p]) => !p || d.can(p));
+  const links = [['/cms/', 'Editor', 'cms.view'], ['/control/', 'CRM', 'crm.view'], ['/propiedades/', 'Catálogo público', null], ['/capacitacion/', 'Capacitación', 'internal'], ['/rrhh/', 'RRHH', 'internal']].filter(([, , p]) => !p || (p === 'internal' ? u.role !== 'client' : d.can(p)));
   return `<p class="eyebrow">( Sesión )</p><h1>Hola, ${esc(u.name)}</h1>
   <p class="lead">Tus cambios se guardan en la base de datos del equipo y los demás los ven al momento.</p>
   ${takeFlash()}
@@ -482,7 +493,9 @@ function bindSesionRemote() {
 
 const tempPassword = () => { const abc = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789'; const v = crypto.getRandomValues(new Uint32Array(16)); return [...v].map(n => abc[n % abc.length]).join(''); };
 async function teamCall(body) {
-  const res = await fetch('/api/team', { method: 'POST', headers: { 'content-type': 'application/json', ...remote.authHeader() }, body: JSON.stringify(body) });
+  let res;
+  try { res = await fetch('/api/team', { method: 'POST', headers: { 'content-type': 'application/json', ...remote.authHeader() }, body: JSON.stringify(body) }); }
+  catch { throw new Error('No se pudo conectar con el servidor. Revisa tu conexión e inténtalo de nuevo.'); }
   const json = await res.json().catch(() => null);
   if (!res.ok) throw new Error(json?.message || `El servidor respondió ${res.status}.`);
   return json;

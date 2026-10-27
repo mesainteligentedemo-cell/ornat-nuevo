@@ -18,8 +18,10 @@ export const RESOLUCIONES = { hd: [1280, 720, 'HD · 1280 × 720'], fhd: [1920, 
 let hdrPromesa = null;
 export function cargarHDRI() { return (hdrPromesa ||= new HDRLoader().loadAsync(HDRI).then(t => { t.mapping = THREE.EquirectangularReflectionMapping; return t; })); }
 
-/** ¿Este navegador puede hacer path tracing? (WebGL2 + render a float). */
-export function soportePathTracing() {
+/** ¿Este navegador puede hacer path tracing? (WebGL2 + render a float). Se consulta una vez: crear un contexto WebGL2 cuesta. */
+let soporteCache = null;
+export function soportePathTracing() { return { ...(soporteCache ||= probarPathTracing()) }; }
+function probarPathTracing() {
   try {
     const c = document.createElement('canvas'); const gl = c.getContext('webgl2');
     if (!gl) return { ok: false, motivo: 'Tu navegador no tiene WebGL2.' };
@@ -33,6 +35,8 @@ let ptModulo = null;
 const dentroDe = (pts, x, y) => { let d = false; for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) { const [xi, yi] = pts[i], [xj, yj] = pts[j]; if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) d = !d; } return d; };
 const RENDERERS = new WeakMap();
 const cargarPathTracer = () => (ptModulo ||= import('three-gpu-pathtracer'));
+/** Suelta el renderer (y su contexto WebGL) asociado a un canvas de render que sale del DOM. */
+export function liberarRender(canvas) { const r = RENDERERS.get(canvas); if (!r) return; RENDERERS.delete(canvas); r.dispose(); r.forceContextLoss(); }
 
 /** Arma la escena de render (modelo, sol, entorno) y la cámara para la vista pedida. */
 export async function prepararEscena({ proyecto, estiloPorId, porDefecto, vista, aspecto, dof = false }) {

@@ -3,7 +3,7 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const hasGsap = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
-  const FILM_SRC = 'media/ornat-pelicula.mp4';
+  const FILM_SRC = 'https://ornat-whitedesert.vercel.app/media/ornat-pelicula.mp4';
 
   /* ---------- smooth scroll ---------- */
   let lenis = null;

@@ -21,7 +21,7 @@ html,body{margin:0;height:100%;background:var(--black);color:var(--cream);font:1
 #state{position:fixed;inset:0;display:grid;place-items:center;text-align:center;padding:24px;background:var(--black);color:var(--cream);z-index:5}
 #state[hidden]{display:none}
 #state .mark{display:block;width:44px;height:44px;margin:0 auto 22px}
-#state b{display:block;font:700 clamp(28px,6vw,44px)/1 "Barlow Condensed",Arial Narrow,sans-serif;letter-spacing:.01em;text-transform:uppercase;margin-bottom:12px}
+#state :is(b,h1){display:block;font:700 clamp(28px,6vw,44px)/1 "Barlow Condensed",Arial Narrow,sans-serif;letter-spacing:.01em;text-transform:uppercase;margin:0 0 12px}
 #state p{margin:0 auto;color:var(--dim);max-width:44ch;font:400 clamp(18px,2.4vw,21px)/1.35 "Instrument Serif",Georgia,serif}
 #state .home{display:none;margin-top:26px;padding:12px 22px;border:0;border-radius:999px;background:var(--lime);color:var(--black);font:700 15px/1 "Barlow Condensed",Arial Narrow,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
 #state.is-error .home{display:inline-flex}
@@ -43,8 +43,8 @@ button:focus-visible,a:focus-visible{outline:3px solid #98ff03;outline-offset:2p
 @media(max-width:560px){#demo-bar{left:8px;right:8px;max-width:none;bottom:60px}#reopen{bottom:60px;left:8px}}
 </style></head>
 <body>
-<div id="state" role="status"><div><img class="mark" src="/img/brand/ornat-planta-cuadrada-lime.svg" alt="ORNAT" width="44" height="44"><div class="spinner" aria-hidden="true"></div><b id="state-title">Cargando el sitio…</b><p id="state-text">Aplicamos tu publicación sobre la plantilla original.</p><a class="home" href="/">Ir a ORNAT</a></div></div>
-<iframe id="site" title="Sitio publicado" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals allow-downloads"></iframe>
+<div id="state" role="status"><div><img class="mark" src="/img/brand/ornat-planta-cuadrada-lime.svg" alt="ORNAT" width="44" height="44"><div class="spinner" aria-hidden="true"></div><h1 id="state-title">Cargando el sitio…</h1><p id="state-text">Aplicamos tu publicación sobre la plantilla original.</p><a class="home" href="/">Ir a ORNAT</a></div></div>
+<iframe id="site" title="Sitio publicado" referrerpolicy="no-referrer"></iframe>
 <div id="demo-bar" role="region" aria-label="Aviso de demostración" hidden>
   <p id="demo-text"></p>
   <div class="row"><button type="button" class="primary" id="zip" disabled>Descargar sitio (.zip)</button><button type="button" id="copy">Copiar enlace</button><button type="button" id="hide" aria-label="Ocultar este aviso">Ocultar aviso</button></div>
@@ -60,14 +60,18 @@ const id = new URLSearchParams(location.search).get('p');
 if (pub) history.replaceState(history.state, '', location.pathname + location.hash);
 const state = document.getElementById('state');
 // sitio.js quita el spinner cuando no puede mostrar la publicación: ese es el estado «no encontrada».
-new MutationObserver(() => {
+// Sin ?p= ni ?v= sitio.js falla antes de que este módulo corra: por eso también se revisa una vez al inicio.
+const markError = () => {
   if (state.hidden || state.querySelector('.spinner') || state.classList.contains('is-error')) return;
   state.classList.add('is-error');
-  if (pub && document.getElementById('state-title').textContent === 'No encontramos esta publicación') {
-    document.title = 'Sitio no encontrado — ORNAT';
+  if (document.getElementById('state-title').textContent !== 'No encontramos esta publicación') return;
+  document.title = 'Sitio no encontrado — ORNAT';
+  if (pub) {
     document.getElementById('state-text').textContent = 'Este sitio no existe o ya no está publicado. Revisa el enlace o pide uno nuevo a quien te lo compartió.';
   }
-}).observe(state, { childList: true, subtree: true, characterData: true });
+};
+new MutationObserver(markError).observe(state, { childList: true, subtree: true, characterData: true });
+markError();
 if (id) dbGet('publications', id).then(record => {
   const seo = record?.patch?.seo || {};
   const description = typeof seo.description === 'string' && seo.description.trim() ? seo.description.trim() : record?.projectName ? `${record.projectName} — sitio publicado con ORNAT.` : '';

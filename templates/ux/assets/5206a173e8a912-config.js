@@ -1,5 +1,5 @@
 const LOCAL_ORIGIN = 'http://localhost:3000';
-const PRODUCTION_MAIN_URL = 'https://ornat-ux.vercel.app/assets/bad3cbb424c280-main.js';
+const PRODUCTION_MAIN_URL = '/templates/ux/assets/bad3cbb424c280-main.js';
 const DEV_SESSION_KEY = 'heron-dev-mode';
 
 async function canConnectToDevServer() {

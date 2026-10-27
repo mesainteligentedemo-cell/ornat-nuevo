@@ -20,13 +20,13 @@ export class Visor {
     this.escena.add(this.sol, this.sol.target, new THREE.HemisphereLight('#fffaf0', '#b9b2a6', 0.35));
     this.info = null; this.modo = '3d'; this.plantaId = null; this.estado = { mobiliario: true, lamina: false };
     this.pmrem = new THREE.PMREMGenerator(this.renderer);
-    cargarHDRI().then(t => { this.env = this.pmrem.fromEquirectangular(t).texture; this.escena.environment = this.env; this.escena.environmentIntensity = 0.75; this.pedir(); }).catch(e => this.onError(e));
+    cargarHDRI().then(t => { if (this.destruido) return; this.env = this.pmrem.fromEquirectangular(t).texture; this.escena.environment = this.env; this.escena.environmentIntensity = 0.75; this.pedir(); }).catch(e => this.onError(e));
     this.ro = new ResizeObserver(() => this.ajustar()); this.ro.observe(canvas);
     this.controles.addEventListener('change', () => this.pedir());
     this.bucle = () => { this.raf = 0; if (this.controles.update()) this.pedir(); this.renderer.render(this.escena, this.camara); };
     this.ajustar();
   }
-  pedir() { if (!this.raf) this.raf = requestAnimationFrame(this.bucle); }
+  pedir() { if (!this.raf && !this.destruido) this.raf = requestAnimationFrame(this.bucle); }
   ajustar() { const w = this.canvas.clientWidth || 640, h = this.canvas.clientHeight || 400; this.renderer.setSize(w, h, false); this.persp.aspect = w / h; this.persp.updateProjectionMatrix(); if (this.modo !== '3d') this.encuadrar(); this.pedir(); }
 
   /** Reconstruye el modelo (cambio de geometría o de estilo). */
@@ -86,7 +86,11 @@ export class Visor {
       return new Blob([out], { type: 'model/gltf-binary' });
     } finally { for (const [o, v] of vis) o.visible = v; this.pedir(); }
   }
-  destruir() { this.ro.disconnect(); cancelAnimationFrame(this.raf); this.renderer.dispose(); }
+  destruir() {
+    this.destruido = true; this.ro.disconnect(); cancelAnimationFrame(this.raf); this.controles.dispose();
+    if (this.info) this.info.grupo.traverse(o => { if (o.isMesh) o.geometry.dispose(); });
+    this.env?.dispose(); this.pmrem.dispose(); this.renderer.dispose(); this.renderer.forceContextLoss(); // libera el contexto WebGL (el navegador limita cuántos hay vivos)
+  }
 }
 
 /** Cámara cenital ortográfica (para comparar con el plano). */

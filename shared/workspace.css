@@ -30,7 +30,8 @@ button{cursor:pointer}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--lime);display:inline-block}
 .shell{min-width:0}
 .topbar{display:flex;justify-content:flex-end;align-items:center;gap:12px;padding:16px clamp(16px,4vw,56px) 0}
-main{padding:clamp(16px,3vw,40px) clamp(16px,4vw,56px) 96px;max-width:1280px;width:100%}
+main{padding:clamp(16px,3vw,40px) clamp(16px,4vw,56px) 96px;max-width:1280px;width:100%;overflow-wrap:break-word}
+main :is(h1,h2,h3,h4,.lead,.msg,.node){overflow-wrap:anywhere}
 main:focus{outline:none}
 .eyebrow{font:600 13px/1 var(--cond);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
 h1,h2,h3,h4{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;margin:0}
@@ -153,8 +154,8 @@ caption{text-align:left;padding:12px 14px;font-weight:600}
 .cert .logo{font:600 44px/1 var(--cond);letter-spacing:-1px}
 .cert h1{font-size:clamp(28px,4vw,44px)}
 .cert .name{font:italic 400 clamp(26px,4vw,42px)/1.1 var(--serif);border-bottom:1px solid var(--ink);padding:6px 24px;margin:6px auto;max-width:90%}
-.cert .sign{display:flex;justify-content:space-around;gap:20px;margin-top:22px;font-size:13px}
-.cert .sign div{border-top:1px solid var(--ink);padding-top:6px;min-width:180px}
+.cert .sign{display:flex;flex-wrap:wrap;justify-content:space-around;gap:20px;margin-top:22px;font-size:13px}
+.cert .sign div{border-top:1px solid var(--ink);padding-top:6px;min-width:min(180px,100%);flex:0 1 auto;overflow-wrap:anywhere}
 .cert .folio{font:600 15px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.06em}
 @media (max-width:860px){
   .workspace{grid-template-columns:minmax(0,1fr)}

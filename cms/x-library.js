@@ -21,12 +21,14 @@ export function create(host, ext) {
     catch (error) { host.toast(error.message, true); return null; }
   }
   async function uploadFiles(files) {
-    let added = 0, dup = 0;
+    let added = 0, dup = 0; const failed = [];
     for (const file of files) {
       try { const media = await readMedia(file, { maxDimension: 3840 }); const r = await add(media, { logo: false }); if (r?.duplicate) dup++; else if (r) added++; }
-      catch (error) { host.toast(`${file.name}: ${error.message}`, true); }
+      catch (error) { failed.push({ name: file.name, message: error.message }); }
     }
-    host.toast(`${added} ${added === 1 ? 'imagen añadida' : 'imágenes añadidas'}${dup ? ` · ${dup} ya estaba${dup === 1 ? '' : 'n'} en la biblioteca` : ''}.`);
+    // El resumen final reemplaza al aviso anterior: los archivos que fallaron se nombran aquí para que no se pierdan.
+    const fail = failed.length === 1 ? ` · ${failed[0].name}: ${failed[0].message}` : failed.length ? ` · ${failed.length} no se pudieron leer (${failed.map(x => x.name).join(', ').slice(0, 120)}). Usa PNG, JPEG, WebP o AVIF.` : '';
+    host.toast(`${added} ${added === 1 ? 'imagen añadida' : 'imágenes añadidas'}${dup ? ` · ${dup} ya estaba${dup === 1 ? '' : 'n'} en la biblioteca` : ''}${fail || '.'}`, failed.length > 0);
   }
   function labels() {
     const out = {};

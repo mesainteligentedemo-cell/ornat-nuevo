@@ -269,12 +269,12 @@ export function mountCatalog(element, options = {}) {
   const onInput = e => {
     const el = e.target.closest?.('[data-f]'); if (!el) return;
     clearTimeout(debounce);
-    const apply = () => { readControl(el); visible = pageSize; pushUrl(); renderList(); };
+    const apply = () => { if (!el.isConnected) return; readControl(el); visible = pageSize; pushUrl(); renderList(); };
     if (el.tagName === 'SELECT') apply(); else debounce = setTimeout(apply, 180);
   };
   const onClick = e => {
     if (e.target.closest('[data-more]')) { visible += pageSize; renderList(); root.querySelectorAll('.card')[visible - pageSize]?.querySelector('a')?.focus({ preventScroll: true }); }
-    if (e.target.closest('[data-clear]')) { filters = { ...DEFAULT_FILTERS, ...preset }; visible = pageSize; pushUrl(); renderAll(); }
+    if (e.target.closest('[data-clear]')) { clearTimeout(debounce); filters = { ...DEFAULT_FILTERS, ...preset }; visible = pageSize; pushUrl(); renderAll(); }
   };
   const onPop = () => { if (!sync) return; filters = parseFilters(globalThis.location.search, preset); visible = pageSize; renderAll(); };
 

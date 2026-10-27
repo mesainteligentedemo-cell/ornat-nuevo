@@ -139,6 +139,8 @@ legend{font:600 12px var(--font);letter-spacing:.12em;text-transform:uppercase;p
 @media (max-width:640px){
   .grid2,.grid3{grid-template-columns:1fr}.ph-card{grid-template-columns:1fr}.ph-card .thumb{max-width:340px}
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.panel{padding:16px}.navbar .btn{flex:1}.inl{grid-template-columns:120px 1fr}
-  .factions .acts{width:100%}.factions .btn{flex:1}.toolbar .acts{width:100%}.fld select{min-width:0;width:100%}
+  .factions .acts{width:100%}.factions .btn{flex:1 1 100%}.navbar [data-action=back]{flex:0 0 auto}.toolbar .acts{width:100%}.fld select{min-width:0;width:100%}
 }
 @media (prefers-reduced-motion:reduce){.spin{animation:none}.toast,.bar i,.drop-main,.tile{transition:none}}
+.errline{margin:14px 0 0;font-size:14px;color:#9b1c1c;font-weight:600}
+.fld input[aria-invalid=true]{border-color:#9b1c1c;background:#fbeeee}

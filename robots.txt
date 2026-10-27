@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /cms/
+Disallow: /control/
+Disallow: /cuenta/
+Disallow: /rrhh/
+Disallow: /capacitacion/
+Disallow: /templates/
+Disallow: /api/
+
+Sitemap: https://ornat-nuevo.vercel.app/sitemap.xml

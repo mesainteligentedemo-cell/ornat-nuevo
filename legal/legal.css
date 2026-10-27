@@ -1,0 +1,12 @@
+/* ORNAT · /legal/ y /404 — reutilizan .swp de /software-ia/. */
+.legal-note{margin-top:22px;color:var(--faint);font-size:var(--t-xs);letter-spacing:.08em}
+.legal-toc{display:flex;flex-wrap:wrap;gap:12px 28px;padding:clamp(28px,3vw,44px) 0;border-bottom:1px solid var(--line)}
+.legal-toc a{font-family:var(--title);text-transform:uppercase;font-weight:600;font-size:clamp(20px,2vw,30px);transition:color .3s}
+.legal-toc a:hover,.legal-toc a:focus-visible{color:var(--lime)}
+.legal-sec{max-width:76ch;padding-top:clamp(60px,7vw,110px);scroll-margin-top:90px}
+.legal-sec h2{font-family:var(--text);font-weight:400;font-style:italic;font-size:var(--t-2xl);line-height:1;margin-bottom:26px}
+.legal-sec h3{font-size:var(--t-xs);letter-spacing:.2em;text-transform:uppercase;color:var(--lime);font-weight:600;margin:30px 0 10px}
+.legal-sec p{color:var(--dim);margin-bottom:14px}
+.legal-sec a{text-decoration:underline;text-underline-offset:3px}
+.legal-sec a:hover{color:var(--lime)}
+.nf-page .swp-head{border-bottom:0;padding-bottom:0}

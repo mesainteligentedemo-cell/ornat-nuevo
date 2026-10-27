@@ -291,6 +291,11 @@ function mount() {
     const go = () => sec.scrollIntoView({ block: 'start' });
     if (document.readyState === 'complete') requestAnimationFrame(go); else addEventListener('load', () => setTimeout(go, 60), { once: true });
   }
+  // Un enlace #pdc-… dentro de la misma página (o pegado en la barra) también abre su ficha.
+  addEventListener('hashchange', () => {
+    const h = location.hash.match(/^#pdc-([\w-]+)$/);
+    if (h && h[1] in POI_IX && sec.pdc.sel !== POI_IX[h[1]]) { sec.pdc.select(POI_IX[h[1]], { silent: true }); sec.scrollIntoView({ block: 'start', behavior: REDUCED ? 'auto' : 'smooth' }); }
+  });
   new IntersectionObserver((es, io) => { if (es[0].isIntersecting) { sec.classList.add('is-in'); io.disconnect(); } }, { rootMargin: '0px 0px -12% 0px' }).observe(sec.querySelector('.pdc__head'));
   new IntersectionObserver((es, io) => {
     if (!es[0].isIntersecting) return;

@@ -1,0 +1,11 @@
+{
+  "name": "ornat-nuevo",
+  "private": true,
+  "description": "Sitio estático de ORNAT: portada, software IA y plantillas del CMS.",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": { "node": ">=18" }
+}

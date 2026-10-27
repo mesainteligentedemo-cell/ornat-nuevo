@@ -21,7 +21,7 @@ html,body{margin:0;height:100%;background:var(--black);color:var(--cream);font:1
 #state{position:fixed;inset:0;display:grid;place-items:center;text-align:center;padding:24px;background:var(--black);color:var(--cream);z-index:5}
 #state[hidden]{display:none}
 #state .mark{display:block;width:44px;height:44px;margin:0 auto 22px}
-#state b{display:block;font:700 clamp(28px,6vw,44px)/1 "Barlow Condensed",Arial Narrow,sans-serif;letter-spacing:.01em;text-transform:uppercase;margin-bottom:12px}
+#state :is(b,h1){display:block;font:700 clamp(28px,6vw,44px)/1 "Barlow Condensed",Arial Narrow,sans-serif;letter-spacing:.01em;text-transform:uppercase;margin:0 0 12px}
 #state p{margin:0 auto;color:var(--dim);max-width:44ch;font:400 clamp(18px,2.4vw,21px)/1.35 "Instrument Serif",Georgia,serif}
 #state .home{display:none;margin-top:26px;padding:12px 22px;border:0;border-radius:999px;background:var(--lime);color:var(--black);font:700 15px/1 "Barlow Condensed",Arial Narrow,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
 #state.is-error .home{display:inline-flex}
@@ -43,7 +43,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #98ff03;outline-offset:2p
 @media(max-width:560px){#demo-bar{left:8px;right:8px;max-width:none;bottom:60px}#reopen{bottom:60px;left:8px}}
 </style></head>
 <body>
-<div id="state" role="status"><div><img class="mark" src="/img/brand/ornat-planta-cuadrada-lime.svg" alt="ORNAT" width="44" height="44"><div class="spinner" aria-hidden="true"></div><b id="state-title">Cargando el sitio…</b><p id="state-text">Aplicamos tu publicación sobre la plantilla original.</p><a class="home" href="/">Ir a ORNAT</a></div></div>
+<div id="state" role="status"><div><img class="mark" src="/img/brand/ornat-planta-cuadrada-lime.svg" alt="ORNAT" width="44" height="44"><div class="spinner" aria-hidden="true"></div><h1 id="state-title">Cargando el sitio…</h1><p id="state-text">Aplicamos tu publicación sobre la plantilla original.</p><a class="home" href="/">Ir a ORNAT</a></div></div>
 <iframe id="site" title="Sitio publicado" referrerpolicy="no-referrer"></iframe>
 <div id="demo-bar" role="region" aria-label="Aviso de demostración" hidden>
   <p id="demo-text"></p>

@@ -388,7 +388,7 @@ function buildDom() {
       <div class="pdc__card-a">
         <button type="button" class="pdc__mini" data-prev aria-label="Lugar anterior">←</button>
         <button type="button" class="pdc__mini" data-next aria-label="Lugar siguiente">→</button>
-        <a class="pdc__mini pdc__mini--wide" data-go target="_blank" rel="noopener">Cómo llegar ↗</a>
+        <a class="pdc__mini pdc__mini--wide" data-go href="https://www.google.com/maps/dir/?api=1&destination=${POIS[0].lat},${POIS[0].lon}" target="_blank" rel="noopener">Cómo llegar ↗</a>
         <button type="button" class="pdc__mini pdc__mini--wide" data-share>Compartir</button>
       </div>
     </aside>
